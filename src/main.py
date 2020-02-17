@@ -4,6 +4,7 @@ import configparser
 import time
 from Reader import Reader
 from Writer import Writer
+from Orchestrator import Orchestrator
 
 def help(show=False):
 	parser = argparse.ArgumentParser(description="")
@@ -42,8 +43,9 @@ def main():
 	if args.first:
 		print("Execute the first subtask")
 		reader = Reader(dataSettings = settings)
-		#to do
-		fh, obs = list(), list()
+		fh, obs = Orchestrator.processTask1(files 		= reader.filesContent, 
+								    		dictionary  = reader.dictionary,
+								    		show 		= args.showprints)
 		Writer.writeTask1(resultFile 	= settings["results"]["task1"], 
 					 	  fh 			= fh, 
 					 	  obs	 		= obs)
