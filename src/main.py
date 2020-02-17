@@ -16,6 +16,8 @@ def help(show=False):
 							help='When active it show some parts of the processing during the executions (default: False)')
 	configs.add_argument('-c', '--cleaning', default=False, action='store_true', \
 							help='When active it cleans the clinical reports (default: False)')
+	configs.add_argument('-m', '--method', dest='method', type=str, \
+                        help='The method used to process.')	
 	
 	executionMode = parser.add_argument_group('Execution Mode', 'Flags to select the execution mode!')
 	executionMode.add_argument('-t1', '--first', default=False, action='store_true', \
@@ -49,6 +51,7 @@ def main():
 		fmDocs, obsDocs = Orchestrator.processTask1(files 			= filesRead,
 													XMLAnnotations 	= reader.loadXMLAnnotations(),
 													dictionaries	= reader.loadDictionary(),
+													method			= args.method,
 								    				show 			= args.showprints)
 		Writer.writeTask1(resultFile 	= settings["results"]["task1"], 
 					 	  fmDocs 		= fmDocs, 
