@@ -14,6 +14,8 @@ def help(show=False):
                         help='The system settings file (default: settings.ini)')	
 	configs.add_argument('-p', '--showprints', default=False, action='store_true', \
 							help='When active it show some parts of the processing during the executions (default: False)')
+	configs.add_argument('-c', '--cleaning', default=False, action='store_true', \
+							help='When active it cleans the clinical reports (default: False)')
 	
 	executionMode = parser.add_argument_group('Execution Mode', 'Flags to select the execution mode!')
 	executionMode.add_argument('-t1', '--first', default=False, action='store_true', \
@@ -43,7 +45,8 @@ def main():
 	if args.first:
 		print("Execute the first subtask")
 		reader = Reader(dataSettings = settings)
-		fmDocs, obsDocs = Orchestrator.processTask1(files 			= reader.loadDataSet(),
+		filesRead = reader.loadDataSet(cleaning=args.cleaning)
+		fmDocs, obsDocs = Orchestrator.processTask1(files 			= filesRead,
 													XMLAnnotations 	= reader.loadXMLAnnotations(),
 													dictionaries	= reader.loadDictionary(),
 								    				show 			= args.showprints)
