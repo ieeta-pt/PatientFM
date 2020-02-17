@@ -7,14 +7,26 @@ class Reader(object):
 		self.dataSetDir = dataSettings["datasets"]["files"]
 		self.vocFiles = dataSettings["vocabulary"]
 
-	def loadDataSet(self):
+	def loadDataSet(self, cleaning=False):
 		filesContent = {}
 		allFiles = glob.glob('{}*.{}'.format(self.dataSetDir, "txt"))
 		for file in allFiles:
 			fileName = file.split("/")[-1].split(".")[0]
 			with codecs.open(file, 'r', encoding='utf8') as fp:
-				filesContent[fileName] = fp.read()
+				if cleaning:
+					filesContent[fileName] = self.cleanFile(fp.read())
+				else:
+					filesContent[fileName] = fp.read()
 		return filesContent
+
+	def cleanFile(self, inFile):
+		file = inFile.replace("\n", " ").replace("’", "\'")
+		for ch in ['\\','\"','*','_','{','}','[',']','(',')','>','#','+',',','!','$',':',';']:
+				if ch in file:
+					file = file.replace(ch,"")
+		file = file.lower()
+		file = file.replace("dr.", "dr").replace("mr.", "mr").replace("mrs.", "mrs").replace("ms.", "ms")
+		return file
 
 	def loadXMLAnnotations(self):
 		#to do
