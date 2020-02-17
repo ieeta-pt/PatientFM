@@ -1,0 +1,1621 @@
+doc_test_1009	FamilyMember	Sister	NA
+doc_test_1009	FamilyMember	Mother	NA
+doc_test_1009	FamilyMember	Parent	NA
+doc_test_1009	FamilyMember	Aunt	Maternal
+doc_test_1009	FamilyMember	Uncle	Maternal
+doc_test_1009	FamilyMember	Grandmother	Maternal
+doc_test_1009	FamilyMember	Daughter	NA
+doc_test_1009	Observation	mental retardation
+doc_test_1009	Observation	learning disabilities
+doc_test_1009	Observation	spontaneous abortion of triplets
+doc_test_1009	Observation	miscarriages
+doc_test_1009	Observation	breast cancer
+doc_test_1009	Observation	cancer
+doc_test_1010	FamilyMember	Uncle	Maternal
+doc_test_1010	FamilyMember	Father	NA
+doc_test_1010	Observation	mental retardation
+doc_test_1010	Observation	miscarriages 
+doc_test_1010	Observation	cleft lip
+doc_test_1010	Observation	neonatal death
+doc_test_1010	Observation	birth defects
+doc_test_1011	FamilyMember	Brother	NA
+doc_test_1011	FamilyMember	Parent	NA
+doc_test_1011	FamilyMember	Sister	NA
+doc_test_1016	FamilyMember	Parent	NA
+doc_test_1016	FamilyMember	Brother	NA
+doc_test_1019	FamilyMember	Grandparent	Paternal
+doc_test_1019	FamilyMember	Mother	NA
+doc_test_1019	FamilyMember	Grandmother	Maternal
+doc_test_1019	FamilyMember	Aunt	NA
+doc_test_1019	FamilyMember	Grandfather	Maternal
+doc_test_1019	FamilyMember	Uncle	Paternal
+doc_test_1019	FamilyMember	Grandmother	Paternal
+doc_test_1019	FamilyMember	Uncle	NA
+doc_test_1019	FamilyMember	Aunt	Paternal
+doc_test_1019	FamilyMember	Grandparent	Maternal
+doc_test_1019	FamilyMember	Grandfather	Paternal
+doc_test_1019	FamilyMember	Aunt	Maternal
+doc_test_1019	FamilyMember	Father	NA
+doc_test_1019	Observation	smoker
+doc_test_1019	Observation	throat cancer
+doc_test_1019	Observation	connective tissue disease
+doc_test_1019	Observation	cervical
+doc_test_1019	Observation	carpal tunnel
+doc_test_1019	Observation	breast cancer
+doc_test_1019	Observation	pancreatic cancer
+doc_test_1019	Observation	Ehlers-Danlos Type 2
+doc_test_1019	Observation	rare genetic hearing loss
+doc_test_1019	Observation	COPD
+doc_test_1019	Observation	joint hypermobility
+doc_test_1019	Observation	easy bruising
+doc_test_1019	Observation	problems with healing
+doc_test_1019	Observation	disabled
+doc_test_1019	Observation	Raynaud's
+doc_test_1019	Observation	female cancer
+doc_test_1019	Observation	cardiac disease
+doc_test_1021	FamilyMember	Sister	NA
+doc_test_1021	FamilyMember	Uncle	Paternal
+doc_test_1021	FamilyMember	Grandmother	Paternal
+doc_test_1021	FamilyMember	Cousin	NA
+doc_test_1021	Observation	multiple miscarriages
+doc_test_1021	Observation	breast cancer
+doc_test_1021	Observation	pancreatic cancer
+doc_test_1021	Observation	consanguinity
+doc_test_1021	Observation	birth defects
+doc_test_1021	Observation	Tourette syndrome
+doc_test_1021	Observation	mental retardation
+doc_test_1021	Observation	other genetic conditions
+doc_test_1021	Observation	early unexplained deaths
+doc_test_1021	Observation	learning disabilities
+doc_test_1022	FamilyMember	Sister	NA
+doc_test_1022	FamilyMember	Mother	NA
+doc_test_1022	FamilyMember	Aunt	Paternal
+doc_test_1022	FamilyMember	Brother	NA
+doc_test_1022	FamilyMember	Father	NA
+doc_test_1022	Observation	learning problems
+doc_test_1022	Observation	miscarriage
+doc_test_1022	Observation	multiple miscarriages
+doc_test_1022	Observation	dyslexia
+doc_test_1022	Observation	stillborn 
+doc_test_1022	Observation	cancer
+doc_test_1022	Observation	birth defects
+doc_test_1022	Observation	died early
+doc_test_1022	Observation	sarcoidosis
+doc_test_1022	Observation	mental retardation
+doc_test_1024	FamilyMember	Sister	NA
+doc_test_1024	FamilyMember	Mother	NA
+doc_test_1024	Observation	shingles
+doc_test_1024	Observation	alcoholism
+doc_test_1024	Observation	untreated depression
+doc_test_1024	Observation	suicides
+doc_test_1024	Observation	depression
+doc_test_1024	Observation	anxiety
+doc_test_1025	FamilyMember	Grandmother	Paternal
+doc_test_1025	FamilyMember	Grandmother	Maternal
+doc_test_1025	Observation	smoking
+doc_test_1025	Observation	premenopausal breast cancer
+doc_test_1025	Observation	ovarian cancer
+doc_test_1025	Observation	pancreatic cancer
+doc_test_1025	Observation	cancer
+doc_test_1026	FamilyMember	Mother	NA
+doc_test_1026	Observation	breast or ovarian cancer
+doc_test_1026	Observation	mental retardation
+doc_test_1026	Observation	multiple miscarriages
+doc_test_1026	Observation	breast cancer
+doc_test_1026	Observation	neonatal death
+doc_test_1026	Observation	known genetic conditions
+doc_test_1026	Observation	birth defects
+doc_test_1027	FamilyMember	Son	NA
+doc_test_1027	FamilyMember	Mother	NA
+doc_test_1027	FamilyMember	Brother	NA
+doc_test_1027	FamilyMember	Father	NA
+doc_test_1027	Observation	 brain tumor
+doc_test_1027	Observation	spinal meningitis
+doc_test_1027	Observation	Wilms' tumor
+doc_test_1029	FamilyMember	Sister	NA
+doc_test_1029	FamilyMember	Mother	NA
+doc_test_1029	FamilyMember	Grandfather	Paternal
+doc_test_1029	FamilyMember	Brother	NA
+doc_test_1029	FamilyMember	Grandmother	Maternal
+doc_test_1029	FamilyMember	Grandfather	Maternal
+doc_test_1029	FamilyMember	Uncle	Paternal
+doc_test_1029	FamilyMember	Grandmother	Paternal
+doc_test_1029	FamilyMember	Uncle	Maternal
+doc_test_1029	FamilyMember	Father	NA
+doc_test_1029	FamilyMember	Aunt	Maternal
+doc_test_1029	Observation	low blood pressure
+doc_test_1029	Observation	cystic ovaries
+doc_test_1029	Observation	ovarian cysts
+doc_test_1029	Observation	joint pain
+doc_test_1029	Observation	walks funny
+doc_test_1029	Observation	cancer
+doc_test_1029	Observation	alcoholic
+doc_test_1029	Observation	broken back
+doc_test_1029	Observation	abuses drugs
+doc_test_1029	Observation	abuse drugs
+doc_test_1030	FamilyMember	Sister	NA
+doc_test_1030	FamilyMember	Grandfather	Paternal
+doc_test_1030	FamilyMember	Grandmother	Maternal
+doc_test_1030	FamilyMember	Grandfather	Maternal
+doc_test_1030	FamilyMember	Son	NA
+doc_test_1030	FamilyMember	Uncle	Paternal
+doc_test_1030	FamilyMember	Grandmother	Paternal
+doc_test_1030	FamilyMember	Aunt	Paternal
+doc_test_1030	FamilyMember	Uncle	Maternal
+doc_test_1030	FamilyMember	Aunt	Maternal
+doc_test_1030	FamilyMember	Father	NA
+doc_test_1030	Observation	possible growth on her neck
+doc_test_1030	Observation	heart attack
+doc_test_1030	Observation	breast cancer
+doc_test_1030	Observation	ER-positive breast cancer
+doc_test_1030	Observation	heart condition
+doc_test_1030	Observation	heart complications
+doc_test_1030	Observation	cancer
+doc_test_1030	Observation	depression
+doc_test_1030	Observation	emphysema
+doc_test_1034	FamilyMember	Brother	NA
+doc_test_1034	FamilyMember	Mother	NA
+doc_test_1034	FamilyMember	Father	NA
+doc_test_1034	Observation	alcohol use
+doc_test_1034	Observation	marijuana use
+doc_test_1034	Observation	temper issues
+doc_test_1034	Observation	drug use
+doc_test_1034	Observation	drank
+doc_test_1035	FamilyMember	Sister	NA
+doc_test_1035	FamilyMember	Mother	NA
+doc_test_1035	FamilyMember	Brother	NA
+doc_test_1035	FamilyMember	Father	NA
+doc_test_1035	FamilyMember	Grandmother	Maternal
+doc_test_1035	Observation	right post-axial polydactyly
+doc_test_1035	Observation	cancer 
+doc_test_1035	Observation	still born 
+doc_test_1035	Observation	hepatitis C
+doc_test_1035	Observation	depression
+doc_test_1035	Observation	died early
+doc_test_1035	Observation	heart problem
+doc_test_1035	Observation	elevated blood pressure level
+doc_test_1035	Observation	ventricular-septal defect
+doc_test_1035	Observation	elevated cholesterol level
+doc_test_1035	Observation	heart murmur
+doc_test_1035	Observation	multiple miscarriages 
+doc_test_1035	Observation	diabetes
+doc_test_1036	FamilyMember	Sister	NA
+doc_test_1036	FamilyMember	Mother	NA
+doc_test_1036	FamilyMember	Son	NA
+doc_test_1036	FamilyMember	Uncle	NA
+doc_test_1036	FamilyMember	Daughter	NA
+doc_test_1036	FamilyMember	Father	NA
+doc_test_1036	FamilyMember	Aunt	NA
+doc_test_1036	Observation	dizziness
+doc_test_1036	Observation	fibrocystic changes
+doc_test_1036	Observation	factor V Leiden heterozygote
+doc_test_1036	Observation	early second trimester miscarriages
+doc_test_1036	Observation	peritoneal cancer 
+doc_test_1036	Observation	clots
+doc_test_1036	Observation	metastatic bone cancer
+doc_test_1036	Observation	mobility problems
+doc_test_1036	Observation	stroke
+doc_test_1036	Observation	mild stroke
+doc_test_1036	Observation	clotting disorder
+doc_test_1036	Observation	blood clot
+doc_test_1037	FamilyMember	Sister	NA
+doc_test_1037	FamilyMember	Mother	NA
+doc_test_1037	FamilyMember	Son	NA
+doc_test_1037	FamilyMember	Cousin	NA
+doc_test_1037	FamilyMember	Father	NA
+doc_test_1037	FamilyMember	Aunt	Maternal
+doc_test_1037	Observation	early miscarriage
+doc_test_1037	Observation	elevatedcholesterol levels
+doc_test_1037	Observation	elevated blood pressure
+doc_test_1037	Observation	cancer
+doc_test_1037	Observation	elevated cholesterol levels
+doc_test_1037	Observation	unilateral mastectomy 
+doc_test_1037	Observation	mental retardation
+doc_test_1037	Observation	hydrocephaly
+doc_test_1037	Observation	learning disabilities
+doc_test_1037	Observation	basal cell carcinoma
+doc_test_1037	Observation	unilateral breast cancer
+doc_test_1039	FamilyMember	Grandmother	Paternal
+doc_test_1039	FamilyMember	Cousin	Maternal
+doc_test_1039	FamilyMember	Grandmother	Maternal
+doc_test_1039	Observation	high blood pressure
+doc_test_1039	Observation	allergies
+doc_test_1039	Observation	long QT Brugada syndrome
+doc_test_1039	Observation	juvenile diabetes
+doc_test_1039	Observation	asthma
+doc_test_1039	Observation	cholesterol
+doc_test_1039	Observation	sudden cardiac deaths
+doc_test_1039	Observation	depression
+doc_test_1039	Observation	anxiety
+doc_test_1040	FamilyMember	Parent	NA
+doc_test_1040	FamilyMember	Sister	NA
+doc_test_1040	FamilyMember	Son	NA
+doc_test_1040	FamilyMember	Uncle	Maternal
+doc_test_1040	FamilyMember	Cousin	NA
+doc_test_1040	FamilyMember	Daughter	NA
+doc_test_1040	FamilyMember	Father	NA
+doc_test_1040	FamilyMember	Aunt	Maternal
+doc_test_1040	Observation	stomach and bladder outside of his body
+doc_test_1040	Observation	learning disabilities
+doc_test_1040	Observation	cancer 
+doc_test_1040	Observation	still born 
+doc_test_1040	Observation	multiple miscarriages 
+doc_test_1040	Observation	mental retardation 
+doc_test_1040	Observation	died early
+doc_test_1041	FamilyMember	Cousin	Paternal
+doc_test_1041	FamilyMember	Sister	NA
+doc_test_1041	FamilyMember	Mother	NA
+doc_test_1041	FamilyMember	Cousin	NA
+doc_test_1041	FamilyMember	Grandfather	Paternal
+doc_test_1041	FamilyMember	Grandmother	Maternal
+doc_test_1041	FamilyMember	Grandfather	Maternal
+doc_test_1041	FamilyMember	Son	NA
+doc_test_1041	FamilyMember	Uncle	Paternal
+doc_test_1041	FamilyMember	Grandmother	Paternal
+doc_test_1041	FamilyMember	Uncle	NA
+doc_test_1041	FamilyMember	Aunt	Paternal
+doc_test_1041	FamilyMember	Father	NA
+doc_test_1041	FamilyMember	Aunt	NA
+doc_test_1041	Observation	Alzheimer disease
+doc_test_1041	Observation	leukemia
+doc_test_1041	Observation	breast cancer
+doc_test_1041	Observation	cancer
+doc_test_1041	Observation	pathology of these colon polyps is unknown
+doc_test_1041	Observation	embolism
+doc_test_1041	Observation	cervical cancer
+doc_test_1041	Observation	stroke
+doc_test_1041	Observation	type 2 diabetes
+doc_test_1041	Observation	breast and colorectal cancer
+doc_test_1041	Observation	colon polyps
+doc_test_1042	FamilyMember	Sister	NA
+doc_test_1042	FamilyMember	Mother	NA
+doc_test_1042	FamilyMember	Uncle	NA
+doc_test_1042	FamilyMember	Brother	NA
+doc_test_1042	FamilyMember	Father	NA
+doc_test_1042	FamilyMember	Aunt	Maternal
+doc_test_1042	Observation	normal growth and development
+doc_test_1042	Observation	miscarriage
+doc_test_1042	Observation	premature
+doc_test_1042	Observation	speech problems
+doc_test_1042	Observation	internal birth defects
+doc_test_1042	Observation	developmental delays
+doc_test_1042	Observation	 mental retardation
+doc_test_1042	Observation	seizures
+doc_test_1042	Observation	 difficulty walking
+doc_test_1042	Observation	hearing problems
+doc_test_1042	Observation	learning disabilities
+doc_test_1042	Observation	speech language development disorders
+doc_test_1044	FamilyMember	Brother	NA
+doc_test_1044	FamilyMember	Son	NA
+doc_test_1044	FamilyMember	Father	NA
+doc_test_1044	FamilyMember	Mother	NA
+doc_test_1044	Observation	MS
+doc_test_1044	Observation	stroke
+doc_test_1045	FamilyMember	Sister	NA
+doc_test_1045	FamilyMember	Mother	NA
+doc_test_1045	FamilyMember	Grandfather	Paternal
+doc_test_1045	FamilyMember	Aunt	Maternal
+doc_test_1045	FamilyMember	Father	NA
+doc_test_1045	Observation	total hearing loss
+doc_test_1045	Observation	complications of asthma
+doc_test_1045	Observation	hypertension
+doc_test_1045	Observation	hearing problems
+doc_test_1045	Observation	bilateral hearing loss
+doc_test_1045	Observation	asthma
+doc_test_1045	Observation	hearing loss
+doc_test_1046	FamilyMember	Cousin	Paternal
+doc_test_1046	FamilyMember	Sister	NA
+doc_test_1046	FamilyMember	Mother	NA
+doc_test_1046	FamilyMember	Cousin	NA
+doc_test_1046	FamilyMember	Grandmother	Maternal
+doc_test_1046	FamilyMember	Grandfather	Maternal
+doc_test_1046	FamilyMember	Grandmother	Paternal
+doc_test_1046	FamilyMember	Aunt	Paternal
+doc_test_1046	FamilyMember	Grandfather	Paternal
+doc_test_1046	FamilyMember	Aunt	Maternal
+doc_test_1046	FamilyMember	Father	NA
+doc_test_1046	Observation	brain aneurysms
+doc_test_1046	Observation	problems with taste and smell
+doc_test_1046	Observation	sensory neural hearing loss
+doc_test_1046	Observation	ruptured ear drum 
+doc_test_1046	Observation	cardiac rhythm problem
+doc_test_1046	Observation	ear tags 
+doc_test_1046	Observation	low thyroid
+doc_test_1046	Observation	recurrent otitis
+doc_test_1046	Observation	hyperactive behavior
+doc_test_1046	Observation	head trauma
+doc_test_1046	Observation	underlying etiology
+doc_test_1046	Observation	fluid behind his ears
+doc_test_1046	Observation	asthma
+doc_test_1046	Observation	hypothyroidism
+doc_test_1046	Observation	mentally retarded
+doc_test_1046	Observation	hearing loss
+doc_test_1047	FamilyMember	Cousin	Paternal
+doc_test_1047	FamilyMember	Aunt	Paternal
+doc_test_1047	FamilyMember	Brother	NA
+doc_test_1047	FamilyMember	Grandparent	Maternal
+doc_test_1047	FamilyMember	Father	NA
+doc_test_1047	FamilyMember	Aunt	Maternal
+doc_test_1047	Observation	part of his valve flap is missing
+doc_test_1047	Observation	breast cancer
+doc_test_1047	Observation	ovarian cancer
+doc_test_1047	Observation	colon cancer
+doc_test_1047	Observation	 valve disorder
+doc_test_1047	Observation	six-vessel bypass surgery
+doc_test_1047	Observation	BRCA positive
+doc_test_1047	Observation	aortic rupture
+doc_test_1049	FamilyMember	Daughter	NA
+doc_test_1049	FamilyMember	Mother	NA
+doc_test_1049	FamilyMember	Brother	NA
+doc_test_1049	FamilyMember	Aunt	Maternal
+doc_test_1049	FamilyMember	Sibling	NA
+doc_test_1049	FamilyMember	Father	NA
+doc_test_1049	FamilyMember	Grandmother	Maternal
+doc_test_1049	FamilyMember	Aunt	NA
+doc_test_1049	Observation	ADHD
+doc_test_1049	Observation	alcohol
+doc_test_1049	Observation	schizophrenia
+doc_test_1049	Observation	mild mental retardation
+doc_test_1049	Observation	drug use
+doc_test_1049	Observation	autistic
+doc_test_1049	Observation	depression
+doc_test_1050	FamilyMember	Cousin	Paternal
+doc_test_1050	FamilyMember	Mother	NA
+doc_test_1050	FamilyMember	Grandfather	Paternal
+doc_test_1050	FamilyMember	Brother	NA
+doc_test_1050	FamilyMember	Grandmother	Maternal
+doc_test_1050	FamilyMember	Uncle	Paternal
+doc_test_1050	FamilyMember	Grandmother	Paternal
+doc_test_1050	FamilyMember	Aunt	Paternal
+doc_test_1050	FamilyMember	Sibling	NA
+doc_test_1050	FamilyMember	Father	NA
+doc_test_1050	Observation	ADHD
+doc_test_1050	Observation	thyroid disease
+doc_test_1050	Observation	rheumatoid arthritis
+doc_test_1050	Observation	depression
+doc_test_1050	Observation	seasonal affective disorder
+doc_test_1050	Observation	alcohol
+doc_test_1050	Observation	back problems
+doc_test_1050	Observation	prostate cancer
+doc_test_1050	Observation	mental health issues
+doc_test_1050	Observation	problems with his back
+doc_test_1050	Observation	mental health problems
+doc_test_1050	Observation	drugs
+doc_test_1052	FamilyMember	Brother	NA
+doc_test_1052	FamilyMember	Sister	NA
+doc_test_1052	Observation	Psychiatric problems
+doc_test_1052	Observation	 psychiatric disorders 
+doc_test_1052	Observation	tic disorder
+doc_test_1052	Observation	exceedingly smart
+doc_test_1054	FamilyMember	Cousin	Paternal
+doc_test_1054	FamilyMember	Mother	NA
+doc_test_1054	FamilyMember	Father	NA
+doc_test_1054	FamilyMember	Brother	NA
+doc_test_1054	FamilyMember	Grandmother	Maternal
+doc_test_1054	FamilyMember	Grandfather	Maternal
+doc_test_1054	FamilyMember	Son	NA
+doc_test_1054	FamilyMember	Uncle	Paternal
+doc_test_1054	FamilyMember	Grandmother	Paternal
+doc_test_1054	FamilyMember	Cousin	Maternal
+doc_test_1054	FamilyMember	Aunt	Paternal
+doc_test_1054	FamilyMember	Grandfather	Paternal
+doc_test_1054	FamilyMember	Aunt	Maternal
+doc_test_1054	FamilyMember	Aunt	NA
+doc_test_1054	Observation	breastcancer
+doc_test_1054	Observation	precancerous cells of her ovaries
+doc_test_1054	Observation	bile duct
+doc_test_1054	Observation	pancreatic cancer
+doc_test_1054	Observation	cancer
+doc_test_1054	Observation	heart disease
+doc_test_1054	Observation	prostate cancer
+doc_test_1054	Observation	breast lump
+doc_test_1054	Observation	ovarian cancer
+doc_test_1054	Observation	colon cancer
+doc_test_1055	FamilyMember	Sister	NA
+doc_test_1055	FamilyMember	Mother	NA
+doc_test_1055	FamilyMember	Grandmother	Maternal
+doc_test_1055	FamilyMember	Grandfather	Maternal
+doc_test_1055	FamilyMember	Uncle	Paternal
+doc_test_1055	FamilyMember	Aunt	Paternal
+doc_test_1055	FamilyMember	Sibling	NA
+doc_test_1055	FamilyMember	Father	NA
+doc_test_1055	FamilyMember	Aunt	Maternal
+doc_test_1055	Observation	metabolic disorders
+doc_test_1055	Observation	migraines
+doc_test_1055	Observation	congenital knee contractures
+doc_test_1055	Observation	neurodevelopmental problems
+doc_test_1055	Observation	lethargy
+doc_test_1055	Observation	upper respiratory infections
+doc_test_1055	Observation	stroke-like episodes
+doc_test_1055	Observation	innocent heart murmur
+doc_test_1055	Observation	hypothyroidism
+doc_test_1055	Observation	retinal disease
+doc_test_1055	Observation	club feet
+doc_test_1055	Observation	thalassemia
+doc_test_1055	Observation	chronic fatigue syndrome
+doc_test_1055	Observation	scoliosis
+doc_test_1055	Observation	muscle weakness
+doc_test_1055	Observation	anemia
+doc_test_1055	Observation	eye problems
+doc_test_1055	Observation	twitches and "warm spots" in her thighs
+doc_test_1055	Observation	eye and lip twitches 
+doc_test_1055	Observation	body odors
+doc_test_1055	Observation	similar symptoms
+doc_test_1055	Observation	lactose intolerance
+doc_test_1055	Observation	core muscle disease
+doc_test_1055	Observation	vomiting
+doc_test_1057	FamilyMember	Sister	NA
+doc_test_1057	FamilyMember	Mother	NA
+doc_test_1057	FamilyMember	Grandfather	NA
+doc_test_1057	FamilyMember	Grandmother	Maternal
+doc_test_1057	FamilyMember	Grandfather	Maternal
+doc_test_1057	FamilyMember	Son	NA
+doc_test_1057	FamilyMember	Grandmother	Paternal
+doc_test_1057	FamilyMember	Uncle	Maternal
+doc_test_1057	FamilyMember	Cousin	Maternal
+doc_test_1057	FamilyMember	Sibling	NA
+doc_test_1057	FamilyMember	Father	NA
+doc_test_1057	FamilyMember	Aunt	Maternal
+doc_test_1057	FamilyMember	Aunt	NA
+doc_test_1057	Observation	heart attacks
+doc_test_1057	Observation	hypertension
+doc_test_1057	Observation	breast cancer
+doc_test_1057	Observation	cancer
+doc_test_1057	Observation	poor eyesight
+doc_test_1057	Observation	accident
+doc_test_1057	Observation	kidney cancer
+doc_test_1057	Observation	noncontributory causes
+doc_test_1057	Observation	MI
+doc_test_1057	Observation	stroke
+doc_test_1057	Observation	heart disease
+doc_test_1057	Observation	diabetes
+doc_test_1057	Observation	massive intracranial hemorrhage
+doc_test_1059	FamilyMember	Sister	NA
+doc_test_1059	FamilyMember	Mother	NA
+doc_test_1059	FamilyMember	Brother	NA
+doc_test_1059	FamilyMember	Father	NA
+doc_test_1059	Observation	stroke
+doc_test_1059	Observation	disabled
+doc_test_1059	Observation	alcohol issues
+doc_test_1059	Observation	depression
+doc_test_1060	FamilyMember	Sister	NA
+doc_test_1060	FamilyMember	Mother	NA
+doc_test_1060	FamilyMember	Son	NA
+doc_test_1060	FamilyMember	Daughter	NA
+doc_test_1060	Observation	mental retardation
+doc_test_1060	Observation	 birth defects
+doc_test_1060	Observation	cancer 
+doc_test_1060	Observation	still born 
+doc_test_1060	Observation	multiple miscarriages 
+doc_test_1060	Observation	learning disabilities
+doc_test_1060	Observation	died early
+doc_test_1061	FamilyMember	Grandfather	Maternal
+doc_test_1061	FamilyMember	Mother	NA
+doc_test_1061	FamilyMember	Father	NA
+doc_test_1061	FamilyMember	Grandfather	Paternal
+doc_test_1061	FamilyMember	Brother	NA
+doc_test_1061	FamilyMember	Grandparent	Maternal
+doc_test_1061	FamilyMember	Uncle	Maternal
+doc_test_1061	FamilyMember	Grandmother	Maternal
+doc_test_1061	Observation	Marfan syndrome
+doc_test_1061	Observation	spontaneous pneumothoraces
+doc_test_1061	Observation	bicuspid aortic valve,
+doc_test_1061	Observation	bicuspid aortic valve
+doc_test_1061	Observation	myopia
+doc_test_1061	Observation	aortic dilation
+doc_test_1062	Observation	neonatal death
+doc_test_1062	Observation	mental retardation
+doc_test_1062	Observation	birth defects
+doc_test_1062	Observation	multiple miscarriages
+doc_test_1064	FamilyMember	Cousin	Paternal
+doc_test_1064	FamilyMember	Mother	NA
+doc_test_1064	FamilyMember	Aunt	Paternal
+doc_test_1064	FamilyMember	Father	NA
+doc_test_1064	FamilyMember	Aunt	Maternal
+doc_test_1064	Observation	breast cancer
+doc_test_1064	Observation	ovarian cancer
+doc_test_1064	Observation	colon cancer
+doc_test_1064	Observation	cancer
+doc_test_1064	Observation	tumor behind her lung
+doc_test_1065	FamilyMember	Mother	NA
+doc_test_1065	FamilyMember	Brother	NA
+doc_test_1065	FamilyMember	Father	NA
+doc_test_1065	FamilyMember	Daughter	NA
+doc_test_1065	Observation	mental retardation
+doc_test_1065	Observation	one second trimester miscarriage
+doc_test_1065	Observation	died early 
+doc_test_1065	Observation	multiple miscarriages 
+doc_test_1065	Observation	learning disabilities
+doc_test_1065	Observation	birth defects
+doc_test_1065	Observation	stillborn 
+doc_test_1067	FamilyMember	Cousin	Paternal
+doc_test_1067	FamilyMember	Grandfather	NA
+doc_test_1067	FamilyMember	Grandfather	Paternal
+doc_test_1067	FamilyMember	Cousin	Maternal
+doc_test_1067	Observation	drug abusers
+doc_test_1067	Observation	psychiatric disturbance
+doc_test_1067	Observation	"pyromaniac
+doc_test_1067	Observation	negligent with child support
+doc_test_1067	Observation	depression
+doc_test_1069	FamilyMember	Sister	NA
+doc_test_1069	FamilyMember	Mother	NA
+doc_test_1069	FamilyMember	Brother	NA
+doc_test_1069	FamilyMember	Father	NA
+doc_test_1070	FamilyMember	Sister	NA
+doc_test_1070	FamilyMember	Mother	NA
+doc_test_1070	FamilyMember	Grandmother	Maternal
+doc_test_1070	FamilyMember	Grandfather	Maternal
+doc_test_1070	FamilyMember	Uncle	Paternal
+doc_test_1070	FamilyMember	Grandmother	Paternal
+doc_test_1070	FamilyMember	Uncle	Maternal
+doc_test_1070	FamilyMember	Cousin	Maternal
+doc_test_1070	FamilyMember	Aunt	Paternal
+doc_test_1070	FamilyMember	Grandfather	Paternal
+doc_test_1070	FamilyMember	Aunt	Maternal
+doc_test_1070	FamilyMember	Father	NA
+doc_test_1070	Observation	congenital heart defect
+doc_test_1070	Observation	prolapse of her uterus and bladder
+doc_test_1070	Observation	overuse sore knees
+doc_test_1070	Observation	sciatic problems
+doc_test_1070	Observation	carpal tunnel syndrome
+doc_test_1070	Observation	bursitis
+doc_test_1070	Observation	diabetes
+doc_test_1070	Observation	Alzheimer disease
+doc_test_1070	Observation	bone marrow cancer
+doc_test_1070	Observation	breast cancer
+doc_test_1070	Observation	endometrial cancer
+doc_test_1070	Observation	crooked thumb
+doc_test_1070	Observation	language delay 
+doc_test_1070	Observation	joint hypermobility
+doc_test_1070	Observation	multi-infarct dementia
+doc_test_1070	Observation	hernia
+doc_test_1070	Observation	back problems
+doc_test_1070	Observation	brain cancer
+doc_test_1070	Observation	stroke
+doc_test_1070	Observation	primary connective tissue disorder
+doc_test_1070	Observation	hearing loss
+doc_test_1072	FamilyMember	Sister	NA
+doc_test_1072	FamilyMember	Mother	NA
+doc_test_1072	FamilyMember	Son	NA
+doc_test_1072	FamilyMember	Brother	NA
+doc_test_1072	FamilyMember	Father	NA
+doc_test_1072	Observation	elevatedcholesterol levels
+doc_test_1072	Observation	could not walk
+doc_test_1072	Observation	still born 
+doc_test_1072	Observation	elevated blood pressure
+doc_test_1072	Observation	cancer
+doc_test_1072	Observation	died early
+doc_test_1072	Observation	 multiple miscarriages
+doc_test_1072	Observation	mental retardation
+doc_test_1072	Observation	alcohol
+doc_test_1072	Observation	cholesterol levels
+doc_test_1072	Observation	heart failure
+doc_test_1072	Observation	cirrhosis of the liver
+doc_test_1072	Observation	learning disabilities
+doc_test_1072	Observation	diabetes
+doc_test_1074	FamilyMember	Mother	NA
+doc_test_1074	FamilyMember	Cousin	NA
+doc_test_1074	FamilyMember	Grandfather	Paternal
+doc_test_1074	FamilyMember	Brother	NA
+doc_test_1074	FamilyMember	Grandmother	Maternal
+doc_test_1074	FamilyMember	Uncle	Paternal
+doc_test_1074	FamilyMember	Grandfather	Maternal
+doc_test_1074	FamilyMember	Grandmother	Paternal
+doc_test_1074	FamilyMember	Cousin	Maternal
+doc_test_1074	FamilyMember	Uncle	Maternal
+doc_test_1074	FamilyMember	Aunt	Maternal
+doc_test_1074	FamilyMember	Father	NA
+doc_test_1074	Observation	arthritis
+doc_test_1074	Observation	hypertension
+doc_test_1074	Observation	psoriasis
+doc_test_1074	Observation	the bones of his inner ears
+doc_test_1074	Observation	decreased hearing
+doc_test_1074	Observation	autism
+doc_test_1074	Observation	suicide
+doc_test_1074	Observation	mental subnormality
+doc_test_1074	Observation	hydrocephalus
+doc_test_1074	Observation	a lot of ear infections
+doc_test_1074	Observation	dysmorphic
+doc_test_1074	Observation	diet controlled diabetes
+doc_test_1074	Observation	increased liver enzymes
+doc_test_1074	Observation	colon cancer
+doc_test_1074	Observation	developmental delay
+doc_test_1074	Observation	sunken chest
+doc_test_1075	Observation	mental retardation
+doc_test_1075	Observation	genetic conditions
+doc_test_1075	Observation	neonatal death
+doc_test_1075	Observation	multiple miscarriages 
+doc_test_1075	Observation	birth defects
+doc_test_1076	FamilyMember	Sister	NA
+doc_test_1076	FamilyMember	Son	NA
+doc_test_1076	FamilyMember	Mother	NA
+doc_test_1076	FamilyMember	Uncle	Maternal
+doc_test_1076	FamilyMember	Brother	NA
+doc_test_1076	FamilyMember	Father	NA
+doc_test_1076	FamilyMember	Aunt	Maternal
+doc_test_1076	Observation	a heavy smoker 
+doc_test_1076	Observation	died early
+doc_test_1076	Observation	babies that were still born 
+doc_test_1076	Observation	birth defects
+doc_test_1076	Observation	benign lesion
+doc_test_1076	Observation	Hirschsprung disease
+doc_test_1076	Observation	mental retardation
+doc_test_1076	Observation	miscarriages
+doc_test_1076	Observation	strokes
+doc_test_1076	Observation	asthma
+doc_test_1076	Observation	learning disabilities
+doc_test_1077	FamilyMember	Cousin	Paternal
+doc_test_1077	FamilyMember	Sister	NA
+doc_test_1077	FamilyMember	Mother	NA
+doc_test_1077	FamilyMember	Grandmother	Maternal
+doc_test_1077	FamilyMember	Uncle	Paternal
+doc_test_1077	FamilyMember	Grandfather	Maternal
+doc_test_1077	FamilyMember	Grandmother	Paternal
+doc_test_1077	FamilyMember	Uncle	NA
+doc_test_1077	FamilyMember	Uncle	Maternal
+doc_test_1077	FamilyMember	Father	NA
+doc_test_1077	Observation	eyelid defect
+doc_test_1077	Observation	extra palmar tri-radius
+doc_test_1077	Observation	rudimentary polydactyly
+doc_test_1077	Observation	scar
+doc_test_1077	Observation	firm tissue tag
+doc_test_1077	Observation	polydactyly
+doc_test_1079	FamilyMember	Sister	NA
+doc_test_1079	FamilyMember	Mother	NA
+doc_test_1079	FamilyMember	Grandfather	Maternal
+doc_test_1079	FamilyMember	Brother	NA
+doc_test_1079	FamilyMember	Father	NA
+doc_test_1079	Observation	Alzheimer disease
+doc_test_1079	Observation	cancer of the "neck and lips"
+doc_test_1079	Observation	melanoma
+doc_test_1079	Observation	prostate cancer
+doc_test_1079	Observation	elevated cholesterol level
+doc_test_1079	Observation	a hole in her heart
+doc_test_1079	Observation	blood pressure levels
+doc_test_1079	Observation	elevated cholesterol
+doc_test_1081	FamilyMember	Sister	NA
+doc_test_1081	FamilyMember	Mother	NA
+doc_test_1081	FamilyMember	Brother	NA
+doc_test_1081	FamilyMember	Father	NA
+doc_test_1081	FamilyMember	Aunt	Maternal
+doc_test_1081	Observation	multiple miscarriages
+doc_test_1081	Observation	cancer
+doc_test_1081	Observation	birth defects
+doc_test_1081	Observation	chromosome problem
+doc_test_1081	Observation	died early
+doc_test_1081	Observation	babies that were stillborn 
+doc_test_1081	Observation	mental retardation
+doc_test_1081	Observation	anencephaly 
+doc_test_1081	Observation	diabetes related complications
+doc_test_1081	Observation	learning disabilities
+doc_test_1081	Observation	diabetes
+doc_test_1082	FamilyMember	Cousin	NA
+doc_test_1082	Observation	mental retardation
+doc_test_1082	Observation	birth defects
+doc_test_1082	Observation	multiple miscarriages
+doc_test_1082	Observation	 neonatal death
+doc_test_1084	FamilyMember	Daughter	NA
+doc_test_1084	FamilyMember	Mother	NA
+doc_test_1084	FamilyMember	Sister	NA
+doc_test_1084	FamilyMember	Father	NA
+doc_test_1084	Observation	mental retardation
+doc_test_1084	Observation	learning disabilities
+doc_test_1084	Observation	cancer
+doc_test_1084	Observation	multiple miscarriages
+doc_test_1084	Observation	alcoholism
+doc_test_1084	Observation	heart failure
+doc_test_1084	Observation	liver and kidney failure
+doc_test_1084	Observation	birth defects
+doc_test_1085	FamilyMember	Sister	NA
+doc_test_1085	FamilyMember	Mother	NA
+doc_test_1085	FamilyMember	Brother	NA
+doc_test_1085	FamilyMember	Father	NA
+doc_test_1085	Observation	mental retardation
+doc_test_1085	Observation	heart attack
+doc_test_1085	Observation	cancer 
+doc_test_1085	Observation	died early
+doc_test_1085	Observation	multiple miscarriages 
+doc_test_1085	Observation	learning disabilities
+doc_test_1085	Observation	birth defects
+doc_test_1085	Observation	stillborn 
+doc_test_1086	FamilyMember	Daughter	NA
+doc_test_1086	FamilyMember	Sister	NA
+doc_test_1086	FamilyMember	Mother	NA
+doc_test_1086	FamilyMember	Brother	NA
+doc_test_1086	FamilyMember	Father	NA
+doc_test_1086	FamilyMember	Grandmother	Maternal
+doc_test_1086	Observation	incompetent cervix
+doc_test_1086	Observation	fetus dying in utero
+doc_test_1086	Observation	miscarriages 
+doc_test_1086	Observation	learning disabilities
+doc_test_1086	Observation	high cholesterol
+doc_test_1086	Observation	infant deaths 
+doc_test_1086	Observation	cancers
+doc_test_1086	Observation	birth defects
+doc_test_1087	FamilyMember	Son	NA
+doc_test_1087	FamilyMember	Mother	NA
+doc_test_1087	FamilyMember	Grandmother	Paternal
+doc_test_1087	FamilyMember	Cousin	Maternal
+doc_test_1087	FamilyMember	Father	NA
+doc_test_1087	FamilyMember	Aunt	Maternal
+doc_test_1087	FamilyMember	Grandmother	Maternal
+doc_test_1087	Observation	heavy vaginal bleed with clots
+doc_test_1087	Observation	 learning disabilities
+doc_test_1087	Observation	weight gain
+doc_test_1087	Observation	hirsutism
+doc_test_1087	Observation	molar pregnancy
+doc_test_1087	Observation	polycystic ovarian syndrome
+doc_test_1087	Observation	developmental delays
+doc_test_1087	Observation	learning disabilities
+doc_test_1087	Observation	overweight 
+doc_test_1087	Observation	growth
+doc_test_1087	Observation	seizures
+doc_test_1087	Observation	takes seizure medicines
+doc_test_1087	Observation	hypothyroidism
+doc_test_1087	Observation	 polycystic ovary syndrome
+doc_test_1087	Observation	conceiving
+doc_test_1087	Observation	cramping
+doc_test_1087	Observation	normal growth and development.
+doc_test_1087	Observation	menarche
+doc_test_1087	Observation	 acid reflux
+doc_test_1087	Observation	normal stature
+doc_test_1087	Observation	birth defects
+doc_test_1087	Observation	irregular periods
+doc_test_1087	Observation	hirsute
+doc_test_1087	Observation	uterine fibroids
+doc_test_1087	Observation	back pain
+doc_test_1087	Observation	obese
+doc_test_1089	FamilyMember	Sister	NA
+doc_test_1089	FamilyMember	Mother	NA
+doc_test_1089	FamilyMember	Grandfather	Maternal
+doc_test_1089	FamilyMember	Uncle	Maternal
+doc_test_1089	FamilyMember	Father	NA
+doc_test_1089	Observation	orthopedic issues
+doc_test_1089	Observation	alcohol problems
+doc_test_1089	Observation	depression
+doc_test_1089	Observation	dyslexia
+doc_test_1090	FamilyMember	Grandfather	Maternal
+doc_test_1090	FamilyMember	Mother	NA
+doc_test_1090	FamilyMember	Aunt	Paternal
+doc_test_1090	FamilyMember	Brother	NA
+doc_test_1090	FamilyMember	Father	NA
+doc_test_1090	Observation	type 2 diabetes
+doc_test_1090	Observation	thyroid concerns
+doc_test_1090	Observation	depression
+doc_test_1090	Observation	learning disorder
+doc_test_1091	FamilyMember	Uncle	Paternal
+doc_test_1091	FamilyMember	Mother	NA
+doc_test_1091	FamilyMember	Child	NA
+doc_test_1091	FamilyMember	Brother	NA
+doc_test_1091	FamilyMember	Father	NA
+doc_test_1091	Observation	mental retardation
+doc_test_1091	Observation	hypertension
+doc_test_1091	Observation	cancer at a young age
+doc_test_1091	Observation	type I diabetes
+doc_test_1091	Observation	ulcerative colitis
+doc_test_1091	Observation	learning disabilities
+doc_test_1091	Observation	birth defects
+doc_test_1091	Observation	hyperlipidemia
+doc_test_1092	FamilyMember	Sister	NA
+doc_test_1092	FamilyMember	Mother	NA
+doc_test_1092	FamilyMember	Grandmother	Paternal
+doc_test_1092	FamilyMember	Grandfather	Maternal
+doc_test_1092	FamilyMember	Grandfather	Paternal
+doc_test_1092	FamilyMember	Grandmother	Maternal
+doc_test_1092	FamilyMember	Father	NA
+doc_test_1092	Observation	lymphoma
+doc_test_1092	Observation	diabetes mellitus
+doc_test_1092	Observation	 stroke
+doc_test_1092	Observation	cardiac bypass
+doc_test_1092	Observation	angioplasty
+doc_test_1094	FamilyMember	Brother	NA
+doc_test_1094	FamilyMember	Mother	NA
+doc_test_1094	FamilyMember	Father	NA
+doc_test_1094	FamilyMember	Grandmother	NA
+doc_test_1095	FamilyMember	Uncle	Paternal
+doc_test_1095	FamilyMember	Mother	NA
+doc_test_1095	FamilyMember	Grandmother	Paternal
+doc_test_1095	FamilyMember	Sister	NA
+doc_test_1095	FamilyMember	Aunt	Paternal
+doc_test_1095	FamilyMember	Uncle	NA
+doc_test_1095	FamilyMember	Grandfather	Paternal
+doc_test_1095	FamilyMember	Father	NA
+doc_test_1095	Observation	arthritis
+doc_test_1095	Observation	chronic headache 
+doc_test_1095	Observation	low titers of anti-RNP
+doc_test_1095	Observation	overweight
+doc_test_1095	Observation	dyslexia
+doc_test_1095	Observation	neurodevelopmental problems
+doc_test_1095	Observation	intermittent atrial fibrillation
+doc_test_1095	Observation	pericarditis
+doc_test_1095	Observation	movement disorder
+doc_test_1095	Observation	pleuritis
+doc_test_1095	Observation	benign anisocoria
+doc_test_1095	Observation	bipolar disease
+doc_test_1095	Observation	obsessive compulsive disorder
+doc_test_1095	Observation	overweight 
+doc_test_1095	Observation	depression 
+doc_test_1095	Observation	seizures
+doc_test_1095	Observation	tremor
+doc_test_1095	Observation	supraventricular tachycardia
+doc_test_1095	Observation	normal behavioral growth and development
+doc_test_1096	FamilyMember	Sister	NA
+doc_test_1096	FamilyMember	Mother	NA
+doc_test_1096	FamilyMember	Brother	NA
+doc_test_1096	FamilyMember	Grandparent	Maternal
+doc_test_1096	FamilyMember	Father	NA
+doc_test_1096	FamilyMember	Grandmother	Maternal
+doc_test_1096	Observation	drug-abusing 
+doc_test_1096	Observation	bipolar disorder
+doc_test_1096	Observation	thought disorder
+doc_test_1097	Observation	 mental retardation
+doc_test_1097	Observation	 birth defects
+doc_test_1097	Observation	early onset cancers
+doc_test_1097	Observation	neonatal death
+doc_test_1097	Observation	multiple miscarriages 
+doc_test_1099	FamilyMember	Cousin	Paternal
+doc_test_1099	FamilyMember	Sister	NA
+doc_test_1099	FamilyMember	Mother	NA
+doc_test_1099	FamilyMember	Daughter	NA
+doc_test_1099	FamilyMember	Father	NA
+doc_test_1099	Observation	multiple miscarriages
+doc_test_1099	Observation	unilateral club foot
+doc_test_1099	Observation	birth defects
+doc_test_1099	Observation	mental retardation
+doc_test_1099	Observation	stillbirths
+doc_test_1099	Observation	cleft lip
+doc_test_1099	Observation	unexplained childhood deaths
+doc_test_1099	Observation	asthma
+doc_test_1099	Observation	genetic disorders
+doc_test_1099	Observation	palate
+doc_test_1100	FamilyMember	Parent	NA
+doc_test_1100	FamilyMember	Sister	NA
+doc_test_1100	FamilyMember	Mother	NA
+doc_test_1100	FamilyMember	Son	NA
+doc_test_1100	FamilyMember	Brother	NA
+doc_test_1100	FamilyMember	Father	NA
+doc_test_1100	Observation	mental retardation
+doc_test_1100	Observation	learning disabilities
+doc_test_1100	Observation	birth complications
+doc_test_1100	Observation	eczema
+doc_test_1100	Observation	multiple miscarriages
+doc_test_1100	Observation	birth defects
+doc_test_1100	Observation	factor V Leiden
+doc_test_1100	Observation	irritable syndrome
+doc_test_1101	FamilyMember	Sister	NA
+doc_test_1101	FamilyMember	Son	NA
+doc_test_1101	FamilyMember	Mother	NA
+doc_test_1101	FamilyMember	Brother	NA
+doc_test_1101	FamilyMember	Father	NA
+doc_test_1101	FamilyMember	Daughter	NA
+doc_test_1101	Observation	alcoholic 
+doc_test_1101	Observation	cancer
+doc_test_1101	Observation	birth defects
+doc_test_1101	Observation	COPD
+doc_test_1101	Observation	died early
+doc_test_1101	Observation	mental retardation
+doc_test_1101	Observation	alcoholism 
+doc_test_1101	Observation	miscarriages or babies that were stillborn 
+doc_test_1101	Observation	learning disabilities
+doc_test_1101	Observation	drug abuse
+doc_test_1102	FamilyMember	Sister	NA
+doc_test_1102	FamilyMember	Mother	NA
+doc_test_1102	FamilyMember	Cousin	Maternal
+doc_test_1102	FamilyMember	Grandfather	Paternal
+doc_test_1102	FamilyMember	Father	NA
+doc_test_1102	Observation	endometriosis
+doc_test_1102	Observation	stillbirths
+doc_test_1102	Observation	miscarriages
+doc_test_1102	Observation	leukemia 
+doc_test_1104	FamilyMember	Cousin	Paternal
+doc_test_1104	FamilyMember	Mother	NA
+doc_test_1104	FamilyMember	Grandfather	Paternal
+doc_test_1104	FamilyMember	Brother	NA
+doc_test_1104	FamilyMember	Grandmother	Maternal
+doc_test_1104	FamilyMember	Uncle	Paternal
+doc_test_1104	FamilyMember	Grandfather	Maternal
+doc_test_1104	FamilyMember	Grandmother	Paternal
+doc_test_1104	FamilyMember	Cousin	Maternal
+doc_test_1104	FamilyMember	Uncle	Maternal
+doc_test_1104	FamilyMember	Aunt	Maternal
+doc_test_1104	FamilyMember	Father	NA
+doc_test_1104	Observation	smokes
+doc_test_1104	Observation	an ear tag
+doc_test_1104	Observation	one episode of bronchitis
+doc_test_1104	Observation	pancreatic cancer
+doc_test_1104	Observation	pneumonia
+doc_test_1104	Observation	autism
+doc_test_1104	Observation	cirrhosis
+doc_test_1104	Observation	some freckles
+doc_test_1104	Observation	stomachcancer
+doc_test_1104	Observation	developmental delay
+doc_test_1105	FamilyMember	Sister	NA
+doc_test_1105	FamilyMember	Mother	NA
+doc_test_1105	FamilyMember	Father	NA
+doc_test_1105	Observation	ADHD
+doc_test_1107	FamilyMember	Grandfather	Maternal
+doc_test_1107	FamilyMember	Mother	NA
+doc_test_1107	FamilyMember	Grandmother	Paternal
+doc_test_1107	FamilyMember	Grandfather	Paternal
+doc_test_1107	FamilyMember	Father	NA
+doc_test_1107	FamilyMember	Grandmother	Maternal
+doc_test_1107	Observation	recurrentsinus infections
+doc_test_1107	Observation	smoker
+doc_test_1107	Observation	lungcancer
+doc_test_1107	Observation	hypertension
+doc_test_1107	Observation	only one either ethmoid or maxillary sinus 
+doc_test_1107	Observation	unusual body asymmetry
+doc_test_1107	Observation	genitourinary anomalies
+doc_test_1107	Observation	developmental delays
+doc_test_1107	Observation	situs inversus
+doc_test_1107	Observation	dysmorphic ears
+doc_test_1107	Observation	learning disabilities
+doc_test_1107	Observation	seizures
+doc_test_1107	Observation	thrombophilia
+doc_test_1107	Observation	stomachcancer
+doc_test_1107	Observation	type 2 diabetes
+doc_test_1107	Observation	dextrocardia
+doc_test_1107	Observation	renal problems
+doc_test_1107	Observation	refractorysinus infections
+doc_test_1107	Observation	congenital heart disease
+doc_test_1107	Observation	breast cancer
+doc_test_1107	Observation	birth defects
+doc_test_1107	Observation	stomach cancer
+doc_test_1107	Observation	sinusitis
+doc_test_1107	Observation	gestational hypertension
+doc_test_1107	Observation	mental retardation
+doc_test_1107	Observation	bronchiectasis
+doc_test_1107	Observation	renalanomalies
+doc_test_1107	Observation	hearing loss
+doc_test_1109	FamilyMember	Grandfather	Maternal
+doc_test_1109	FamilyMember	Mother	NA
+doc_test_1109	FamilyMember	Sister	NA
+doc_test_1109	FamilyMember	Cousin	Maternal
+doc_test_1109	FamilyMember	Uncle	Maternal
+doc_test_1109	FamilyMember	Aunt	Maternal
+doc_test_1109	Observation	smoker
+doc_test_1109	Observation	breast ovarian cancer
+doc_test_1109	Observation	lung cancer
+doc_test_1110	FamilyMember	Parent	NA
+doc_test_1110	FamilyMember	Brother	NA
+doc_test_1110	Observation	mental retardation
+doc_test_1110	Observation	cancer 
+doc_test_1110	Observation	died early
+doc_test_1110	Observation	still born 
+doc_test_1110	Observation	multiple miscarriages 
+doc_test_1110	Observation	learning disabilities
+doc_test_1110	Observation	birth defects
+doc_test_1111	FamilyMember	Sister	NA
+doc_test_1111	FamilyMember	Mother	NA
+doc_test_1111	FamilyMember	Grandmother	Paternal
+doc_test_1111	FamilyMember	Brother	NA
+doc_test_1111	FamilyMember	Father	NA
+doc_test_1111	FamilyMember	Daughter	NA
+doc_test_1111	Observation	pancreatitis during her pregnancy
+doc_test_1111	Observation	breast cancer
+doc_test_1112	FamilyMember	Cousin	Paternal
+doc_test_1112	FamilyMember	Sister	NA
+doc_test_1112	FamilyMember	Son	NA
+doc_test_1112	FamilyMember	Mother	NA
+doc_test_1112	FamilyMember	Cousin	Maternal
+doc_test_1112	FamilyMember	Daughter	NA
+doc_test_1112	FamilyMember	Aunt	Maternal
+doc_test_1112	FamilyMember	Grandmother	Maternal
+doc_test_1112	Observation	BART with negative results
+doc_test_1112	Observation	left breast cancer
+doc_test_1112	Observation	leukemia
+doc_test_1112	Observation	BRCA2
+doc_test_1112	Observation	cancer 
+doc_test_1112	Observation	BRCA1
+doc_test_1112	Observation	salivary gland cancer
+doc_test_1112	Observation	cancer
+doc_test_1112	Observation	Comprehensive BRACAnalysis
+doc_test_1112	Observation	depression
+doc_test_1112	Observation	radiation therapy
+doc_test_1112	Observation	chemotherapy
+doc_test_1112	Observation	DCIS
+doc_test_1112	Observation	radiation treatment
+doc_test_1112	Observation	left mastectomy
+doc_test_1112	Observation	basal cell carcinoma
+doc_test_1112	Observation	acne
+doc_test_1114	FamilyMember	Sister	NA
+doc_test_1114	FamilyMember	Mother	NA
+doc_test_1114	FamilyMember	Grandmother	Paternal
+doc_test_1114	FamilyMember	Uncle	Maternal
+doc_test_1114	FamilyMember	Brother	NA
+doc_test_1114	FamilyMember	Father	NA
+doc_test_1114	FamilyMember	Aunt	Maternal
+doc_test_1114	Observation	a ring chromosome 22
+doc_test_1114	Observation	bipolar disorder
+doc_test_1114	Observation	migraines
+doc_test_1114	Observation	a mood disorder
+doc_test_1114	Observation	autism
+doc_test_1114	Observation	depression
+doc_test_1114	Observation	alcoholic
+doc_test_1114	Observation	racing heart during pregnancy
+doc_test_1114	Observation	hearing problems
+doc_test_1114	Observation	bilateral sensorineural hearing loss
+doc_test_1115	FamilyMember	Sister	NA
+doc_test_1115	FamilyMember	Mother	NA
+doc_test_1115	FamilyMember	Uncle	Maternal
+doc_test_1115	FamilyMember	Grandmother	Maternal
+doc_test_1115	FamilyMember	Son	NA
+doc_test_1115	FamilyMember	Brother	NA
+doc_test_1115	FamilyMember	Father	NA
+doc_test_1115	FamilyMember	Aunt	Maternal
+doc_test_1115	FamilyMember	Daughter	NA
+doc_test_1115	Observation	high blood pressure
+doc_test_1115	Observation	arythmic heart
+doc_test_1115	Observation	breast cancer
+doc_test_1115	Observation	two second trimester miscarriages
+doc_test_1115	Observation	still born 
+doc_test_1115	Observation	cancer
+doc_test_1115	Observation	birth defects
+doc_test_1115	Observation	died early
+doc_test_1115	Observation	brain bleeding
+doc_test_1115	Observation	mental retardation
+doc_test_1115	Observation	breast cancer in the contralateral breast
+doc_test_1115	Observation	ovarian cancer
+doc_test_1115	Observation	HELLP
+doc_test_1115	Observation	multiple miscarriages 
+doc_test_1115	Observation	learning disabilities
+doc_test_1116	FamilyMember	Sister	NA
+doc_test_1116	FamilyMember	Mother	NA
+doc_test_1116	FamilyMember	Uncle	NA
+doc_test_1116	FamilyMember	Father	NA
+doc_test_1116	Observation	miscarriage
+doc_test_1116	Observation	overweight
+doc_test_1116	Observation	multiple miscarriages
+doc_test_1116	Observation	still born 
+doc_test_1116	Observation	pneumonia
+doc_test_1116	Observation	cancer
+doc_test_1116	Observation	died early
+doc_test_1116	Observation	accident-related health concerns
+doc_test_1116	Observation	birth defects
+doc_test_1116	Observation	alcoholic
+doc_test_1116	Observation	mental retardation
+doc_test_1116	Observation	liver disease
+doc_test_1116	Observation	heavy smoker
+doc_test_1116	Observation	learning disabilities
+doc_test_1116	Observation	diabetes
+doc_test_1117	FamilyMember	Sister	NA
+doc_test_1117	FamilyMember	Son	NA
+doc_test_1117	FamilyMember	Mother	NA
+doc_test_1117	FamilyMember	Uncle	NA
+doc_test_1117	FamilyMember	Aunt	Paternal
+doc_test_1117	FamilyMember	Brother	NA
+doc_test_1117	FamilyMember	Father	NA
+doc_test_1117	Observation	L1CAM
+doc_test_1117	Observation	riple bypass surgery
+doc_test_1117	Observation	cancer 
+doc_test_1117	Observation	pyloric stenosis
+doc_test_1117	Observation	mitral valve prolapse
+doc_test_1117	Observation	Smith-Lemli-Opitz
+doc_test_1117	Observation	macrocephalic
+doc_test_1117	Observation	colon polyps
+doc_test_1117	Observation	diabetes
+doc_test_1117	Observation	myocardial infarction
+doc_test_1117	Observation	ADHD
+doc_test_1117	Observation	multiple congenital abnormalities
+doc_test_1117	Observation	shortened long bones
+doc_test_1117	Observation	syndactyly of the toes and hands
+doc_test_1117	Observation	dyslexia
+doc_test_1117	Observation	atrial fibrillation
+doc_test_1117	Observation	colorectal cancer
+doc_test_1117	Observation	hydrocephalus
+doc_test_1117	Observation	mental retardation
+doc_test_1117	Observation	 cardiac complications
+doc_test_1117	Observation	schizophrenia
+doc_test_1117	Observation	learning disabilities
+doc_test_1117	Observation	four cardiac malformations
+doc_test_1119	FamilyMember	Cousin	Paternal
+doc_test_1119	FamilyMember	Mother	NA
+doc_test_1119	FamilyMember	Brother	NA
+doc_test_1119	FamilyMember	Grandmother	Maternal
+doc_test_1119	FamilyMember	Uncle	Paternal
+doc_test_1119	FamilyMember	Grandfather	Maternal
+doc_test_1119	FamilyMember	Grandmother	Paternal
+doc_test_1119	FamilyMember	Cousin	Maternal
+doc_test_1119	FamilyMember	Grandfather	Paternal
+doc_test_1119	FamilyMember	Aunt	Maternal
+doc_test_1119	FamilyMember	Father	NA
+doc_test_1119	Observation	short stature
+doc_test_1119	Observation	osteoporosis
+doc_test_1119	Observation	fractures
+doc_test_1119	Observation	joint replacements
+doc_test_1119	Observation	severe arthritis
+doc_test_1119	Observation	a bone age
+doc_test_1119	Observation	depression
+doc_test_1119	Observation	in utero intracranial hemorrhage
+doc_test_1119	Observation	skeletal symptoms
+doc_test_1119	Observation	premature osteoarthritis
+doc_test_1119	Observation	pains
+doc_test_1119	Observation	learning disabilities
+doc_test_1119	Observation	aches
+doc_test_1119	Observation	skeletal dysplasia
+doc_test_1119	Observation	osteopenia
+doc_test_1120	FamilyMember	Parent	NA
+doc_test_1120	FamilyMember	Sister	NA
+doc_test_1120	FamilyMember	Son	NA
+doc_test_1120	FamilyMember	Uncle	Paternal
+doc_test_1120	FamilyMember	Brother	NA
+doc_test_1120	FamilyMember	Sibling	NA
+doc_test_1120	Observation	stillborn
+doc_test_1120	Observation	mental retardation
+doc_test_1120	Observation	slow heart rate
+doc_test_1120	Observation	neonatal death
+doc_test_1120	Observation	asthma
+doc_test_1120	Observation	multiple miscarriages 
+doc_test_1120	Observation	mental retardation 
+doc_test_1120	Observation	birth defects
+doc_test_1120	Observation	blastomycosis
+doc_test_1121	FamilyMember	Child	NA
+doc_test_1121	Observation	mental retardation
+doc_test_1121	Observation	cancer
+doc_test_1121	Observation	multiple miscarriages
+doc_test_1121	Observation	spina bifida
+doc_test_1121	Observation	learning disabilities
+doc_test_1122	FamilyMember	Sister	NA
+doc_test_1122	FamilyMember	Mother	NA
+doc_test_1122	FamilyMember	Father	NA
+doc_test_1122	Observation	ADHD
+doc_test_1122	Observation	 fine motor delays
+doc_test_1122	Observation	 cognitive deficit
+doc_test_1122	Observation	speech delays
+doc_test_1122	Observation	gestational diabetes
+doc_test_1122	Observation	ADHD 
+doc_test_1122	Observation	seizure disorder
+doc_test_1122	Observation	schizophrenia
+doc_test_1122	Observation	type 2 diabetes
+doc_test_1124	FamilyMember	Mother	NA
+doc_test_1124	FamilyMember	Grandmother	Paternal
+doc_test_1124	FamilyMember	Brother	NA
+doc_test_1124	FamilyMember	Father	NA
+doc_test_1124	FamilyMember	Daughter	NA
+doc_test_1124	Observation	high blood pressure
+doc_test_1124	Observation	mental retardation
+doc_test_1124	Observation	learning disabilities
+doc_test_1124	Observation	cancer
+doc_test_1124	Observation	infant deaths
+doc_test_1124	Observation	several miscarriages
+doc_test_1124	Observation	birth defects
+doc_test_1125	FamilyMember	Mother	NA
+doc_test_1125	FamilyMember	Cousin	NA
+doc_test_1125	FamilyMember	Grandfather	Paternal
+doc_test_1125	FamilyMember	Father	NA
+doc_test_1125	FamilyMember	Aunt	Maternal
+doc_test_1125	Observation	heart attack
+doc_test_1125	Observation	migraines
+doc_test_1125	Observation	cancer 
+doc_test_1125	Observation	brain aneurysm
+doc_test_1125	Observation	stillborn 
+doc_test_1125	Observation	died early 
+doc_test_1125	Observation	birth defects
+doc_test_1125	Observation	three early miscarriages
+doc_test_1125	Observation	heart problems
+doc_test_1125	Observation	mental retardation
+doc_test_1125	Observation	high cholesterol
+doc_test_1125	Observation	multiple miscarriages 
+doc_test_1125	Observation	learning disabilities
+doc_test_1126	FamilyMember	Brother	NA
+doc_test_1126	FamilyMember	Uncle	Paternal
+doc_test_1126	FamilyMember	Mother	NA
+doc_test_1126	FamilyMember	Father	NA
+doc_test_1126	Observation	abnormal head shape
+doc_test_1126	Observation	birth defects
+doc_test_1126	Observation	weak aortic valve
+doc_test_1127	Observation	neonatal death
+doc_test_1127	Observation	mental retardation
+doc_test_1127	Observation	 birth defects
+doc_test_1127	Observation	multiple miscarriages
+doc_test_1129	Observation	neonatal death
+doc_test_1129	Observation	mental retardation
+doc_test_1129	Observation	birth defects
+doc_test_1129	Observation	multiple miscarriages
+doc_test_1130	FamilyMember	Aunt	NA
+doc_test_1130	FamilyMember	Uncle	Maternal
+doc_test_1130	FamilyMember	Brother	NA
+doc_test_1130	FamilyMember	Grandfather	Paternal
+doc_test_1130	FamilyMember	Grandmother	Maternal
+doc_test_1130	FamilyMember	Father	NA
+doc_test_1130	Observation	mental retardation
+doc_test_1130	Observation	learning disabilities
+doc_test_1130	Observation	breast cancer
+doc_test_1130	Observation	still born 
+doc_test_1130	Observation	died early
+doc_test_1130	Observation	heavy smoker
+doc_test_1130	Observation	birth defects
+doc_test_1130	Observation	cancer
+doc_test_1130	Observation	lung cancer
+doc_test_1131	FamilyMember	Sister	NA
+doc_test_1131	FamilyMember	Mother	NA
+doc_test_1131	FamilyMember	Cousin	Maternal
+doc_test_1131	FamilyMember	Brother	NA
+doc_test_1131	FamilyMember	Father	NA
+doc_test_1131	FamilyMember	Aunt	Maternal
+doc_test_1131	Observation	type II diabetes
+doc_test_1131	Observation	leukemia
+doc_test_1131	Observation	a "broken" chromosome
+doc_test_1131	Observation	Down syndrome
+doc_test_1131	Observation	asthma
+doc_test_1131	Observation	AML
+doc_test_1131	Observation	congenital hip dislocation
+doc_test_1132	FamilyMember	Mother	NA
+doc_test_1132	FamilyMember	Brother	NA
+doc_test_1132	FamilyMember	Uncle	Paternal
+doc_test_1132	FamilyMember	Son	NA
+doc_test_1132	FamilyMember	Grandmother	Paternal
+doc_test_1132	FamilyMember	Uncle	Maternal
+doc_test_1132	FamilyMember	Grandparent	Maternal
+doc_test_1132	FamilyMember	Grandfather	Paternal
+doc_test_1132	FamilyMember	Father	NA
+doc_test_1132	Observation	metastatic disease
+doc_test_1132	Observation	unilateral nephrectomy
+doc_test_1132	Observation	cancer
+doc_test_1132	Observation	 breast cancer
+doc_test_1132	Observation	radiation therapy
+doc_test_1132	Observation	unilateral mastectomy
+doc_test_1132	Observation	myotonia congenita
+doc_test_1132	Observation	chemotherapy
+doc_test_1132	Observation	recurrence of this breast cancer
+doc_test_1132	Observation	thyroid lesion
+doc_test_1135	FamilyMember	Sister	NA
+doc_test_1135	FamilyMember	Mother	NA
+doc_test_1135	FamilyMember	Grandmother	Paternal
+doc_test_1135	FamilyMember	Cousin	NA
+doc_test_1135	FamilyMember	Uncle	Maternal
+doc_test_1135	FamilyMember	Aunt	Maternal
+doc_test_1135	FamilyMember	Father	NA
+doc_test_1135	Observation	ADHD
+doc_test_1135	Observation	neurologic problems 
+doc_test_1135	Observation	neurodevelopmental problems
+doc_test_1135	Observation	have problems
+doc_test_1135	Observation	developmental delay 
+doc_test_1135	Observation	autism
+doc_test_1135	Observation	psychiatric 
+doc_test_1135	Observation	three first trimester miscarriages 
+doc_test_1135	Observation	depression
+doc_test_1135	Observation	behavioral disorder
+doc_test_1135	Observation	neurologicdisorder
+doc_test_1135	Observation	schizophrenia
+doc_test_1135	Observation	fever during infancy
+doc_test_1135	Observation	mentally retarded
+doc_test_1135	Observation	anxiety
+doc_test_1137	FamilyMember	Mother	NA
+doc_test_1137	FamilyMember	Father	NA
+doc_test_1137	Observation	high cholesterol
+doc_test_1137	Observation	infertility
+doc_test_1137	Observation	major birth defects
+doc_test_1137	Observation	craniosynostosis
+doc_test_1137	Observation	birth defects
+doc_test_1139	FamilyMember	Uncle	Paternal
+doc_test_1139	FamilyMember	Mother	NA
+doc_test_1139	FamilyMember	Grandmother	Paternal
+doc_test_1139	FamilyMember	Aunt	Paternal
+doc_test_1139	FamilyMember	Father	NA
+doc_test_1139	Observation	clubfoot
+doc_test_1139	Observation	malignant hyperthermia
+doc_test_1139	Observation	episode of rhabdomyolysis
+doc_test_1139	Observation	lock jaw
+doc_test_1139	Observation	inguinal hernia
+doc_test_1140	FamilyMember	Mother	NA
+doc_test_1140	FamilyMember	Father	NA
+doc_test_1140	Observation	high blood pressure
+doc_test_1140	Observation	ulcerative colitis
+doc_test_1140	Observation	high cholesterol
+doc_test_1141	FamilyMember	Grandfather	Maternal
+doc_test_1141	FamilyMember	Mother	NA
+doc_test_1141	FamilyMember	Father	NA
+doc_test_1141	FamilyMember	Uncle	Paternal
+doc_test_1141	FamilyMember	Grandfather	Paternal
+doc_test_1141	FamilyMember	Aunt	Paternal
+doc_test_1141	FamilyMember	Uncle	Maternal
+doc_test_1141	FamilyMember	Aunt	Maternal
+doc_test_1141	FamilyMember	Grandmother	Maternal
+doc_test_1141	Observation	muscular dystrophy
+doc_test_1141	Observation	preeclampsia
+doc_test_1141	Observation	Devic's syndrome
+doc_test_1141	Observation	placental steroid sulfatase deficiency
+doc_test_1141	Observation	malaria
+doc_test_1141	Observation	plasma Estradiol 
+doc_test_1141	Observation	dry skin 
+doc_test_1141	Observation	HELLP syndrome
+doc_test_1141	Observation	non-Hodgkin's lymphoma
+doc_test_1141	Observation	blood pressure problems
+doc_test_1141	Observation	asthma
+doc_test_1141	Observation	ichthyosis
+doc_test_1141	Observation	hemorrhagic stroke
+doc_test_1141	Observation	primary biliary cirrhosis
+doc_test_1142	FamilyMember	Brother	NA
+doc_test_1142	FamilyMember	Sister	NA
+doc_test_1142	FamilyMember	Mother	NA
+doc_test_1142	FamilyMember	Father	NA
+doc_test_1142	Observation	mental retardation
+doc_test_1142	Observation	starvation
+doc_test_1142	Observation	cancer 
+doc_test_1142	Observation	multiple miscarriages
+doc_test_1142	Observation	birth defects
+doc_test_1142	Observation	learning disabilities
+doc_test_1142	Observation	famine 
+doc_test_1144	FamilyMember	Cousin	Paternal
+doc_test_1144	FamilyMember	Grandmother	Paternal
+doc_test_1144	FamilyMember	Cousin	NA
+doc_test_1144	FamilyMember	Aunt	Paternal
+doc_test_1144	FamilyMember	Daughter	NA
+doc_test_1144	Observation	mental retardation
+doc_test_1144	Observation	cord being wrapped around the fetus' neck
+doc_test_1144	Observation	multiple miscarriages
+doc_test_1144	Observation	neonatal death
+doc_test_1144	Observation	birth defects
+doc_test_1144	Observation	two miscarriages
+doc_test_1144	Observation	stillbirth
+doc_test_1145	FamilyMember	Sister	NA
+doc_test_1145	FamilyMember	Mother	NA
+doc_test_1145	FamilyMember	Uncle	Maternal
+doc_test_1145	FamilyMember	Father	NA
+doc_test_1145	Observation	invasive melanoma
+doc_test_1145	Observation	malignant melanoma 
+doc_test_1145	Observation	melanoma
+doc_test_1145	Observation	pre-melanoma
+doc_test_1145	Observation	melanoma 
+doc_test_1145	Observation	atypical nevi
+doc_test_1145	Observation	chromosome microdeletion
+doc_test_1145	Observation	Saethre-Chotzen syndrome
+doc_test_1145	Observation	metastatic melanoma
+doc_test_1147	FamilyMember	Brother	NA
+doc_test_1147	FamilyMember	Son	NA
+doc_test_1147	FamilyMember	Father	NA
+doc_test_1147	FamilyMember	Mother	NA
+doc_test_1147	Observation	mental retardation
+doc_test_1147	Observation	prostate cancer
+doc_test_1147	Observation	miscarriage
+doc_test_1147	Observation	multiple miscarriages
+doc_test_1147	Observation	cancer
+doc_test_1147	Observation	learning disabilities
+doc_test_1147	Observation	birth defects
+doc_test_1149	FamilyMember	Sister	NA
+doc_test_1149	FamilyMember	Son	NA
+doc_test_1149	FamilyMember	Father	NA
+doc_test_1149	FamilyMember	Mother	NA
+doc_test_1149	Observation	Alzheimer disease
+doc_test_1149	Observation	mental retardation
+doc_test_1149	Observation	cancer
+doc_test_1149	Observation	hypertension
+doc_test_1149	Observation	multiple miscarriages
+doc_test_1149	Observation	cardiovascular disease
+doc_test_1149	Observation	learning disabilities
+doc_test_1149	Observation	birth defects
+doc_test_1151	FamilyMember	Son	NA
+doc_test_1151	FamilyMember	Mother	NA
+doc_test_1151	FamilyMember	Brother	NA
+doc_test_1151	FamilyMember	Father	NA
+doc_test_1151	FamilyMember	Daughter	NA
+doc_test_1151	Observation	miscarriage
+doc_test_1151	Observation	breast cancer
+doc_test_1151	Observation	cancer
+doc_test_1151	Observation	birth defects
+doc_test_1151	Observation	died early
+doc_test_1151	Observation	mental retardation
+doc_test_1151	Observation	prostate cancer
+doc_test_1151	Observation	miscarriages
+doc_test_1151	Observation	babies that were stillborn
+doc_test_1151	Observation	learning disabilities
+doc_test_1152	FamilyMember	Sister	NA
+doc_test_1152	FamilyMember	Mother	NA
+doc_test_1152	FamilyMember	Father	NA
+doc_test_1152	Observation	mental retardation
+doc_test_1152	Observation	learning disabilities
+doc_test_1152	Observation	 birth defects
+doc_test_1152	Observation	multiple miscarriages
+doc_test_1152	Observation	cancer
+doc_test_1152	Observation	babies that were still born or died 
+doc_test_1154	FamilyMember	Mother	NA
+doc_test_1154	FamilyMember	Brother	NA
+doc_test_1154	FamilyMember	Grandmother	Maternal
+doc_test_1154	FamilyMember	Grandfather	Maternal
+doc_test_1154	FamilyMember	Grandmother	Paternal
+doc_test_1154	FamilyMember	Cousin	Maternal
+doc_test_1154	FamilyMember	Grandfather	Paternal
+doc_test_1154	FamilyMember	Aunt	Maternal
+doc_test_1154	FamilyMember	Father	NA
+doc_test_1154	Observation	heart attack
+doc_test_1154	Observation	aneurysm
+doc_test_1154	Observation	ocular complications of Marfan syndrome
+doc_test_1154	Observation	Marfan syndrome
+doc_test_1154	Observation	smoked
+doc_test_1154	Observation	aortic heart valve
+doc_test_1154	Observation	some striae across
+doc_test_1154	Observation	significant eye problems
+doc_test_1154	Observation	aortic valve
+doc_test_1154	Observation	lung disease
+doc_test_1154	Observation	highly arched palate
+doc_test_1155	FamilyMember	Sister	NA
+doc_test_1155	FamilyMember	Mother	NA
+doc_test_1155	FamilyMember	Grandfather	Paternal
+doc_test_1155	FamilyMember	Grandmother	Maternal
+doc_test_1155	FamilyMember	Grandfather	Maternal
+doc_test_1155	FamilyMember	Uncle	Paternal
+doc_test_1155	FamilyMember	Grandmother	Paternal
+doc_test_1155	FamilyMember	Cousin	Maternal
+doc_test_1155	FamilyMember	Aunt	Paternal
+doc_test_1155	FamilyMember	Uncle	Maternal
+doc_test_1155	FamilyMember	Aunt	Maternal
+doc_test_1155	FamilyMember	Father	NA
+doc_test_1155	Observation	autoimmune disorders
+doc_test_1155	Observation	cramping
+doc_test_1155	Observation	mild scoliosis
+doc_test_1155	Observation	myotonia
+doc_test_1155	Observation	allergies
+doc_test_1155	Observation	smoked
+doc_test_1155	Observation	muscle weakness
+doc_test_1155	Observation	droopy eyelids
+doc_test_1155	Observation	lung cancer
+doc_test_1155	Observation	musculoskeletal problems
+doc_test_1155	Observation	crib death
+doc_test_1155	Observation	adenocarcinoma
+doc_test_1155	Observation	non-Hodgkin's lymphoma
+doc_test_1155	Observation	skin sensitivity
+doc_test_1155	Observation	symptoms of myasthenia
+doc_test_1155	Observation	eczema
+doc_test_1155	Observation	asthma
+doc_test_1155	Observation	sensitive skin
+doc_test_1156	FamilyMember	Sister	NA
+doc_test_1156	FamilyMember	Cousin	Maternal
+doc_test_1156	FamilyMember	Parent	NA
+doc_test_1156	FamilyMember	Uncle	Maternal
+doc_test_1156	Observation	microcytic anemia
+doc_test_1156	Observation	hydrops
+doc_test_1156	Observation	hemolysis
+doc_test_1156	Observation	glucose-6-phosphate dehydrogenase deficiency
+doc_test_1156	Observation	G6PD
+doc_test_1156	Observation	anemia
+doc_test_1156	Observation	certain food exposure
+doc_test_1156	Observation	exposure to fava beans
+doc_test_1156	Observation	hemoglobin electrophoresis
+doc_test_1156	Observation	miscarriages
+doc_test_1156	Observation	G6PD deficiency
+doc_test_1157	FamilyMember	Sibling	NA
+doc_test_1159	FamilyMember	Daughter	NA
+doc_test_1159	Observation	mental retardation
+doc_test_1159	Observation	multiple miscarriages
+doc_test_1159	Observation	neonatal death
+doc_test_1159	Observation	birth defects
+doc_test_1159	Observation	bicuspid valve
+doc_test_1160	FamilyMember	Grandfather	Maternal
+doc_test_1160	FamilyMember	Mother	NA
+doc_test_1160	FamilyMember	Brother	NA
+doc_test_1160	FamilyMember	Father	NA
+doc_test_1160	FamilyMember	Aunt	Maternal
+doc_test_1160	Observation	hypotension
+doc_test_1160	Observation	liver cancer
+doc_test_1160	Observation	pancreatic cancer
+doc_test_1160	Observation	birth defects
+doc_test_1160	Observation	infantile deaths
+doc_test_1160	Observation	mental retardation
+doc_test_1160	Observation	prostate cancer
+doc_test_1160	Observation	multiple stillbirths
+doc_test_1160	Observation	colon cancer
+doc_test_1160	Observation	learning disabilities
+doc_test_1160	Observation	hypercholesterolemia
+doc_test_1162	FamilyMember	Sister	NA
+doc_test_1162	FamilyMember	Mother	NA
+doc_test_1162	FamilyMember	Grandfather	Maternal
+doc_test_1162	Observation	mental retardation
+doc_test_1162	Observation	adult-onset hearing loss
+doc_test_1162	Observation	multiple miscarriages
+doc_test_1162	Observation	 hearing loss
+doc_test_1162	Observation	neonatal death
+doc_test_1162	Observation	known genetic conditions
+doc_test_1162	Observation	birth defects
+doc_test_1164	FamilyMember	Mother	NA
+doc_test_1164	FamilyMember	Parent	NA
+doc_test_1164	FamilyMember	Grandparent	Maternal
+doc_test_1164	FamilyMember	Father	NA
+doc_test_1164	Observation	thromboses in her brain
+doc_test_1164	Observation	protein S deficiency
+doc_test_1164	Observation	breast cancer
+doc_test_1164	Observation	dermatomyositis
+doc_test_1164	Observation	autoimmune disease
+doc_test_1164	Observation	psoriasis
+doc_test_1164	Observation	visual changes
+doc_test_1164	Observation	lost a pregnancy
+doc_test_1164	Observation	asthma
+doc_test_1164	Observation	headaches
+doc_test_1165	FamilyMember	Sister	NA
+doc_test_1165	FamilyMember	Mother	NA
+doc_test_1165	FamilyMember	Grandmother	Paternal
+doc_test_1165	FamilyMember	Cousin	Maternal
+doc_test_1165	FamilyMember	Grandfather	Paternal
+doc_test_1165	FamilyMember	Brother	NA
+doc_test_1165	FamilyMember	Father	NA
+doc_test_1165	FamilyMember	Aunt	Maternal
+doc_test_1165	Observation	acute myelogenous leukemia
+doc_test_1165	Observation	hypertension
+doc_test_1165	Observation	pancreatic cancer
+doc_test_1165	Observation	ataxia telangiectasia
+doc_test_1165	Observation	Hodgkin's lymphoma
+doc_test_1166	FamilyMember	Mother	NA
+doc_test_1166	FamilyMember	Cousin	NA
+doc_test_1166	FamilyMember	Brother	NA
+doc_test_1166	FamilyMember	Grandmother	Maternal
+doc_test_1166	FamilyMember	Grandfather	Maternal
+doc_test_1166	FamilyMember	Grandmother	Paternal
+doc_test_1166	FamilyMember	Cousin	Maternal
+doc_test_1166	FamilyMember	Uncle	Maternal
+doc_test_1166	FamilyMember	Aunt	Maternal
+doc_test_1166	FamilyMember	Father	NA
+doc_test_1166	Observation	ADHD
+doc_test_1166	Observation	heart disease
+doc_test_1166	Observation	endometriosis
+doc_test_1166	Observation	hypothyroidism
+doc_test_1166	Observation	autistic
+doc_test_1166	Observation	autism
+doc_test_1166	Observation	learning disorders
+doc_test_1166	Observation	PCOS
+doc_test_1167	FamilyMember	Brother	NA
+doc_test_1167	Observation	Wilms tumor
+doc_test_1167	Observation	anaphylactic reaction
+doc_test_1167	Observation	asthma
+doc_test_1167	Observation	cancers
+doc_test_1167	Observation	genetic diseases
+doc_test_1169	FamilyMember	Grandfather	Maternal
+doc_test_1169	FamilyMember	Mother	NA
+doc_test_1169	FamilyMember	Grandmother	Paternal
+doc_test_1169	FamilyMember	Sibling	NA
+doc_test_1169	FamilyMember	Grandfather	Paternal
+doc_test_1169	FamilyMember	Grandmother	Maternal
+doc_test_1169	FamilyMember	Father	NA
+doc_test_1169	Observation	spinal TB
+doc_test_1169	Observation	osteoporosis
+doc_test_1169	Observation	cardiomyopathy
+doc_test_1169	Observation	pancreatic cancer
+doc_test_1169	Observation	Meniere disease
+doc_test_1169	Observation	speech delay
+doc_test_1169	Observation	hearing loss
+doc_test_1170	FamilyMember	Sister	NA
+doc_test_1170	FamilyMember	Cousin	NA
+doc_test_1170	FamilyMember	Daughter	NA
+doc_test_1170	FamilyMember	Grandmother	Maternal
+doc_test_1170	FamilyMember	Grandfather	Maternal
+doc_test_1170	FamilyMember	Son	NA
+doc_test_1170	FamilyMember	Cousin	Maternal
+doc_test_1170	FamilyMember	Uncle	Maternal
+doc_test_1170	FamilyMember	Aunt	Maternal
+doc_test_1170	FamilyMember	Father	NA
+doc_test_1170	Observation	heart attack
+doc_test_1170	Observation	breast lump 
+doc_test_1170	Observation	DCIS 
+doc_test_1170	Observation	breast cancer
+doc_test_1170	Observation	atypical ductal hyperplasia
+doc_test_1170	Observation	cancer
+doc_test_1170	Observation	asthma
+doc_test_1170	Observation	DCIS
+doc_test_1170	Observation	a broken hip
+doc_test_1170	Observation	diabetes
+doc_test_1172	FamilyMember	Mother	NA
+doc_test_1172	FamilyMember	Sibling	NA
+doc_test_1172	Observation	mental retardation
+doc_test_1172	Observation	second trimester miscarriage
+doc_test_1172	Observation	 multiple miscarriages 
+doc_test_1172	Observation	birth defects
+doc_test_1172	Observation	 neonatal death
+doc_test_1174	FamilyMember	Sister	NA
+doc_test_1174	FamilyMember	Grandfather	NA
+doc_test_1174	FamilyMember	Father	NA
+doc_test_1174	FamilyMember	Mother	NA
+doc_test_1174	Observation	ADHD
+doc_test_1174	Observation	difficulty with social interaction
+doc_test_1174	Observation	sudden death
+doc_test_1174	Observation	heart rhythm
+doc_test_1174	Observation	prolonged eye contact
+doc_test_1174	Observation	atypical eye contact
+doc_test_1174	Observation	keeping a job
+doc_test_1174	Observation	struggled with math
+doc_test_1175	FamilyMember	Son	NA
+doc_test_1175	FamilyMember	Cousin	Maternal
+doc_test_1175	FamilyMember	Aunt	Maternal
+doc_test_1175	Observation	mental retardation
+doc_test_1175	Observation	miscarriages 
+doc_test_1175	Observation	neonatal death
+doc_test_1175	Observation	birth defects
+doc_test_1175	Observation	hydrocephalus

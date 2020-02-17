@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+<info>
+  <savetime>07:51:27 29-04-2018</savetime>
+  <progress>completed</progress>
+</info>
+
+<schema path="./" protocol="file">temporal.schema.xml</schema>
+
+<annotations>
+	<entity>
+		<id>1</id>
+		<span>315,323</span>
+		<type>FamilyMember</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Relation>Daughter</Relation>
+			<Count></Count>
+			<SideOfFamily>NA</SideOfFamily>
+			<Blood>Blooded</Blood>
+			<Adopted>NA</Adopted>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>2</id>
+		<span>339,340</span>
+		<type>Age</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<AgeType>CurrentAge</AgeType>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>3</id>
+		<span>358,373</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>No</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>False</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>4</id>
+		<span>385,399</span>
+		<type>FamilyMember</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Relation>Aunt</Relation>
+			<Count></Count>
+			<SideOfFamily>Paternal</SideOfFamily>
+			<Blood>Blooded</Blood>
+			<Adopted>NA</Adopted>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>5</id>
+		<span>404,422</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>No</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>False</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>6</id>
+		<span>478,490</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>No</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>False</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>7</id>
+		<span>671,693</span>
+		<type>FamilyMember</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Relation>Cousin</Relation>
+			<Count></Count>
+			<SideOfFamily>Paternal</SideOfFamily>
+			<Blood>Blooded</Blood>
+			<Adopted>NA</Adopted>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>8</id>
+		<span>698,711</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>No</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>False</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>9</id>
+		<span>770,788</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>Yes</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>True</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>10</id>
+		<span>790,803</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>Yes</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>True</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>11</id>
+		<span>805,826</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>Yes</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>True</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>12</id>
+		<span>830,844</span>
+		<type>Observation</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Negation>Yes</Negation>
+			<Certainty>Certain</Certainty>
+			<isAll>True</isAll>
+			<ID></ID>
+		</properties>
+	</entity>
+
+	<entity>
+		<id>13</id>
+		<span>446,460</span>
+		<type>FamilyMember</type>
+		<parentsType>Mentions</parentsType>
+		<properties>
+			<Relation>Aunt</Relation>
+			<Count></Count>
+			<SideOfFamily>Maternal</SideOfFamily>
+			<Blood>Blooded</Blood>
+			<Adopted>NA</Adopted>
+		</properties>
+	</entity>
+
+	<relation>
+		<id>14</id>
+		<type>Chain</type>
+		<parentsType>Relations</parentsType>
+		<properties>
+			<FamilyMembers>1</FamilyMembers>
+			<Properties>2</Properties>
+			<Properties>3</Properties>
+		</properties>
+	</relation>
+
+	<relation>
+		<id>15</id>
+		<type>Chain</type>
+		<parentsType>Relations</parentsType>
+		<properties>
+			<FamilyMembers>4</FamilyMembers>
+			<Properties>5</Properties>
+		</properties>
+	</relation>
+
+	<relation>
+		<id>16</id>
+		<type>Chain</type>
+		<parentsType>Relations</parentsType>
+		<properties>
+			<FamilyMembers>13</FamilyMembers>
+			<Properties>6</Properties>
+		</properties>
+	</relation>
+
+	<relation>
+		<id>17</id>
+		<type>Chain</type>
+		<parentsType>Relations</parentsType>
+		<properties>
+			<FamilyMembers>7</FamilyMembers>
+			<Properties>8</Properties>
+		</properties>
+	</relation>
+
+</annotations>
+
+</data>

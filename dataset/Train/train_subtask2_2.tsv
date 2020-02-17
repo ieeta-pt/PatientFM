@@ -1,0 +1,1116 @@
+doc_1	Brother	NA	LivingStatus	4
+doc_1	Father	NA	LivingStatus	4
+doc_1	Daughter	NA	LivingStatus	4
+doc_1	Grandfather	Paternal	LivingStatus	0
+doc_1	Son	NA	LivingStatus	4
+doc_1	Mother	NA	Observation	bile duct adenocarcinoma	Non_Negated
+doc_1	Mother	NA	Observation	lump of skin	Non_Negated
+doc_1	Mother	NA	Observation	disorders of meninges	Non_Negated
+doc_1	Mother	NA	Observation	neoplasm maligprostate 	Non_Negated
+doc_1	Uncle	Maternal	Observation	ovarian failure	Non_Negated
+doc_1	Father	NA	Observation	men ii	Negated
+doc_1	Grandfather	Paternal	Observation	ear melanoma	Non_Negated
+doc_1	Cousin	Paternal	Observation	choreic dysphonia	Non_Negated
+doc_1	Cousin	Paternal	Observation	 phaeochromocytoma	Non_Negated
+doc_10	Brother	NA	LivingStatus	4
+doc_10	Son	NA	LivingStatus	4
+doc_10	Father	NA	LivingStatus	4
+doc_10	Sister	NA	LivingStatus	4
+doc_10	Mother	NA	LivingStatus	4
+doc_10	Sister	NA	Observation	hypermnesia	Non_Negated
+doc_101	Grandfather	Maternal	Observation	hyperthermia	Non_Negated
+doc_101	Aunt	Paternal	Observation	gene mutation	Non_Negated
+doc_101	Aunt	Paternal	Observation	vulvar sarcoma	Non_Negated
+doc_101	Mother	NA	Observation	umbilical cord anomaly	Non_Negated
+doc_101	Father	NA	Observation	hypertension	Non_Negated
+doc_101	Father	NA	Observation	drug overdose	Non_Negated
+doc_101	Grandmother	Maternal	Observation	hypothyroidism	Non_Negated
+doc_104	Aunt	Paternal	Observation	nalbuphine allergy	Non_Negated
+doc_104	Aunt	Maternal	Observation	miscarriages	Non_Negated
+doc_104	Daughter	NA	Observation	genetic disease	Non_Negated
+doc_104	Cousin	Paternal	Observation	schizophrenia	Non_Negated
+doc_105	Grandmother	Maternal	LivingStatus	0
+doc_105	Daughter	NA	Observation	hemophilia	Non_Negated
+doc_105	Sister	NA	Observation	cardiac problems infarction	Negated
+doc_105	Sister	NA	Observation	DKA	Non_Negated
+doc_105	Grandmother	Maternal	Observation	heart attack	Non_Negated
+doc_105	Grandmother	Maternal	Observation	cancer	Non_Negated
+doc_105	Mother	NA	Observation	renal disease	Non_Negated
+doc_105	Mother	NA	Observation	DKA	Non_Negated
+doc_105	Mother	NA	Observation	alcohol use 	Non_Negated
+doc_105	Mother	NA	Observation	heart murmur	Non_Negated
+doc_105	Mother	NA	Observation	carrier of leptomeningeal metastases	Non_Negated
+doc_105	Grandfather	NA	Observation	rheumatoid arthritis	Non_Negated
+doc_105	Grandfather	NA	Observation	genetic disease	Non_Negated
+doc_105	Grandfather	NA	Observation	allergies	Non_Negated
+doc_105	Grandfather	NA	Observation	heavy smoker	Non_Negated
+doc_105	Grandfather	NA	Observation	type 2 diabetes	Non_Negated
+doc_105	Uncle	Maternal	Observation	herpes iris	Non_Negated
+doc_105	Father	NA	Observation	alcoholism 	Non_Negated
+doc_105	Father	NA	Observation	heart issues	Non_Negated
+doc_105	Father	NA	Observation	depressed	Non_Negated
+doc_11	Grandfather	Maternal	LivingStatus	0
+doc_11	Father	NA	LivingStatus	0
+doc_11	Grandfather	Paternal	LivingStatus	0
+doc_11	Grandmother	Paternal	LivingStatus	0
+doc_11	Grandmother	Maternal	LivingStatus	0
+doc_11	Daughter	NA	Observation	cancers	Negated
+doc_11	Grandmother	Maternal	Observation	dermatitis acneiform	Non_Negated
+doc_11	Grandmother	Maternal	Observation	heart disease	Non_Negated
+doc_11	Grandmother	Maternal	Observation	keratitis actinic	Non_Negated
+doc_11	Mother	NA	Observation	anthrax	Negated
+doc_11	Mother	NA	Observation	Jejunum	Non_Negated
+doc_11	Grandfather	Maternal	Observation	cysticercosis	Non_Negated
+doc_11	Uncle	Maternal	Observation	cancers	Negated
+doc_11	Father	NA	Observation	hypermnesia	Non_Negated
+doc_11	Father	NA	Observation	smoked	Non_Negated
+doc_111	Brother	NA	LivingStatus	0
+doc_111	Sister	NA	LivingStatus	4
+doc_111	Mother	NA	LivingStatus	4
+doc_111	Father	NA	Observation	infiltrating ductal car	Non_Negated
+doc_111	Father	NA	Observation	syndrome merrf	Non_Negated
+doc_111	Sister	NA	Observation	syndrome merrf	Non_Negated
+doc_115	Brother	NA	LivingStatus	2
+doc_115	Mother	NA	LivingStatus	0
+doc_115	Father	NA	LivingStatus	0
+doc_115	Grandmother	Paternal	LivingStatus	0
+doc_115	Son	NA	LivingStatus	4
+doc_115	Sister	NA	Observation	type 2 diabetes 	Non_Negated
+doc_115	Sister	NA	Observation	thalassemia 	Non_Negated
+doc_115	Mother	NA	Observation	malignant blood disorder 	Non_Negated
+doc_115	Mother	NA	Observation	babesia infection 	Non_Negated
+doc_115	Mother	NA	Observation	multiple sclerosis	Non_Negated
+doc_115	Grandmother	Paternal	Observation	disorder micturition 	Non_Negated
+doc_115	Aunt	Paternal	Observation	disorder micturition 	Non_Negated
+doc_115	Aunt	Maternal	Observation	alzheimer disease 	Non_Negated
+doc_115	Aunt	Maternal	Observation	strep infections 	Negated
+doc_115	Father	NA	Observation	emphysema paraseptal 	Non_Negated
+doc_115	Father	NA	Observation	aortic dilation	Non_Negated
+doc_117	Father	NA	LivingStatus	0
+doc_117	Sister	NA	LivingStatus	2
+doc_117	Grandmother	Maternal	LivingStatus	0
+doc_117	Grandmother	Maternal	Observation	low platelets 	Non_Negated
+doc_117	Father	NA	Observation	tonsillitis 	Non_Negated
+doc_117	Father	NA	Observation	aortic dilation	Non_Negated
+doc_117	Sister	NA	Observation	anomalies nervous system 	Non_Negated
+doc_117	Sister	NA	Observation	delleman syndrome	Non_Negated
+doc_117	Sister	NA	Observation	dextrocardia	Non_Negated
+doc_117	Sister	NA	Observation	myocardial infarction 	Non_Negated
+doc_117	Mother	NA	Observation	cancer 	Negated
+doc_117	Mother	NA	Observation	dextrocardia 	Non_Negated
+doc_118	Brother	NA	LivingStatus	2
+doc_118	Father	NA	LivingStatus	4
+doc_118	Brother	NA	Observation	recurrent thyroid problems	Non_Negated
+doc_118	Mother	NA	Observation	hypertension	Non_Negated
+doc_12	Cousin	Maternal	LivingStatus	0
+doc_12	Sister	NA	LivingStatus	2
+doc_12	Grandmother	Maternal	LivingStatus	0
+doc_12	Child	NA	LivingStatus	4
+doc_12	Aunt	Paternal	LivingStatus	0
+doc_12	Grandmother	Paternal	LivingStatus	0
+doc_12	Grandfather	Maternal	LivingStatus	0
+doc_12	Uncle	Paternal	LivingStatus	0
+doc_12	Mother	NA	LivingStatus	4
+doc_12	Father	NA	LivingStatus	0
+doc_12	Grandfather	Paternal	LivingStatus	0
+doc_12	Cousin	Maternal	Observation	heart attacks	Non_Negated
+doc_12	Grandmother	Maternal	Observation	amebic eczema	Non_Negated
+doc_12	Grandmother	Maternal	Observation	asthma	Non_Negated
+doc_12	Mother	NA	Observation	blood pressure	Non_Negated
+doc_12	Grandfather	Maternal	Observation	 IMMPaCtte	Non_Negated
+doc_12	Grandfather	Maternal	Observation	embolism	Non_Negated
+doc_12	Grandfather	Maternal	Observation	 genital lichen planus	Non_Negated
+doc_12	Uncle	Maternal	Observation	urethral corbus	Non_Negated
+doc_12	Father	NA	Observation	pancoast	Non_Negated
+doc_12	Father	NA	Observation	torus palatinus	Non_Negated
+doc_12	Father	NA	Observation	canker	Non_Negated
+doc_12	Father	NA	Observation	Uterine corbus	Non_Negated
+doc_12	Father	NA	Observation	 asthma colliers	Non_Negated
+doc_12	Father	NA	Observation	 pigmented skin	Non_Negated
+doc_121	Father	NA	LivingStatus	0
+doc_121	Mother	NA	LivingStatus	0
+doc_121	Daughter	NA	LivingStatus	0
+doc_121	Son	NA	LivingStatus	2
+doc_121	Daughter	NA	Observation	chloasma	Non_Negated
+doc_121	Mother	NA	Observation	amebic abscess of skin	Non_Negated
+doc_121	Mother	NA	Observation	smoker	Non_Negated
+doc_121	Mother	NA	Observation	malignant blood disorder	Non_Negated
+doc_123	Aunt	Maternal	LivingStatus	0
+doc_123	Grandmother	Maternal	LivingStatus	0
+doc_123	Mother	NA	LivingStatus	0
+doc_123	Aunt	Maternal	Observation	p388 leukemia 	Non_Negated
+doc_123	Aunt	Maternal	Observation	brain cancer 	Non_Negated
+doc_123	Grandmother	Maternal	Observation	eating excess 	Non_Negated
+doc_123	Mother	NA	Observation	blood clot 	Non_Negated
+doc_123	Mother	NA	Observation	p388 leukemia 	Non_Negated
+doc_124	Brother	NA	LivingStatus	4
+doc_124	Father	NA	LivingStatus	4
+doc_126	Brother	NA	LivingStatus	2
+doc_126	Daughter	NA	LivingStatus	4
+doc_126	Sister	NA	LivingStatus	2
+doc_126	Mother	NA	LivingStatus	4
+doc_126	Father	NA	Observation	glaucoma 	Non_Negated
+doc_126	Father	NA	Observation	bone fragile 	Non_Negated
+doc_126	Grandmother	Paternal	Observation	NHL childhood 	Non_Negated
+doc_13	Grandfather	Maternal	LivingStatus	0
+doc_13	Cousin	Paternal	LivingStatus	0
+doc_13	Mother	NA	LivingStatus	0
+doc_13	Grandmother	Paternal	LivingStatus	0
+doc_13	Grandmother	Maternal	LivingStatus	2
+doc_13	Grandmother	Maternal	Observation	diabetes	Non_Negated
+doc_13	Mother	NA	Observation	memory lapses	Non_Negated
+doc_13	Grandmother	Paternal	Observation	corbus	Non_Negated
+doc_13	Cousin	Paternal	Observation	 ileitis pouch	Non_Negated
+doc_13	Child	NA	Observation	ductal	Non_Negated
+doc_13	Child	NA	Observation	cyclothymic personality	Non_Negated
+doc_13	Child	NA	Observation	lung myolipoma	Non_Negated
+doc_13	Father	NA	Observation	syndrome scheie	Non_Negated
+doc_13	Father	NA	Observation	telangiectasia	Non_Negated
+doc_13	Father	NA	Observation	pongidae disease	Non_Negated
+doc_13	Father	NA	Observation	acute proctitis	Non_Negated
+doc_13	Father	NA	Observation	palinphrasia	Non_Negated
+doc_130	Daughter	NA	LivingStatus	0
+doc_130	Father	NA	LivingStatus	0
+doc_130	Mother	NA	LivingStatus	0
+doc_130	Daughter	NA	Observation	hydrocephalus 	Non_Negated
+doc_130	Daughter	NA	Observation	delleman syndrome 	Non_Negated
+doc_130	Sister	NA	Observation	cancers	Negated
+doc_130	Sister	NA	Observation	malaria 	Negated
+doc_130	Mother	NA	Observation	stroke	Non_Negated
+doc_130	Brother	NA	Observation	malaria 	Negated
+doc_130	Aunt	Paternal	Observation	cancers	Negated
+doc_130	Father	NA	Observation	never been ill 	Negated
+doc_132	Aunt	Paternal	LivingStatus	0
+doc_132	Father	NA	LivingStatus	0
+doc_132	Uncle	Paternal	LivingStatus	2
+doc_132	Son	NA	LivingStatus	4
+doc_132	Aunt	Paternal	Observation	aneurysm or schizophrenia	Non_Negated
+doc_132	Aunt	Paternal	Observation	hypothyroidism 	Non_Negated
+doc_132	Aunt	Paternal	Observation	schizophrenia 	Non_Negated
+doc_132	Father	NA	Observation	asthma	Non_Negated
+doc_132	Uncle	Paternal	Observation	asthma	Negated
+doc_132	Cousin	Maternal	Observation	schizophrenia 	Non_Negated
+doc_132	Mother	NA	Observation	leukemia	Non_Negated
+doc_136	Cousin	NA	LivingStatus	2
+doc_136	Sister	NA	Observation	angelman syndrome 	Non_Negated
+doc_136	Mother	NA	Observation	pseudotruncus arteriosus 	Non_Negated
+doc_136	Mother	NA	Observation	cholera	Non_Negated
+doc_136	Son	NA	Observation	type 2 diabetes	Non_Negated
+doc_136	Son	NA	Observation	cholera 	Non_Negated
+doc_136	Aunt	Paternal	Observation	uterine cancer	Non_Negated
+doc_136	Aunt	Paternal	Observation	heart issues 	Non_Negated
+doc_136	Aunt	Paternal	Observation	psychiatric conditions	Non_Negated
+doc_136	Aunt	Maternal	Observation	heart issues	Non_Negated
+doc_136	Father	NA	Observation	albers schonberg disease 	Non_Negated
+doc_136	Father	NA	Observation	CCHF	Non_Negated
+doc_138	Grandmother	Maternal	Observation	CCHF	Non_Negated
+doc_138	Grandmother	Maternal	Observation	deficiency endocrine 	Non_Negated
+doc_138	Mother	NA	Observation	DKA	Non_Negated
+doc_138	Mother	NA	Observation	hemophilia	Non_Negated
+doc_138	Mother	NA	Observation	cholera	Non_Negated
+doc_138	Mother	NA	Observation	multiple sclerosis	Non_Negated
+doc_138	Mother	NA	Observation	dementia 	Non_Negated
+doc_138	Mother	NA	Observation	recurrent malignant tumour 	Non_Negated
+doc_138	Grandparent	Paternal	Observation	prophylactic mastectomy	Non_Negated
+doc_138	Grandfather	Maternal	Observation	colorblind	Non_Negated
+doc_138	Grandfather	Maternal	Observation	cardiac disease	Non_Negated
+doc_138	Grandfather	Maternal	Observation	melanoma	Non_Negated
+doc_138	Uncle	Paternal	Observation	Marfan syndrome	Non_Negated
+doc_138	Father	NA	Observation	prophylactic mastectomy	Non_Negated
+doc_139	Mother	NA	LivingStatus	0
+doc_139	Daughter	NA	Observation	germ cell tumour ovarian recurrent	Non_Negated
+doc_139	Sister	NA	Observation	nettle rash	Non_Negated
+doc_139	Mother	NA	Observation	gastroliths	Non_Negated
+doc_139	Mother	NA	Observation	aphasia broca	Negated
+doc_139	Mother	NA	Observation	fever typhogastric 	Negated
+doc_139	Son	NA	Observation	connective tissue	Non_Negated
+doc_139	Brother	NA	Observation	dubinis disease	Non_Negated
+doc_139	Brother	NA	Observation	disease graves	Non_Negated
+doc_139	Brother	NA	Observation	papillary carcinoma	Non_Negated
+doc_139	Brother	NA	Observation	gonorrhea recurrent	Non_Negated
+doc_139	Child	NA	Observation	mental behavioral disorders	Negated
+doc_139	Child	NA	Observation	 familial polyposis	Negated
+doc_139	Father	NA	Observation	pancreatitis fungal	Non_Negated
+doc_139	Father	NA	Observation	cancer	Non_Negated
+doc_14	Brother	NA	LivingStatus	2
+doc_14	Father	NA	LivingStatus	2
+doc_14	Sister	NA	LivingStatus	0
+doc_14	Mother	NA	LivingStatus	0
+doc_14	Brother	NA	Observation	lymphocytoma	Non_Negated
+doc_14	Brother	NA	Observation	leukocytopenias	Non_Negated
+doc_14	Father	NA	Observation	tumour of pyriform fossa	Non_Negated
+doc_14	Father	NA	Observation	ileum ulcer	Non_Negated
+doc_14	Father	NA	Observation	spasm tic	Non_Negated
+doc_14	Father	NA	Observation	neoplasm of cystic duct	Non_Negated
+doc_14	Father	NA	Observation	lymphangitis	Non_Negated
+doc_14	Father	NA	Observation	stomach abscess	Non_Negated
+doc_14	Father	NA	Observation	hepatic coma	Non_Negated
+doc_14	Sibling	NA	Observation	hemophilia	Non_Negated
+doc_14	Sister	NA	Observation	edema stress	Non_Negated
+doc_14	Sister	NA	Observation	amylopectinoses	Non_Negated
+doc_14	Mother	NA	Observation	sigmoiditis	Non_Negated
+doc_14	Mother	NA	Observation	hemophilia	Non_Negated
+doc_14	Mother	NA	Observation	melanoma ear	Non_Negated
+doc_14	Mother	NA	Observation	myofascitis	Non_Negated
+doc_140	Mother	NA	LivingStatus	0
+doc_140	Sibling	NA	Observation	hypertension	Negated
+doc_140	Sibling	NA	Observation	thyroid lump	Non_Negated
+doc_140	Grandparent	Paternal	Observation	 hypertension	Non_Negated
+doc_140	Mother	NA	Observation	leukemia pediatric acute lymphocytic t cell	Non_Negated
+doc_140	Son	NA	Observation	loss function of labyrinth	Non_Negated
+doc_140	Son	NA	Observation	acute MI 	Non_Negated
+doc_140	Son	NA	Observation	rhinoconjunctivitis 	Negated
+doc_140	Son	NA	Observation	giant cell pneumonia	Non_Negated
+doc_140	Uncle	Paternal	Observation	fingerprint myopathy	Non_Negated
+doc_140	Father	NA	Observation	type 2 diabetes	Non_Negated
+doc_142	Sister	NA	LivingStatus	0
+doc_142	Cousin	Paternal	LivingStatus	0
+doc_142	Cousin	Maternal	Observation	renal disease	Non_Negated
+doc_142	Cousin	Maternal	Observation	fungus eczema	Non_Negated
+doc_142	Sister	NA	Observation	hydrocephalus	Non_Negated
+doc_142	Sister	NA	Observation	skin eruption 	Non_Negated
+doc_142	Cousin	Paternal	Observation	recurrent heart disease 	Non_Negated
+doc_142	Cousin	Paternal	Observation	iron allergy	Non_Negated
+doc_142	Cousin	Paternal	Observation	fever uremic 	Non_Negated
+doc_142	Uncle	Paternal	Observation	 phacomatosis	Non_Negated
+doc_142	Aunt	Maternal	Observation	 nulnaris disorder	Non_Negated
+doc_142	Father	NA	Observation	prolapse colon	Non_Negated
+doc_142	Aunt	Paternal	Observation	 phacomatosis	Non_Negated
+doc_143	Daughter	NA	LivingStatus	4
+doc_143	Cousin	Maternal	LivingStatus	4
+doc_143	Grandmother	Paternal	LivingStatus	0
+doc_143	Cousin	Paternal	LivingStatus	4
+doc_143	Grandfather	Maternal	LivingStatus	0
+doc_143	Brother	NA	LivingStatus	2
+doc_143	Uncle	Paternal	LivingStatus	0
+doc_143	Aunt	Maternal	LivingStatus	4
+doc_143	Grandfather	Paternal	LivingStatus	0
+doc_143	Daughter	NA	Observation	 febrile mucocutaneous syndrome	Non_Negated
+doc_143	Mother	NA	Observation	vagina sarcoma 	Non_Negated
+doc_143	Mother	NA	Observation	odontomas	Non_Negated
+doc_143	Grandmother	Paternal	Observation	 pneumonia	Non_Negated
+doc_143	Son	NA	Observation	cancer	Non_Negated
+doc_143	Son	NA	Observation	CCHF 	Non_Negated
+doc_143	Son	NA	Observation	 gastritis biliary	Non_Negated
+doc_143	Grandfather	Maternal	Observation	 urachal cysts	Non_Negated
+doc_143	Grandfather	Maternal	Observation	 cardiomyopathy amyloid etiology	Non_Negated
+doc_143	Uncle	Paternal	Observation	 cystocoele	Non_Negated
+doc_143	Father	NA	Observation	quadraplegia	Non_Negated
+doc_143	Father	NA	Observation	brown mclean syndrome 	Non_Negated
+doc_143	Father	NA	Observation	neck lipoma	Non_Negated
+doc_143	Father	NA	Observation	 meninges sarcoma	Non_Negated
+doc_143	Grandfather	Paternal	Observation	uricemia	Non_Negated
+doc_143	Grandmother	None	Observation	body tinea	Non_Negated
+doc_143	Grandmother	None	Observation	basiloma	Non_Negated
+doc_145	Uncle	Paternal	LivingStatus	0
+doc_145	Uncle	Maternal	LivingStatus	0
+doc_145	Uncle	Maternal	Observation	gingival tumour	Non_Negated
+doc_145	Uncle	Maternal	Observation	postnatal dysphoria	Non_Negated
+doc_145	Grandmother	Maternal	Observation	Down syndrome	Non_Negated
+doc_145	Mother	NA	Observation	hypogonadism	Non_Negated
+doc_145	Cousin	Paternal	Observation	thigh abscess	Non_Negated
+doc_145	Aunt	Paternal	Observation	Down syndrome	Non_Negated
+doc_145	Aunt	Maternal	Observation	brain anoxia	Non_Negated
+doc_145	Uncle	Paternal	Observation	necrosis scrotum	Non_Negated
+doc_145	Uncle	Paternal	Observation	cancer	Non_Negated
+doc_145	Uncle	Paternal	Observation	myasthenia gravis	Non_Negated
+doc_147	Brother	NA	LivingStatus	4
+doc_147	Daughter	NA	LivingStatus	4
+doc_147	Sister	NA	LivingStatus	4
+doc_147	Father	NA	Observation	stupor catatonic 	Non_Negated
+doc_147	Mother	NA	Observation	heart murmur 	Non_Negated
+doc_148	Father	NA	LivingStatus	4
+doc_148	Father	NA	Observation	polyp rectum	Non_Negated
+doc_148	Mother	NA	Observation	elevated lipoprotein A levels	Non_Negated
+doc_150	Brother	NA	LivingStatus	2
+doc_150	Father	NA	LivingStatus	2
+doc_150	Sister	NA	LivingStatus	0
+doc_150	Mother	NA	LivingStatus	0
+doc_150	Brother	NA	Observation	sinus cancer	Non_Negated
+doc_150	Brother	NA	Observation	stomatitis	Non_Negated
+doc_150	Brother	NA	Observation	pityriasis alba	Non_Negated
+doc_150	Father	NA	Observation	lymphocoeles	Non_Negated
+doc_150	Father	NA	Observation	 suprarenal insufficiency	Non_Negated
+doc_150	Father	NA	Observation	akithisia	Non_Negated
+doc_150	Father	NA	Observation	 dextrocardia	Non_Negated
+doc_150	Father	NA	Observation	uterus adhesion	Non_Negated
+doc_150	Father	NA	Observation	lung cancer 	Non_Negated
+doc_150	Father	NA	Observation	basal cell	Non_Negated
+doc_150	Father	NA	Observation	prophylactic mastectomy	Non_Negated
+doc_150	Sister	NA	Observation	lung fibroma	Non_Negated
+doc_150	Sister	NA	Observation	stomatitis	Non_Negated
+doc_150	Sister	NA	Observation	pan microscopic 	Non_Negated
+doc_150	Mother	NA	Observation	 leukopenias	Non_Negated
+doc_150	Mother	NA	Observation	memory loss	Non_Negated
+doc_150	Mother	NA	Observation	sacral ulcer	Non_Negated
+doc_150	Mother	NA	Observation	neonatal death	Non_Negated
+doc_150	Mother	NA	Observation	stomatitis	Non_Negated
+doc_150	Mother	NA	Observation	cystdermoid	Non_Negated
+doc_152	Brother	NA	LivingStatus	4
+doc_152	Daughter	NA	LivingStatus	4
+doc_152	Son	NA	LivingStatus	4
+doc_152	Grandparent	Maternal	Observation	cancer	Negated
+doc_152	Sister	NA	Observation	 malaria	Non_Negated
+doc_152	Sister	NA	Observation	 sinus infections	Non_Negated
+doc_152	Mother	NA	Observation	sinus infections	Non_Negated
+doc_152	Grandmother	Paternal	Observation	cancer	Non_Negated
+doc_152	Uncle	Paternal	Observation	tonsillitis	Non_Negated
+doc_152	Uncle	Paternal	Observation	cholangioma	Non_Negated
+doc_152	Uncle	Paternal	Observation	heavy smoker	Non_Negated
+doc_152	Aunt	Maternal	Observation	climactericum epileptic 	Non_Negated
+doc_152	Father	NA	Observation	brachyolmia	Non_Negated
+doc_152	Father	NA	Observation	heavy smoker	Non_Negated
+doc_154	Mother	NA	LivingStatus	0
+doc_154	Aunt	Maternal	Observation	 low platelets	Negated
+doc_154	Aunt	Maternal	Observation	low platelets 	Non_Negated
+doc_154	Sibling	NA	Observation	cancer	Negated
+doc_155	Brother	NA	LivingStatus	4
+doc_155	Father	NA	LivingStatus	4
+doc_155	Mother	NA	LivingStatus	4
+doc_155	Brother	NA	Observation	klinefelter 	Non_Negated
+doc_155	Brother	NA	Observation	steroid purpura	Non_Negated
+doc_155	Brother	NA	Observation	keratoacanthoma 	Non_Negated
+doc_155	Mother	NA	Observation	pneumothorax iatrogenic 	Non_Negated
+doc_156	Brother	NA	LivingStatus	2
+doc_156	Father	NA	LivingStatus	0
+doc_156	Mother	NA	LivingStatus	0
+doc_156	Father	NA	Observation	imbecile	Non_Negated
+doc_156	Father	NA	Observation	enamel caries 	Non_Negated
+doc_156	Mother	NA	Observation	syndrome hemiparaplegic	Non_Negated
+doc_157	Daughter	NA	LivingStatus	4
+doc_157	Sister	NA	LivingStatus	4
+doc_157	Mother	NA	LivingStatus	4
+doc_157	Son	NA	LivingStatus	4
+doc_157	Brother	NA	LivingStatus	4
+doc_157	Uncle	Paternal	LivingStatus	0
+doc_157	Father	NA	LivingStatus	4
+doc_157	Uncle	Paternal	Observation	GI problems 	Non_Negated
+doc_157	Uncle	Paternal	Observation	pharynx cellulitis 	Non_Negated
+doc_157	Aunt	Maternal	Observation	choroid plexus papilloma fourth ventricle	Non_Negated
+doc_158	Brother	NA	LivingStatus	4
+doc_158	Parent	NA	LivingStatus	4
+doc_158	Father	NA	LivingStatus	4
+doc_158	Sister	NA	LivingStatus	4
+doc_158	Mother	NA	LivingStatus	4
+doc_16	Uncle	Paternal	LivingStatus	4
+doc_16	Aunt	Paternal	Observation	heart murmur	Non_Negated
+doc_160	Sibling	NA	LivingStatus	4
+doc_160	Mother	NA	Observation	heart attack	Non_Negated
+doc_161	Brother	NA	LivingStatus	4
+doc_161	Daughter	NA	LivingStatus	4
+doc_161	Son	NA	LivingStatus	4
+doc_161	Brother	NA	Observation	 skin syphilitic	Non_Negated
+doc_161	Brother	NA	Observation	krabbe 	Non_Negated
+doc_161	Brother	NA	Observation	blood pressure	Non_Negated
+doc_161	Brother	NA	Observation	 abscess joint	Non_Negated
+doc_161	Brother	NA	Observation	viral meningitides	Non_Negated
+doc_161	Uncle	Maternal	Observation	krabbe	Non_Negated
+doc_162	Uncle	Paternal	Observation	 obesity	Non_Negated
+doc_162	Father	NA	Observation	 overweight	Non_Negated
+doc_162	Father	NA	Observation	suicide 	Non_Negated
+doc_162	Father	NA	Observation	 demyelinating diseases	Non_Negated
+doc_164	Grandfather	Maternal	LivingStatus	4
+doc_164	Aunt	Maternal	LivingStatus	4
+doc_164	Grandmother	Maternal	LivingStatus	4
+doc_164	Cousin	NA	Observation	shortness of breath 	Non_Negated
+doc_164	Cousin	NA	Observation	retrosternal hernia	Negated
+doc_164	Sister	NA	Observation	gingival pregnancy tumour 	Non_Negated
+doc_164	Mother	NA	Observation	eardrum inflammation	Negated
+doc_164	Mother	NA	Observation	nipple neoplasm	Non_Negated
+doc_166	Son	NA	Observation	cancer	Non_Negated
+doc_167	Father	NA	LivingStatus	4
+doc_167	Sister	NA	LivingStatus	0
+doc_167	Mother	NA	LivingStatus	0
+doc_167	Sister	NA	Observation	memory loss	Non_Negated
+doc_167	Mother	NA	Observation	DVT	Non_Negated
+doc_169	Grandfather	Maternal	LivingStatus	0
+doc_169	Grandfather	Paternal	LivingStatus	2
+doc_169	Uncle	Maternal	Observation	asthma	Negated
+doc_169	Cousin	Maternal	Observation	schizophrenia.	Non_Negated
+doc_169	Cousin	Maternal	Observation	raft neurosis.	Non_Negated
+doc_169	Cousin	Maternal	Observation	 schizophrenia	Non_Negated
+doc_169	Cousin	Maternal	Observation	schizophrenia 	Non_Negated
+doc_169	Grandmother	Maternal	Observation	iabetes 	Non_Negated
+doc_169	Grandmother	Maternal	Observation	AR syndrome 	Non_Negated
+doc_169	Mother	NA	Observation	eart disease 	Non_Negated
+doc_169	Grandfather	Maternal	Observation	sthma.	Non_Negated
+doc_169	Uncle	Paternal	Observation	ypertension i	Non_Negated
+doc_169	Uncle	Paternal	Observation	halassemia.	Non_Negated
+doc_169	Aunt	Maternal	Observation	 schizophrenia	Non_Negated
+doc_169	Aunt	Maternal	Observation	schizophrenia 	Non_Negated
+doc_169	Grandfather	Paternal	Observation	owel bypass syndrome.	Non_Negated
+doc_169	Grandfather	Paternal	Observation	raft site infection 	Non_Negated
+doc_17	Daughter	NA	Observation	oxaluria	Non_Negated
+doc_17	Sister	NA	Observation	leukemia	Non_Negated
+doc_17	Cousin	Maternal	Observation	leukemia	Non_Negated
+doc_17	Mother	NA	Observation	Bone marrow cancer	Non_Negated
+doc_17	Mother	NA	Observation	cysticercosis	Non_Negated
+doc_17	Brother	NA	Observation	MS	Non_Negated
+doc_17	Father	NA	Observation	cancer	Non_Negated
+doc_170	Cousin	Maternal	LivingStatus	4
+doc_170	Grandparent	Maternal	LivingStatus	0
+doc_170	Mother	NA	LivingStatus	0
+doc_170	Grandmother	Paternal	LivingStatus	0
+doc_170	Uncle	Paternal	LivingStatus	0
+doc_170	Uncle	Maternal	LivingStatus	4
+doc_170	Father	NA	LivingStatus	0
+doc_170	Grandfather	Paternal	LivingStatus	0
+doc_170	Son	NA	Observation	heart disease 	Negated
+doc_170	Son	NA	Observation	dysplasia of anus	Non_Negated
+doc_170	Son	NA	Observation	pneumonia	Non_Negated
+doc_170	Mother	NA	Observation	neutrophilic hyperplasia	Non_Negated
+doc_170	Cousin	Paternal	Observation	cancer	Negated
+doc_170	Uncle	Paternal	Observation	connective tissue	Non_Negated
+doc_170	Father	NA	Observation	liver necrosis	Non_Negated
+doc_170	Grandfather	Paternal	Observation	gynecologic tumor	Non_Negated
+doc_173	Father	NA	LivingStatus	4
+doc_173	Daughter	NA	LivingStatus	4
+doc_173	Sister	NA	LivingStatus	4
+doc_173	Brother	NA	Observation	Infiltrating ductal carcinoma 	Non_Negated
+doc_173	Sister	NA	Observation	paramyloidosis	Non_Negated
+doc_173	Sister	NA	Observation	type 2 diabetes	Non_Negated
+doc_173	Mother	NA	Observation	tophi	Non_Negated
+doc_173	Mother	NA	Observation	hairy tongues	Non_Negated
+doc_174	Daughter	NA	LivingStatus	4
+doc_174	Sister	NA	LivingStatus	4
+doc_174	Mother	NA	LivingStatus	4
+doc_174	Father	NA	Observation	mousepox	Non_Negated
+doc_174	Sister	NA	Observation	pyelitis acute	Non_Negated
+doc_176	Brother	NA	Observation	presbyopia with astigmatism	Non_Negated
+doc_176	Grandfather	NA	Observation	endosalpingiosis	Non_Negated
+doc_176	Grandfather	NA	Observation	hypermnesia	Non_Negated
+doc_176	Father	NA	Observation	esophageal infections	Non_Negated
+doc_176	Sister	NA	Observation	COPD	Non_Negated
+doc_176	Sister	NA	Observation	atrial fibrillation	Non_Negated
+doc_176	Sister	NA	Observation	iron disorder 	Non_Negated
+doc_176	Mother	NA	Observation	esophageal infections	Non_Negated
+doc_176	Mother	NA	Observation	pneumonia	Non_Negated
+doc_176	Mother	NA	Observation	COPD	Non_Negated
+doc_177	Cousin	Paternal	LivingStatus	4
+doc_177	Aunt	Paternal	Observation	acute middle ear effusion	Non_Negated
+doc_177	Cousin	Maternal	Observation	epilepsy senile	Non_Negated
+doc_178	Father	NA	Observation	overweight	Non_Negated
+doc_18	Brother	NA	LivingStatus	4
+doc_18	Aunt	Maternal	LivingStatus	0
+doc_18	Sister	NA	LivingStatus	4
+doc_18	Mother	NA	LivingStatus	0
+doc_18	Brother	NA	Observation	cervix metritis	Non_Negated
+doc_18	Aunt	Maternal	Observation	malignant smallpox	Non_Negated
+doc_18	Aunt	Maternal	Observation	hypertension	Non_Negated
+doc_18	Mother	NA	Observation	psoriasis nummular	Non_Negated
+doc_19	Uncle	Paternal	LivingStatus	0
+doc_19	Sister	NA	LivingStatus	4
+doc_19	Father	NA	Observation	kanamycin allergy	Non_Negated
+doc_19	Father	NA	Observation	salmonella infection	Non_Negated
+doc_19	Uncle	Paternal	Observation	aneurysm	Non_Negated
+doc_19	Daughter	NA	Observation	cancer	Non_Negated
+doc_19	Sister	NA	Observation	gynatresias	Non_Negated
+doc_19	Sister	NA	Observation	osteoporosis	Non_Negated
+doc_2	Brother	NA	LivingStatus	4
+doc_2	Brother	NA	Observation	nails soft	Non_Negated
+doc_2	Sibling	NA	Observation	bird pox	Non_Negated
+doc_21	Sister	NA	LivingStatus	4
+doc_21	Mother	NA	LivingStatus	4
+doc_21	Son	NA	LivingStatus	4
+doc_21	Brother	NA	LivingStatus	4
+doc_21	Uncle	Maternal	LivingStatus	0
+doc_21	Father	NA	LivingStatus	4
+doc_21	Aunt	Paternal	Observation	dwarfism	Non_Negated
+doc_21	Aunt	Paternal	Observation	waardenburg	Non_Negated
+doc_21	Aunt	Paternal	Observation	lung cancer	Non_Negated
+doc_21	Grandfather	Paternal	Observation	fainting	Non_Negated
+doc_21	Grandmother	Paternal	Observation	blood disease	Non_Negated
+doc_21	Mother	NA	Observation	heart murmur	Non_Negated
+doc_21	Mother	NA	Observation	cancers anal	Non_Negated
+doc_23	Sister	NA	LivingStatus	4
+doc_23	Cousin	Maternal	LivingStatus	4
+doc_23	Grandmother	Maternal	LivingStatus	0
+doc_23	Grandmother	Paternal	LivingStatus	0
+doc_23	Cousin	Paternal	LivingStatus	2
+doc_23	Grandfather	Maternal	LivingStatus	0
+doc_23	Uncle	Maternal	LivingStatus	4
+doc_23	Father	NA	LivingStatus	4
+doc_23	Aunt	Maternal	Observation	pineoblastoma	Non_Negated
+doc_23	Child	NA	Observation	paranasal sinus cancer	Non_Negated
+doc_23	Child	NA	Observation	hemophilia	Non_Negated
+doc_23	Grandmother	Paternal	Observation	phycomycosis	Non_Negated
+doc_23	Grandfather	Maternal	Observation	foot ulcer	Non_Negated
+doc_23	Grandfather	Maternal	Observation	meningitis recurrent	Non_Negated
+doc_23	Aunt	Paternal	Observation	surface dyslexia	Non_Negated
+doc_23	Mother	NA	Observation	papillary carcinoma	Negated
+doc_23	Father	NA	Observation	hemophilia	Non_Negated
+doc_23	Father	NA	Observation	pachygyria	Non_Negated
+doc_23	Grandfather	Paternal	Observation	gangliosidosis	Non_Negated
+doc_24	Daughter	NA	LivingStatus	4
+doc_24	Cousin	Maternal	LivingStatus	0
+doc_24	Sister	NA	LivingStatus	0
+doc_24	Grandmother	Maternal	LivingStatus	0
+doc_24	Mother	NA	LivingStatus	0
+doc_24	Grandmother	Paternal	LivingStatus	0
+doc_24	Grandfather	Maternal	LivingStatus	0
+doc_24	Aunt	Maternal	LivingStatus	2
+doc_24	Father	NA	LivingStatus	0
+doc_24	Grandfather	Paternal	LivingStatus	0
+doc_24	Cousin	Maternal	Observation	ileocolitis	Non_Negated
+doc_24	Cousin	Maternal	Observation	haglunds	Non_Negated
+doc_24	Sister	NA	Observation	factor S deficiency	Non_Negated
+doc_24	Grandmother	Maternal	Observation	hysterectomy	Non_Negated
+doc_24	Mother	NA	Observation	hysterectomy	Non_Negated
+doc_24	Mother	NA	Observation	cysticercosis	Non_Negated
+doc_24	Son	NA	Observation	ekbom syndrome	Non_Negated
+doc_24	Son	NA	Observation	laryngeal sarcomatoid carcinoma	Non_Negated
+doc_24	Son	NA	Observation	oral glyceryl trinitrate allergy	Non_Negated
+doc_24	Son	NA	Observation	sinus testis	Non_Negated
+doc_24	Grandfather	Maternal	Observation	gastric tumor	Non_Negated
+doc_24	Brother	NA	Observation	cancer	Negated
+doc_24	Aunt	Maternal	Observation	hysterectomy	Non_Negated
+doc_24	Aunt	Maternal	Observation	lesch nyhan syndrome	Non_Negated
+doc_24	Aunt	Maternal	Observation	heart disease	Non_Negated
+doc_24	Aunt	Maternal	Observation	urethral cancer	Non_Negated
+doc_24	Father	NA	Observation	puerperal salpingitis	Non_Negated
+doc_24	Grandfather	Paternal	Observation	thiamine deficiencies	Non_Negated
+doc_26	Sister	NA	LivingStatus	4
+doc_26	Grandmother	Maternal	LivingStatus	4
+doc_26	Mother	NA	LivingStatus	4
+doc_26	Grandfather	Maternal	LivingStatus	0
+doc_26	Brother	NA	LivingStatus	4
+doc_26	Uncle	Maternal	LivingStatus	4
+doc_26	Grandfather	Paternal	LivingStatus	0
+doc_26	Grandmother	Maternal	Observation	 lactrodectism	Non_Negated
+doc_26	Mother	NA	Observation	hepatic coma	Non_Negated
+doc_26	Grandmother	Paternal	Observation	nonsmoker	Non_Negated
+doc_26	Grandmother	Paternal	Observation	skin cancer	Non_Negated
+doc_26	Grandfather	Maternal	Observation	smoker	Non_Negated
+doc_26	Grandfather	Maternal	Observation	sirenomelia	Non_Negated
+doc_26	Aunt	Paternal	Observation	pancreas mass	Non_Negated
+doc_26	Grandfather	Paternal	Observation	asthma	Non_Negated
+doc_28	Daughter	NA	LivingStatus	4
+doc_28	Mother	NA	LivingStatus	4
+doc_28	Son	NA	LivingStatus	4
+doc_28	Brother	NA	LivingStatus	4
+doc_28	Uncle	Paternal	LivingStatus	0
+doc_28	Father	NA	LivingStatus	4
+doc_28	Uncle	Paternal	Observation	cystic fibrosis in 	Non_Negated
+doc_28	Aunt	Maternal	Observation	fibrous cavernitides	Non_Negated
+doc_28	Cousin	Paternal	Observation	 diabetes	Non_Negated
+doc_29	Brother	NA	LivingStatus	4
+doc_29	Sister	NA	LivingStatus	4
+doc_29	Mother	NA	LivingStatus	4
+doc_29	Mother	NA	Observation	miscarriages	Non_Negated
+doc_29	Sister	NA	Observation	enamel caries	Non_Negated
+doc_29	Grandmother	Maternal	Observation	cholera	Non_Negated
+doc_31	Brother	NA	Observation	hemophilia	Non_Negated
+doc_31	Brother	NA	Observation	low platelets	Negated
+doc_31	Brother	NA	Observation	suicide	Negated
+doc_31	Brother	NA	Observation	roaring	Non_Negated
+doc_31	Aunt	Paternal	Observation	 paranasal sinus cancer	Non_Negated
+doc_31	Cousin	Paternal	Observation	cholera	Non_Negated
+doc_34	Son	NA	Observation	 cancer	Non_Negated
+doc_35	Brother	NA	LivingStatus	4
+doc_35	Father	NA	LivingStatus	2
+doc_35	Sister	NA	LivingStatus	0
+doc_35	Mother	NA	LivingStatus	0
+doc_35	Sister	NA	Observation	due to an leukemia	Non_Negated
+doc_35	Mother	NA	Observation	PAP	Non_Negated
+doc_36	Grandmother	Paternal	LivingStatus	0
+doc_36	Cousin	Paternal	LivingStatus	0
+doc_36	Grandmother	Maternal	Observation	lipoidemia	Non_Negated
+doc_36	Mother	NA	Observation	skin	Non_Negated
+doc_36	Mother	NA	Observation	brain problems	Non_Negated
+doc_36	Mother	NA	Observation	chronic pain	Non_Negated
+doc_36	Grandmother	Paternal	Observation	hemophilia	Non_Negated
+doc_36	Grandmother	Paternal	Observation	 infiltrating ductal carcinoma	Non_Negated
+doc_36	Grandfather	Maternal	Observation	thyroid problems 	Negated
+doc_36	Uncle	Paternal	Observation	alcohol	Non_Negated
+doc_36	Uncle	Paternal	Observation	drugs	Non_Negated
+doc_36	Father	NA	Observation	stressors	Non_Negated
+doc_36	Grandfather	Paternal	Observation	nail disease	Non_Negated
+doc_37	Grandfather	Maternal	LivingStatus	0
+doc_37	Grandfather	Paternal	LivingStatus	0
+doc_37	Grandmother	Maternal	LivingStatus	0
+doc_37	Uncle	Maternal	Observation	asthma	Negated
+doc_37	Cousin	Maternal	Observation	hypothyroidism	Non_Negated
+doc_37	Cousin	Maternal	Observation	 schizophrenia	Non_Negated
+doc_37	Grandmother	Maternal	Observation	dwarfism	Non_Negated
+doc_37	Grandmother	Maternal	Observation	brain corbus	Non_Negated
+doc_37	Mother	NA	Observation	vulvar corbus	Non_Negated
+doc_37	Grandfather	Maternal	Observation	corbus	Non_Negated
+doc_37	Uncle	Paternal	Observation	acute chorea	Non_Negated
+doc_37	Uncle	Paternal	Observation	lung corbus	Non_Negated
+doc_37	Aunt	Maternal	Observation	enamel caries	Non_Negated
+doc_37	Aunt	Maternal	Observation	low platelets	Non_Negated
+doc_37	Aunt	Maternal	Observation	nickel eczema	Non_Negated
+doc_37	Grandfather	Paternal	Observation	desmoplastic	Non_Negated
+doc_37	Grandfather	Paternal	Observation	learning disabilities	Non_Negated
+doc_4	Daughter	NA	LivingStatus	4
+doc_4	Grandmother	Maternal	LivingStatus	0
+doc_4	Mother	NA	LivingStatus	0
+doc_4	Aunt	Paternal	LivingStatus	0
+doc_4	Grandmother	Paternal	LivingStatus	2
+doc_4	Son	NA	LivingStatus	4
+doc_4	Grandfather	Maternal	LivingStatus	0
+doc_4	Brother	NA	LivingStatus	4
+doc_4	Uncle	Paternal	LivingStatus	0
+doc_4	Aunt	Maternal	LivingStatus	0
+doc_4	Grandfather	Paternal	LivingStatus	2
+doc_4	Sister	NA	Observation	malaria	Non_Negated
+doc_4	Sister	NA	Observation	 a Rube	Non_Negated
+doc_4	Grandmother	Maternal	Observation	 a nevus ben	Non_Negated
+doc_4	Mother	NA	Observation	th thymus atro	Non_Negated
+doc_4	Aunt	Paternal	Observation	of aspirin ab	Non_Negated
+doc_4	Aunt	Paternal	Observation	ad leprosy neu	Non_Negated
+doc_4	Aunt	Paternal	Observation	of orbital va	Non_Negated
+doc_4	Grandmother	Paternal	Observation	of mental disorder caffe	Non_Negated
+doc_4	Grandfather	Maternal	Observation	er ma	Non_Negated
+doc_4	Grandfather	Maternal	Observation	or timolol alle	Non_Negated
+doc_4	Brother	NA	Observation	uvulitis	Non_Negated
+doc_4	Uncle	Paternal	Observation	of hypermne	Non_Negated
+doc_4	Aunt	Maternal	Observation	th skrjabinemo	Non_Negated
+doc_4	Aunt	Maternal	Observation	th anemia gene	Non_Negated
+doc_4	Aunt	Maternal	Observation	of noe	Negated
+doc_4	Father	NA	Observation	 a anal tum	Non_Negated
+doc_4	Grandfather	Paternal	Observation	of syndrome fr	Non_Negated
+doc_40	Daughter	NA	LivingStatus	4
+doc_40	Aunt	Paternal	LivingStatus	0
+doc_40	Grandmother	Paternal	LivingStatus	0
+doc_40	Grandfather	Maternal	LivingStatus	0
+doc_40	Brother	NA	LivingStatus	4
+doc_40	Uncle	Paternal	LivingStatus	0
+doc_40	Father	NA	LivingStatus	0
+doc_40	Grandfather	Paternal	LivingStatus	0
+doc_40	Sister	NA	Observation	yaba pox	Non_Negated
+doc_40	Sister	NA	Observation	angiolipomas	Non_Negated
+doc_40	Cousin	Maternal	Observation	xeroma	Negated
+doc_40	Aunt	Paternal	Observation	peritoneal cancer	Non_Negated
+doc_40	Grandmother	Paternal	Observation	acne comedonal	Non_Negated
+doc_40	Grandfather	Maternal	Observation	cholera	Non_Negated
+doc_40	Brother	NA	Observation	peanut allergies	Non_Negated
+doc_40	Uncle	Paternal	Observation	dextrocardia	Non_Negated
+doc_40	Uncle	Paternal	Observation	stressors	Non_Negated
+doc_40	Father	NA	Observation	cerebral palsy	Non_Negated
+doc_40	Father	NA	Observation	allergies	Non_Negated
+doc_40	Father	NA	Observation	cholera	Non_Negated
+doc_40	Grandfather	Paternal	Observation	mucous colon	Non_Negated
+doc_41	Aunt	Paternal	LivingStatus	0
+doc_41	Uncle	Paternal	LivingStatus	0
+doc_41	Cousin	Maternal	Observation	heart murmur	Non_Negated
+doc_41	Mother	NA	Observation	ulcer bladder	Non_Negated
+doc_41	Grandfather	Maternal	Observation	hypothyroidism	Non_Negated
+doc_41	Grandfather	Maternal	Observation	smoking	Non_Negated
+doc_41	Aunt	Paternal	Observation	alcohol use	Non_Negated
+doc_41	Aunt	Paternal	Observation	extramembranous glomerulopathy	Non_Negated
+doc_41	Father	NA	Observation	hypermnesia	Non_Negated
+doc_41	Father	NA	Observation	type 2 diabetes	Non_Negated
+doc_41	Uncle	Paternal	Observation	fainting	Non_Negated
+doc_42	Aunt	Paternal	LivingStatus	0
+doc_42	Grandfather	Paternal	LivingStatus	0
+doc_42	Sister	NA	LivingStatus	0
+doc_42	Aunt	Paternal	Observation	uterine cancer	Non_Negated
+doc_42	Father	NA	Observation	cancers	Non_Negated
+doc_42	Grandfather	Paternal	Observation	cancer	Non_Negated
+doc_42	Sister	NA	Observation	encephalitis periaxialis	Non_Negated
+doc_42	Sister	NA	Observation	seizures	Non_Negated
+doc_43	Cousin	Maternal	LivingStatus	0
+doc_43	Aunt	Paternal	LivingStatus	0
+doc_43	Grandfather	Paternal	LivingStatus	0
+doc_43	Grandmother	Paternal	LivingStatus	0
+doc_43	Child	NA	LivingStatus	4
+doc_43	Aunt	Paternal	Observation	corbus	Negated
+doc_43	Aunt	Paternal	Observation	planus lichen	Non_Negated
+doc_43	Father	NA	Observation	peribronchial pneumonia.	Non_Negated
+doc_43	Father	NA	Observation	factor S deficiency	Non_Negated
+doc_43	Cousin	Maternal	Observation	cancer	Non_Negated
+doc_43	Grandmother	Paternal	Observation	heart issues	Non_Negated
+doc_43	Mother	NA	Observation	cyesiophobia	Non_Negated
+doc_44	Daughter	NA	LivingStatus	4
+doc_44	Sister	NA	LivingStatus	4
+doc_44	Cousin	Maternal	LivingStatus	2
+doc_44	Grandmother	Maternal	LivingStatus	0
+doc_44	Grandfather	Paternal	LivingStatus	0
+doc_44	Mother	NA	LivingStatus	0
+doc_44	Grandmother	Paternal	LivingStatus	0
+doc_44	Son	NA	LivingStatus	4
+doc_44	Grandfather	Maternal	LivingStatus	0
+doc_44	Uncle	Paternal	LivingStatus	0
+doc_44	Aunt	Maternal	LivingStatus	2
+doc_44	Father	NA	LivingStatus	0
+doc_44	Aunt	Paternal	LivingStatus	0
+doc_44	Cousin	Maternal	Observation	cholera	Non_Negated
+doc_44	Cousin	Maternal	Observation	complications after childbirth	Non_Negated
+doc_44	Grandmother	Maternal	Observation	hypothyroidism	Non_Negated
+doc_44	Grandfather	Paternal	Observation	asthma	Non_Negated
+doc_44	Grandfather	Paternal	Observation	heart issues	Non_Negated
+doc_44	Mother	NA	Observation	acute disorder	Non_Negated
+doc_44	Mother	NA	Observation	low platelets	Non_Negated
+doc_44	Grandmother	Paternal	Observation	lameness	Non_Negated
+doc_44	Grandfather	Maternal	Observation	hypertension	Non_Negated
+doc_44	Uncle	Paternal	Observation	oligodendroglioma	Non_Negated
+doc_44	Uncle	Paternal	Observation	angelman syndrome	Non_Negated
+doc_44	Aunt	Maternal	Observation	pineoblastoma	Non_Negated
+doc_44	Father	NA	Observation	thalassemia	Non_Negated
+doc_44	Father	NA	Observation	smoker	Non_Negated
+doc_44	Aunt	Paternal	Observation	acute schizophrenic	Non_Negated
+doc_49	Brother	NA	LivingStatus	4
+doc_49	Son	NA	LivingStatus	4
+doc_49	Father	NA	LivingStatus	4
+doc_49	Sister	NA	LivingStatus	4
+doc_49	Mother	NA	LivingStatus	4
+doc_49	Sister	NA	Observation	miscarriage	Non_Negated
+doc_50	Grandfather	Maternal	LivingStatus	0
+doc_50	Cousin	Paternal	LivingStatus	0
+doc_50	Mother	NA	LivingStatus	0
+doc_50	Grandmother	Paternal	LivingStatus	0
+doc_50	Grandmother	Maternal	LivingStatus	0
+doc_50	Sibling	NA	Observation	apeded	Negated
+doc_50	Grandmother	Maternal	Observation	osselets	Non_Negated
+doc_50	Cousin	Paternal	Observation	heart attacks	Non_Negated
+doc_50	Mother	NA	Observation	comas hepatic	Non_Negated
+doc_50	Grandmother	Paternal	Observation	cancer	Non_Negated
+doc_50	Son	NA	Observation	wolman	Non_Negated
+doc_50	Son	NA	Observation	deficiency pyridoxamine	Non_Negated
+doc_50	Son	NA	Observation	cittotaeniosis	Non_Negated
+doc_50	Father	NA	Observation	umbilical cord anomaly	Non_Negated
+doc_50	Father	NA	Observation	hemochromatosis	Non_Negated
+doc_50	Father	NA	Observation	hyperthermia 	Non_Negated
+doc_50	Father	NA	Observation	pineal syndrome	Non_Negated
+doc_50	Father	NA	Observation	fungal infection	Non_Negated
+doc_52	Brother	NA	LivingStatus	4
+doc_52	Sister	NA	LivingStatus	4
+doc_52	Son	NA	LivingStatus	4
+doc_52	Father	NA	Observation	smoker	Non_Negated
+doc_52	Sister	NA	Observation	adrenal disorder	Non_Negated
+doc_52	Mother	NA	Observation	smoker	Non_Negated
+doc_52	Mother	NA	Observation	ovariocele	Non_Negated
+doc_53	Daughter	NA	LivingStatus	4
+doc_53	Son	NA	LivingStatus	4
+doc_53	Daughter	NA	Observation	domperidone allergy	Non_Negated
+doc_53	Daughter	NA	Observation	nutritional cirrhosis	Non_Negated
+doc_53	Daughter	NA	Observation	nervous diarrhea	Non_Negated
+doc_53	Daughter	NA	Observation	entropion	Non_Negated
+doc_53	Daughter	NA	Observation	coronary artery disease	Non_Negated
+doc_53	Daughter	NA	Observation	giant colon	Non_Negated
+doc_53	Daughter	NA	Observation	mentally-handicapped deaf	Non_Negated
+doc_53	Daughter	NA	Observation	biliary tumour	Non_Negated
+doc_53	Daughter	NA	Observation	hepatopulmonary syndromes	Non_Negated
+doc_53	Daughter	NA	Observation	emphysema	Non_Negated
+doc_53	Son	NA	Observation	myocardial damage	Non_Negated
+doc_54	Aunt	Maternal	LivingStatus	0
+doc_54	Daughter	NA	LivingStatus	2
+doc_54	Grandmother	Maternal	LivingStatus	0
+doc_54	Mother	NA	LivingStatus	4
+doc_54	Grandmother	Paternal	LivingStatus	0
+doc_54	Grandfather	Maternal	LivingStatus	0
+doc_54	Uncle	Maternal	LivingStatus	4
+doc_54	Cousin	NA	LivingStatus	0
+doc_54	Grandmother	Maternal	Observation	heart attack	Non_Negated
+doc_54	Grandmother	Maternal	Observation	congestive heart failure	Non_Negated
+doc_54	Grandmother	Maternal	Observation	acromioclavicular infection	Non_Negated
+doc_54	Mother	NA	Observation	pineal tumor	Negated
+doc_54	Grandmother	Paternal	Observation	albright disease	Non_Negated
+doc_54	Grandfather	Maternal	Observation	sternal neoplasm	Non_Negated
+doc_54	Grandfather	Maternal	Observation	skin cancer	Non_Negated
+doc_54	Brother	NA	Observation	oesophageal neoplasm metastatic	Non_Negated
+doc_54	Aunt	Maternal	Observation	cardiac problems infarction	Non_Negated
+doc_54	Aunt	Maternal	Observation	smoker	Negated
+doc_54	Aunt	Maternal	Observation	skin cancer	Non_Negated
+doc_54	Father	NA	Observation	uterus myoma	Non_Negated
+doc_54	Father	NA	Observation	psychosis manic	Non_Negated
+doc_54	Father	NA	Observation	fetish	Negated
+doc_54	Father	NA	Observation	emotional crisis	Non_Negated
+doc_54	Father	NA	Observation	fecalith appendix	Non_Negated
+doc_54	Cousin	NA	Observation	staccato speech	Non_Negated
+doc_56	Mother	NA	LivingStatus	0
+doc_56	Father	NA	LivingStatus	0
+doc_56	Child	NA	LivingStatus	4
+doc_56	Daughter	NA	Observation	lufts disease	Negated
+doc_56	Daughter	NA	Observation	chorea syndromes	Non_Negated
+doc_56	Sibling	NA	Observation	kidney problems	Non_Negated
+doc_56	Sister	NA	Observation	neoplasm of the urethra	Non_Negated
+doc_56	Sister	NA	Observation	grawitz tumor	Non_Negated
+doc_56	Sister	NA	Observation	porphyria acute	Non_Negated
+doc_56	Mother	NA	Observation	myriapodiasis	Negated
+doc_56	Mother	NA	Observation	edema cornea	Non_Negated
+doc_56	Mother	NA	Observation	depression	Non_Negated
+doc_56	Mother	NA	Observation	umbilical cord anomaly	Non_Negated
+doc_56	Mother	NA	Observation	hypertension	Non_Negated
+doc_56	Mother	NA	Observation	alzheimer disease	Non_Negated
+doc_56	Mother	NA	Observation	colon spasm	Non_Negated
+doc_56	Aunt	Paternal	Observation	uterine cancer	Non_Negated
+doc_56	Father	NA	Observation	colon cancer	Non_Negated
+doc_56	Father	NA	Observation	submucosal cleft palate	Non_Negated
+doc_56	Father	NA	Observation	dermal	Non_Negated
+doc_56	Father	NA	Observation	coma insulin	Non_Negated
+doc_57	Grandfather	Maternal	LivingStatus	0
+doc_57	Uncle	Maternal	LivingStatus	2
+doc_57	Grandfather	Maternal	Observation	low platelets	Non_Negated
+doc_57	Father	NA	Observation	groin melanoma	Non_Negated
+doc_57	Uncle	Maternal	Observation	groin melanoma	Non_Negated
+doc_57	Daughter	NA	Observation	clubfoot	Non_Negated
+doc_58	Brother	NA	LivingStatus	4
+doc_58	Uncle	Maternal	LivingStatus	0
+doc_58	Grandmother	Maternal	LivingStatus	2
+doc_58	Mother	NA	LivingStatus	0
+doc_58	Aunt	Maternal	Observation	ACI carrier	Non_Negated
+doc_58	Uncle	Maternal	Observation	acromioclavicular infection	Non_Negated
+doc_58	Grandmother	Maternal	Observation	carrier of acromioclavicular infection	Non_Negated
+doc_58	Grandmother	Maternal	Observation	carrier for acromioclavicular infection	Non_Negated
+doc_58	Mother	NA	Observation	acromioclavicular infection	Negated
+doc_59	Sister	NA	LivingStatus	4
+doc_59	Son	NA	LivingStatus	4
+doc_59	Mother	NA	LivingStatus	4
+doc_59	Cousin	Paternal	LivingStatus	4
+doc_59	Brother	NA	LivingStatus	4
+doc_59	Father	NA	LivingStatus	4
+doc_6	Daughter	NA	LivingStatus	4
+doc_6	Grandmother	Maternal	LivingStatus	0
+doc_6	Mother	NA	LivingStatus	4
+doc_6	Son	NA	LivingStatus	4
+doc_6	Brother	NA	LivingStatus	0
+doc_6	Grandfather	Paternal	LivingStatus	0
+doc_6	Cousin	NA	Observation	phorias 	Negated
+doc_6	Uncle	Maternal	Observation	pigbel	Negated
+doc_6	Uncle	Maternal	Observation	halzoun	Negated
+doc_6	Grandmother	Maternal	Observation	perthes	Non_Negated
+doc_6	Mother	NA	Observation	myocarditis	Non_Negated
+doc_6	Mother	NA	Observation	vitreous syneresis	Non_Negated
+doc_6	Grandmother	Paternal	Observation	muscle tissue neoplasms	Non_Negated
+doc_6	Grandfather	Paternal	Observation	deviation sex	Non_Negated
+doc_6	Grandfather	Paternal	Observation	skin disease	Non_Negated
+doc_6	Grandfather	Paternal	Observation	heller	Non_Negated
+doc_6	Brother	NA	Observation	legs ulcers	Non_Negated
+doc_6	Aunt	Paternal	Observation	bile nephrosis	Non_Negated
+doc_6	Aunt	Paternal	Observation	atrophic hair	Non_Negated
+doc_6	Aunt	Paternal	Observation	fryns syndrome	Non_Negated
+doc_6	Aunt	Maternal	Observation	salmonella pneumonia	Non_Negated
+doc_6	Aunt	Maternal	Observation	viral illness	Non_Negated
+doc_6	Aunt	Maternal	Observation	pigbel	Negated
+doc_6	Aunt	Maternal	Observation	gaze apraxia	Non_Negated
+doc_6	Aunt	Maternal	Observation	behcet arthritides	Non_Negated
+doc_6	Aunt	Maternal	Observation	halzoun	Negated
+doc_6	Father	NA	Observation	reflux duodenal	Negated
+doc_6	Father	NA	Observation	 corbus 	Negated
+doc_6	Uncle	Paternal	Observation	smoker	Non_Negated
+doc_6	Uncle	Paternal	Observation	tarsal coalition	Non_Negated
+doc_6	Uncle	Paternal	Observation	timber tongue	Non_Negated
+doc_6	Uncle	Paternal	Observation	carcinofibroma	Non_Negated
+doc_6	Uncle	Paternal	Observation	thinking reduced	Non_Negated
+doc_60	Aunt	Paternal	LivingStatus	4
+doc_60	Uncle	Paternal	LivingStatus	4
+doc_60	Grandmother	Paternal	Observation	brain cancer 	Non_Negated
+doc_62	Brother	NA	LivingStatus	4
+doc_62	Aunt	Maternal	LivingStatus	0
+doc_62	Sister	NA	LivingStatus	2
+doc_62	Aunt	Maternal	Observation	heart disease	Non_Negated
+doc_62	Father	NA	Observation	thyroid problems	Negated
+doc_62	Father	NA	Observation	asthmamalaria	Non_Negated
+doc_62	Father	NA	Observation	heart issues	Non_Negated
+doc_62	Father	NA	Observation	abscessdental	Non_Negated
+doc_62	Father	NA	Observation	dyslexia	Non_Negated
+doc_62	Father	NA	Observation	blood clots	Non_Negated
+doc_62	Father	NA	Observation	edema retina	Non_Negated
+doc_62	Father	NA	Observation	seizureabsence	Non_Negated
+doc_62	Father	NA	Observation	hyperlipidemia	Non_Negated
+doc_62	Sister	NA	Observation	alcoholism	Non_Negated
+doc_62	Mother	NA	Observation	heart disease	Non_Negated
+doc_66	Grandfather	Maternal	LivingStatus	0
+doc_66	Uncle	Maternal	LivingStatus	0
+doc_66	Daughter	NA	LivingStatus	4
+doc_66	Sister	NA	LivingStatus	4
+doc_66	Grandmother	Maternal	LivingStatus	0
+doc_66	Grandfather	Maternal	Observation	 alcohol us	Non_Negated
+doc_66	Uncle	Maternal	Observation	smoker	Non_Negated
+doc_66	Uncle	Maternal	Observation	hypermnesia	Non_Negated
+doc_66	Uncle	Maternal	Observation	heart disease	Non_Negated
+doc_66	Grandmother	Maternal	Observation	 low platelet	Non_Negated
+doc_66	Mother	NA	Observation	alzheimer disease	Non_Negated
+doc_66	Mother	NA	Observation	low platelets	Non_Negated
+doc_66	Mother	NA	Observation	multiple sclerosis	Non_Negated
+doc_67	Aunt	Maternal	LivingStatus	0
+doc_67	Daughter	NA	LivingStatus	4
+doc_67	Cousin	Maternal	LivingStatus	4
+doc_67	Sister	NA	LivingStatus	4
+doc_67	Grandmother	Maternal	LivingStatus	0
+doc_67	Mother	NA	LivingStatus	0
+doc_67	Cousin	Paternal	LivingStatus	4
+doc_67	Grandfather	Maternal	LivingStatus	0
+doc_67	Brother	NA	LivingStatus	0
+doc_67	Aunt	Paternal	LivingStatus	0
+doc_67	Uncle	Maternal	LivingStatus	4
+doc_67	Father	NA	LivingStatus	0
+doc_67	Uncle	Paternal	LivingStatus	0
+doc_67	Aunt	Maternal	Observation	cholera	Non_Negated
+doc_67	Mother	NA	Observation	asthma	Negated
+doc_67	Mother	NA	Observation	ischemia brain	Non_Negated
+doc_67	Grandfather	Maternal	Observation	cancer	Non_Negated
+doc_67	Brother	NA	Observation	hypothyroidism	Non_Negated
+doc_67	Aunt	Paternal	Observation	cardiac bypass surgery	Non_Negated
+doc_67	Uncle	Maternal	Observation	stroke	Non_Negated
+doc_67	Father	NA	Observation	schizophrenia	Non_Negated
+doc_67	Uncle	Paternal	Observation	pancreatic metastases	Non_Negated
+doc_7	Son	NA	LivingStatus	4
+doc_7	Aunt	Paternal	LivingStatus	0
+doc_7	Aunt	Maternal	LivingStatus	0
+doc_7	Daughter	NA	LivingStatus	4
+doc_7	Grandmother	Maternal	LivingStatus	0
+doc_7	Uncle	Maternal	Observation	 syndromes fraxe	Non_Negated
+doc_7	Grandmother	Maternal	Observation	sjogrens	Non_Negated
+doc_7	Mother	NA	Observation	indiana fever	Non_Negated
+doc_7	Mother	NA	Observation	otitis media acute seromucinous	Non_Negated
+doc_7	Mother	NA	Observation	pneumonitis toxoplasmal 	Non_Negated
+doc_7	Aunt	Paternal	Observation	mikulicz	Non_Negated
+doc_7	Aunt	Maternal	Observation	 hypomnesia	Non_Negated
+doc_7	Aunt	Maternal	Observation	pleura exudate	Non_Negated
+doc_7	Father	NA	Observation	sponge kidney medullary	Non_Negated
+doc_74	Mother	NA	LivingStatus	0
+doc_74	Mother	NA	Observation	blood pressure	Non_Negated
+doc_74	Daughter	NA	Observation	colonoscopy	Non_Negated
+doc_74	Child	NA	Observation	colonoscopy	Non_Negated
+doc_76	Uncle	Paternal	LivingStatus	0
+doc_76	Uncle	Maternal	LivingStatus	0
+doc_76	Aunt	Maternal	Observation	heart issues	Non_Negated
+doc_76	Grandmother	Maternal	Observation	pelvic cancer	Non_Negated
+doc_76	Mother	NA	Observation	heart issues	Non_Negated
+doc_76	Cousin	Paternal	Observation	pelvic cancer	Non_Negated
+doc_76	Uncle	Paternal	Observation	cancer of his leg 	Non_Negated
+doc_76	Uncle	Paternal	Observation	testicular cancer	Non_Negated
+doc_76	Uncle	Maternal	Observation	type 2 diabetes 	Non_Negated
+doc_76	Uncle	Maternal	Observation	cancer of the brain	Non_Negated
+doc_76	Aunt	Paternal	Observation	pelvic cancer	Non_Negated
+doc_79	Brother	NA	LivingStatus	4
+doc_79	Father	NA	LivingStatus	0
+doc_79	Daughter	NA	LivingStatus	4
+doc_79	Sister	NA	LivingStatus	4
+doc_79	Son	NA	LivingStatus	4
+doc_79	Father	NA	Observation	smoker	Non_Negated
+doc_79	Father	NA	Observation	diabetes mellitus	Non_Negated
+doc_79	Mother	NA	Observation	hemophilia	Non_Negated
+doc_80	Sibling	NA	LivingStatus	2
+doc_80	Cousin	NA	LivingStatus	2
+doc_80	Grandmother	Paternal	LivingStatus	2
+doc_80	Grandfather	Paternal	LivingStatus	2
+doc_80	Uncle	NA	Observation	depressed	Non_Negated
+doc_80	Father	NA	Observation	chronic pulmonary disease	Non_Negated
+doc_80	Grandfather	Paternal	Observation	smoker	Non_Negated
+doc_80	Grandfather	Paternal	Observation	depressed	Non_Negated
+doc_80	Grandmother	Paternal	Observation	smoker	Non_Negated
+doc_81	Cousin	NA	LivingStatus	2
+doc_81	Sister	NA	LivingStatus	2
+doc_81	Grandmother	Maternal	LivingStatus	2
+doc_81	Grandmother	NA	LivingStatus	0
+doc_81	Son	NA	LivingStatus	4
+doc_81	Mother	NA	LivingStatus	0
+doc_81	Grandfather	NA	LivingStatus	0
+doc_81	Grandfather	Maternal	LivingStatus	0
+doc_81	Uncle	Paternal	LivingStatus	0
+doc_81	Aunt	Maternal	LivingStatus	2
+doc_81	Father	NA	LivingStatus	0
+doc_81	Aunt	Paternal	LivingStatus	0
+doc_81	Cousin	NA	Observation	cholera 	Non_Negated
+doc_81	Grandmother	Maternal	Observation	hypothyroidism	Non_Negated
+doc_81	Grandmother	NA	Observation	seizures	Non_Negated
+doc_81	Mother	NA	Observation	hypothyroidism	Non_Negated
+doc_81	Mother	NA	Observation	peptic ulcers	Non_Negated
+doc_81	Grandfather	NA	Observation	hypertension	Non_Negated
+doc_81	Grandfather	NA	Observation	stroke	Non_Negated
+doc_81	Grandfather	Maternal	Observation	asthma heart	Non_Negated
+doc_81	Uncle	Paternal	Observation	alzheimer disease	Non_Negated
+doc_81	Uncle	Paternal	Observation	jamaican syndrome	Non_Negated
+doc_81	Aunt	Maternal	Observation	renal disease	Non_Negated
+doc_81	Father	NA	Observation	smoker	Non_Negated
+doc_81	Father	NA	Observation	skin cancer	Non_Negated
+doc_81	Aunt	Paternal	Observation	an accident	Non_Negated
+doc_81	Aunt	Paternal	Observation	shortness of breath	Non_Negated
+doc_85	Mother	NA	LivingStatus	0
+doc_85	Aunt	Maternal	LivingStatus	0
+doc_85	Grandmother	Maternal	LivingStatus	0
+doc_85	Mother	NA	Observation	cystitides	Non_Negated
+doc_85	Mother	NA	Observation	thyroid toxic	Non_Negated
+doc_85	Aunt	Maternal	Observation	dermanyssosis	Non_Negated
+doc_85	Aunt	Maternal	Observation	spinal tumor	Non_Negated
+doc_85	Grandmother	Maternal	Observation	heart disease	Non_Negated
+doc_86	Sister	NA	LivingStatus	2
+doc_86	Grandmother	Maternal	LivingStatus	0
+doc_86	Aunt	NA	LivingStatus	0
+doc_86	Brother	NA	LivingStatus	2
+doc_86	Aunt	Paternal	LivingStatus	0
+doc_86	Grandparent	NA	LivingStatus	0
+doc_86	Daughter	NA	Observation	dystocia	Non_Negated
+doc_86	Sister	NA	Observation	thyromegaly	Non_Negated
+doc_86	Sister	NA	Observation	stroke	Negated
+doc_86	Sister	NA	Observation	heart attack	Non_Negated
+doc_86	Grandmother	Maternal	Observation	heart disease	Non_Negated
+doc_86	Mother	NA	Observation	heart issues	Non_Negated
+doc_86	Mother	NA	Observation	medicatiions	Non_Negated
+doc_86	Uncle	NA	Observation	asthma	Negated
+doc_86	Brother	NA	Observation	cardiac bypass surgery	Non_Negated
+doc_86	Aunt	NA	Observation	dyslexia	Non_Negated
+doc_86	Aunt	NA	Observation	smoker	Non_Negated
+doc_86	Aunt	NA	Observation	GE reflux	Non_Negated
+doc_86	Aunt	NA	Observation	carcinoma bladder	Non_Negated
+doc_86	Uncle	Paternal	Observation	cancer	Negated
+doc_86	Father	NA	Observation	pelvic cancer	Non_Negated
+doc_9	Aunt	Maternal	LivingStatus	4
+doc_9	Daughter	NA	LivingStatus	2
+doc_9	Cousin	Maternal	LivingStatus	4
+doc_9	Grandmother	Maternal	LivingStatus	0
+doc_9	Cousin	Paternal	LivingStatus	4
+doc_9	Mother	NA	LivingStatus	2
+doc_9	Son	NA	LivingStatus	4
+doc_9	Grandfather	Paternal	LivingStatus	4
+doc_9	Brother	NA	LivingStatus	4
+doc_9	Uncle	Paternal	LivingStatus	0
+doc_9	Uncle	Maternal	LivingStatus	0
+doc_9	Father	NA	LivingStatus	4
+doc_9	Aunt	Paternal	LivingStatus	4
+doc_9	Grandfather	Maternal	Observation	infectionbitespider	Non_Negated
+doc_9	Grandfather	Maternal	Observation	fsc lymphoma	Non_Negated
+doc_9	Uncle	Paternal	Observation	histoplasma capsulatum infection	Non_Negated
+doc_9	Uncle	Paternal	Observation	retina disorder	Non_Negated
+doc_9	Uncle	Maternal	Observation	histoplasma capsulatum infection	Non_Negated
+doc_9	Grandmother	Paternal	Observation	wind sucking	Non_Negated
+doc_9	Grandmother	Paternal	Observation	nephrosis cholemic	Non_Negated
+doc_9	Grandmother	Paternal	Observation	hyoid myoclonus	Non_Negated
+doc_9	Grandmother	Maternal	Observation	cyclic schizophrenia	Non_Negated
+doc_9	Grandmother	Maternal	Observation	hallucinosis	Non_Negated
+doc_9	Grandmother	Maternal	Observation	high cholesterol	Non_Negated
+doc_9	Grandmother	Maternal	Observation	renal pelvis tumour	Non_Negated
+doc_92	Father	NA	LivingStatus	2
+doc_92	Sister	NA	LivingStatus	2
+doc_92	Mother	NA	LivingStatus	2
+doc_93	Mother	NA	LivingStatus	0
+doc_93	Aunt	Maternal	Observation	low platelets	Negated
+doc_93	Aunt	Maternal	Observation	low platelets	Non_Negated
+doc_93	Mother	NA	Observation	fall	Non_Negated
+doc_94	Aunt	NA	Observation	hypertension	Non_Negated
+doc_94	Grandfather	Paternal	Observation	hypertension	Non_Negated
+doc_94	Grandfather	Paternal	Observation	type 2 diabetes	Non_Negated
+doc_94	Grandmother	Paternal	Observation	heart issues	Non_Negated
+doc_95	Sister	NA	LivingStatus	4
+doc_95	Grandmother	Maternal	LivingStatus	0
+doc_95	Son	NA	LivingStatus	2
+doc_95	Grandfather	Maternal	LivingStatus	0
+doc_95	Brother	NA	LivingStatus	4
+doc_95	Father	NA	LivingStatus	0
+doc_95	Aunt	Maternal	Observation	cysticercosis	Non_Negated
+doc_95	Grandfather	Maternal	Observation	heart problems	Non_Negated
+doc_95	Grandmother	Maternal	Observation	heart disease	Non_Negated
+doc_95	Father	NA	Observation	cancers	Negated
+doc_95	Mother	NA	Observation	CCHF	Non_Negated
+doc_97	Cousin	Maternal	LivingStatus	2
+doc_97	Mother	NA	LivingStatus	4
+doc_97	Aunt	NA	LivingStatus	4
+doc_97	Cousin	Paternal	LivingStatus	4
+doc_97	Grandfather	Maternal	LivingStatus	4
+doc_97	Uncle	NA	LivingStatus	2
+doc_97	Uncle	Paternal	LivingStatus	4
+doc_97	Sibling	NA	Observation	ischemia	Non_Negated
+doc_97	Sibling	NA	Observation	splenic sequestration	Non_Negated
+doc_97	Sibling	NA	Observation	post traumatic eczema	Non_Negated
+doc_97	Mother	NA	Observation	thalassemia	Non_Negated
+doc_97	Mother	NA	Observation	severe nosebleed	Non_Negated
+doc_97	Uncle	NA	Observation	hypothyroidism	Non_Negated
+doc_97	Uncle	NA	Observation	stomach cancer	Non_Negated
+doc_97	Grandmother	Paternal	Observation	fainting	Non_Negated
+doc_97	Grandmother	Paternal	Observation	esophago pharyngeal diverticula	Non_Negated
+doc_97	Father	NA	Observation	larynx carcinoma	Non_Negated
+doc_97	Grandfather	Paternal	Observation	type 2 diabetes 	Non_Negated
