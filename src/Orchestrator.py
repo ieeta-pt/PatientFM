@@ -1,5 +1,5 @@
 class Orchestrator():
-	def processTask1(files, XMLAnnotations, dictionaries, show=False):
+	def processTask1(files, XMLAnnotations, dictionaries, method=None, show=False):
 		"""
 		Method to handle with task 1 .
 		:param files: dictionary containing the clinical reports (key: filename)
@@ -9,6 +9,10 @@ class Orchestrator():
 					  dictionary containing observations (key: filename, value: list))
 		"""
 		# to do
+		if method == "methodXXX":
+			return dict(), dict()
+		elif  method == "methodZZZ":
+			return dict(), dict()
 		return 	dict(), dict()
 
 	def processTask2(show=False):
