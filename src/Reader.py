@@ -16,6 +16,10 @@ class Reader(object):
 				filesContent[fileName] = fp.read()
 		return filesContent
 
+	def loadXMLAnnotations(self):
+		#to do
+		return None
+
 	def loadDictionary(self):
 		dictionary = set()
 		for file in self.vocFiles:

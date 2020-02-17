@@ -43,12 +43,13 @@ def main():
 	if args.first:
 		print("Execute the first subtask")
 		reader = Reader(dataSettings = settings)
-		fh, obs = Orchestrator.processTask1(files 		= reader.filesContent, 
-								    		dictionary  = reader.dictionary,
-								    		show 		= args.showprints)
+		fmDocs, obsDocs = Orchestrator.processTask1(files 			= reader.loadDataSet(),
+													XMLAnnotations 	= reader.loadXMLAnnotations(),
+													dictionaries	= reader.loadDictionary(),
+								    				show 			= args.showprints)
 		Writer.writeTask1(resultFile 	= settings["results"]["task1"], 
-					 	  fh 			= fh, 
-					 	  obs	 		= obs)
+					 	  fmDocs 		= fmDocs, 
+					 	  obsDocs	 	= obsDocs)
 
 	if args.second:
 		print("Execute the second subtask")
