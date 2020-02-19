@@ -44,47 +44,16 @@ class Reader(object):
 			fileName = file.split("/")[-1].split(".")[0]
 			xmlFilesContent[fileName] = {}
 			fileTree = ET.parse(file)
-			xmlFilesContent, shitcount = self.extractXMLEntity(fileTree, fileName, xmlFilesContent, dataset)
+			xmlFilesContent = self.extractXMLEntity(fileTree, fileName, xmlFilesContent, dataset[fileName])
 			xmlFilesContent = self.extractXMLRelation(fileTree, fileName, xmlFilesContent)
+			if fileName == "doc_14":
+				print(xmlFilesContent[fileName])
 		return xmlFilesContent
 
-	# def extractXMLEntity(self, fileElementTree, fileName, filesContent):
-	# 	"""
-	# 	Searches the ElementTree for annotations regarding Entities and updates the filesContent dict with extracted information
-	# 	returns filesContent
-	# 	"""
-	#
-	# 	for entity in fileElementTree.iter('entity'):
-	# 		id             = entity.find('id').text
-	# 		span           = entity.find('span').text
-	# 		annotationType = entity.find('type').text
-	# 		properties 	   = entity.find('properties')
-	#
-	# 		if annotationType == "Age":
-	# 			ageType = properties.find('AgeType').text
-	# 			filesContent[fileName].update({id: {'span': span, 'type': annotationType, "ageType": ageType}})
-	#
-	# 		elif annotationType == "FamilyMember":
-	# 			count 		   = properties.find('Count').text
-	# 			familyRelation = properties.find('Relation').text
-	# 			familySide     = properties.find('SideOfFamily').text
-	# 			filesContent[fileName].update({id: {'span': span, 'type': annotationType, "familyRelation": familyRelation, "count": count, "familySide": familySide}})
-	#
-	# 		elif annotationType == "Observation":
-	# 			negation  = properties.find('Negation').text
-	# 			certainty = properties.find('Certainty').text
-	# 			filesContent[fileName].update({id: {'span': span, 'type': annotationType, "negation": negation, "certainty": certainty}})
-	#
-	# 		elif annotationType == "LivingStatus":
-	# 			alive   = properties.find('Alive').text
-	# 			healthy = properties.find('Healthy').text
-	# 			filesContent[fileName].update({id: {'span': span, 'type': annotationType, "alive": alive, "healthy": healthy}})
-	# 	return filesContent
-
-	def extractXMLEntity(self, fileElementTree, fileName, xmlFilesContent, dataset):
+	def extractXMLEntity(self, fileElementTree, fileName, xmlFilesContent, txtFileRead):
 		"""
 		Searches the ElementTree for annotations regarding Entities and updates the filesContent dict with extracted information
-		returns xmlFilesContent
+		:return: xmlFilesContent
 		"""
 
 		for entity in fileElementTree.iter('entity'):
@@ -93,25 +62,28 @@ class Reader(object):
 			annotationType = entity.find('type').text
 			properties 	   = entity.find('properties')
 
+			numSpans, spanTuple = self.spanToTuple(span)
+
 			if annotationType == "Age":
 				ageType = properties.find('AgeType').text
-				xmlFilesContent[fileName].update({id: {'span': span, 'type': annotationType, "ageType": ageType}})
+				xmlFilesContent[fileName].update({id: {'spans': spanTuple, 'numSpans': numSpans, 'type': annotationType, "ageType": ageType}})
 
 			elif annotationType == "FamilyMember":
 				count 		   = properties.find('Count').text
 				familyRelation = properties.find('Relation').text
 				familySide     = properties.find('SideOfFamily').text
-				xmlFilesContent[fileName].update({id: {'span': span, 'type': annotationType, "familyRelation": familyRelation, "count": count, "familySide": familySide}})
+				xmlFilesContent[fileName].update({id: {'spans': spanTuple, 'numSpans': numSpans, 'type': annotationType, "familyRelation": familyRelation, "count": count, "familySide": familySide}})
 
 			elif annotationType == "Observation":
 				negation  = properties.find('Negation').text
 				certainty = properties.find('Certainty').text
-				xmlFilesContent[fileName].update({id: {'span': span, 'type': annotationType, "negation": negation, "certainty": certainty}})
+				mentions = self.fetchMentionFromSpan(spanTuple, txtFileRead)
+				xmlFilesContent[fileName].update({id: {'spans': spanTuple, 'numSpans': numSpans, 'type': annotationType, 'mentions': mentions, "negation": negation, "certainty": certainty}})
 
 			elif annotationType == "LivingStatus":
 				alive   = properties.find('Alive').text
 				healthy = properties.find('Healthy').text
-				xmlFilesContent[fileName].update({id: {'span': span, 'type': annotationType, "alive": alive, "healthy": healthy}})
+				xmlFilesContent[fileName].update({id: {'spans': spanTuple, 'numSpans': numSpans, 'type': annotationType, "alive": alive, "healthy": healthy}})
 		return xmlFilesContent
 
 	def extractXMLRelation(self, fileElementTree, fileName, xmlFilesContent):
@@ -128,6 +100,32 @@ class Reader(object):
 			sub_properties = [sub_property.text for sub_property in properties.findall('Properties')]
 			xmlFilesContent[fileName].update({id: {'type': annotationType, "familyMembers": familyMembers, "Properties": sub_properties}})
 		return xmlFilesContent
+
+	def spanToTuple(self, span):
+		"""
+		Converts a span in string format to a list with span tuples.
+		Addresses discontiguous spans (e.g. "128,132;145,150") by creating a tuple per sub-span
+
+		:param: span (in string)
+		:return: list of tuples with beginning and end of spans
+		"""
+		try:
+			spanBegin, spanEnd = span.split(',')
+		except ValueError:
+			numSpans = len(span.split(';'))
+			spans = [subSpan.split(',') for subSpan in span.split(';')]
+			spanTuple = [(int(spanBegin), int(spanEnd)) for spanBegin, spanEnd in spans]
+		else:
+			numSpans = 1
+			spanTuple = [(int(spanBegin), int(spanEnd))]
+		return numSpans, spanTuple
+
+	def fetchMentionFromSpan(self, spanTuple, txtFileRead):
+		observations = []
+		for span in spanTuple:
+			span_begin, span_end = span
+			observations.append(txtFileRead[span_begin:span_end])
+		return observations
 
 	def loadDictionary(self):
 		dictionary = set()
