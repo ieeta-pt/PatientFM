@@ -50,7 +50,7 @@ def main():
 		filesRead = reader.loadDataSet(cleaning=args.cleaning)
 		reader.loadXMLAnnotations(filesRead)
 		fmDocs, obsDocs = Orchestrator.processTask1(files 			= filesRead,
-													XMLAnnotations 	= reader.loadXMLAnnotations(),
+													XMLAnnotations 	= reader.loadXMLAnnotations(filesRead),
 													dictionaries	= reader.loadDictionary(),
 													method			= args.method,
 								    				show 			= args.showprints)
