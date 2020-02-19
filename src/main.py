@@ -48,6 +48,7 @@ def main():
 		print("Execute the first subtask")
 		reader = Reader(dataSettings = settings)
 		filesRead = reader.loadDataSet(cleaning=args.cleaning)
+		reader.loadXMLAnnotations(filesRead)
 		fmDocs, obsDocs = Orchestrator.processTask1(files 			= filesRead,
 													XMLAnnotations 	= reader.loadXMLAnnotations(),
 													dictionaries	= reader.loadDictionary(),
