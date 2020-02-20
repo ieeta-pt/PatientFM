@@ -5,6 +5,7 @@ import time
 from Reader import Reader
 from Writer import Writer
 from Orchestrator import Orchestrator
+from Preprocessing import nltkInitialize
 
 def help(show=False):
 	parser = argparse.ArgumentParser(description="")
@@ -46,9 +47,9 @@ def main():
 
 	if args.first:
 		print("Execute the first subtask")
+		nltkInitialize(settings["datasets"]["nltk_sources"])
 		reader = Reader(dataSettings = settings)
 		filesRead = reader.loadDataSet(cleaning=args.cleaning)
-		reader.loadXMLAnnotations(filesRead)
 		fmDocs, obsDocs = Orchestrator.processTask1(files 			= filesRead,
 													XMLAnnotations 	= reader.loadXMLAnnotations(filesRead),
 													dictionaries	= reader.loadDictionary(),
