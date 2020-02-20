@@ -1,3 +1,5 @@
+from Entity import createClasses
+
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, method=None, show=False):
 		"""
@@ -9,8 +11,13 @@ class Orchestrator():
 					  dictionary containing observations (key: filename, value: list))
 		"""
 		# to do
-		if method == "methodXXX":
+		if method == "silva":
+			classesDict = createClasses(files, XMLAnnotations)
+			# for fileName in files:
+			# 	print(fileName)
+			# 	print(classesDict[fileName])
 			return dict(), dict()
+
 		elif  method == "methodZZZ":
 			return dict(), dict()
 		return 	dict(), dict()

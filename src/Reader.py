@@ -4,6 +4,7 @@ import codecs
 
 import xml.etree.ElementTree as ET
 
+
 class Reader(object):
 	def __init__(self, dataSettings):
 		self.dataSetDir = dataSettings["datasets"]["files"]
@@ -38,6 +39,7 @@ class Reader(object):
 		returns: xmlFilesContent - Dict of dicts with base dict indexed by file name, "sub"dict indexed by id
 			eg. xmlFilesContent[fileName] = {id: {'span': span, 'type': annotationType, "familyRelation": familyRelation, "count": count, "familySide": familySide}})
 		"""
+
 		xmlFilesContent = {}
 		allFiles = glob.glob('{}*.{}'.format(self.dataSetDir, "xml"))
 		for file in allFiles:
@@ -46,8 +48,6 @@ class Reader(object):
 			fileTree = ET.parse(file)
 			xmlFilesContent = self.extractXMLEntity(fileTree, fileName, xmlFilesContent, dataset[fileName])
 			xmlFilesContent = self.extractXMLRelation(fileTree, fileName, xmlFilesContent)
-			if fileName == "doc_14":
-				print(xmlFilesContent[fileName])
 		return xmlFilesContent
 
 	def extractXMLEntity(self, fileElementTree, fileName, xmlFilesContent, txtFileRead):
@@ -55,7 +55,6 @@ class Reader(object):
 		Searches the ElementTree for annotations regarding Entities and updates the filesContent dict with extracted information
 		:return: xmlFilesContent
 		"""
-
 		for entity in fileElementTree.iter('entity'):
 			id             = entity.find('id').text
 			span           = entity.find('span').text
@@ -89,7 +88,7 @@ class Reader(object):
 	def extractXMLRelation(self, fileElementTree, fileName, xmlFilesContent):
 		"""
 		Searches the ElementTree for annotations regarding Relations and updates the filesContent dict with extracted information
-		returns xmlFilesContent
+		:return: xmlFilesContent
 		"""
 
 		for relation in fileElementTree.iter('relation'):
@@ -141,3 +140,4 @@ class Reader(object):
 							#	diseases += word + " "
 						dictionary.add(diseases.strip())
 		return dictionary
+
