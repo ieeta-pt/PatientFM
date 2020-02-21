@@ -19,7 +19,7 @@ class Orchestrator():
 			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
 
 			from embeddings.Pipeline import runPipeline
-			runPipeline(dataSettings)
+			runEmbeddingCreationPipeline(dataSettings)
 
 			return dict(), dict()
 
