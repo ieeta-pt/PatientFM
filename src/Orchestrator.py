@@ -1,4 +1,5 @@
 from Preprocessing import nltkInitialize
+from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import createDefaultClasses, setObservationClasses, setFamilyMemberClasses
 
 class Orchestrator():
@@ -18,8 +19,7 @@ class Orchestrator():
 			# classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
 			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
 
-			from embeddings.Pipeline import runPipeline
-			runPipeline(dataSettings)
+			runEmbeddingCreationPipeline(dataSettings)
 
 			return dict(), dict()
 

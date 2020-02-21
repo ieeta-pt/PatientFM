@@ -9,13 +9,12 @@ from Preprocessing import nltkSentenceSplit, nltkTokenize
 
 
 
-def runPipeline(settings):
+def runEmbeddingCreationPipeline(settings):
 
     createVocabulary(settings)
-    # createEmbeddingModels(settings)
+    createEmbeddingModels(settings)
     for corpus in ("train", "test"):
         createEmbeddingsPickle(settings, corpus)
-
 
 
 def createVocabulary(settings):
@@ -34,6 +33,7 @@ def createVocabulary(settings):
 def createEmbeddingModels(settings):
     # Create smaller biowordvec embedding models
     if not (os.path.exists(settings["embeddings"]["biowordvec_original"]) or os.path.exists(settings["embeddings"]["biowordvec_normalized"])):
+        print("just testing")
         createFasttextModel(settings["embeddings"]["vocabulary_path"], settings["embeddings"]["wordvec_path"],
                             settings["embeddings"]["biowordvec_original"], settings["embeddings"]["biowordvec_normalized"])
 
@@ -42,8 +42,8 @@ def createEmbeddingsPickle(settings, corpus):
     if corpus == "train": picklePath = settings["embeddings"]["train_embeddings_pickle"]
     elif corpus == "test": picklePath = settings["embeddings"]["test_embeddings_pickle"]
 
+    tokenizedSentenceList = list()
     if not os.path.exists(picklePath):
-        tokenizedSentenceList = list()
         reader = Reader(dataSettings=settings, corpus=corpus)
         filesRead = reader.loadDataSet()
         for fileName in filesRead:
@@ -52,11 +52,12 @@ def createEmbeddingsPickle(settings, corpus):
                 sentence = nltkTokenize(sentence)
                 tokenizedSentenceList.extend([sentence])
 
+        print(tokenizedSentenceList[1])
+
+
         embeddings = Embeddings(settings["embeddings"]["biowordvec_original"], settings["embeddings"]["biowordvec_normalized"],
-                                settings["embeddings"]["wordvec_size"])
-        embeddingsVec = Embeddings.wordvec_concat(tokenizedSentenceList)
+                                int(settings["embeddings"]["wordvec_size"]))
+        embeddingsVec = embeddings.wordvec_concat(tokenizedSentenceList)
         writeEmbeddingsPickle(embeddingsVec, picklePath)
         print("Created pickle file {}".format(picklePath))
-
-
 
