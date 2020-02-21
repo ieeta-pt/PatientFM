@@ -1,7 +1,8 @@
+from Preprocessing import nltkInitialize
 from Entity import createDefaultClasses, setObservationClasses, setFamilyMemberClasses
 
 class Orchestrator():
-	def processTask1(files, XMLAnnotations, dictionaries, method=None, show=False):
+	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
 		"""
 		Method to handle with task 1 .
 		:param files: dictionary containing the clinical reports (key: filename)
@@ -12,12 +13,14 @@ class Orchestrator():
 		"""
 		# to do
 		if method == "silva":
-			classesDict = createDefaultClasses(files)
-			classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
-			classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
-			# for fileName in files:
-			# 	print(fileName)
-			# 	print(classesDict[fileName])
+			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
+			# classesDict = createDefaultClasses(files)
+			# classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
+			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
+
+			from embeddings.Pipeline import runPipeline
+			runPipeline(dataSettings)
+
 			return dict(), dict()
 
 		elif  method == "methodZZZ":

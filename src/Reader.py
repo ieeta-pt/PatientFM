@@ -6,8 +6,9 @@ import xml.etree.ElementTree as ET
 
 
 class Reader(object):
-	def __init__(self, dataSettings):
-		self.dataSetDir = dataSettings["datasets"]["files"]
+	def __init__(self, dataSettings, corpus):
+		if corpus == "train": self.dataSetDir = dataSettings["datasets"]["train_files"]
+		elif corpus == "test": self.dataSetDir = dataSettings["datasets"]["test_files"]
 		self.vocFiles = dataSettings["vocabulary"]
 
 	def loadDataSet(self, cleaning=False):
