@@ -52,15 +52,9 @@ def createEmbeddingsPickle(settings, corpus):
                 sentence = nltkTokenize(sentence)
                 tokenizedSentenceList.extend([sentence])
 
-        print(tokenizedSentenceList[1])
-
-
         embeddings = Embeddings(settings["embeddings"]["biowordvec_original"], settings["embeddings"]["biowordvec_normalized"],
-<<<<<<< HEAD
                                 int(settings["embeddings"]["wordvec_size"]))
-=======
-                                settings["embeddings"]["wordvec_size"])
->>>>>>> 492484fe9e28c6e2a841296f2b5af8765095fe80
+
         embeddingsVec = embeddings.wordvec_concat(tokenizedSentenceList)
         writeEmbeddingsPickle(embeddingsVec, picklePath)
         print("Created pickle file {}".format(picklePath))

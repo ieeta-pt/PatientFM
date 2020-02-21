@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.idea/
+dataset/Test/test_embeddings.pickle
+dataset/Train/train_embeddings.pickle
+
 # C extensions
 *.so
 
@@ -127,5 +131,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-.idea/
