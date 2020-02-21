@@ -1,4 +1,4 @@
-from Entity import createClasses
+from Entity import createDefaultClasses, setObservationClasses, setFamilyMemberClasses
 
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, method=None, show=False):
@@ -12,7 +12,9 @@ class Orchestrator():
 		"""
 		# to do
 		if method == "silva":
-			classesDict = createClasses(files, XMLAnnotations)
+			classesDict = createDefaultClasses(files)
+			classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
+			classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
 			# for fileName in files:
 			# 	print(fileName)
 			# 	print(classesDict[fileName])
