@@ -36,8 +36,7 @@ def createFasttextModel(vocabularyFilePath, biowordvecPath, biowordvecVocabOrigP
     t0 = time()
     model = FastText.load_fasttext_format(fpath)
     t1 = time()
-
-    print(t1 - t0)
+    print(' ({} seconds)'.format(t1 - t0))
 
     # Vocabulary.
     vocab = model.wv.vocab
