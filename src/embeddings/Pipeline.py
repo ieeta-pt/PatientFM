@@ -9,7 +9,7 @@ from Preprocessing import nltkSentenceSplit, nltkTokenize
 
 
 
-def runPipeline(settings):
+def runEmbeddingCreationPipeline(settings):
 
     createVocabulary(settings)
     # createEmbeddingModels(settings)
@@ -54,7 +54,7 @@ def createEmbeddingsPickle(settings, corpus):
 
         embeddings = Embeddings(settings["embeddings"]["biowordvec_original"], settings["embeddings"]["biowordvec_normalized"],
                                 settings["embeddings"]["wordvec_size"])
-        embeddingsVec = Embeddings.wordvec_concat(tokenizedSentenceList)
+        embeddingsVec = embeddings.wordvec_concat(tokenizedSentenceList)
         writeEmbeddingsPickle(embeddingsVec, picklePath)
         print("Created pickle file {}".format(picklePath))
 
