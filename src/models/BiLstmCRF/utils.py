@@ -4,7 +4,7 @@ import numpy as np
 from torch import nn
 
 
-def class_list_to_tensor(sentence_classes):
+def classListToTensor(sentence_classes):
     tensor = torch.zeros((1, len(sentence_classes)), dtype=torch.long)
     for idx, label in enumerate(sentence_classes):
         tensor[0, idx] = label
@@ -33,7 +33,7 @@ def update_progress(progress):
     print(text)
 
 
-r""" This method is heavily crippled, it does not ensure that the whole dataset is used, it just uses random numbers the whole time, wtf?!?! """
+r""" This method does not ensure that the whole dataset is used, it just uses random numbers the whole time to sample """
 def generate_batch(tokenized_sentences, sentences_embeddings, embedding_dimension, classes, batch_size, device):
 
     batch_idx = np.random.randint(low=0,high=len(tokenized_sentences), size=batch_size).tolist()

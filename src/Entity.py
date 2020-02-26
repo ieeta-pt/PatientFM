@@ -29,6 +29,18 @@ def createDefaultClasses(datasetTXT):
             classesDict[fileName].append([int(0) for _ in sentence])
     return classesDict
 
+def createTrueClasses(datasetTXT, XMLAnnotations):
+    """
+    Creates default classes and populates them with the golden standard from the annotations (Observations and FamilyMember annotations only)
+    :param datasetTXT:
+    :param XMLAnnotations:
+    :return: classesDict
+    """
+    classesDict = createDefaultClasses(datasetTXT)
+    classesDict = setObservationClasses(classesDict, datasetTXT, XMLAnnotations)
+    classesDict = setFamilyMemberClasses(classesDict, datasetTXT, XMLAnnotations)
+    return classesDict
+
 def setObservationClasses(classesDict, datasetTXT, datasetXML):
     """
     This method updates default classes with the classes for Observation entities

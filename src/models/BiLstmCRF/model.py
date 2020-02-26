@@ -5,7 +5,7 @@ import numpy as np
 from torch import nn
 from sklearn import metrics
 
-from models.BiLstmCRF.utils import generate_batch, class_list_to_tensor, update_progress, value_to_key
+from models.BiLstmCRF.utils import generate_batch, classListToTensor, update_progress, value_to_key
 from models.BiLstmCRF.decoder import Decoder
 from models.BiLstmCRF.encoder import BiLSTMEncoder
 
@@ -230,62 +230,76 @@ class Model:
         return loss.item()
 
 
-    #
-    #
-    #
-    #
-    #
-    # def get_entity_type_count(self, test_labels, single_labels, begin_labels):
-    #     entity_dict = {}
-    #     r""" This process works by trimming the (B/I/E/S)- part from the label string,
-    #     leaving the label with the entity type """
-    #     for label_idx in range(len(test_labels)):
-    #         label = value_to_key(test_labels[label_idx], self.entity_classes)
-    #         if label in single_labels:
-    #             entity_type = label[2:]
-    #             entity_dict[(label_idx, label_idx)] = entity_type
-    #         if label in begin_labels:
-    #             entity_type = label[2:]
-    #             next_label_idx = label_idx + 1
-    #             next_label = value_to_key(test_labels[next_label_idx], self.entity_classes)
-    #             while next_label != 'E-' + entity_type:
-    #                 next_label_idx += 1
-    #                 next_label = value_to_key(test_labels[next_label_idx], self.entity_classes)
-    #             entity_dict[(label_idx, next_label_idx)] = entity_type
-    #
-    #     entity_type_count = {'Problem': 0, 'Test': 0, 'Treatment': 0}
-    #     for key, entity_type in entity_dict.items():
-    #         entity_type_count[entity_type] += 1
-    #
-    #     return entity_dict, entity_type_count
-    #
-    #
-    # def evaluate_test(self, test_label_pred, test_label_true):
-    #     labels = [value for key, value in self.entity_classes.items()]# if key != "O"]
-    #     print(metrics.classification_report(test_label_true, test_label_pred, labels=labels))
-    #
-    #     begin_labels = ['B-Problem', 'B-Test', 'B-Treatment']
-    #     single_labels = ['S-Problem', 'S-Test', 'S-Treatment']
-    #
-    #     true_entity, true_entity_type_count = self.get_entity_type_count(test_label_true, single_labels, begin_labels)
-    #     pred_entity, pred_entity_type_count = self.get_entity_type_count(test_label_pred, single_labels, begin_labels)
-    #
-    #     exact_hits = {'Problem': 0, 'Test': 0, 'Treatment': 0}
-    #     for key, entity_type in true_entity.items():
-    #         if key in pred_entity.keys() and pred_entity[key] == entity_type:
-    #             exact_hits[entity_type] += 1
-    #
-    #     entity_types = ['Problem', 'Test', 'Treatment']
-    #     recall = [exact_hits[entity_type] / true_entity_type_count[entity_type] for entity_type in entity_types]
-    #     precision = [exact_hits[entity_type] / pred_entity_type_count[entity_type] for entity_type in entity_types]
-    #     fp = np.mean([(2 * precision[i] * recall[i]) / (precision[i] + recall[i]) for i in range(len(entity_types))])
-    #     print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
-    #
-    #
-    # def write_model_files(self, test_label_pred, test_label_true, seed):
-    #     timepoint = time.strftime("%Y%m%d_%H%M")
-    #     path = 'results/'
-    #     filename = 'I2B2_BioWordVec_' + timepoint + '-' + str(seed)
-    #     pickle.dump([test_label_pred, test_label_true], open(path + "results-" + filename + '.pickle', 'wb'))
-    #     torch.save(self.encoder, path + 'model_encoder-'+filename)
-    #     torch.save(self.decoder, path + 'model_decoder-'+filename)
+    def get_entity_type_count(self, testLabels):
+        r""" This process works by trimming the first part of the label string (B-/I-/P-/M-/NA-),
+        resulting in the label with the entity type
+        POSITIVE_CLASSES: B-Observation, I-Observation, P-FamilyMember, M-FamilyMember, NA-FamilyMember"""
+
+        entityDict = {}
+        for labelIdx, testLabel in enumerate(testLabels):
+            label = value_to_key(testLabel, self.entity_classes)
+            labelPrefix = label[:2]
+            if labelPrefix in ("P-", "M-", "NA"):
+                entityType = "FamilyMember"
+                entityDict[(labelIdx, labelIdx)] = entityType
+            elif labelPrefix == "B-":
+                entityType = "Observation"
+                nextLabelIdx = labelIdx + 1
+                nextLabel = value_to_key(testLabels[nextLabelIdx], self.entity_classes)
+                if nextLabel != "I-Observation":
+                    entityDict[(labelIdx, labelIdx)] = entityType
+                elif nextLabel == "I-Observation":
+                    while nextLabel == "I-Observation":
+                        nextLabelIdx += 1
+                        if nextLabelIdx <= (len(testLabels)-1):
+                            nextLabel = value_to_key(testLabels[nextLabelIdx], self.entity_classes)
+                        else:
+                            nextLabel = "EndSentence"
+                    entityDict[(labelIdx, nextLabelIdx-1)] = entityType
+
+        entityTypeCount = {'Observation': 0, 'FamilyMember': 0}
+        for _, entityType in entityDict.items():
+            entityTypeCount[entityType] += 1
+
+        return entityDict, entityTypeCount
+
+
+    def evaluate_test(self, testLabelPred, testLabelTrue):
+        labels = [value for key, value in self.entity_classes.items()]# if key != "O"] # NO MODELO ORIGINAL USAVAM COM ESTA CONDIÇÃO, SEM A CLASSE 0
+        print(metrics.classification_report(testLabelTrue, testLabelPred, labels=labels))
+
+        trueEntity, trueEntityTypeCount = self.get_entity_type_count(testLabelTrue)
+        predEntity, predEntityTypeCount = self.get_entity_type_count(testLabelPred)
+
+        exactHits = {'Observation': 0, 'FamilyMember': 0}
+        for key, entity_type in trueEntity.items():
+            if key in predEntity.keys() and predEntity[key] == entity_type:
+                exactHits[entity_type] += 1
+
+        entityTypes = ['Observation', 'FamilyMember']
+        recall = [exactHits[entityType] / trueEntityTypeCount[entityType] for entityType in entityTypes]
+        precision = [exactHits[entityType] / predEntityTypeCount[entityType] for entityType in entityTypes]
+        fp = np.mean([(2 * precision[i] * recall[i]) / (precision[i] + recall[i]) for i in range(len(entityTypes))])
+        print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
+
+
+    def write_model_files(self, test_label_pred, test_label_true, seed):
+        timepoint = time.strftime("%Y%m%d_%H%M")
+        path = '../results/models/BiLstmCRF/'
+        filename = 'N2C2_BioWordVec_' + timepoint + '-' + str(seed)
+        pickle.dump([test_label_pred, test_label_true], open(path + "results-" + filename + '.pickle', 'wb'))
+        torch.save(self.encoder, path + 'model_encoder-'+filename)
+        torch.save(self.decoder, path + 'model_decoder-'+filename)
+
+def loadModelConfigs(settings):
+    class Args:
+        pass
+    configs = Args()
+    configs.epochs = int(settings["DLmodelparams"]["epochs"])
+    configs.iterations_per_epoch = int(settings["DLmodelparams"]["iterationsperepoch"])
+    configs.hidden_size = int(settings["DLmodelparams"]["hiddensize"])
+    configs.batch_size = int(settings["DLmodelparams"]["batchsize"])
+    configs.num_layers = int(settings["DLmodelparams"]["numlayers"])
+    configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
+    configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
+    return configs
