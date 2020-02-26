@@ -1,6 +1,6 @@
 from Preprocessing import nltkInitialize
-from embeddings.Pipeline import runEmbeddingCreationPipeline
-from Entity import createDefaultClasses, setObservationClasses, setFamilyMemberClasses
+from embeddings.Pipeline import runEmbeddingCreationPipeline, runModelDevelopment, runModelBothCorpus
+from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
 
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
@@ -18,8 +18,11 @@ class Orchestrator():
 			# classesDict = createDefaultClasses(files)
 			# classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
 			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
+			classesDict = createTrueClasses(files, XMLAnnotations)
 
 			runEmbeddingCreationPipeline(dataSettings)
+			# runModel(dataSettings)
+			runModelDevelopment(dataSettings, files, XMLAnnotations)
 
 			return dict(), dict()
 
