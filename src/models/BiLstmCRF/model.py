@@ -149,7 +149,7 @@ class Model:
         self.decoder = self.decoder.eval()
 
 
-    def test(self, test_tokenized_sentences, test_sentences_embeddings, test_labels):
+    def test(self, test_tokenized_sentences, test_sentences_embeddings, test_labels, verbose=False):
         test_label_true = []
         test_label_pred = []
 
@@ -174,9 +174,10 @@ class Model:
             test_label_pred.extend(crf_out[0])
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
-            if (sentence_idx + 1) % 100 == 0:
+            if ((sentence_idx + 1) % 100 == 0) and verbose:
                 update_progress(sentence_idx / len(test_tokenized_sentences))
-        update_progress(1)
+        if verbose:
+            update_progress(1)
 
         return test_label_pred, test_label_true
 
@@ -283,6 +284,8 @@ class Model:
         print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
 
 
+
+
     def write_model_files(self, test_label_pred, test_label_true, seed):
         timepoint = time.strftime("%Y%m%d_%H%M")
         path = '../results/models/BiLstmCRF/'
@@ -291,15 +294,3 @@ class Model:
         torch.save(self.encoder, path + 'model_encoder-'+filename)
         torch.save(self.decoder, path + 'model_decoder-'+filename)
 
-def loadModelConfigs(settings):
-    class Args:
-        pass
-    configs = Args()
-    configs.epochs = int(settings["DLmodelparams"]["epochs"])
-    configs.iterations_per_epoch = int(settings["DLmodelparams"]["iterationsperepoch"])
-    configs.hidden_size = int(settings["DLmodelparams"]["hiddensize"])
-    configs.batch_size = int(settings["DLmodelparams"]["batchsize"])
-    configs.num_layers = int(settings["DLmodelparams"]["numlayers"])
-    configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
-    configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
-    return configs

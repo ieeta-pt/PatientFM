@@ -10,8 +10,8 @@ from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
 from Preprocessing import nltkSentenceSplit, nltkTokenize
 from embeddings.Embeddings import Embeddings, writeEmbeddingsPickle, readEmbeddingsPickle
 from embeddings.Vocabulary import createVocabularyFile, createFasttextModel
-from models.BiLstmCRF.utils import classListToTensor
-from models.BiLstmCRF.model import Model, loadModelConfigs
+from models.BiLstmCRF.utils import classListToTensor, loadModelConfigs, task1PredictionToOutput
+from models.BiLstmCRF.model import Model
 
 
 def runEmbeddingCreationPipeline(settings):
@@ -111,7 +111,6 @@ def runModelBothCorpus(settings):
     max_length = 100
     print("Loaded data successfully.\n")
 
-
     modelConfigs = loadModelConfigs(settings)
 
     DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
@@ -124,6 +123,49 @@ def runModelBothCorpus(settings):
     DL_model.evaluate_test(testLabelPred, testLabelTrue)
     print("Writing model files to disk.\n")
     DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
+
+def runModel(settings):
+
+    seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
+    random_seed = seed[9]
+    random.seed(random_seed)
+    np.random.seed(random_seed)
+    torch.manual_seed(random_seed)
+
+    torch.cuda.is_available()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('Using device:', device)
+    if device.type == 'cuda':
+        print(torch.cuda.get_device_name(0))
+        print('Memory Usage:')
+        print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
+        print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
+
+    reader = Reader(dataSettings=settings, corpus="train")
+    filesRead = reader.loadDataSet()
+    XMLannotations = reader.loadXMLAnnotations(filesRead)
+    trainTokenizedSentences = getSentenceList(filesRead, tokenized=True)
+    trainEmbeddings = readEmbeddingsPickle(settings["embeddings"]["train_embeddings_pickle"])
+    trainClassesDict = createTrueClasses(filesRead, XMLannotations)
+    trainClasses = classDictToList(trainClassesDict)
+    trainClasses = [classListToTensor(sentenceClasses) for sentenceClasses in trainClasses]
+
+    # 100 is the default size used in embedding creation
+    max_length = 100
+    print("Loaded data successfully.\n")
+
+    modelConfigs = loadModelConfigs(settings)
+    DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
+    print("Model created. Starting training.\n")
+    DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
+    # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
+
+    print("Starting the testing phase.\n")
+    reader = Reader(dataSettings=settings, corpus="test")
+    filesRead = reader.loadDataSet()
+
+    predFamilyMemberDict, predObservationDict = evaluateModelInTest(settings, DL_model, filesRead)
+    return predFamilyMemberDict, predObservationDict
 
 
 def createVocabulary(settings):
@@ -181,4 +223,33 @@ def createEmbeddingsPickle(settings, corpus):
         embeddingsVec = embeddings.wordvec_concat(tokenizedSentenceList)
         writeEmbeddingsPickle(embeddingsVec, picklePath)
         print("Created pickle file {}".format(picklePath))
+
+
+def evaluateModelInTest(settings, DLmodel, filesRead):
+    testClassesDict = createDefaultClasses(filesRead)
+    testEmbeddings = readEmbeddingsPickle(settings["embeddings"]["test_embeddings_pickle"])
+    sentencePos = 0
+    predFamilyMemberDict = {}
+    predObservationDict = {}
+    for fileName in filesRead:
+        testDocTokenizedSentences = list()
+        sentences = nltkSentenceSplit(filesRead[fileName], verbose=False)
+        docSize = len(sentences)
+        testDocTokenizedSentences.extend(nltkTokenize(sentence) for sentence in sentences)
+        testDocClasses = list()
+        testDocClasses.extend(sentenceClasses for sentenceClasses in testClassesDict[fileName])
+        testDocClasses = [classListToTensor(sentenceClasses) for sentenceClasses in testDocClasses]
+        testDocEmbeddings = testEmbeddings[sentencePos:sentencePos+docSize]
+        sentencePos += docSize
+
+        testModelPred, _ = DLmodel.test(testDocTokenizedSentences, testDocEmbeddings, testDocClasses)
+        singleTokenizedDocument = [token for sentence in testDocTokenizedSentences for token in sentence]
+        # print(testModelPred)
+        # print(singleTokenizedDocument)
+
+        familyMemberList, observationsList = task1PredictionToOutput(testModelPred, singleTokenizedDocument)
+        if familyMemberList: predFamilyMemberDict[fileName] = familyMemberList
+        if observationsList: predObservationDict[fileName] = observationsList
+    return predFamilyMemberDict, predObservationDict
+
 

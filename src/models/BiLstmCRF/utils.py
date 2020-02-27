@@ -65,3 +65,48 @@ def generate_batch(tokenized_sentences, sentences_embeddings, embedding_dimensio
     packed_input = nn.utils.rnn.pack_padded_sequence(sentences_tensor, sorted_len_units, batch_first=True)
 
     return sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask
+
+def loadModelConfigs(settings):
+    class Args:
+        pass
+    configs = Args()
+    configs.epochs = int(settings["DLmodelparams"]["epochs"])
+    configs.iterations_per_epoch = int(settings["DLmodelparams"]["iterationsperepoch"])
+    configs.hidden_size = int(settings["DLmodelparams"]["hiddensize"])
+    configs.batch_size = int(settings["DLmodelparams"]["batchsize"])
+    configs.num_layers = int(settings["DLmodelparams"]["numlayers"])
+    configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
+    configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
+    return configs
+
+def task1PredictionToOutput(modelPrediction, singleTokenizedDocument):
+    observationsList = list()
+    familyMemberList = list()
+    observation = ""
+    for idx, prediction in enumerate(modelPrediction):
+        if prediction != 0:
+            if prediction == 1:
+                observation = singleTokenizedDocument[idx]
+            elif prediction == 2:
+                observation = observation + " " + singleTokenizedDocument[idx]
+                if idx < len(modelPrediction):
+                    if modelPrediction[idx + 1] != 2:
+                        observationsList.append(observation)
+            elif prediction in (3, 4, 5):
+                # Trim plurals
+                if singleTokenizedDocument[idx][-1] == "s":
+                    familyMember = singleTokenizedDocument[idx][:-1].capitalize()
+                else:
+                    familyMember = singleTokenizedDocument[idx].capitalize()
+                if prediction == 3:
+                    familyMemberList.append(tuple((familyMember, "Paternal")))
+                elif prediction == 4:
+                    familyMemberList.append(tuple((familyMember, "Maternal")))
+                elif prediction == 5:
+                    familyMemberList.append(tuple((familyMember, "NA")))
+    # Set is used to remove duplicate entries
+    familyMemberList = list(set(familyMemberList))
+    observationsList = list(set(observationsList))
+    return familyMemberList, observationsList
+
+
