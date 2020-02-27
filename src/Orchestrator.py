@@ -1,5 +1,5 @@
 from Preprocessing import nltkInitialize
-from embeddings.Pipeline import runEmbeddingCreationPipeline, runModelDevelopment, runModelBothCorpus
+from embeddings.Pipeline import runEmbeddingCreationPipeline, runModel, runModelDevelopment
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
 
 class Orchestrator():
@@ -21,10 +21,11 @@ class Orchestrator():
 			classesDict = createTrueClasses(files, XMLAnnotations)
 
 			runEmbeddingCreationPipeline(dataSettings)
-			# runModel(dataSettings)
-			runModelDevelopment(dataSettings, files, XMLAnnotations)
+			predFamilyMemberDict, predObservationDict = runModel(dataSettings)
+			# runModelDevelopment(dataSettings, files, XMLAnnotations)
 
-			return dict(), dict()
+			# return dict(), dict()
+			return predFamilyMemberDict, predObservationDict
 
 		elif  method == "methodZZZ":
 			return dict(), dict()
