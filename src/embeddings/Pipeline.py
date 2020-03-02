@@ -5,6 +5,7 @@ import os
 import torch
 import random
 import numpy as np
+from sklearn.model_selection import KFold
 from Reader import Reader
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
 from Preprocessing import nltkSentenceSplit, nltkTokenize
@@ -21,7 +22,7 @@ def runEmbeddingCreationPipeline(settings):
     for corpus in ("train", "test"):
         createEmbeddingsPickle(settings, corpus)
 
-def runModelDevelopment(settings, trainTXT, trainXML):
+def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
     seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
     random_seed = seed[9]
@@ -44,34 +45,35 @@ def runModelDevelopment(settings, trainTXT, trainXML):
     classes = classDictToList(classesDict)
     classes = [classListToTensor(sentenceClasses) for sentenceClasses in classes]
 
-    trainPercentage = 0.70
-    trainTestSplit = round(trainPercentage * (len(tokenizedSentences)))
+    kFolds = KFold(n_splits=cvFolds)
+    for trainIdx, testIdx in kFolds.split(tokenizedSentences):
+        # print(trainIdx)
+        # print(testIdx)
 
-    trainTokenizedSentences = tokenizedSentences[:trainTestSplit]
-    trainEmbeddings = embeddings[:trainTestSplit]
-    trainClasses = classes[:trainTestSplit]
+        trainTokenizedSentences = [tokenizedSentences[idx] for idx in trainIdx]
+        trainEmbeddings = embeddings[trainIdx]
+        trainClasses = [classes[idx] for idx in trainIdx]
 
-    testTokenizedSentences = tokenizedSentences[trainTestSplit:]
-    testEmbeddings = embeddings[trainTestSplit:]
-    testClasses = classes[trainTestSplit:]
+        testTokenizedSentences = [tokenizedSentences[idx] for idx in testIdx]
+        testEmbeddings = embeddings[testIdx]
+        testClasses = [classes[idx] for idx in testIdx]
 
-    # 100 is the default size used in embedding creation
-    max_length = 100
-    print("Loaded data successfully.\n")
+        # 100 is the default size used in embedding creation
+        max_length = 100
+        print("Loaded data successfully.\n")
 
+        modelConfigs = loadModelConfigs(settings)
 
-    modelConfigs = loadModelConfigs(settings)
-
-    DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
-    print("Model created. Starting training.\n")
-    DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
-    # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
-    print("Starting the testing phase.\n")
-    testLabelPred, testLabelTrue = DL_model.test(testTokenizedSentences, testEmbeddings, testClasses)
-    print("Finished the testing phase. Evaluating test results\n")
-    DL_model.evaluate_test(testLabelPred, testLabelTrue)
-    print("Writing model files to disk.\n")
-    DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
+        DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
+        print("Model created. Starting training.\n")
+        DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
+        # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
+        print("Starting the testing phase.\n")
+        testLabelPred, testLabelTrue = DL_model.test(testTokenizedSentences, testEmbeddings, testClasses)
+        print("Finished the testing phase. Evaluating test results\n")
+        DL_model.evaluate_test(testLabelPred, testLabelTrue)
+        print("Writing model files to disk.\n")
+        DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
 
 def runModelBothCorpus(settings):
 
@@ -125,6 +127,12 @@ def runModelBothCorpus(settings):
     DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
 
 def runModel(settings):
+    """
+    Trains the model in the FULL training dataset and computes predictions for the FULL test set,
+     generating the output for the tsv submission file
+    :param settings:
+    :return: predFamilyMemberDict, predObservationDict - predictions stored in dictionaries, keyed by filename
+    """
 
     seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
     random_seed = seed[9]

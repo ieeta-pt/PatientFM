@@ -70,6 +70,7 @@ def loadModelConfigs(settings):
     class Args:
         pass
     configs = Args()
+    configs.ENTITY_PREDICTION = settings["DLmodelparams"]["entity_prediction"]
     configs.epochs = int(settings["DLmodelparams"]["epochs"])
     configs.iterations_per_epoch = int(settings["DLmodelparams"]["iterationsperepoch"])
     configs.hidden_size = int(settings["DLmodelparams"]["hiddensize"])
