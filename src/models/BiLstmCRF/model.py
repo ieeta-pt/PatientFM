@@ -9,10 +9,10 @@ from models.BiLstmCRF.utils import generate_batch, classListToTensor, update_pro
 from models.BiLstmCRF.decoder import Decoder
 from models.BiLstmCRF.encoder import BiLSTMEncoder
 
-
 class Model:
     def __init__(self, configs, labels_dict, max_length, device):
         self.device = device
+        self.ENTITY_PREDICTION = configs.ENTITY_PREDICTION
         self.max_length = max_length
         self.entity_classes = labels_dict
         self.output_size = len(self.entity_classes)
@@ -31,8 +31,11 @@ class Model:
         self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
         self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
+        total = sum(p.numel() for p in self.encoder.parameters() if p.requires_grad)
+        total += sum(p.numel() for p in self.decoder.parameters() if p.requires_grad)
+        print("Total number of trainable parameters: {}".format(total))
 
-    def train(self, train_tokenized_sentences, train_sentences_embeddings, train_labels):
+    def train(self, train_tokenized_sentences, train_sentences_embeddings, train_labels, ENTITY_PREDICTION=False):
 
         r""" List with entity labels ("O":0 maps to nonentity) """
         entity_labels = [value for key, value in self.entity_classes.items() if not key.startswith('O')]
@@ -52,8 +55,11 @@ class Model:
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
             crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
-            entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-            current_loss += self.perform_optimization_step(crf_loss, entity_pred, entity_true)
+            if self.ENTITY_PREDICTION:
+                entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
+            else:
+                current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
             label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
 
             f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
@@ -219,7 +225,7 @@ class Model:
         return label_pred, label_true
 
 
-    def perform_optimization_step(self, crf_loss, entity_pred, entity_true):
+    def perform_optimization_step_entity_pred(self, crf_loss, entity_pred, entity_true):
         entity_loss = self.criterion(entity_pred,entity_true)
         loss = crf_loss + 0.2 * entity_loss
         self.encoder_optimizer.zero_grad()
@@ -227,7 +233,15 @@ class Model:
         loss.backward()
         self.encoder_optimizer.step()
         self.decoder_optimizer.step()
+        return loss.item()
 
+    def perform_optimization_step_no_entity_pred(self, crf_loss):
+        loss = crf_loss
+        self.encoder_optimizer.zero_grad()
+        self.decoder_optimizer.zero_grad()
+        loss.backward()
+        self.encoder_optimizer.step()
+        self.decoder_optimizer.step()
         return loss.item()
 
 
@@ -266,7 +280,7 @@ class Model:
 
 
     def evaluate_test(self, testLabelPred, testLabelTrue):
-        labels = [value for key, value in self.entity_classes.items()]# if key != "O"] # NO MODELO ORIGINAL USAVAM COM ESTA CONDIÇÃO, SEM A CLASSE 0
+        labels = [value for key, value in self.entity_classes.items() if key != "O"] # NO MODELO ORIGINAL USAVAM COM ESTA CONDIÇÃO, SEM A CLASSE 0
         print(metrics.classification_report(testLabelTrue, testLabelPred, labels=labels))
 
         trueEntity, trueEntityTypeCount = self.get_entity_type_count(testLabelTrue)

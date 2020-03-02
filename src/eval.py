@@ -136,12 +136,13 @@ def calculate_s1(gs_tsv, pred_tsv, verbose):
                     falsePostive[fm] += 1
                 else:
                     falsePostive[fm] = 1
-                print(elm)
+                if verbose: print(elm)
                 fp_fm += 1
-        print("True positives")
-        print(sorted(truePostive.items(), key=lambda kv: kv[1]))
-        print("False positives")
-        print(sorted(falsePostive.items(), key=lambda kv: kv[1]))
+        if verbose:
+            print("True positives")
+            print(sorted(truePostive.items(), key=lambda kv: kv[1]))
+            print("False positives")
+            print(sorted(falsePostive.items(), key=lambda kv: kv[1]))
 
         fn_fm = len(gs_fm) - tp_fm
 
