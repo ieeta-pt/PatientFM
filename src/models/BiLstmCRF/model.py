@@ -46,7 +46,7 @@ class Model:
         all_losses = []
         f1_score_accumulated = 0
 
-        start = time.clock()
+        start = time.time()
         global_start = start
         for iteration in range(n_iterations):
             sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
@@ -70,17 +70,17 @@ class Model:
                       ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
                 current_loss = 0
                 f1_score_accumulated = 0
-                elapsed = (time.clock() - start)
+                elapsed = (time.time() - start)
                 print("Time used:", elapsed)
-                start = time.clock()
+                start = time.time()
 
-        elapsed = (time.clock() - global_start)
+        elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))
         self.encoder = self.encoder.eval()
         self.decoder = self.decoder.eval()
 
 
-    def train_time_debug(self, train_tokenized_sentences, train_sentences_embeddings, train_labels):
+    def train_time_debug(self, train_tokenized_sentences, train_sentences_embeddings, train_labels, ENTITY_PREDICTION=False):
 
         r""" List with entity labels ("O":0 maps to nonentity) """
         entity_labels = [value for key, value in self.entity_classes.items() if not key.startswith('O')]
@@ -90,52 +90,57 @@ class Model:
         all_losses = []
         f1_score_accumulated = 0
 
-        start = time.clock()
+        start = time.time()
         global_start = start
 
-        debug_prev_time = time.clock()
+        debug_prev_time = time.time()
 
         for iteration in range(n_iterations):
             sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
                 generateBatch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
 
-            debug_time = time.clock()
+            debug_time = time.time()
             print("Time to generate batch: {}".format(debug_time - debug_prev_time))
             debug_prev_time = debug_time
 
             initial_state_h0c0 = self.encoder.initH0C0(self.device)
 
-            debug_time = time.clock()
+            debug_time = time.time()
             print("Time to initialize encoder: {}".format(debug_time - debug_prev_time))
             debug_prev_time = debug_time
 
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
 
-            debug_time = time.clock()
+            debug_time = time.time()
             print("Time for encoder step: {}".format(debug_time - debug_prev_time))
             debug_prev_time = debug_time
 
             crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
-            debug_time = time.clock()
+            debug_time = time.time()
             print("Time for decoder step: {}".format(debug_time - debug_prev_time))
             debug_prev_time = debug_time
 
-            entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+            if self.ENTITY_PREDICTION:
+                entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                debug_time = time.time()
+                print("Time for Entity prediction: {}".format(debug_time - debug_prev_time))
+                debug_prev_time = debug_time
 
-            debug_time = time.clock()
-            print("Time for Entity prediction: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
+                current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
+                debug_time = time.time()
+                print("Time for optimization step: {}".format(debug_time - debug_prev_time))
+                debug_prev_time = debug_time
 
-            current_loss += self.perform_optimization_step(crf_loss, entity_pred, entity_true)
-
-            debug_time = time.clock()
-            print("Time for optimization step: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
+            else:
+                current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
+                debug_time = time.time()
+                print("Time for optimization step: {}".format(debug_time - debug_prev_time))
+                debug_prev_time = debug_time
 
             label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
 
-            debug_time = time.clock()
+            debug_time = time.time()
             print("Time for Label prediction: {} \n\n".format(debug_time - debug_prev_time))
 
 
@@ -146,11 +151,11 @@ class Model:
                       ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
                 current_loss = 0
                 f1_score_accumulated = 0
-                elapsed = (time.clock() - start)
+                elapsed = (time.time() - start)
                 print("Time used:", elapsed)
-                start = time.clock()
+                start = time.time()
 
-        elapsed = (time.clock() - global_start)
+        elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))
         self.encoder = self.encoder.eval()
         self.decoder = self.decoder.eval()
