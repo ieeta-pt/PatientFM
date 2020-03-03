@@ -1,3 +1,4 @@
+import os
 import time
 import torch
 import pickle
@@ -5,7 +6,7 @@ import numpy as np
 from torch import nn
 from sklearn import metrics
 
-from models.BiLstmCRF.utils import generate_batch, classListToTensor, update_progress, value_to_key
+from models.utils import generateBatch, classListToTensor, updateProgress, valueToKey
 from models.BiLstmCRF.decoder import Decoder
 from models.BiLstmCRF.encoder import BiLSTMEncoder
 
@@ -49,7 +50,7 @@ class Model:
         global_start = start
         for iteration in range(n_iterations):
             sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
-                generate_batch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
+                generateBatch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
 
             initial_state_h0c0 = self.encoder.initH0C0(self.device)
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
@@ -96,7 +97,7 @@ class Model:
 
         for iteration in range(n_iterations):
             sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
-                generate_batch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
+                generateBatch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
 
             debug_time = time.clock()
             print("Time to generate batch: {}".format(debug_time - debug_prev_time))
@@ -181,9 +182,9 @@ class Model:
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
             if ((sentence_idx + 1) % 100 == 0) and verbose:
-                update_progress(sentence_idx / len(test_tokenized_sentences))
+                updateProgress(sentence_idx / len(test_tokenized_sentences))
         if verbose:
-            update_progress(1)
+            updateProgress(1)
 
         return test_label_pred, test_label_true
 
@@ -252,7 +253,7 @@ class Model:
 
         entityDict = {}
         for labelIdx, testLabel in enumerate(testLabels):
-            label = value_to_key(testLabel, self.entity_classes)
+            label = valueToKey(testLabel, self.entity_classes)
             labelPrefix = label[:2]
             if labelPrefix in ("P-", "M-", "NA"):
                 entityType = "FamilyMember"
@@ -260,14 +261,14 @@ class Model:
             elif labelPrefix == "B-":
                 entityType = "Observation"
                 nextLabelIdx = labelIdx + 1
-                nextLabel = value_to_key(testLabels[nextLabelIdx], self.entity_classes)
+                nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
                 if nextLabel != "I-Observation":
                     entityDict[(labelIdx, labelIdx)] = entityType
                 elif nextLabel == "I-Observation":
                     while nextLabel == "I-Observation":
                         nextLabelIdx += 1
                         if nextLabelIdx <= (len(testLabels)-1):
-                            nextLabel = value_to_key(testLabels[nextLabelIdx], self.entity_classes)
+                            nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
                         else:
                             nextLabel = "EndSentence"
                     entityDict[(labelIdx, nextLabelIdx-1)] = entityType
@@ -298,11 +299,11 @@ class Model:
         print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
 
 
-
-
     def write_model_files(self, test_label_pred, test_label_true, seed):
         timepoint = time.strftime("%Y%m%d_%H%M")
         path = '../results/models/BiLstmCRF/'
+        if not os.path.exists(path):
+            os.makedirs(path)
         filename = 'N2C2_BioWordVec_' + timepoint + '-' + str(seed)
         pickle.dump([test_label_pred, test_label_true], open(path + "results-" + filename + '.pickle', 'wb'))
         torch.save(self.encoder, path + 'model_encoder-'+filename)
