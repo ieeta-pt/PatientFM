@@ -19,14 +19,14 @@ class Orchestrator():
 			# classesDict = createDefaultClasses(files)
 			# classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
 			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
-			classesDict = createTrueClasses(files, XMLAnnotations)
+			# classesDict = createTrueClasses(files, XMLAnnotations)
 
 			runEmbeddingCreationPipeline(dataSettings)
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings)
-			# return predFamilyMemberDict, predObservationDict
 
-			runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
-			return dict(), dict()
+			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
+			return predFamilyMemberDict, predObservationDict
+			# return dict(), dict()
 
 
 		elif  method == "methodZZZ":
