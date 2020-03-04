@@ -6,7 +6,7 @@ from sklearn.model_selection import KFold
 from Reader import Reader
 from embeddings.Embeddings import readEmbeddingsPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
-from models.utils import classListToTensor, createTestOutputTask1, getSentenceList, classDictToList
+from models.utils import classListToTensor, createTestOutputTask1, createTrainOutputTask1, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries
 from models.BiLstmCRF.utils import loadModelConfigs
 
 from models.BiLstmCRF.model import Model
@@ -79,13 +79,16 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
         print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
 
-    tokenizedSentences = getSentenceList(trainTXT, tokenized=True)
+    # tokenizedSentences = getSentenceList(trainTXT, tokenized=True)
+    tokenizedSentences, sentenceToDocList = getSentenceListWithMapping(trainTXT, tokenized=True)
     embeddings = readEmbeddingsPickle(settings["embeddings"]["train_embeddings_pickle"])
     classesDict = createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
     classes = [classListToTensor(sentenceClasses) for sentenceClasses in classes]
 
     kFolds = KFold(n_splits=cvFolds)
+    predFamilyMemberDicts = []
+    predObservationsDicts = []
     for trainIdx, testIdx in kFolds.split(tokenizedSentences):
         # print(trainIdx)
         # print(testIdx)
@@ -97,6 +100,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         testTokenizedSentences = [tokenizedSentences[idx] for idx in testIdx]
         testEmbeddings = embeddings[testIdx]
         testClasses = [classes[idx] for idx in testIdx]
+        testDocMapping = [sentenceToDocList[idx] for idx in testIdx]
 
         # 100 is the default size used in embedding creation
         max_length = 100
@@ -108,12 +112,23 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         print("Model created. Starting training.\n")
         DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
         # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
+
         print("Starting the testing phase.\n")
         testLabelPred, testLabelTrue = DL_model.test(testTokenizedSentences, testEmbeddings, testClasses)
         print("Finished the testing phase. Evaluating test results\n")
         DL_model.evaluate_test(testLabelPred, testLabelTrue)
         print("Writing model files to disk.\n")
         DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
+
+        print("Generating prediction output for final tsv.\n")
+        predFamilyMemberDict, predObservationDict = createTrainOutputTask1(DL_model, testTokenizedSentences, testEmbeddings, testClasses, testDocMapping)
+        predFamilyMemberDicts.append(predFamilyMemberDict)
+        predObservationsDicts.append(predObservationDict)
+
+    finalFamilyMemberDict = mergeDictionaries(predFamilyMemberDicts)
+    finalObservationsDict = mergeDictionaries(predObservationsDicts)
+
+    return finalFamilyMemberDict, finalObservationsDict
 
 
 def runModelBothCorpus(settings):

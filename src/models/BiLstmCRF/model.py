@@ -32,9 +32,9 @@ class Model:
         self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
         self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
-        total = sum(p.numel() for p in self.encoder.parameters() if p.requires_grad)
-        total += sum(p.numel() for p in self.decoder.parameters() if p.requires_grad)
-        print("Total number of trainable parameters: {}".format(total))
+        # total = sum(p.numel() for p in self.encoder.parameters() if p.requires_grad)
+        # total += sum(p.numel() for p in self.decoder.parameters() if p.requires_grad)
+        # print("Total number of trainable parameters: {}".format(total))
 
     def train(self, train_tokenized_sentences, train_sentences_embeddings, train_labels, ENTITY_PREDICTION=False):
 
@@ -161,7 +161,7 @@ class Model:
         self.decoder = self.decoder.eval()
 
 
-    def test(self, test_tokenized_sentences, test_sentences_embeddings, test_labels, verbose=False):
+    def test(self, test_tokenized_sentences, test_sentences_embeddings, test_labels, verbose=False, SINGLE_INSTANCE=False):
         test_label_true = []
         test_label_pred = []
 
@@ -172,12 +172,18 @@ class Model:
 
             r""" Convert numpy array with embeddings to tensor, and reshape to (sentence length x Embedding size)"""
             sentence_length = len(tokenized_sentence)
-            sentence_tensor = torch.from_numpy(test_sentences_embeddings[sentence_idx, :sentence_length * self.embedding_dim]).float()
+            if SINGLE_INSTANCE:
+                sentence_tensor = torch.from_numpy(test_sentences_embeddings[:sentence_length * self.embedding_dim]).float()
+                y_true_tensor = [test_labels.to(self.device)]
+            else:
+                sentence_tensor = torch.from_numpy(test_sentences_embeddings[sentence_idx, :sentence_length * self.embedding_dim]).float()
+                y_true_tensor = [test_labels[sentence_idx].to(self.device)]
+
             sentence_tensor = sentence_tensor.view(sentence_length, self.embedding_dim)
 
             x_input[0] = sentence_tensor
             x_input = nn.utils.rnn.pack_padded_sequence(x_input, torch.tensor([x_input.shape[1]]), batch_first=True)
-            y_true_tensor = [test_labels[sentence_idx].to(self.device)]
+
             initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
                                   torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device))
 
