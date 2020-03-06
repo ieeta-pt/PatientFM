@@ -11,7 +11,3 @@ def loadModelConfigs(settings):
     configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
     configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
     return configs
-
-
-
-
