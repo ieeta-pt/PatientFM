@@ -1,7 +1,9 @@
 from Preprocessing import nltkInitialize
 from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
-from models.modelRunners import runModel, runModelDevelopment
+
+# from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
+from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
