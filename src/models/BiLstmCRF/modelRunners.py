@@ -111,7 +111,6 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
         print("Model created. Starting training.\n")
         DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
-        # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
 
         print("Starting the testing phase.\n")
         testLabelPred, testLabelTrue = DL_model.test(testTokenizedSentences, testEmbeddings, testClasses)
