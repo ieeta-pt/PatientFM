@@ -13,7 +13,7 @@ from models.BiLstmCRF.encoder import BiLSTMEncoder
 class Model:
     def __init__(self, configs, labels_dict, max_length, device):
         self.device = device
-        self.ENTITY_PREDICTION = configs.ENTITY_PREDICTION
+        self.ENTITY_PREDICTION = bool(configs.ENTITY_PREDICTION)
         self.max_length = max_length
         self.entity_classes = labels_dict
         self.output_size = len(self.entity_classes)
@@ -56,7 +56,7 @@ class Model:
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
             crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
-            if self.ENTITY_PREDICTION:
+            if self.ENTITY_PREDICTION is True:
                 entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
                 current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
             else:
@@ -80,85 +80,85 @@ class Model:
         self.decoder = self.decoder.eval()
 
 
-    def train_time_debug(self, train_tokenized_sentences, train_sentences_embeddings, train_labels, ENTITY_PREDICTION=False):
-
-        r""" List with entity labels ("O":0 maps to nonentity) """
-        entity_labels = [value for key, value in self.entity_classes.items() if not key.startswith('O')]
-
-        n_iterations = self.epochs * self.iterations_per_epoch
-        current_loss = 0
-        all_losses = []
-        f1_score_accumulated = 0
-
-        start = time.time()
-        global_start = start
-
-        debug_prev_time = time.time()
-
-        for iteration in range(n_iterations):
-            sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
-                generateBatch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
-
-            debug_time = time.time()
-            print("Time to generate batch: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
-
-            initial_state_h0c0 = self.encoder.initH0C0(self.device)
-
-            debug_time = time.time()
-            print("Time to initialize encoder: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
-
-            encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
-
-            debug_time = time.time()
-            print("Time for encoder step: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
-
-            crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
-
-            debug_time = time.time()
-            print("Time for decoder step: {}".format(debug_time - debug_prev_time))
-            debug_prev_time = debug_time
-
-            if self.ENTITY_PREDICTION:
-                entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-                debug_time = time.time()
-                print("Time for Entity prediction: {}".format(debug_time - debug_prev_time))
-                debug_prev_time = debug_time
-
-                current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
-                debug_time = time.time()
-                print("Time for optimization step: {}".format(debug_time - debug_prev_time))
-                debug_prev_time = debug_time
-
-            else:
-                current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
-                debug_time = time.time()
-                print("Time for optimization step: {}".format(debug_time - debug_prev_time))
-                debug_prev_time = debug_time
-
-            label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
-
-            debug_time = time.time()
-            print("Time for Label prediction: {} \n\n".format(debug_time - debug_prev_time))
-
-
-            f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
-            if (iteration + 1) % self.iterations_per_epoch == 0:
-                all_losses.append(current_loss / self.iterations_per_epoch)
-                print("Epoch %d of %d | F1: %.3f%% | Average Loss: %.5f" %
-                      ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
-                current_loss = 0
-                f1_score_accumulated = 0
-                elapsed = (time.time() - start)
-                print("Time used:", elapsed)
-                start = time.time()
-
-        elapsed = (time.time() - global_start)
-        print("Completed training. Total time used: {}".format(elapsed))
-        self.encoder = self.encoder.eval()
-        self.decoder = self.decoder.eval()
+    # def train_time_debug(self, train_tokenized_sentences, train_sentences_embeddings, train_labels, ENTITY_PREDICTION=False):
+    #
+    #     r""" List with entity labels ("O":0 maps to nonentity) """
+    #     entity_labels = [value for key, value in self.entity_classes.items() if not key.startswith('O')]
+    #
+    #     n_iterations = self.epochs * self.iterations_per_epoch
+    #     current_loss = 0
+    #     all_losses = []
+    #     f1_score_accumulated = 0
+    #
+    #     start = time.time()
+    #     global_start = start
+    #
+    #     debug_prev_time = time.time()
+    #
+    #     for iteration in range(n_iterations):
+    #         sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask = \
+    #             generateBatch(train_tokenized_sentences, train_sentences_embeddings, self.embedding_dim, train_labels, self.batch_size, self.device)
+    #
+    #         debug_time = time.time()
+    #         print("Time to generate batch: {}".format(debug_time - debug_prev_time))
+    #         debug_prev_time = debug_time
+    #
+    #         initial_state_h0c0 = self.encoder.initH0C0(self.device)
+    #
+    #         debug_time = time.time()
+    #         print("Time to initialize encoder: {}".format(debug_time - debug_prev_time))
+    #         debug_prev_time = debug_time
+    #
+    #         encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
+    #
+    #         debug_time = time.time()
+    #         print("Time for encoder step: {}".format(debug_time - debug_prev_time))
+    #         debug_prev_time = debug_time
+    #
+    #         crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
+    #
+    #         debug_time = time.time()
+    #         print("Time for decoder step: {}".format(debug_time - debug_prev_time))
+    #         debug_prev_time = debug_time
+    #
+    #         if self.ENTITY_PREDICTION:
+    #             entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+    #             debug_time = time.time()
+    #             print("Time for Entity prediction: {}".format(debug_time - debug_prev_time))
+    #             debug_prev_time = debug_time
+    #
+    #             current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
+    #             debug_time = time.time()
+    #             print("Time for optimization step: {}".format(debug_time - debug_prev_time))
+    #             debug_prev_time = debug_time
+    #
+    #         else:
+    #             current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
+    #             debug_time = time.time()
+    #             print("Time for optimization step: {}".format(debug_time - debug_prev_time))
+    #             debug_prev_time = debug_time
+    #
+    #         label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
+    #
+    #         debug_time = time.time()
+    #         print("Time for Label prediction: {} \n\n".format(debug_time - debug_prev_time))
+    #
+    #
+    #         f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
+    #         if (iteration + 1) % self.iterations_per_epoch == 0:
+    #             all_losses.append(current_loss / self.iterations_per_epoch)
+    #             print("Epoch %d of %d | F1: %.3f%% | Average Loss: %.5f" %
+    #                   ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
+    #             current_loss = 0
+    #             f1_score_accumulated = 0
+    #             elapsed = (time.time() - start)
+    #             print("Time used:", elapsed)
+    #             start = time.time()
+    #
+    #     elapsed = (time.time() - global_start)
+    #     print("Completed training. Total time used: {}".format(elapsed))
+    #     self.encoder = self.encoder.eval()
+    #     self.decoder = self.decoder.eval()
 
 
     def test(self, test_tokenized_sentences, test_sentences_embeddings, test_labels, verbose=False, SINGLE_INSTANCE=False):
@@ -172,7 +172,7 @@ class Model:
 
             r""" Convert numpy array with embeddings to tensor, and reshape to (sentence length x Embedding size)"""
             sentence_length = len(tokenized_sentence)
-            if SINGLE_INSTANCE:
+            if SINGLE_INSTANCE is True:
                 sentence_tensor = torch.from_numpy(test_sentences_embeddings[:sentence_length * self.embedding_dim]).float()
                 y_true_tensor = [test_labels.to(self.device)]
             else:
