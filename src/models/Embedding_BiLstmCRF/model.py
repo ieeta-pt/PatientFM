@@ -14,7 +14,7 @@ from models.BiLstmCRF.encoder import BiLSTMEncoder
 class Model:
     def __init__(self, configs, labels_dict, max_length, vocab_size, weights_matrix, device):
         self.device = device
-        self.ENTITY_PREDICTION = configs.ENTITY_PREDICTION
+        self.ENTITY_PREDICTION = bool(configs.ENTITY_PREDICTION)
         self.EMBEDDINGS_FREEZE_AFTER_EPOCH = int(configs.EMBEDDINGS_FREEZE_AFTER_EPOCH)
         self.max_length = max_length
         self.entity_classes = labels_dict
@@ -28,7 +28,7 @@ class Model:
         self.iterations_per_epoch = configs.iterations_per_epoch
         self.learning_rate = configs.learning_rate
 
-        self.embeddingLayer = nn.Embedding(vocab_size, self.embedding_dim)
+        self.embeddingLayer = nn.Embedding(vocab_size, self.embedding_dim).to(device=self.device)
         self.embeddingLayer.load_state_dict({'weight': weights_matrix})
         self.embeddingLayer.weight.requires_grad = True
         self.embedding_optimizer = torch.optim.Adam(self.embeddingLayer.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
@@ -59,6 +59,7 @@ class Model:
             # Freeze layer after epoch threshold
             if ((iteration + 1) / self.iterations_per_epoch) == self.EMBEDDINGS_FREEZE_AFTER_EPOCH:
                 self.embeddingLayer.weight.requires_grad = False
+                self.embeddingLayer = self.embeddingLayer.eval()
 
             encoded_sentences_tensors, sorted_batch_classes, sorted_len_units,  mask = \
                 generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
@@ -90,6 +91,7 @@ class Model:
 
         elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))
+        # self.embeddingLayer = self.embeddingLayer.eval()
         self.encoder = self.encoder.eval()
         self.decoder = self.decoder.eval()
 
@@ -106,16 +108,12 @@ class Model:
 
             r""" Convert numpy array with embeddings to tensor, and reshape to (sentence length x Embedding size)"""
             if SINGLE_INSTANCE is True:
-                # sentence_tensor = torch.from_numpy(test_sentences_embeddings[:sentence_length * self.embedding_dim]).float()
                 y_true_tensor = [test_labels.to(self.device)]
             else:
-                # sentence_tensor = torch.from_numpy(test_sentences_embeddings[sentence_idx, :sentence_length * self.embedding_dim]).float()
                 y_true_tensor = [test_labels[sentence_idx].to(self.device)]
 
-            # sentence_tensor = sentence_tensor.view(sentence_length, self.embedding_dim)
-
             x_input[0] = encoded_sentence_tensor
-            sentence_embeddings = self.embeddingLayer(x_input[0])
+            sentence_embeddings = self.embeddingLayer(x_input)
             packed_input = nn.utils.rnn.pack_padded_sequence(sentence_embeddings, torch.tensor([sentence_embeddings.shape[1]]), batch_first=True)
 
             initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
@@ -170,16 +168,15 @@ class Model:
 
         return label_pred, label_true
 
-
     def perform_optimization_step_entity_pred(self, crf_loss, entity_pred, entity_true):
         entity_loss = self.criterion(entity_pred,entity_true)
         loss = crf_loss + 0.2 * entity_loss
-        if self.embeddingLayer.weight.requires_grad:
+        if self.embeddingLayer.weight.requires_grad is True:
             self.embedding_optimizer.zero_grad()
         self.encoder_optimizer.zero_grad()
         self.decoder_optimizer.zero_grad()
         loss.backward()
-        if self.embeddingLayer.weight.requires_grad:
+        if self.embeddingLayer.weight.requires_grad is True:
             self.embedding_optimizer.step()
         self.encoder_optimizer.step()
         self.decoder_optimizer.step()
@@ -187,12 +184,12 @@ class Model:
 
     def perform_optimization_step_no_entity_pred(self, crf_loss):
         loss = crf_loss
-        if self.embeddingLayer.weight.requires_grad:
+        if self.embeddingLayer.weight.requires_grad is True:
             self.embedding_optimizer.zero_grad()
         self.encoder_optimizer.zero_grad()
         self.decoder_optimizer.zero_grad()
         loss.backward()
-        if self.embeddingLayer.weight.requires_grad:
+        if self.embeddingLayer.weight.requires_grad is True:
             self.embedding_optimizer.step()
         self.encoder_optimizer.step()
         self.decoder_optimizer.step()
@@ -254,7 +251,7 @@ class Model:
 
     def write_model_files(self, test_label_pred, test_label_true, seed):
         timepoint = time.strftime("%Y%m%d_%H%M")
-        path = '../results/models/BiLstmCRF/'
+        path = '../results/models/Embedding_BiLstmCRF/'
         if not os.path.exists(path):
             os.makedirs(path)
         filename = 'N2C2_BioWordVec_' + timepoint + '-' + str(seed)

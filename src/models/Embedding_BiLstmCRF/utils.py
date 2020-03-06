@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+from models.utils import trainPredictionToOutputTask1
 
 def loadModelConfigs(settings):
     class Args:
@@ -41,3 +42,29 @@ def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
         sorted_batch_classes.append(batch_classes[idx])
 
     return sentences_tensor, sorted_batch_classes, sorted_len_units, mask
+
+
+def createTrainOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping):
+    """
+    Runs the trained model on the validation split, returning the resulting entity predictions
+    :param DLmodel:
+    :param testTokenizedSentences:
+    :param testClasses:
+    :param testDocMapping:
+    :return:
+    """
+
+    predFamilyMemberDict = {}
+    predObservationDict = {}
+    for idx, _ in enumerate(testTokenizedSentences):
+        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True)
+        familyMemberList, observationsList = trainPredictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
+        if familyMemberList:
+            if testDocMapping[idx] not in predFamilyMemberDict.keys():
+                predFamilyMemberDict[testDocMapping[idx]] = []
+            predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
+        if observationsList:
+            if testDocMapping[idx] not in predObservationDict.keys():
+                predObservationDict[testDocMapping[idx]] = []
+            predObservationDict[testDocMapping[idx]].extend(observationsList)
+    return predFamilyMemberDict, predObservationDict

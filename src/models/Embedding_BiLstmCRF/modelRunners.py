@@ -6,9 +6,9 @@ from sklearn.model_selection import KFold
 from Reader import Reader
 from embeddings.Embeddings import readEmbeddingsPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
-from models.utils import classListToTensor, createTestOutputTask1, createTrainOutputTask1, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries
+from models.utils import classListToTensor, createTestOutputTask1, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries
 
-from models.Embedding_BiLstmCRF.utils import loadModelConfigs
+from models.Embedding_BiLstmCRF.utils import loadModelConfigs, createTrainOutputTask1
 from models.Embedding_BiLstmCRF.model import Model
 
 
@@ -90,12 +90,12 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     for i, word in enumerate(vocab):
         word2Idx[word] = i
         embeddingsWeightsMatrix[i] = embeddingModel[word]
-    embeddingsWeightsMatrix = torch.tensor(embeddingsWeightsMatrix, dtype=torch.float64)
+    embeddingsWeightsMatrix = torch.tensor(embeddingsWeightsMatrix, dtype=torch.float64).to(device)
 
     encodedSentences = []
     for sentence in tokenizedSentences:
         sentence = [word2Idx[token] for token in sentence]
-        encodedSentences.append(torch.tensor(sentence, dtype=torch.long))
+        encodedSentences.append(torch.tensor(sentence, dtype=torch.long).to(device))
 
     classesDict = createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
@@ -137,7 +137,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
 
         print("Generating prediction output for final tsv.\n")
-        predFamilyMemberDict, predObservationDict = createTrainOutputTask1(DL_model, testTokenizedSentences, testEmbeddings, testClasses, testDocMapping)
+        predFamilyMemberDict, predObservationDict = createTrainOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping)
         predFamilyMemberDicts.append(predFamilyMemberDict)
         predObservationsDicts.append(predObservationDict)
 
@@ -145,8 +145,3 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     finalObservationsDict = mergeDictionaries(predObservationsDicts)
 
     return finalFamilyMemberDict, finalObservationsDict
-
-
-
-
-
