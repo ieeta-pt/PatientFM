@@ -14,7 +14,7 @@ from models.BiLstmCRF.encoder import BiLSTMEncoder
 class Model:
     def __init__(self, configs, labels_dict, max_length, vocab_size, weights_matrix, device):
         self.device = device
-        self.ENTITY_PREDICTION = bool(configs.ENTITY_PREDICTION)
+        self.ENTITY_PREDICTION = configs.ENTITY_PREDICTION
         self.EMBEDDINGS_FREEZE_AFTER_EPOCH = int(configs.EMBEDDINGS_FREEZE_AFTER_EPOCH)
         self.max_length = max_length
         self.entity_classes = labels_dict
@@ -71,10 +71,10 @@ class Model:
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
             crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
-            if self.ENTITY_PREDICTION is True:
+            if self.ENTITY_PREDICTION == "True":
                 entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
                 current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
-            else:
+            elif self.ENTITY_PREDICTION == "False":
                 current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
             label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
 
