@@ -72,7 +72,14 @@ class Reader(object):
 				count 		   = properties.find('Count').text
 				familyRelation = properties.find('Relation').text
 				familySide     = properties.find('SideOfFamily').text
-				xmlFilesContent[fileName].update({id: {'spans': spanTuple, 'numSpans': numSpans, 'type': annotationType, "familyRelation": familyRelation, "count": count, "familySide": familySide}})
+				mentions 	   = self.fetchMentionFromSpan(spanTuple, txtFileRead)
+				xmlFilesContent[fileName].update({id: { 'spans': spanTuple, 
+														'numSpans': numSpans, 
+														'type': annotationType, 
+														"familyRelation": familyRelation, 
+														"count": count, 
+														"familySide": familySide,
+														"mention": mentions}})
 
 			elif annotationType == "Observation":
 				negation  = properties.find('Negation').text

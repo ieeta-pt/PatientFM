@@ -1,6 +1,7 @@
 from Preprocessing import nltkInitialize
 from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
+from RuleBased import RuleBased
 
 # from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
 from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
@@ -30,10 +31,22 @@ class Orchestrator():
 			return predFamilyMemberDict, predObservationDict
 			# return dict(), dict()
 
+		elif method == "ja_rules":
+			return RuleBased.processTask1(files)
 
 		elif  method == "methodZZZ":
 			return dict(), dict()
 		return 	dict(), dict()
+
+	def mergeResultsTask1(fmDocs, obsDocs):
+		fmRes = dict()
+		obsRes = dict()
+		#for method in fmDocs:
+		#...
+		#no right, in progress
+		fmRes = fmDocs[list(fmDocs.keys())[0]]
+		obsRes = obsDocs[list(obsDocs.keys())[0]]
+		return 	fmRes, obsRes
 
 	def processTask2(show=False):
 		# to do

@@ -12,7 +12,7 @@ class Writer():
 		for doc in sorted(fmDocs):
 			#doc_1	FamilyMember	Father	NA
 			for familyMember, sideOfFamily in fmDocs[doc]:
-				print(familyMember, sideOfFamily)
+				#print(familyMember, sideOfFamily)
 				foutput.write("{}\tFamilyMember\t{}\t{}\n".format(doc, familyMember, sideOfFamily))
 		
 		for doc in sorted(obsDocs):
