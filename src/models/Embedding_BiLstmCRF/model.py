@@ -30,8 +30,12 @@ class Model:
 
         self.embeddingLayer = nn.Embedding(vocab_size, self.embedding_dim).to(device=self.device)
         self.embeddingLayer.load_state_dict({'weight': weights_matrix})
-        self.embeddingLayer.weight.requires_grad = True
-        self.embedding_optimizer = torch.optim.Adam(self.embeddingLayer.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+        if self.EMBEDDINGS_FREEZE_AFTER_EPOCH == 0:
+            print("Embeddings layer will not be trained.\n")
+            self.embeddingLayer.weight.requires_grad = False
+        elif self.EMBEDDINGS_FREEZE_AFTER_EPOCH > 0:
+            self.embeddingLayer.weight.requires_grad = True
+            self.embedding_optimizer = torch.optim.Adam(self.embeddingLayer.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
         self.encoder = BiLSTMEncoder(self.embedding_dim, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
         self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
@@ -256,6 +260,7 @@ class Model:
             os.makedirs(path)
         filename = 'N2C2_BioWordVec_' + timepoint + '-' + str(seed)
         pickle.dump([test_label_pred, test_label_true], open(path + "results-" + filename + '.pickle', 'wb'))
+        torch.save(self.embeddingLayer, path + 'model_embedding_layer-'+filename)
         torch.save(self.encoder, path + 'model_encoder-'+filename)
         torch.save(self.decoder, path + 'model_decoder-'+filename)
 
