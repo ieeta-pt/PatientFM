@@ -87,7 +87,7 @@ def get_pr_f1(tp, fp, fn):
     print()
 
 
-def calculate_s1(gs_tsv, pred_tsv, verbose):
+def calculate_s1(gs_tsv, pred_tsv, verbose, onlyFM=False):
     """
     Calculate system performance of subtask 1
     :param gs_tsv:
@@ -104,6 +104,7 @@ def calculate_s1(gs_tsv, pred_tsv, verbose):
 
     falsePostive = {}
     truePostive = {}
+    trueNegative = {}
     if ignoringSide:
         new_gs_fm = list(set([(x[0], x[1]) for x in gs_fm]))
         new_pred_fm = list(set([(x[0], x[1]) for x in pred_fm]))
@@ -121,7 +122,15 @@ def calculate_s1(gs_tsv, pred_tsv, verbose):
                 else:
                     falsePostive[fm] = 1
                 fp_fm += 1
+        for elm in new_gs_fm:
+            fm = (elm[1])
+            if elm not in new_pred_fm:
+                if fm not in trueNegative:
+                    trueNegative[fm] = 0
+                trueNegative[fm] += 1
         fn_fm = len(new_gs_fm) - tp_fm
+        if len(trueNegative) != fn_fm:
+            print("WRONG Calculated")
     else:
         for elm in pred_fm:
             fm = (elm[1], elm[2])
@@ -132,21 +141,30 @@ def calculate_s1(gs_tsv, pred_tsv, verbose):
                 else:
                     truePostive[fm] = 1
             else:
+                #print(elm)
                 if fm in falsePostive:
                     falsePostive[fm] += 1
                 else:
                     falsePostive[fm] = 1
-                if verbose: print(elm)
+                #if verbose: print(elm)
                 fp_fm += 1
+        for elm in gs_fm:
+            fm = (elm[1], elm[2])
+            if elm not in pred_fm:
+                if fm not in trueNegative:
+                    trueNegative[fm] = 0
+                trueNegative[fm] += 1
         if verbose:
             print("True positives")
             print(sorted(truePostive.items(), key=lambda kv: kv[1]))
+            print("True Negatives")
+            print(sorted(trueNegative.items(), key=lambda kv: kv[1]))
             print("False positives")
             print(sorted(falsePostive.items(), key=lambda kv: kv[1]))
 
         fn_fm = len(gs_fm) - tp_fm
 
-    if verbose:
+    if verbose or onlyFM:
         print("FM: ")
         get_pr_f1(tp_fm, fp_fm, fn_fm)
 
@@ -174,16 +192,18 @@ def calculate_s1(gs_tsv, pred_tsv, verbose):
     fp_ob = total_pred_ob - tp_ob
     fn_ob = total_gs_ob - tp_ob
 
-    if verbose:
-        print("OB: ")
-        get_pr_f1(tp_ob, fp_ob, fn_ob)
+    if not onlyFM:
+        if verbose:
+            print("OB: ")
+            get_pr_f1(tp_ob, fp_ob, fn_ob)
 
-    tp = tp_ob + tp_fm
-    fp = fp_ob + fp_fm
-    fn = fn_ob + fn_fm
+        tp = tp_ob + tp_fm
+        fp = fp_ob + fp_fm
+        fn = fn_ob + fn_fm
 
-    print("Overall:")
-    get_pr_f1(tp, fp, fn)
+        print("Overall:")
+        get_pr_f1(tp, fp, fn)
+
 
 
 def calculate_s2(gs_tsv, pred_tsv, verbose):
@@ -257,6 +277,9 @@ if __name__ == '__main__':
                         help="includes the performance of " +
                              "family members and observations in the output",
                         action="store_true")
+    parser.add_argument("-fm", "--onlyfm",
+                        help="consideres only family members in the output",
+                        action="store_true")
 
     parser.add_argument("gs", help="Gold Standard file of the selected subtask")
     parser.add_argument("pred", help="Prediction file of the selected subtask")
@@ -264,7 +287,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.subtask == 1:
-        calculate_s1(args.gs, args.pred, args.verbose)
+        calculate_s1(args.gs, args.pred, args.verbose, args.onlyfm)
     elif args.subtask == 2:
         calculate_s2(args.gs, args.pred, args.verbose)
     else:
