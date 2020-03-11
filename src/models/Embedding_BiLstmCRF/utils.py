@@ -1,6 +1,5 @@
 import torch
 import numpy as np
-from models.utils import trainPredictionToOutputTask1
 
 def loadModelConfigs(settings):
     class Args:
@@ -43,28 +42,69 @@ def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
 
     return sentences_tensor, sorted_batch_classes, sorted_len_units, mask
 
+#
+# def createTrainOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping):
+#     """
+#     Runs the trained model on the validation split, returning the resulting entity predictions
+#     :param DLmodel:
+#     :param testTokenizedSentences:
+#     :param testEncodedSentences:
+#     :param testClasses:
+#     :param testDocMapping:
+#     :return:
+#     """
+#
+#     predFamilyMemberDict = {}
+#     predObservationDict = {}
+#     for idx, _ in enumerate(testTokenizedSentences):
+#         testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True)
+#         familyMemberList, observationsList = trainPredictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
+#         if familyMemberList:
+#             if testDocMapping[idx] not in predFamilyMemberDict.keys():
+#                 predFamilyMemberDict[testDocMapping[idx]] = []
+#             predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
+#         if observationsList:
+#             if testDocMapping[idx] not in predObservationDict.keys():
+#                 predObservationDict[testDocMapping[idx]] = []
+#             predObservationDict[testDocMapping[idx]].extend(observationsList)
+#     return predFamilyMemberDict, predObservationDict
 
-def createTrainOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping):
-    """
-    Runs the trained model on the validation split, returning the resulting entity predictions
-    :param DLmodel:
-    :param testTokenizedSentences:
-    :param testClasses:
-    :param testDocMapping:
-    :return:
-    """
 
-    predFamilyMemberDict = {}
-    predObservationDict = {}
-    for idx, _ in enumerate(testTokenizedSentences):
-        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True)
-        familyMemberList, observationsList = trainPredictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
-        if familyMemberList:
-            if testDocMapping[idx] not in predFamilyMemberDict.keys():
-                predFamilyMemberDict[testDocMapping[idx]] = []
-            predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
-        if observationsList:
-            if testDocMapping[idx] not in predObservationDict.keys():
-                predObservationDict[testDocMapping[idx]] = []
-            predObservationDict[testDocMapping[idx]].extend(observationsList)
-    return predFamilyMemberDict, predObservationDict
+# def testPredictionToOutputTask1(modelPrediction, singleTokenizedDocument):
+#     """
+#     Converts the prediction vector to the respective entities identified in the text
+#     :param modelPrediction:
+#     :param singleTokenizedDocument:
+#     :return:
+#     """
+#     observationsList = list()
+#     familyMemberList = list()
+#     observation = ""
+#     finalCheckablePosition = len(modelPrediction) - 1
+#     for idx, prediction in enumerate(modelPrediction):
+#         if prediction != 0:
+#             if prediction in (1, 2):
+#                 if prediction == 1:
+#                     observation = singleTokenizedDocument[idx]
+#                 elif prediction == 2:
+#                     observation = observation + " " + singleTokenizedDocument[idx]
+#                 if idx < finalCheckablePosition:
+#                     if modelPrediction[idx + 1] not in (1, 2):
+#                         observationsList.append(observation)
+#                         observation = ""
+#             elif prediction in (3, 4, 5):
+#                 # Trim plurals
+#                 if singleTokenizedDocument[idx][-1] == "s":
+#                     familyMember = singleTokenizedDocument[idx][:-1].capitalize()
+#                 else:
+#                     familyMember = singleTokenizedDocument[idx].capitalize()
+#                 if prediction == 3:
+#                     familyMemberList.append(tuple((familyMember, "Paternal")))
+#                 elif prediction == 4:
+#                     familyMemberList.append(tuple((familyMember, "Maternal")))
+#                 elif prediction == 5:
+#                     familyMemberList.append(tuple((familyMember, "NA")))
+#     # Set is used to remove duplicate entries
+#     familyMemberList = list(set(familyMemberList))
+#     observationsList = list(set(observationsList))
+#     return familyMemberList, observationsList

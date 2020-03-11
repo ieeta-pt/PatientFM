@@ -4,20 +4,19 @@ import numpy as np
 from sklearn.model_selection import KFold
 
 from Reader import Reader
-from embeddings.Embeddings import readEmbeddingsPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
-from models.utils import classListToTensor, createTestOutputTask1, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries
+from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1
 
-from models.Embedding_BiLstmCRF.utils import loadModelConfigs, createTrainOutputTask1
+from models.Embedding_BiLstmCRF.utils import loadModelConfigs
 from models.Embedding_BiLstmCRF.model import Model
 
 
-def runModel(settings):
-    """
-    Trains the model in the FULL training dataset and computes predictions for the FULL test set,
-     generating the output for the tsv submission file
-    :param settings:
-    :return: predFamilyMemberDict, predObservationDict - predictions stored in dictionaries, keyed by filename
+def runModel(settings, trainTXT, trainXML):
+    """ Trains the model in the FULL training dataset and computes predictions for the FULL test set
+    :param settings: settings from settings.ini file
+    :param trainTXT: train txts
+    :param trainXML: train xml annotations
+    :return: finalFamilyMemberDict, finalObservationsDict: dicts indexed by filename with detected entities
     """
 
     seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
@@ -35,12 +34,26 @@ def runModel(settings):
         print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
         print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
 
-    reader = Reader(dataSettings=settings, corpus="train")
-    filesRead = reader.loadDataSet()
-    XMLannotations = reader.loadXMLAnnotations(filesRead)
-    trainTokenizedSentences = getSentenceList(filesRead, tokenized=True)
-    trainEmbeddings = readEmbeddingsPickle(settings["embeddings"]["train_embeddings_pickle"])
-    trainClassesDict = createTrueClasses(filesRead, XMLannotations)
+
+    print("Loading and preprocessing data.\n")
+
+    embeddingModel = np.load(settings["embeddings"]["biowordvec_original"], allow_pickle=True).item()
+    vocab = [key for key in embeddingModel]
+    vocabSize = len(vocab)
+    embeddingsWeightsMatrix = np.zeros((vocabSize, int(settings["embeddings"]["wordvec_size"])))
+    word2Idx = {}
+    for i, word in enumerate(vocab):
+        word2Idx[word] = i
+        embeddingsWeightsMatrix[i] = embeddingModel[word]
+    embeddingsWeightsMatrix = torch.tensor(embeddingsWeightsMatrix, dtype=torch.float64).to(device)
+
+    trainTokenizedSentences = getSentenceList(trainTXT, tokenized=True)
+    trainEncodedSentences = []
+    for sentence in trainTokenizedSentences:
+        sentence = [word2Idx[token] for token in sentence]
+        trainEncodedSentences.append(torch.tensor(sentence, dtype=torch.long).to(device))
+
+    trainClassesDict = createTrueClasses(trainTXT, trainXML)
     trainClasses = classDictToList(trainClassesDict)
     trainClasses = [classListToTensor(sentenceClasses) for sentenceClasses in trainClasses]
 
@@ -49,20 +62,37 @@ def runModel(settings):
     print("Loaded data successfully.\n")
 
     modelConfigs = loadModelConfigs(settings)
-    DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, device)
+
+    DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, vocabSize, embeddingsWeightsMatrix, device)
     print("Model created. Starting training.\n")
-    DL_model.train(trainTokenizedSentences, trainEmbeddings, trainClasses)
-    # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
+    DL_model.train(trainEncodedSentences, trainClasses)
 
     print("Starting the testing phase.\n")
     reader = Reader(dataSettings=settings, corpus="test")
-    filesRead = reader.loadDataSet()
+    testTXT = reader.loadDataSet()
 
-    predFamilyMemberDict, predObservationDict = createTestOutputTask1(settings, DL_model, filesRead)
+    testClassesDict = createDefaultClasses(testTXT)
+    testClasses = classDictToList(testClassesDict)
+    testClasses = [classListToTensor(sentenceClasses) for sentenceClasses in testClasses]
+
+    testTokenizedSentences, testSentenceToDocList = getSentenceListWithMapping(testTXT, tokenized=True)
+    testEncodedSentences = []
+    for sentence in testTokenizedSentences:
+        sentence = [word2Idx[token] for token in sentence]
+        testEncodedSentences.append(torch.tensor(sentence, dtype=torch.long).to(device))
+
+    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testSentenceToDocList)
     return predFamilyMemberDict, predObservationDict
 
 
 def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
+    """ Trains the model with K-fold cross validation, using K-1 splits to train and 1 to validate (and generate output), in K possible combinations.
+    :param settings: settings from settings.ini file
+    :param trainTXT: train txts
+    :param trainXML: train xml annotations
+    :param cvFolds: number of folds for cross validation
+    :return: finalFamilyMemberDict, finalObservationsDict: dicts indexed by filename with detected entities
+    """
 
     seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
     random_seed = seed[9]
@@ -137,7 +167,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
 
         print("Generating prediction output for final tsv.\n")
-        predFamilyMemberDict, predObservationDict = createTrainOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping)
+        predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping)
         predFamilyMemberDicts.append(predFamilyMemberDict)
         predObservationsDicts.append(predObservationDict)
 
