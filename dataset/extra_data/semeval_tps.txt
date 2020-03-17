@@ -1,0 +1,2236 @@
+pericardial effusion	91
+mitral regurgitation	63
+#abdomen	56
+pain	53
+chest pain	45
+nausea	43
+shortness of breath	41
+atrial fibrillation	39
+hypertension	38
+edema	37
+aortic regurgitation	37
+#abd	36
+#mr	36
+sinus rhythm	36
+left ventricular hypertrophy	35
+hypokinesis	34
+#left atrium	34
+coronary artery disease	32
+thickened	31
+vomiting	29
+pneumothorax	28
+#mitral	28
+systolic hypertension	28
+fever	27
+pneumonia	27
+#mass	27
+abdominal pain	25
+aortic stenosis	24
+pleural effusion	24
+#tr	24
+congestive heart failure	23
+#as	23
+atelectasis	22
+left ventricular systolic function	22
+#ar	21
+#masses	20
+fevers	20
+ascites	20
+#r	18
+endocarditis	18
+fracture	17
+sinus tachycardia	17
+#symptoms	17
+diarrhea	17
+mitral annular calcification	17
+hemorrhage	16
+#c	16
+lesion	16
+diabetes	16
+sepsis	15
+weakness	15
+#cad	15
+left ventricular function	15
+effusion	15
+aortic valve stenosis	15
+stroke	14
+lvh	14
+calcifications	14
+#pr	14
+aortic valve leaflets	14
+headache	13
+#afebrile	13
+#mental status	13
+bleeding	13
+#tricuspid	13
+thickened mitral	13
+#hypo	13
+clubbing	12
+cyanosis	12
+#sob	12
+stenosis	12
+#aspiration	12
+chills	12
+chf	12
+cough	12
+murmurs	12
+tamponade	12
+jvd	11
+hematoma	11
+seizure	11
+aspiration pneumonia	11
+hypotension	11
+myocardial infarction	11
+#fall	11
+#infiltrate	11
+depression	11
+bilateral pleural effusions	11
+#ascending aorta	11
+end-stage renal disease	10
+tricuspid regurgitation	10
+lightheadedness	10
+vegetation	10
+wheezing	10
+mitral valve prolapse	10
+melena	10
+copd	10
+atrial septal defect	10
+la enlargement	10
+resting lvot gradient	10
+left ventricular systolic dysfunction	10
+acute distress	9
+back pain	9
+m	9
+g	9
+erythema	9
+opacity	9
+fractures	9
+tachycardic	9
+nephrolithiasis	9
+infection	9
+lymphadenopathy	9
+fatigue	9
+wound	9
+aortic root	9
+confusion	9
+thickening	9
+patent foramen ovale	9
+atheroma	9
+right ventricular	9
+akinetic	9
+consolidation	9
+rhonchi	8
+hypotensive	8
+lesions	8
+murmur	8
+e	8
+urinary tract infection	8
+chronic obstructive pulmonary disease	8
+seizures	8
+blood	8
+nystagmus	8
+pulmonary edema	8
+vegetations	8
+anemia	8
+htn	8
+ischemia	8
+dilated ra	8
+sinus bradycardia	8
+left ventricular	8
+dizziness	7
+mi	7
+febrile	7
+pna	7
+respiratory failure	7
+uti	7
+hypercholesterolemia	7
+plaque	7
+malignancy	7
+ards	7
+dehydration	7
+peripheral edema	7
+hydronephrosis	7
+chronic renal insufficiency	7
+intracranial hemorrhage	7
+schizoaffective disorder	7
+rubs	7
+small bowel obstruction	7
+pseudocyst	7
+wall motion abnormality	7
+right atrium	7
+lv systolic function	7
+hypothyroidism	6
+hypoxia	6
+mass effect	6
+infarct	6
+arteriovenous fistula	6
+cerebrovascular accident	6
+wheezes	6
+rales	6
+heart	6
+st-t wave changes	6
+abscess	6
+chest	6
+lad	6
+thyromegaly	6
+vomitting	6
+decreased breath sounds	6
+anxiety	6
+liver	6
+acute renal failure	6
+cirrhosis	6
+hiatal hernia	6
+dyspnea on exertion	6
+dysuria	6
+renal failure	6
+nsclc	6
+metastases	6
+blood pressure	6
+left bundle branch block	6
+left atrial abnormality	6
+dilated ascending aorta	6
+thickened aortic valve leaflets	6
+akinesis	6
+ptx	6
+nad	5
+occluded	5
+carotid bruits	5
+infarction	5
+dnr	5
+afib	5
+pancreatitis	5
+systolic murmur	5
+abdominal	5
+hematemesis	5
+aortic insufficiency	5
+inferior myocardial infarction	5
+redness	5
+alcohol abuse	5
+agitation	5
+emphysema	5
+peripheral vascular disease	5
+loss of consciousness	5
+respiratory distress	5
+tenderness	5
+mvp	5
+cardiomegaly	5
+right bundle branch block	5
+diabetes mellitus	5
+lung cancer	5
+ha	5
+apparent distress	5
+si	5
+gallops	5
+gerd	5
+following commands	5
+gastroparesis	5
+obese	5
+bleed	5
+esrd	5
+n	5
+v	5
+free air	5
+jaundice	5
+biliary obstruction	5
+lv systolic dysfunction	5
+splenomegaly	5
+tuberous sclerosis	5
+atrial ectopy	5
+lv wall motion abnormality	5
+depressed lvef	5
+right ventricular systolic function	5
+asd	5
+malalignment	5
+rash	4
+aneurysm	4
+diseased	4
+atrial flutter	4
+cva	4
+dvt	4
+respiratory status	4
+subcutaneous emphysema	4
+injuries	4
+rib fx	4
+w	4
+organomegaly	4
+distress	4
+jugular venous distention	4
+t wave inversions	4
+complications	4
+pleural effusions	4
+aortic valve disease	4
+confused	4
+polysubstance abuse	4
+subdural hematoma	4
+metastatic	4
+thrombi	4
+fell	4
+weak	4
+tachycardia	4
+septic	4
+trauma	4
+agitated	4
+anicteric	4
+stone	4
+asthma	4
+left atrial enlargement	4
+constipation	4
+degenerative joint disease	4
+pe	4
+palpitations	4
+rashes	4
+hydrocephalus	4
+ica stenosis	4
+pale	4
+suicidal ideation	4
+dilated aortic root	4
+left lower lobe pneumonia	4
+pneumocephalus	4
+type 1 diabetes	4
+hurt himself	4
+diabetes mellitus type 2	4
+breath sounds	4
+hemetemesis	4
+pulmonary embolism	4
+pleural	4
+tracheobronchomalacia	4
+thrombocytopenia	4
+tachy	4
+left bundle-branch block	4
+atherosclerotic disease	4
+alcoholic pancreatitis	4
+obstructive jaundice	4
+seizure disorder	4
+aspiration event	4
+right bundle-branch block	4
+t wave changes	4
+q-t interval prolongation	4
+left axis deviation	4
+pulmonic regurgitation	4
+lv wall motion abnormalities	4
+left ventricular cavity	4
+pulmonary artery systolic pressure	4
+abnormal septal	4
+abnormal septal motion	4
+ligamentous injury	4
+abnormal signal	4
+interval change	4
+gsw	4
+nondistended	3
+drift	3
+le edema	3
+pulmonary contusions	3
+dislocation	3
+hct drop	3
+clot	3
+rebound	3
+thrill	3
+drainage	3
+pupils	3
+substance abuse	3
+chronic back pain	3
+neck pain	3
+tingling	3
+metastatic disease	3
+respiratory arrest	3
+adenocarcinoma	3
+cavitary lesion	3
+lv	3
+aspiration pna	3
+hiv	3
+pulmonary	3
+infiltrates	3
+hit	3
+tongue	3
+pronator drift	3
+lethargy	3
+dehydrated	3
+multiple sclerosis	3
+c spine fx	3
+pulm contusions	3
+spenic lac	3
+pelvic fx	3
+ecchymoses	3
+incision	3
+chronic anemia	3
+change in mental status	3
+hepatitis-c cirrhosis	3
+varices	3
+tachycardiac	3
+paroxysmal nocturnal dyspnea	3
+hypertensive urgency	3
+purulent drainage	3
+stoma	3
+left-sided weakness	3
+urosepsis	3
+chest tightness	3
+crackles	3
+dni	3
+lbp	3
+hsm	3
+acute process	3
+calcification	3
+bradycardia	3
+mental status changes	3
+syncope	3
+ulcerative colitis	3
+malignant hypertension	3
+hypertensive	3
+altered mental status	3
+etoh abuse	3
+dilated loops	3
+cancer	3
+adhesions	3
+hypodensity	3
+variceal bleed	3
+cp	3
+bicuspid aortic valve	3
+poor r wave progression	3
+varicosities	3
+cardiopulmonary process	3
+volume loss	3
+chronic	3
+infectious disease	3
+elevation	3
+prostate cancer	3
+leukocytosis	3
+pea arrest	3
+junctional rhythm	3
+glaucoma	3
+stool	3
+gastritis	3
+deformity	3
+abrasion	3
+displaced	3
+injury	3
+temperature spikes	3
+heavy vaginal bleeding	3
+degenerative change	3
+pda	3
+lytic	3
+sclerotic lesions	3
+liver laceration	3
+pancreatic pseudocyst	3
+infarctions	3
+type b aortic dissection	3
+aortic dissection	3
+inguinal lymphadenopathy	3
+thrombus	3
+lymphoma	3
+unable to rise	3
+group a strep bacteremia	3
+flank pain	3
+deformed	3
+effusions	3
+hypoxic	3
+tired	3
+thrush	3
+eosinophilia	3
+rate	3
+non-specific st-t wave changes	3
+mitral stenosis	3
+hypokinetic	3
+lv function	3
+aortic valve	3
+left ventricular inflow pattern	3
+dilated lv	3
+ms	3
+hyperdynamic lvef	3
+tamponade physiology	3
+diastolic collapse	3
+right ventricular pressure	3
+sinusitis	3
+carotid disease	3
+delayed pp hemorrhage	3
+lgi bleed	3
+gallbladder	3
+retrocardiac opacity	3
+pneumothoraces	3
+abcess	3
+facial droop	2
+mca aneurysm	2
+arthritis	2
+bruits	2
+3vd	2
+pud	2
+dementia	2
+gib	2
+decubitus	2
+infectious	2
+bandemia	2
+illeus	2
+loc	2
+lip laceration	2
+crepitus	2
+instability	2
+tender	2
+subcutaneous	2
+nasal fracture	2
+soft tissue swelling	2
+displaced fracture	2
+step-off	2
+hemopneumothorax	2
+oozing	2
+moving abnormally	2
+extremities	2
+strokes	2
+left hemiplegia	2
+anoxic brain injury	2
+mental status change	2
+encephalopathy	2
+unresponsive	2
+epileptiform activity	2
+arrest	2
+failed swallow	2
+aspiration pneumonitis	2
+hemiparesis	2
+gout	2
+escherichia coli bacteremia infections	2
+diverticulosis	2
+third heart sound	2
+fourth heart sound	2
+substernal chest pain	2
+diaphoresis	2
+thrombosis	2
+bright red blood per rectum	2
+left	2
+aortic root dilatation	2
+hyperlipidemia	2
+weight loss	2
+discomfort	2
+scar	2
+gallstones	2
+peak systolic velocities	2
+carotid bruit	2
+swelling	2
+delirium tremens	2
+lethargic	2
+acute intracranial process	2
+alcohol withdrawal	2
+esophageal varices	2
+elevated	2
+vertigo	2
+urinary	2
+bowel movements	2
+numbness	2
+night sweats	2
+inflammatory	2
+hernia	2
+paraphasic errors	2
+head trauma	2
+foci	2
+sacral mass	2
+induration	2
+cavitary mass	2
+patchy opacities	2
+vsd	2
+inflammation	2
+falling down	2
+sah	2
+dysarthria	2
+atrophy	2
+contusion	2
+rib fractures	2
+new	2
+dark	2
+black material	2
+skin	2
+barrett's esophagus	2
+pneumomediastinum	2
+osteoporosis	2
+obesity	2
+tachypneic	2
+perforation	2
+esophageal perforation	2
+coughing	2
+incisions	2
+ptosis	2
+fluid collection	2
+somnolent	2
+po intake	2
+black stools	2
+hepatic encephalopathy	2
+prerenal azotemia	2
+renal function	2
+stones	2
+kidney	2
+decreased responsiveness	2
+suicidal ideations	2
+hepatitis c	2
+noncompliance	2
+fluid overload	2
+drug abuse	2
+pharyngitis	2
+carotids	2
+hepatosplenomegaly	2
+mrsa	2
+chronic aspiration	2
+down's syndrome	2
+cataract	2
+esophageal leak	2
+itching	2
+orthopnea	2
+occlusion	2
+sick sinus syndrome	2
+normal sinus rhythm	2
+found down	2
+erythematous	2
+abrasions	2
+flaccid	2
+ischemic bowel	2
+metabolic acidosis	2
+lactic acidosis	2
+complaints	2
+jugular venous distension	2
+anterior myocardial infarction	2
+heart failure	2
+fatigued	2
+lung mass	2
+decreased bs	2
+hypercholestrolemia	2
+r sided neglect	2
+r hemianopsia	2
+blurry vision	2
+dysphagia	2
+muscle aches	2
+joint pains	2
+ankylosing spondylitis	2
+fibrothorax	2
+difficulty	2
+shift	2
+hypodensities	2
+oral control	2
+syncopal episode	2
+orthostatic	2
+peptic ulcer disease	2
+diziness	2
+foot pain	2
+atenolol overdose	2
+psychiatric illnesses	2
+foot	2
+wall motion abnormalities	2
+overdose	2
+ah	2
+subdural hematomas	2
+alert	2
+autonomic neuropathy	2
+high blood pressure	2
+poorly responsive	2
+disoriented	2
+suicidal thoughts	2
+lung volumes are low	2
+depressions in v3 through v6	2
+claudication	2
+passing gas	2
+pericarditis	2
+holosystolic murmur	2
+non-bleeding varices	2
+bleeding gastric ulcer	2
+gastropathy	2
+alcoholism	2
+inguinal hernia	2
+ulcerations	2
+nodular	2
+gastrointestinal bleed	2
+tortuous aorta	2
+skin lesions	2
+myocardial infarctions	2
+racoon's eyes	2
+pulmonary embolus	2
+skull fracture	2
+loculated	2
+aorta	2
+hyperkalemia	2
+malignant	2
+sscp	2
+ebsteins anomaly	2
+dilated	2
+ai	2
+illness	2
+dm2	2
+resp failure	2
+gi bleed	2
+coagulopathy	2
+bruit	2
+pseudoaneurysm	2
+thigh pain	2
+blood loss anemia	2
+hyperchol	2
+black tarry stools	2
+brbpr	2
+transverse process fracture	2
+sacral fracture	2
+perineal injury	2
+osteomyelitis	2
+defervesced	2
+forearm fracture	2
+heavy bleeding	2
+depressed left ventricular function	2
+diastolic dysfunction	2
+laceration	2
+acute myocardial infarction	2
+ectopic beats	2
+extravasation	2
+perirenal hematoma	2
+gastric outlet obstruction	2
+ascities	2
+lung	2
+portal hypertension	2
+hematuria	2
+cyst	2
+renal mass	2
+cholelithiasis	2
+fibrosis	2
+dilatation	2
+bilateral effusions	2
+sbp	2
+hypercalcemia	2
+portal vein thrombosis	2
+pvd	2
+mitral regurg	2
+adenomyomatosis	2
+gallstone	2
+hemangioma	2
+insulin-dependent diabetes mellitus	2
+stridor	2
+gastroesophageal reflux	2
+iron deficiency anemia	2
+paroxysmal atrial fibrillation	2
+rapid atrial fibrillation	2
+skin breakdown	2
+interatrial septum	2
+fatty infiltrate	2
+angiomyolipoma	2
+diabetic ketoacidosis	2
+gram negative rods	2
+breast ca	2
+leptomeningeal disease	2
+puss	2
+bowel obstruction	2
+flat affect	2
+palate elevated	2
+ruptured	2
+vasospasm	2
+groin hematoma	2
+spiking temperatures	2
+rapid ventricular response	2
+prolonged q-tc interval	2
+left anterior fascicular block	2
+supraventricular tachycardia	2
+ventricular ectopy	2
+st segment depression	2
+aaa	2
+dilated rv	2
+lv mass	2
+calcified tips	2
+embolism	2
+ps	2
+thickened tricuspid	2
+vf arrest	2
+hypertrophic obstructive cardiomyopathy	2
+hocm	2
+pericardium	2
+pa systolic pressure	2
+pfo	2
+rv diastolic collapse	2
+right ventricular diastolic collapse	2
+right ventricular function	2
+impaired fillling	2
+elongated la	2
+calcified	2
+pulmonary artery	2
+left ventricular outflow obstruction	2
+ear fullness	2
+pulmonary vascular redistribution	2
+ica	2
+esld	2
+spinal abscess	2
+accreta	2
+retained products	2
+vascularity	2
+portal flow	2
+multiple facial fractures	2
+collapsed lung	2
+chi	2
+purulent sputum	2
+discoid atelectasis	2
+cholangitisepsis	2
+fall from ladder	2
+abnormal alignment	2
+hilar mass	2
+loculated effusion	2
+carotid artery thrombosis	2
+low lung volumes	2
+distended stomach	2
+perihilar alveolar pattern	2
+multiple injuries	2
+patchy opacity	2
+adenoma	2
+frontotemporal dementia	2
+abd distention	2
+cardiapulm changes	2
+interstitial markings	2
+leak	2
+lung consolidation	2
+hydropneumothorax	2
+fluid collections	2
+opacification	2
+pneumoniae	2
+neck stiffness	1
+unable to walk	1
+inability to walk	1
+cerebral aneurysm	1
+mca	1
+moving all extremities	1
+shoulder blade	1
+reversible inferior defect	1
+reversible anterior defect	1
+carpal tunnel	1
+shingles	1
+lgib	1
+systolic murmur at apex	1
+lower ext edema	1
+bed abnormalities	1
+splinters	1
+dropping oxygen saturation	1
+pulmonary toilet	1
+drop	1
+non-verbal status	1
+vascular dementia	1
+cerebellar stroke	1
+tachypnic	1
+thick whitish secreations	1
+localized pain	1
+pupils pinpoint	1
+midline lesion	1
+upper hard palate	1
+coarse rhonchi	1
+distended	1
+poor foot hygiene	1
+dp pulse	1
+st-tw changes	1
+opacities	1
+dilated  loops	1
+loops	1
+ileus	1
+small  bowel  obstruction	1
+elevated lactate	1
+lactate	1
+enteric	1
+decompensation	1
+transmigrated bacteria	1
+facial laceration	1
+elbow pain	1
+hand laceration	1
+knee swelling	1
+congenitcal spine abnormality	1
+decreased rom	1
+hand lacerated	1
+knee abrasions	1
+skull fractures	1
+dislocations	1
+spondylolysis	1
+spondylolisthesis	1
+left pneumo	1
+hemothorax	1
+multiple	1
+sternal fracture	1
+mesenteric stranding	1
+mesenteric injury	1
+facial cuts	1
+sinus disease	1
+avulsion fracture	1
+distraction	1
+foreign bodies	1
+tibial plateau fracture	1
+lipohemarthrosis	1
+tibial plateau	1
+elbow fx	1
+hand fx	1
+nasal fx	1
+mesenteric hematoma	1
+lacerated	1
+non-viable small bowel	1
+elbow	1
+tibial plateau fx	1
+bloody stools	1
+adverse events	1
+olecranon fx	1
+flail chest	1
+mesenteric	1
+1st metacarpal fx	1
+alteration in mental status	1
+contorted	1
+eyes were clamped closed	1
+left hemiparesis	1
+wheelchair bound	1
+congenital heart defect	1
+blood clot	1
+scleral icterus	1
+nuchal rigidity	1
+irregularly irregular rhythm	1
+inattentive	1
+oriented to self only	1
+language nonfluent	1
+inconsistently follows commands	1
+papilledema	1
+exudates	1
+hemorrhages	1
+tongue protrudes	1
+atrophic musculature	1
+tone is spastic	1
+adventitious movements	1
+encephalomalacia	1
+seizure activity	1
+cerebral infarct	1
+asystolic arrrest	1
+metabolic	1
+cardioembolic	1
+ischemic event	1
+sharp	1
+slow wave discharges	1
+convulsive seizures	1
+responding appropriately	1
+left sided infarct	1
+processess	1
+old infarct	1
+asystolic arrest	1
+pneumonitis	1
+meaningful neurologic function	1
+apnea	1
+cortical activity	1
+trace amount of blood flow	1
+condition worsened	1
+flutter	1
+acute issues	1
+non-oliguric renal failure	1
+atn	1
+cardiac arrest	1
+guarding	1
+conduction delay	1
+3-vessel disease	1
+coronary artery stenosis	1
+anteroinferior st elevations	1
+coffee-grounds emesis	1
+right atrial dilatation	1
+non-st-elevation myocardial infarction	1
+upper gastrointestinal bleed	1
+right ventricular conduction delay	1
+tachycardia	1
+acute cardiopulmonary process	1
+pain with swallowing	1
+mucosal irregularity	1
+epistaxis	1
+sore throat	1
+sternal drainage	1
+temp	1
+right flank pain	1
+lack of function	1
+subcutaneous mass	1
+anterior mi	1
+dyslipidemia	1
+cystic	1
+hernias	1
+abscess right flank	1
+cavity stones	1
+subcutaneous abscess	1
+abscess cautery stones	1
+antegrade flow	1
+carotid stenosis	1
+dropped gallstone abscess	1
+dried blood	1
+combativeness	1
+thrombophlebitis	1
+breast cancer	1
+alcohol use	1
+withdrawal seizures	1
+responding to	1
+responding to voice	1
+blood in his mouth	1
+response to painful stimulus	1
+stimulus sensitive	1
+elevated transaminases	1
+elevated lipase	1
+left lower lobe	1
+right lower lobe pneumonia	1
+obtunded	1
+biliary tree abnormalities	1
+poor balance	1
+lack of safety awareness	1
+alcohol withdrawal seizures	1
+compression fractures	1
+injure	1
+alternation in consciousness	1
+unable to move his legs	1
+urinary frequency	1
+neoplasm	1
+bipolar disorder	1
+organic mania	1
+sleep disorder	1
+basal cell cancer	1
+acute leukemia	1
+rheumatoid arthritis	1
+emaciated	1
+unwilling to cooperate	1
+cervical rigidity	1
+kyphosis	1
+range of motion	1
+neck	1
+right-left	1
+right-left confusion	1
+right palmomental reflex	1
+rooting	1
+grasp bilaterally	1
+relative afferent defect	1
+decreased	1
+decreased bulk	1
+wasting	1
+downgoing toes	1
+clonus	1
+light touch	1
+pinprick	1
+temperature	1
+position sense	1
+impaired position sense	1
+finger to nose	1
+nonspecific st changes	1
+paraparesis	1
+spine	1
+retrolisthesis	1
+calcified mass	1
+nodules	1
+patchy linear opacities	1
+abnormally high inr	1
+narcotic pain medications	1
+cord compression	1
+scoliosis	1
+obstruction to flow of contrast	1
+epidural mass	1
+hypercapnia	1
+acidosis	1
+respirations	1
+pancreatic cancer	1
+elevated psa	1
+sacral lesions	1
+mucus plugging event	1
+metastatic adenocarcinoma	1
+pleuritic chest pain	1
+aspirated	1
+right sided chest pain	1
+right-sided chest pain	1
+short of breath	1
+white tongue	1
+plaques	1
+dullness to percussion	1
+egophony	1
+cavitary infiltrate	1
+hilar lymphadenopathy	1
+air-fluid level	1
+thickened wall	1
+lung abscess	1
+septic emboli	1
+bilateral pleural effusion	1
+la	1
+respirtory distress	1
+respiratory discomcomfort	1
+lung injury via mechanical ventilation	1
+cap	1
+normocytic anemia	1
+anemia of chronic disease	1
+right upper lobe pneumonia	1
+idiopathic anemia	1
+trouble breathing	1
+cerebral contusions	1
+bronchitis	1
+alcoholic episodes	1
+falls	1
+episodes of unconsciousness	1
+abnormal movements	1
+tremors	1
+hemorrhagic contusion	1
+chronic subdural hematoma	1
+extraaxial widening	1
+sinus mucosal thickening	1
+small air-fluid level	1
+nasal bone fractures	1
+extra axial fluid	1
+enlarged subarachnoid space	1
+chronic sinusitis	1
+cervical spondylosis	1
+underlying mass	1
+intermittently confused	1
+pain medication	1
+alcoholic history	1
+traumatic brain injury	1
+slurred speech	1
+cannot keep in	1
+cannot keep in fluids	1
+dry mouth	1
+rapid heartbeat	1
+feeling dizzy	1
+faint	1
+whites of	1
+shaking chills	1
+new symptoms	1
+esophageal polyp	1
+dysplasia	1
+widened mediastinum	1
+gastroesophageal reflux disease	1
+polyp	1
+pilonidal cyst	1
+fascia defect	1
+incarceration	1
+rectal	1
+widening	1
+extravasation of contrast	1
+extravasation of barium	1
+c2 fracture	1
+hematomas	1
+breast implant rupture	1
+splenic laceration	1
+amyloidosis	1
+kidney stones	1
+coarse upper airway sounds	1
+corneal reflex present	1
+no speech	1
+increased tone	1
+rise	1
+tenderness	1
+ischemic colonic perforation	1
+anemic	1
+unarousable	1
+movement	1
+moved	1
+response to pain	1
+responding to painful  stimuli	1
+respiratoy failure	1
+poor nutritional status	1
+tube feed dependence	1
+wound care	1
+non-cooperation	1
+self-harm	1
+cryoglobulinemia	1
+dry mucous membrane	1
+nose	1
+caput medusae	1
+asterixis	1
+telangiectasias	1
+oriented to place and time	1
+uncooperative	1
+groin pain	1
+hydroureter	1
+hepatitis-c	1
+myocardial ischemia	1
+poor medicine compliance	1
+infected tunneled catheter	1
+feeling	1
+depressed	1
+tunneled catheter	1
+left-sided cva	1
+residual right-sided weakness	1
+clots	1
+tearful	1
+pedal edema	1
+fistula	1
+vascular congestion	1
+hypodense lesion	1
+dialysis noncompliance	1
+end stage renal disease	1
+noncompliance with medications	1
+acute risk to	1
+acute risk to herself	1
+small-vessel disease	1
+lacunar infarct	1
+wound drainage	1
+niddm	1
+wound infection	1
+aspirations	1
+oropharyngeal swallowing disturbance	1
+poor laryngeal sensitivity	1
+profound mental retardation	1
+hepatitis b carrier	1
+allergic rhinitis	1
+retractile testis	1
+hip subluxation	1
+atopic dermatitis	1
+thigh lipoma	1
+dystonia	1
+muscular atrophy	1
+desaturations	1
+frothy sputum	1
+inferior posterolateral defect	1
+timi three flow	1
+s3	1
+s4	1
+occult bleeding	1
+foot ulcer	1
+elevated wedge pressure	1
+decreased ejection fraction	1
+toe ulcer	1
+respiratory rate	1
+demented	1
+p.o. intake	1
+diastolic heart failure	1
+type 2 diabetes	1
+benign positional vertigo	1
+femoral neck fracture	1
+b12 deficiency	1
+mucous membranes	1
+edentulous	1
+jugulovenous distension	1
+costovertebral angle tenderness	1
+pitting bilaterally	1
+hip	1
+pelvic instability	1
+passive range of motion	1
+right lower lobe	1
+atelectasis right	1
+vascular calcification	1
+stranding	1
+pneumatosis	1
+myelocele	1
+cervical spine	1
+bloody stool	1
+longterm pain	1
+infectious colitis	1
+low hematocrit	1
+respiratory alkalosis	1
+bloody diarrhea	1
+lipase	1
+lipase levels	1
+abdominal complaint	1
+fluid-filled uterus	1
+uterine stripe	1
+swallowing problems	1
+acute st elevation myocardial infarction	1
+chest pain radiating	1
+st elevations	1
+st elevations anteriorly	1
+two-vessel coronary artery disease	1
+ostial lesion	1
+left anterior descending artery	1
+luminal irregularities	1
+right coronary artery	1
+coronary artery	1
+cardiac index	1
+decreased distal pulses bilaterally	1
+anterior st elevation myocardial infarction	1
+depressed cardiac	1
+depressed cardiac output	1
+hemodynamics	1
+nonsustained ventricular tachycardia	1
+very low ejection fraction	1
+scarring	1
+arrhythmia	1
+acute anterior myocardial infarction	1
+poor ejection fraction	1
+acute anterior st elevation myocardial infarction	1
+tachypnea	1
+low blood pressure	1
+hct improved	1
+right flank	1
+abnormality	1
+enlarged	1
+mediastinal lad	1
+highly atypical cells	1
+met	1
+asbestos exposure	1
+intention tremor	1
+ncslc	1
+work of breathing	1
+diaphoretic	1
+comfort measures only	1
+non small cell lung cancer	1
+acute confusional state	1
+mumble	1
+frontal headache	1
+phonemic paraphasias	1
+diplopia	1
+tinnitus	1
+incoordination	1
+focal	1
+focal weakness	1
+left pleural effusion	1
+trapped left lower lobe	1
+sem	1
+petechiae	1
+cannot name date	1
+difficulty naming	1
+phonemic paraphsias	1
+neglect	1
+facial	1
+facial weakness	1
+tongue protrudes midline	1
+tremor	1
+rigidity	1
+bradykinesia	1
+dysmetria	1
+ataxia	1
+prior infarctions	1
+hyperdensity	1
+acute bleed	1
+left ventricular systolic  function	1
+ventricular  septal defect	1
+left ventricular inflow  pattern	1
+oral	1
+pharyngeal dysphagia	1
+swallow delay	1
+delayed laryngeal valve closure	1
+coughs	1
+clearing	1
+trace aspiration	1
+global aphasia	1
+unresponsiveness	1
+hypercapnea	1
+staph aureus pneumonia	1
+neurologic deficits	1
+swallowing function	1
+penumonia	1
+black	1
+tarry stools	1
+guaiac-positive stool	1
+against medical advice	1
+ulcers	1
+gastrointestinal bleeding	1
+epigastric pain	1
+significant bowel movements	1
+hematocrit	1
+chronic duodenal ulcers	1
+uc	1
+atenolol intake	1
+lightheadness	1
+psychosocial stress	1
+hematochezia	1
+hip pain	1
+presyncopal	1
+fecal	1
+urinary incontinence	1
+atenolol ovedose	1
+sbp's decreased	1
+diverticular rupture	1
+osteoarthritis	1
+rheumatic fever	1
+sydenham's chorea	1
+duodenal ulcer	1
+orthostatic hypotension	1
+drug overdose	1
+ingestion of atenolol	1
+taking multiple pills	1
+iron	1
+chronic disease	1
+wheezy	1
+nicotine	1
+schizoaffective d/o	1
+acute renal insufficiency	1
+fainting	1
+common carotid artery aneurysm	1
+common carotid artery aneursym	1
+common carotid aneursym	1
+dry skin	1
+supraclavicular	1
+supraclavicular nose	1
+common carotid aneurysm	1
+heart murmur	1
+wounds	1
+weight gain	1
+midline shift	1
+follow commands	1
+oriented	1
+oriented times three	1
+responsive to painful stimulation	1
+enlarged pupil	1
+nonreactive pupil	1
+pupil	1
+herniated	1
+positive gag	1
+bruising	1
+nosocomial pneumonia	1
+spike a temperature	1
+blood in	1
+changes in vision	1
+poor control	1
+weiss tears	1
+micturition	1
+intracystic pheochromocytoma	1
+elevated blood sugars	1
+prerenal etiology	1
+diabetic nephropathy	1
+opioid overdose	1
+benzodiazepine abuse	1
+disruptive	1
+od'd	1
+over medication	1
+drooling	1
+sleepy	1
+visual changes	1
+multiple suicide attempts	1
+od	1
+head injury	1
+bendoziadepine withdrawl seizure	1
+motrin od	1
+heroin abuse	1
+alcaholic hepatitis	1
+dts	1
+dysarthric speech	1
+mm dry	1
+thyromegly	1
+hepatosplenomegly	1
+hallucinations	1
+mucosal thickening	1
+soft tissue	1
+chronic mucosal changes	1
+nonspecific st-t wave changes	1
+narcotic overdose	1
+knee pain	1
+hearing voices	1
+pscyh illness	1
+asp pneumonia	1
+chemical pneumonitis	1
+wbc trended down	1
+hurting himself	1
+elevated blood glucose	1
+impaired glucose tolerance	1
+opiod overdose	1
+intoxication	1
+heard voices	1
+hear	1
+hurting	1
+hurting yourself	1
+three-vessel coronary artery disease	1
+three-vessel disease	1
+abnormal wall motion activity	1
+depression in 2	1
+t wave inversions in 2	1
+depression in	1
+depression in v4	1
+t wave inversions in v3 through 5	1
+unstable angina	1
+scars	1
+one vessel coronary artery disease	1
+sedentary	1
+transient ischemic attack	1
+murmur radiating	1
+bilious emesis	1
+stool impaction	1
+lipoma	1
+moving	1
+multiple infarcts	1
+desaturated	1
+coagulase negative staphylococcus in	1
+mobile mass	1
+elevated liver function tests	1
+liver function tests	1
+cerebrovascular accidents	1
+staphylococcus	1
+hemetematsis	1
+esophageal ulceration	1
+non-bleeding proximal stomach lesion	1
+l sided cp	1
+palpatations	1
+paresthesias	1
+w/d	1
+seized	1
+etoh cirrhosis	1
+pancytopenia	1
+etohism	1
+caput medusa	1
+spider angiomata	1
+palmar erythema	1
+nodular cirrhotic liver	1
+liver disease	1
+older clotted blood	1
+ulceration	1
+congestion	1
+nodularity	1
+portal gastrophathy	1
+nonbleeding esophageal varices	1
+non-bleeding	1
+congested	1
+heaped up mucosa	1
+gastric varix	1
+bleed of gastropathy	1
+bleeding ulcer	1
+melenic stools	1
+liver was nodular	1
+chronic etoh abuse	1
+dt	1
+nsvt	1
+electrolyte loss	1
+alcoholic liver disease	1
+pancytopenic	1
+leukopenia	1
+addiction	1
+gastric lesion	1
+liver cirrhosis	1
+bloody	1
+dark stools	1
+other concerns	1
+exercise tolerance	1
+grade iv/vi systolic ejection murmur	1
+radiated throughout	1
+flatus	1
+bowel movement	1
+jvp	1
+left lower quadrant	1
+blood in the stool	1
+vaginal bleeding	1
+urinary symptoms	1
+hypertensive crisis	1
+ppd positive	1
+transient ischemic attacks	1
+raccoon eyes	1
+oriented to place or time	1
+fundi obscured	1
+cataracts	1
+conjunctival hemorrhage	1
+battle signs	1
+hemotympanum	1
+pleural rub	1
+positive bowel sounds	1
+bruise	1
+inflammatory process	1
+traction bronchiectasis	1
+cardiac issues	1
+intra-cranial bleeding	1
+cardiac process	1
+abdominal tenderness	1
+telemetry events	1
+reactive component	1
+intracranial process	1
+lactose intolerant	1
+hemodynamic complications	1
+upper respiratory infections	1
+secretions	1
+breathing	1
+osa	1
+basal cell carcinoma	1
+squamous cell carcinoma of the skin	1
+melanoma	1
+diverticular disease	1
+exposed to asbestos	1
+alzheimer's	1
+inspiratory wheezes	1
+ext	1
+infectious consolidation	1
+mediastinal	1
+right pneumothorax	1
+tortuous	1
+consolidations	1
+loculation	1
+difficulty swallowing	1
+decreased po intake	1
+electrolyte abnormalities	1
+azotemia	1
+hyperkalemic	1
+uremic	1
+urine output	1
+bilateral hydronephrosis	1
+incurable disease	1
+cachectic	1
+dry mucous membranes	1
+lower abdominal tenderness	1
+lower extremities	1
+post-obstructive	1
+urinary retention	1
+post- obstructive	1
+bladder mass	1
+stemi	1
+occluded rca	1
+epstein's	1
+heart dilatation	1
+syncopal events	1
+thalassemia minor	1
+low back pain	1
+polycystic ovaries	1
+hypertriglyceridemia	1
+conjunctivitis	1
+yeast growth	1
+blood in the stomach	1
+hemorrhagic gastritis	1
+lfts increased	1
+acute mi	1
+cardiogenic shock	1
+rv failure	1
+avn	1
+inferior stemi	1
+hypothyroid	1
+thallesemia minor	1
+tobacco abuse	1
+diast dysf	1
+non-st elevation mi	1
+two-vessel disease	1
+ekg changes	1
+fixed inferior defect	1
+factor viii deficiency	1
+rapid steroid taper	1
+nsaid use	1
+eosinophilic pneumonia	1
+vulvar intraepithelial neoplasia	1
+mormurs	1
+exp wheezes	1
+avf	1
+copd exacerbation	1
+flash edema	1
+sbp fell	1
+sbp came back	1
+dm	1
+repiratory failure	1
+intraop bleeding	1
+hematocrit dropped	1
+common femoral artery injury	1
+pain hip	1
+bph	1
+anxious	1
+dressing	1
+tense	1
+arterial laceration	1
+thigh hematoma	1
+skin bleeding	1
+voiding difficulties	1
+common femoral laceration	1
+chronically	1
+epigastric discomfort	1
+gurgling gas-like pain	1
+d	1
+a. fib	1
+lung ca	1
+epigastric tenderness	1
+hemrroiids	1
+guiac positive brown stool	1
+sinus tach	1
+st-t abnormalities	1
+non bleeding ulcer	1
+gi bleeding	1
+facial lacerations	1
+degloving injury	1
+deformity laceration	1
+blood in the urine	1
+impingement	1
+superior pubic rami fracture	1
+diastasis	1
+solid organ injury	1
+radial ulnar fracture	1
+nondisplaced fracture	1
+orthopedic injuries	1
+forearm fractures	1
+buttock	1
+thigh wound	1
+withdrawal	1
+tremulousness	1
+withdrawal symptoms	1
+femur fracture	1
+open pelvic fracture	1
+superior rami fracture	1
+proximal fibula fracture	1
+iliac bone fracture	1
+deep tissue infection	1
+abnormal periods	1
+heavier periods	1
+fibroids	1
+large clots	1
+cramping	1
+hydrosalpinx	1
+uterine fibroid	1
+anteverted uterus	1
+fibroid	1
+abnormal pap smears	1
+sexually transmitted diseases	1
+neurofibroma	1
+parotid tumor	1
+gynecological cancers	1
+large amounts of	1
+large amounts of blood	1
+polyps	1
+cervical motion tenderness	1
+adnexal tenderness	1
+much pooling	1
+slow return of bowel function	1
+severe respiratory distress	1
+elevated troponin	1
+left ventricular dilatation	1
+flash pulmonary edema	1
+gained more than three pounds	1
+worsening	1
+hypotensive episodes	1
+creatinine improved	1
+pernicious anemia	1
+vommiting blood	1
+vomitting bright red blood	1
+gagging	1
+vomimitting	1
+post nasal drip	1
+vommitted	1
+vommitting	1
+dizzy	1
+hematochezeia	1
+bleeding problems	1
+liver problems	1
+nsaid	1
+steroid use	1
+irregular menstrual cycle	1
+pallor	1
+blood in stomach	1
+stomach	1
+showed bright red blood	1
+decreasing hct	1
+tear	1
+signs or symptoms	1
+end organ damage	1
+weiss tear	1
+radiation to his jaw	1
+generalized weakness	1
+bradycardic	1
+st elevation	1
+a-v dissociation	1
+reocclusion	1
+knee arthritis	1
+sleep apnea	1
+filling pressures	1
+right dominant heart	1
+rca occlusion	1
+chest pains	1
+tibia	1
+fibula fractures	1
+radial head fracture	1
+amnestic	1
+fixed	1
+dilated pupils	1
+disc herniation	1
+blood in oropharynx	1
+head lac	1
+ruq tenderness	1
+tib	1
+fib deformity	1
+angulated fracture	1
+displaced fractures	1
+lateral	1
+posterior displacement	1
+parenchymal opacity	1
+contusions	1
+linear densities	1
+atelectatic	1
+high density material	1
+perirenal stranding	1
+pathologic adenopathy	1
+perirenal	1
+retroperitoneal hematoma	1
+hct	1
+appropriate increase	1
+eschar	1
+radial neck fracture	1
+chronic alcoholic-induced pancreatitis	1
+malnutrition	1
+bile duct obstruction	1
+malnourished	1
+obstructed bile duct	1
+sinistral hypertension	1
+venous collaterals	1
+thrombosed	1
+bladder ca	1
+icteric	1
+lung volumes	1
+residual contrast	1
+ascitic	1
+abdominal distension	1
+inability to eat	1
+persistent vomiting	1
+inability to pass	1
+inability to pass gas	1
+right sided weakness	1
+hives	1
+neurologic pain	1
+visual field deficit	1
+neurologic deficit	1
+embolic stroke	1
+right	1
+sensory changes	1
+neurologic complaints	1
+kidney mass	1
+retinal hemorrhage	1
+memory loss	1
+prostate ca	1
+aneurysm of carotid artery	1
+oriented to person only	1
+white plaque	1
+mrg	1
+type b intramural hematoma	1
+mural thrombus	1
+aneurysmal	1
+aneurysmal dilatation	1
+primary renal neoplasm	1
+noncalcified nodule	1
+noncalcified granuloma	1
+calcified nodules	1
+intramural hematoma	1
+renal cell cancer	1
+atypical uroepithelial cells	1
+nodule	1
+symptom	1
+increased abdominal girth	1
+bilateral infiltrates	1
+pulmonary effusions	1
+adult respiratory distress syndrome	1
+hospital acquired pneumonia	1
+lung sounds	1
+expiratory	1
+inspiratory wheeze	1
+inguinal mass	1
+venous stasis	1
+pitting edema	1
+mucosal	1
+chronic inflammatory change	1
+pancreas masses	1
+cystic area	1
+stricture	1
+chronic inflammation	1
+portal vein thrombus	1
+complete obstruction	1
+reactive vascular transformation	1
+high grade b cell lymphoma	1
+high grade lymphoma	1
+ventilator related pneumonia	1
+condyloma	1
+herpes simplex	1
+herpes simplex one	1
+ampullary mass	1
+forlymphoma	1
+xanthomonas maltophilia	1
+ascending cholangitis	1
+hyperparathyroidism	1
+pancreatic ascites	1
+cold symptoms	1
+abd pain	1
+ischemic cardiomyopathy	1
+left facial numbness	1
+numerous diverticuli	1
+adenomatous polyps	1
+cdiff	1
+irregular	1
+sensation	1
+mass lesion	1
+peripheral hypodensity	1
+sigmoid diverticulosis	1
+diverticulitis	1
+collapsed gallbladder	1
+acute cholecystitis	1
+biliary ductal dilatation	1
+deconditioning	1
+hypoadrenalism	1
+cmo	1
+troponin	1
+systolic ejection murmur	1
+dry eschar	1
+palpable dorsalis pedis pulse	1
+first-degree atrioventricular block	1
+white blood cell count rose	1
+passing	1
+sweats	1
+vomited	1
+recurrent utis	1
+cervical lymphadenopathy	1
+hypoactive bowel sounds	1
+paucity of air	1
+pulmonary sequelae	1
+decreased respiratory status	1
+respiratory instability	1
+complication	1
+left pneumothorax	1
+passed flatus	1
+colonic polyps	1
+sirs	1
+emesis	1
+persistently febrile	1
+group a strep	1
+gropu b streptococcus	1
+enlarged r kidney	1
+adipose tissue densities	1
+air fluid levels	1
+gas present	1
+enlarged spleen	1
+strep a	1
+renal lesion	1
+difficulty breathing	1
+feeling lh	1
+loose stools	1
+blood in stool	1
+skin infection	1
+non productive cough	1
+recent	1
+recent trauma	1
+distressed	1
+dry mucosa	1
+pharyngeal exudate	1
+rhonci	1
+flank tenderness	1
+lle	1
+focal deficits	1
+pulmonary infiltrates	1
+left effusion	1
+enlarged right kidney	1
+aml	1
+carcinoma	1
+patent foramen  ovale	1
+mitral valve  prolapse	1
+bacteremia	1
+strep a group bacteremia	1
+vegatations	1
+paneumonia	1
+seizure d/o	1
+group a streptococcus bacteremia	1
+rigors	1
+renal lesions	1
+increasing	1
+increasing thirst	1
+urinating multiple times	1
+lost 37 pounds	1
+abdominal discomfort	1
+blood sugar	1
+genital herpes	1
+diabetic	1
+type 1 diabetes mellitus	1
+hypovolemia	1
+tumor	1
+colon cancer	1
+coronary problems	1
+dry	1
+sacral ulcer	1
+mg	1
+changes in personality	1
+level of alertness	1
+fluctuance	1
+infxn	1
+breast carcinoma	1
+meningeal carcinomatosis	1
+ventriculitis	1
+lm disease	1
+disease	1
+myopathy	1
+bm	1
+cerebral edema	1
+r/l disorientation	1
+ideomotor apraxia	1
+alopecic from radiation	1
+vision changes	1
+drainage from wound	1
+decubitus ulcer	1
+brain tumor	1
+hiv+	1
+photophobia	1
+enuresis	1
+human immunodeficiency virus	1
+pneumocystis carinii pneumonia	1
+cvd	1
+subarachnoid hemorrhage	1
+ruptured aneurysm	1
+posterior-inferior cerebellar artery aneurysm	1
+new infarction	1
+intraventricular blood  products	1
+subarchnoid hemorrhage	1
+hyponatremia	1
+subarachnoid hemorrage	1
+visual disturbances	1
+dyscoordination	1
+positive urinalysis	1
+positive nitrates	1
+positive leukocyte esterase	1
+white blood cells with	1
+chronic lymphocytic leukemia	1
+hypogammaglobinemia	1
+brain metastases	1
+unknown primary	1
+brain metastatic bleed	1
+acute respiratory distress	1
+metastatic bleed	1
+av fistula	1
+drop in blood pressure	1
+blood loss	1
+line sepsis	1
+polycystic kidney disease	1
+liver metastasis	1
+multiple drug interactions	1
+drug rash	1
+drug reaction	1
+drug fever	1
+sternal rub	1
+pain sensation	1
+respond to	1
+no heart sounds	1
+atrial premature complex	1
+t wave abnormalities	1
+slowing	1
+1st degree a-v block	1
+nonspecific	1
+acute inferior myocardial infarction	1
+intraventricular conduction delay	1
+delayed precordial r wave	1
+a-v conduction delay	1
+prior inferior wall myocardial infarction	1
+non-specific inferolateral st-t wave changes	1
+atrial premature depolarizations	1
+qrs	1
+anterior precordial r wave progression	1
+a-v conduction	1
+non-sinus supraventricular rhythm	1
+anteroseptal myocardial infarction	1
+anterolateral st elevation	1
+low amplitude p waves	1
+normal p-r interval	1
+st-t wave abnormalities	1
+anterolateral myocardial infarct	1
+atrial sensed	1
+paced	1
+prolonged p-r interval	1
+failure of a-v conduction	1
+st segment elevations	1
+slow ventricular response	1
+rate is slower	1
+old inferior infarct	1
+atrial pacemaker artifact	1
+pacemaker	1
+first degree a-v delay	1
+st-t changes	1
+anteroseptal lateral myocardial infarction	1
+chronic pulmonary disease	1
+incomplete right bundle-branch block	1
+prior inferior myocardial infarction	1
+st segment abnormalities	1
+short pr interval	1
+lateral myocardial infarct	1
+biphasis t wave	1
+atrial premature complexes	1
+slower rate	1
+low qrs voltages	1
+first degree a-v block	1
+p-r interval prolongation	1
+st changes are nonspecific	1
+repolarization	1
+paced rhythm	1
+variable block	1
+t wave flattening	1
+t wave inversion	1
+anterolateral myocardial injury	1
+prolonged qtc interval	1
+qtc interval	1
+atrial bigeminy	1
+ventriciular ectopy	1
+rbbb	1
+systolic function	1
+hypertrophy	1
+atheromatous disease	1
+avr	1
+peri-valve leaks	1
+dilated la	1
+rv function	1
+paradoxic septal motion	1
+conduction abnormality	1
+ventricular septal defect	1
+cerebrovascular event	1
+tia	1
+aortic root is	1
+elongated	1
+arch coarctation	1
+valvular vegetations	1
+cardiomyopathy	1
+lvef	1
+elevated esr	1
+mitral leaflets	1
+dilated ivc	1
+inferior vena cava	1
+impaired relaxation	1
+left ventricular outflow tract obstruction	1
+mitral valve leaflets	1
+valvular regurgitation	1
+fibrinous material	1
+left ventricular wall motion abnormalities	1
+dyskinetic	1
+anterior space	1
+dyskinesis	1
+deformed aortic valve leaflets	1
+lv inflow pattern	1
+tee related complications	1
+inferior wall function	1
+fluid	1
+atrial	1
+ra	1
+right atrial	1
+distal arch coarctation	1
+intracardiac shunt	1
+dilated aortic sinus	1
+right atria	1
+hyperdynamic left ventricular function	1
+focal wall motion abnormality	1
+regional wall motion	1
+residual fluid	1
+paradoxic septal motion	1
+diastolic	1
+pericardial	1
+aortic	1
+dilated cardiomyopathy	1
+vf	1
+cardiac defects	1
+inferior st elevation	1
+atherosclerotic plaque	1
+chronic lung disease	1
+shunt	1
+bradycrdia	1
+aortic valve sclerosis	1
+pathologic flow	1
+rv pressure	1
+valvular heart disease	1
+left ventricular systolic function is hyperdynamic	1
+left ventricle	1
+hypertrophic	1
+splenomegalia	1
+soft tissue compromise	1
+nasal septum	1
+nasal septum deviates	1
+pneumatized	1
+ethmoid sinus thickening	1
+retrocardiac opacification	1
+perihilar haze	1
+end stage liver disease	1
+loculated l  effusion	1
+loculated left effusion	1
+interstitial opacities	1
+accre	1
+retained products of conception	1
+postpartum bleeding	1
+uterus	1
+adnexal mass	1
+free pelvic fluid	1
+appearance of	1
+retained product of conception	1
+non-st segment elevation myocardial infarction	1
+peumonia	1
+aeration	1
+hemidiaphragm	1
+linear atelectasis	1
+lower gastrointestinal bleed	1
+significant hematocrit drop	1
+narrowing	1
+contrast extravasation	1
+bibasilar atelectasis	1
+cpp	1
+upper zone redistribution	1
+shadow	1
+nipple shadow	1
+pulmonary consolidation	1
+hep c cirrhosis	1
+cirrhotic liver	1
+hydro	1
+hepatitis c cirrhosis	1
+shrunken	1
+nodular liver	1
+lordosis	1
+crohn's disease	1
+atelectatic changes	1
+low sats	1
+tortuous thoracic aorta	1
+engorgement	1
+delta ms	1
+interstitial basilar abnormality	1
+cholangitis	1
+mediastinal contour	1
+aortic aneurysm	1
+dissection	1
+infrahilar opacification	1
+parenchymal scarring	1
+dyspnea	1
+ischemic symptoms	1
+ecg changes	1
+breast attenuation	1
+temp. fracture	1
+spinal stenosis	1
+t1	1
+t2 signal	1
+hemangiomas	1
+abnormal	1
+bilateral hematoma	1
+loculated fluid	1
+vascular territorial	1
+vascular territorial infarcts	1
+internal carotid artery stenosis	1
+poly substance od	1
+ms change	1
+mediastinal contours	1
+widening of mediastinal contours	1
+hepatic abscess	1
+resp arrest	1
+poor inspir effort	1
+poor inspiratory effort	1
+poor oxygenation	1
+calcific densities	1
+elevated wbc	1
+patchy	1
+osseous abnormalities	1
+multilobar pna	1
+emphysematous changes	1
+urinary tract anomoly	1
+diffusely low in attenuation	1
+spleen is enlarged	1
+free intraperitoneal air	1
+drainable fluid collections	1
+bilateral	1
+free fluid	1
+pelvic	1
+pyelonephritis	1
+diffusely low attenuation	1
+fatty infiltration	1
+c. diff	1
+c. difficile	1
+postprocedural complications	1
+neuropathy	1
+liver failure	1
+abdominal distention	1
+prominent loops	1
+gas in	1
+retained barium	1
+partial small bowel obstruction	1
+rul pneumonia	1
+pulmonary overload	1
+gastric distention	1
+healed fracture	1
+hepatitis	1
+hep b virus	1
+hepatitis b	1
+liver volume	1
+abnormal focal enhancement	1
+irregularity	1
+spleen	1
+adenomymatosis	1
+lower extremity edema	1
+pulmonary hyperinflation	1
+obstructive airways disease	1
+centrilobular emphysema	1
+pleural thickening	1
+pulmonary vascular congestion	1
+osteopenia	1
+vertebral compression	1
+obstructive lung disease	1
+perforated duodenum	1
+tension ptx	1
+lung lesions	1
+lower lobe	1
+contrast	1
+shotty	1
+fat stranding	1
+amount of stool	1
+collapsed	1
+soft- tissue densities	1
+injection granulomas	1
+abdominal effusions	1
+asctes	1
+increased tb	1
+increased total bilirubin	1
+dilated bowel segments	1
+resistive indices remain low	1
+turbulent flow	1
+resistive indices	1
+arterial anastomotic stenosis	1
+liver hemangioma	1
+gunshot wound	1
+residual air	1
+air bubbles	1
+intracranial abscess	1
+cardiac silhouette	1
+failure	1

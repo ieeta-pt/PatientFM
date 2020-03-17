@@ -188,7 +188,7 @@ class Model:
                                   torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device))
 
             encoder_output, hidden_state_n, cell_state_n = self.encoder(x_input.to(device=self.device), initial_state_h0c0)
-            crf_out, entity_out, crf_loss = self.decoder(encoder_output, y_true_tensor, mask, self.device)
+            crf_out, _, crf_loss = self.decoder(encoder_output, y_true_tensor, mask, self.device)
             test_label_pred.extend(crf_out[0])
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
