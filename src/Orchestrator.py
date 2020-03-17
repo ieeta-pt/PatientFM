@@ -3,8 +3,8 @@ from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
 from RuleBased import RuleBased
 
-from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
-#from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+# from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
+from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
@@ -19,15 +19,11 @@ class Orchestrator():
 		# to do
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
-			# classesDict = createDefaultClasses(files)
-			# classesDict = setObservationClasses(classesDict, files, XMLAnnotations)
-			# classesDict = setFamilyMemberClasses(classesDict, files, XMLAnnotations)
-			# classesDict = createTrueClasses(files, XMLAnnotations)
-
 			runEmbeddingCreationPipeline(dataSettings)
-			# predFamilyMemberDict, predObservationDict = runModel(dataSettings)
 
+			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
+
 			return predFamilyMemberDict, predObservationDict
 			# return dict(), dict()
 

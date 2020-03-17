@@ -1,0 +1,1660 @@
+normal	519
+left	492
+right	445
+**first	188
+#aortic	172
+#blood	151
+history of	127
+well	126
+small	108
+#mitral	97
+#chest	92
+c	83
+#cardiac	82
+condition	80
+#pulmonary	77
+#pulmonary artery	70
+#thickened	70
+hospital course	64
+good	64
+past medical history	63
+allergies	62
+soft	62
+illness	61
+negative	60
+sex	59
+first	59
+blood pressure	57
+head	57
+surgical	53
+follow up	50
+social history	48
+#heart	47
+multiple	47
+pressure	47
+follow-up	46
+man	45
+emergency	44
+#tricuspid	44
+white	43
+cavity	42
+#coronary artery	41
+secondary	40
+#pericardium	40
+extremities	38
+family history	38
+#depressed	38
+#aorta	38
+increased	37
+bilateral	37
+therapy	36
+left ventricular cavity cavity	36
+glucose	35
+positive	35
+mouth	35
+possible	34
+job	33
+large	33
+discharge diagnosis	33
+air	33
+rhythm	32
+**job	32
+chief complaint	32
+liver	32
+blood glucose	31
+discharge condition	31
+anterior	30
+history	30
+ascending aorta aorta	30
+#abdomen	29
+unchanged	29
+male	28
+#abdominal	28
+alert	27
+coronary	27
+#respiratory	27
+neck	26
+distal	25
+calcium	25
+pulmonic valve pulmonary	25
+proximal	24
+posterior	24
+t wave	24
+lower	24
+basal	23
+admitting diagnosis	23
+discontinued	22
+down	21
+back	21
+patch	21
+lung	20
+white blood	20
+trace	19
+hemodialysis	19
+left anterior	19
+artery systolic hypertension	19
+suboptimal image	19
+normal tricuspid	19
+upper	18
+unable	18
+hemodynamically stable	18
+central	17
+sinus	17
+cardiovascular	17
+discharge diagnoses	17
+calcification	17
+right upper	16
+platelets	16
+re	16
+fluid	16
+small pericardial effusion	16
+ext	15
+oxygen	15
+magnesium	15
+red	15
+able	15
+female	14
+mass	14
+electrocardiogram	14
+apparent	14
+abnormality	14
+normal aortic	14
+skin	13
+trauma	13
+drug allergies	13
+red blood	13
+abnormalities	13
+left lower	13
+right coronary	13
+normal aortic root	13
+extraocular	12
+awake	12
+bed	12
+pcp	12
+oropharynx	12
+cranial	12
+lives	12
+bilirubin	12
+urea	12
+ekg	12
+presumed	12
+cervical	12
+oral	12
+thoracic	12
+saphenous vein graft vein	12
+beta	12
+stomach	12
+pacing	12
+normal mitral	12
+anicteric	11
+pelvis	11
+subcutaneous	11
+**street address	11
+vessel	11
+nutrition	11
+xii	11
+right lower	11
+portal vein	11
+enlargement	11
+thickened aortic	11
+ascending aorta aorta diameter	11
+related	10
+infectious disease	10
+mucous	10
+cca	10
+indicated	10
+comfortable	10
+electrolytes	10
+ventricular hypokinesis	10
+gallbladder	10
+portal	10
+normal cavity	10
+protein	9
+drug use	9
+motor	9
+married	9
+phosphate	9
+discharge status	9
+vascular	9
+**male first	9
+**male	9
+impaired	9
+small bilateral	9
+nph	9
+foley	9
+bleed	9
+died	8
+mmm	8
+unknown	8
+bowel sounds	8
+c c	8
+nose	8
+labs	8
+blood calcium	8
+dialysis	8
+aspiration	8
+anterior descending coronary artery coronary	8
+afebrile	8
+cervical spine	8
+duodenum	8
+hepatic	8
+vitamin	8
+right ventricular cavity cavity	8
+water	7
+iron	7
+left lung	7
+aggressive	7
+fracture	7
+nasal	7
+plan	7
+mental status	7
+blood urea	7
+normal sinus rhythm	7
+nausea and vomiting	7
+right flank	7
+retired	7
+wound	7
+diagnosis	7
+sharp	7
+lower extremities	7
+ppd	7
+nad	7
+brain	7
+esophagus	7
+tracheostomy	7
+liquid	7
+swan	7
+stenosis	7
+left pleural effusion	7
+positive bowel sounds	7
+diagnostic	7
+dressing	7
+lower extremity	7
+external	7
+opacity	7
+acoustic	7
+trace aortic regurgitation	7
+collapse	7
+lateral chest chest	7
+tongue	6
+eos	6
+epi	6
+ecg	6
+early	6
+new onset	6
+opiates	6
+ten	6
+sedated	6
+biliary	6
+speech	6
+pain	6
+broad	6
+absence	6
+sensation	6
+bladder	6
+surgical history	6
+history of coronary artery disease	6
+stress	6
+upper extremity	6
+gastrointestinal	6
+pancreas	6
+uterus	6
+pass	6
+epinephrine	6
+tenderness	6
+sedation	6
+spinal	6
+lymph	6
+right lung	6
+thoracic aorta	6
+normal aortic diameter	6
+superior vena cava vena	6
+left colic	6
+colic artery	6
+anastomosis	6
+complaints	5
+gait	5
+edema	5
+foot	5
+ldh	5
+blood gas	5
+axis	5
+spine	5
+c spine	5
+right forearm	5
+pat	5
+medical care	5
+folate	5
+lives with	5
+difficulty	5
+wounds	5
+sinus rhythm	5
+carotid	5
+carotid arteries	5
+reflexes	5
+bone	5
+lesion	5
+social	5
+symptoms	5
+hepatitis c	5
+hepatitis	5
+weakness	5
+pneumonia	5
+distal right	5
+right hip	5
+blood pressures	5
+abuse	5
+heart size	5
+good condition	5
+bleeding	5
+hepatic arteries	5
+colon	5
+arrest	5
+abdomen and pelvis pelvis	5
+motor vehicle collision	5
+coronal	5
+spleen	5
+right kidney	5
+systolic dysfunction	5
+descending thoracic aorta thoracic	5
+regurgitation	5
+pylorus	5
+block	4
+defect	4
+arm	4
+source	4
+cmo	4
+hand	4
+elbow	4
+state of health	4
+face	4
+speaks	4
+extremity	4
+left anterior descending artery artery	4
+cardiac surgical	4
+arterial blood blood	4
+visual	4
+finger	4
+right pleural effusion	4
+oriented to person	4
+left frontal	4
+right frontal	4
+worse	4
+extravasation	4
+c cirrhosis	4
+white female	4
+lives with husband	4
+hip	4
+continuous	4
+fixed	4
+urine output	4
+pacemaker	4
+head and neck neck	4
+pelvic	4
+right atrial pressure	4
+meds	4
+small left	4
+discontinue	4
+**female first	4
+**female	4
+vein	4
+activity level	4
+breast	4
+gas	4
+esophageal varices	4
+difficulties	4
+patient motion	4
+right thigh	4
+abdominal aorta	4
+common bile duct bile	4
+cerebrospinal fluid fluid	4
+hemorrhage	4
+large pericardial effusion	4
+pulmonary vascular	4
+ligamentous	4
+thoracic spine	4
+third	3
+lad	3
+right arm	3
+left knee	3
+bilateral lower	3
+obstruction	3
+hep	3
+facial	3
+right elbow	3
+knee	3
+human	3
+turned	3
+eeg	3
+normotensive	3
+endocrine	3
+accommodation	3
+left internal mammary artery artery	3
+left leg	3
+vertebral arteries arteries	3
+transport	3
+intracranial	3
+voice	3
+left hip	3
+neglect	3
+finding	3
+opacities	3
+lumbar	3
+body	3
+medical history	3
+young	3
+small right	3
+right middle	3
+bal	3
+pulmonary function	3
+nausea vomiting	3
+lives alone	3
+hearing	3
+left maxillary	3
+maxillary sinus	3
+steroid	3
+vision	3
+tobacco use	3
+lipid	3
+flush	3
+peripheral	3
+gastric	3
+right dominant	3
+post percutaneous transluminal coronary angioplasty	3
+phosphorus	3
+vessel coronary artery disease	3
+right heart	3
+pressures	3
+obese	3
+hospitalized	3
+increased weakness	3
+move	3
+palate	3
+mastoid	3
+paranasal	3
+fatty	3
+history of schizoaffective disorder	3
+colostomy	3
+history of seizures	3
+left common carotid artery carotid	3
+carotid artery	3
+neutrophils	3
+asymptomatic	3
+overdose	3
+intra-aortic	3
+mucosa	3
+complications	3
+left basilar	3
+short	3
+vitamin c	3
+st elevation	3
+cap	3
+under general anesthesia	3
+injuries	3
+rectum	3
+diagnosed	3
+vaginal bleeding	3
+intra-abdominal	3
+sclerotic	3
+leg	3
+superior mesenteric vein vein	3
+left upper	3
+poor historian	3
+strep bacteremia	3
+strep	3
+shunt	3
+right pica	3
+pica aneurysm	3
+descending aorta aorta diameter	3
+related complications	3
+tricuspid valve supporting	3
+large left	3
+fat pad	3
+agitated normal	3
+agitated	3
+ventricular pressure volume overload	3
+pyloric	3
+pel lower	3
+superior mesenteric artery artery	3
+ankle	3
+maxillary	3
+brachial vein vein	3
+abdominal effusions	3
+left hepatic	3
+aneurysm	2
+intraoperative complication	2
+cerebral	2
+upper lung	2
+lower ext	2
+small hematoma	2
+pda	2
+mrs	2
+urine color	2
+urine blood	2
+apc	2
+bony	2
+abd pelvis	2
+sma	2
+mls	2
+sitting	2
+uncertain	2
+pta	2
+language	2
+pat ach	2
+history of right	2
+mca stroke	2
+seizure	2
+asystolic	2
+fasting	2
+infarct	2
+suffered	2
+left hemiparesis	2
+multiple escherichia coli bacteremia	2
+cholesterol	2
+lipoprotein	2
+proximal left	2
+west	2
+smoking history	2
+mobility	2
+motor vehicle accident	2
+umbilicus	2
+flank	2
+abscess	2
+unemployed	2
+painful	2
+arms	2
+tail of the pancreas pancreas	2
+lumbar spine	2
+aspirated	2
+chest pain	2
+alive	2
+young man	2
+air fluid	2
+atypical	2
+vegetation mass	2
+bilateral pulmonary infiltrates	2
+fasciculations	2
+cough	2
+mediastinum	2
+oriented to place	2
+ttp	2
+small vessel	2
+hiv	2
+sternum	2
+coagulation	2
+swallowing	2
+esophageal	2
+flushed	2
+vessel coronary	2
+global hypokinesis	2
+occluded left	2
+mammary coronary	2
+artery pressure	2
+good bowel sounds	2
+right foot	2
+history of atrial fibrillation	2
+paced rhythm	2
+blood positive	2
+deficiency	2
+positive brown	2
+large hiatal hernia	2
+uterine	2
+jaw	2
+occluded	2
+anterior st elevation	2
+st elevation myocardial infarction	2
+large right	2
+lumbar puncture	2
+hemianopsia	2
+mastoid air	2
+probably present	2
+eighth	2
+hypotensive secondary	2
+left foot	2
+disability	2
+illnesses	2
+died secondary	2
+mdi	2
+worker	2
+teeth	2
+drs	2
+pupil	2
+history of type 1 diabetes	2
+diabetic	2
+moves	2
+smooth	2
+depressions	2
+normal left	2
+normal axis	2
+depression	2
+history of aortic stenosis	2
+history of hypercholesterolemia	2
+infectious	2
+bleeding varices	2
+lives with wife	2
+good air	2
+stomach body	2
+distal esophagus	2
+social worker	2
+dental	2
+runs	2
+cardiac index	2
+mediastinal chest	2
+pathology	2
+allergy	2
+wheezes	2
+hypertension depression	2
+post ptca	2
+viral load	2
+possible sepsis	2
+examined	2
+forearm	2
+proximal right	2
+gravida 2	2
+para 2	2
+lysis	2
+fio2	2
+depressed left	2
+bright red blood	2
+bright red	2
+sleep	2
+artery pressures	2
+right posterior	2
+pca	2
+weight bearing	2
+abdominal pain jaundice	2
+large pseudocyst	2
+bile	2
+head of the pancreas pancreas	2
+splenic vein vein	2
+basilar atelectasis	2
+cyst	2
+prostate	2
+intrathoracic	2
+left renal artery artery	2
+nodules	2
+history of alcoholic pancreatitis	2
+left inguinal lymphadenopathy	2
+near	2
+icd	2
+collapsed	2
+history of shortness of breath	2
+posterior descending artery artery	2
+flatus	2
+proximal jejunum	2
+transition	2
+possible pneumonia	2
+kidney	2
+left kidney	2
+middle	2
+bacteremia	2
+new onset diabetes	2
+spinal cord	2
+mute	2
+ruptured distal	2
+pulled	2
+death	2
+r wave	2
+myocardial infarct	2
+st segment	2
+atrial pacemaker	2
+basal anterior	2
+descending aorta aorta	2
+lv mass thrombus	2
+borderline normal	2
+anterior pericardial effusion	2
+bilateral ear	2
+ethmoid	2
+right central	2
+vertebral body body	2
+retraction	2
+endometrial cavity cavity	2
+left chest	2
+common femoral artery artery	2
+inferior mesenteric artery artery	2
+anesthesia	2
+cabbage\coronary artery	2
+cabbage\coronary	2
+lower lung	2
+nipple	2
+left portal	2
+possible aspiration	2
+lobe emphysema	2
+mci	2
+external carotid	2
+left axilla	2
+alveolar pattern	2
+urinary	2
+sterile	2
+fat	2
+infiltrate edema	2
+lower lung consolidation	2
+thrombus clot	2
+re liver	2
+surgical bed	2
+chamber icd	2
+pharynx	1
+negative bruits	1
+third aneurysm	1
+anterior temporal artery artery	1
+severe headache	1
+smile	1
+left shoulder	1
+back pain at rest	1
+worsened	1
+pain in left shoulder	1
+shoulder blade back	1
+anterior defect	1
+arthritis carpal tunnel	1
+carpal tunnel shingles	1
+shingles right	1
+right knee	1
+husband died	1
+anicteric neck	1
+systolic murmur	1
+trace bilateral	1
+ext edema	1
+groin small	1
+distal stenosis	1
+pda occluded	1
+increased pulmonary	1
+bathing	1
+drug allergy	1
+upper hard	1
+hard palate	1
+discolored	1
+rhonchi	1
+foot hygiene	1
+iron pnd	1
+pnd	1
+blood type	1
+urine emergency	1
+withdrawn	1
+new onset hypoxia	1
+bps	1
+respiratory status deteriorated	1
+foot small	1
+chest struck	1
+struck steering	1
+right elbow elbow pain	1
+spine abnormality	1
+lip laceration chest	1
+bony instability	1
+bilateral knee	1
+bilateral spondylolysis	1
+multiple left	1
+rib fractures	1
+left hand	1
+left thumb	1
+right tibial plateau fracture	1
+knee joint	1
+articular	1
+thumb	1
+small bowel anastomosis	1
+mesenteric vessel	1
+vessel injury	1
+high fever	1
+pin	1
+history of stroke	1
+right arm arm moving	1
+multiple strokes	1
+history of congenital heart defect	1
+history of blood clot	1
+lives with daughter wheelchair bound	1
+lives with daughter	1
+oropharynx neck	1
+nuchal rigidity pulmonary	1
+left facial droop	1
+atrophic	1
+spastic	1
+grimaces	1
+plantar response	1
+signs and symptoms	1
+occipital sharp	1
+slow wave	1
+seizure activity	1
+fasting lipid	1
+quality of life	1
+acute stroke	1
+evolving infarct	1
+depressed mental status	1
+aspiration pneumonia pneumonitis	1
+poor prognosis	1
+cerebral blood flow	1
+patient's condition worsened	1
+history of afib	1
+afib flutter	1
+renal failure	1
+pronounced dead	1
+history of pancreatitis	1
+history of gout	1
+family history unknown	1
+normal first	1
+first heart	1
+arm arteriovenous fistula	1
+arteriovenous fistula dressing	1
+negative creatine	1
+left anterior descending artery artery stenosis	1
+right coronary artery stenosis	1
+discontinued early	1
+large hematemesis	1
+emesis	1
+normal right	1
+history of end-stage renal disease	1
+myocardial infarction	1
+circumflex artery artery	1
+pneumonia sepsis	1
+sepsis hyperlipidemia	1
+hyperlipidemia hypercholesterolemia	1
+pupils equal	1
+right leg	1
+tachycardia	1
+posterior pharyngeal	1
+subcutaneous fat	1
+sits	1
+mitral valve murmur	1
+murmur abdomen soft	1
+bulging	1
+pathology~~~~~~~~~~~~~~~~~~~~~	1
+abscess right	1
+cardiac history	1
+soft left	1
+left carotid bruit	1
+gallstone abscess	1
+gallstone	1
+history of alcohol abuse	1
+alcohol withdrawal with delirium	1
+engaged	1
+response	1
+gas indicated	1
+right subdural hematoma	1
+mildly elevated transaminases	1
+plasma	1
+possible left	1
+history of compression fractures	1
+alternation	1
+consciousness	1
+unable to move	1
+incontinence	1
+multiple nodules	1
+shoulder	1
+organic	1
+fed	1
+right left	1
+left confusion	1
+normal jaw	1
+jaw jerk	1
+cranial nerve	1
+ocular	1
+afferent defect	1
+afferent	1
+facial sensation	1
+upper extremities	1
+ataxia	1
+thoracolumbar spine spine	1
+compression fractures	1
+lower lumbar	1
+diagnoses	1
+presumed cord compression	1
+t spine spine	1
+pancreatic disease	1
+left pancreatic cancer	1
+mucus plugging	1
+hospice care	1
+speak	1
+sexual	1
+able to speak	1
+plaques neck	1
+thyromegaly chest	1
+dullness	1
+calf tenderness	1
+infiltrate	1
+right upper lobe infiltrate	1
+right hilar lymphadenopathy	1
+atypical edema	1
+lung injury	1
+abscess infection	1
+cap aspiration	1
+pulmonary follow-up	1
+pulmonary inflammation infection	1
+pulmonary inflammation	1
+right upper lobe mass	1
+secondary diagnosis	1
+idiopathic	1
+increased cough	1
+oral temperature	1
+hpi	1
+body weakness	1
+vomiting chest	1
+pain shortness of breath	1
+complaining of a headache	1
+unconsciousness	1
+normal affect	1
+orientated	1
+confrontation	1
+trapezius normal	1
+contusion	1
+small subdural hematoma	1
+mucosal thickening	1
+small air	1
+nasal bone bone fractures	1
+confused	1
+numbness tingling	1
+tingling weakness	1
+wheezing	1
+vomit	1
+returned home	1
+substernal chest pain	1
+pneumomediastinum widened mediastinum	1
+gastroesophageal reflux disease barrett's esophagus	1
+guarding	1
+fascia	1
+hypertensive	1
+history of hepatitis	1
+liver transplant evaluation	1
+history of nephrolithiasis	1
+substance abuse counselor	1
+substance abuse	1
+history of heavy alcohol use	1
+agitated male	1
+costal margin margin	1
+palm erythema	1
+palm	1
+oriented to time	1
+urine electrolytes	1
+strain	1
+cirrhosis secondary	1
+uncontrolled hypertension	1
+tired	1
+dialysis infections	1
+history of left	1
+cva	1
+ttp patch	1
+fluid overload secondary	1
+left submandibular lymph node lymph	1
+oropharyngeal lesions	1
+niddm arthritis	1
+htn depression	1
+bruits	1
+hepatosplenomegaly chest	1
+glucose glucose	1
+form	1
+bgs	1
+oropharyngeal swallowing	1
+laryngeal sensitivity	1
+left retractile testis	1
+right hip hip subluxation	1
+left cataract	1
+lens	1
+tracheostomy tube in good position	1
+breakdown	1
+crust	1
+iodine	1
+conjunctiva	1
+lungs good	1
+laboratory examination	1
+right bundle branch block morphology	1
+history of pacemaker	1
+history of chronic renal insufficiency	1
+left toe ulcer	1
+increased respiratory rate	1
+distension	1
+distention	1
+positive costovertebral angle tenderness	1
+abrasion	1
+left arm	1
+response to pain	1
+right lower lobe opacity	1
+bowel ischemia	1
+sacral myelocele	1
+history of large	1
+large bloody stool	1
+pain relief	1
+recent myocardial infarction	1
+respiratory alkalosis and metabolic acidosis	1
+lactic acidosis secondary	1
+small well	1
+well circumscribed lesion	1
+genitourinary	1
+problem	1
+discharge back	1
+fresh thrombus	1
+proximal lesion	1
+proximal stenosis	1
+result	1
+physical findings	1
+run	1
+basal posterior	1
+clinical findings	1
+chest and abdomen abdomen	1
+increased size	1
+focusing	1
+flank back pain	1
+history of cough	1
+right thyroid	1
+former smoker	1
+right upper lobe posterior	1
+posterior segment mass	1
+atypical cells	1
+brain negative	1
+speaks little	1
+exposure	1
+history of malignancy	1
+pretibial edema	1
+increased work of breathing	1
+left handed man	1
+left handed	1
+onset of confusion	1
+paraphasias	1
+apparent hemorrhage	1
+weakness numbness	1
+intercostal nerve nerve	1
+nerve blocks	1
+memory	1
+apparent facial weakness	1
+voice normal	1
+atrophy	1
+fasciculations motor	1
+pinch	1
+dss	1
+apparent dysmetria	1
+infarctions	1
+left central	1
+septal defect	1
+well seated	1
+trace aspiration	1
+increased oral	1
+unable to swallow	1
+presumed stroke	1
+femoral central	1
+staph	1
+focal neurologic deficits	1
+toxic	1
+dnr	1
+weight stable	1
+history of peptic ulcer disease	1
+severe anemia	1
+duodenal ulcers	1
+complaint	1
+bath tub	1
+psychosocial	1
+left hip hip pain	1
+good response	1
+glucagon	1
+rupture	1
+wheezes heart	1
+dislocation	1
+withdrawal	1
+acute renal insufficiency secondary	1
+left common carotid artery carotid artery aneurysm	1
+aorta left	1
+gerd left	1
+lives with parents	1
+anicteric sclera	1
+small mass	1
+sem	1
+pneumothorax unchanged	1
+pleural effusions increased	1
+constipation	1
+increased pain	1
+painful stimulation	1
+left pupil	1
+back positive	1
+type 1 diabetes diagnosed	1
+pheochromocytoma	1
+history of nausea and vomiting	1
+blood pressure well	1
+ect	1
+bed asleep	1
+sclera anicteric	1
+sclera	1
+ill	1
+right diaphragm	1
+right lower lobe atelectasis	1
+sedating meds	1
+sedating	1
+weight loss	1
+hrs	1
+overdose suicidal ideation	1
+pupils equal, round and reactive to light	1
+circumflex coronary artery coronary	1
+complication	1
+posterior descending coronary artery coronary	1
+upper thigh	1
+history of cerebrovascular accident	1
+carpal tunnel	1
+head, ears, eyes, nose and throat nose	1
+murmur	1
+3/6 systolic murmur	1
+3/6	1
+assisted	1
+independent	1
+white male	1
+increased chest tightness	1
+running	1
+fall	1
+arch, aortic aortic stenosis	1
+flank lipoma	1
+dental examinations	1
+dental examination	1
+murmurs	1
+resonance	1
+able to swallow well	1
+able to swallow	1
+prosthetic aortic	1
+prosthetic	1
+multiple small	1
+small cerebrovascular accidents	1
+negative bacteremia	1
+esr	1
+proximal stomach stomach lesion	1
+diffuse abdominal pain	1
+associated symptoms	1
+cirrhosis	1
+finger amputation	1
+weber	1
+midline mouth	1
+posterior palate	1
+uvula neck	1
+uvula	1
+normal hepatic	1
+gallbladder wall edema	1
+proximal stomach	1
+lower third of the esophagus esophagus	1
+lower third	1
+esophagus and stomach stomach	1
+clots	1
+gastropathy	1
+normal potassium	1
+small ascites	1
+tolerance	1
+cm2	1
+normal sinus	1
+inguinal	1
+systolic ejection murmur	1
+large varicosities	1
+stable blood pressure	1
+little	1
+right inguinal	1
+lower quadrant abdominal abdominal pain	1
+history of pulmonary embolism	1
+multiple myocardial infarctions	1
+accessory muscle	1
+left conjunctival hemorrhage	1
+tympanic	1
+cranial bleeding	1
+base of the skull skull fracture	1
+presumed chronic obstructive pulmonary disease	1
+recurrence	1
+intermittent abdominal pain	1
+normal coronary arteries	1
+back pain	1
+back negative	1
+positive urinary tract infection	1
+aortic stenosis aortic regurgitation	1
+post mi	1
+basal cell carcinoma of the skin	1
+prostate cancer diagnosed	1
+work in	1
+alzheimer	1
+muscle	1
+basilar opacity	1
+hole	1
+right basilar	1
+basilar chest	1
+right chest	1
+left pleural effusions	1
+right effusion	1
+increased confusion	1
+large mass	1
+nephrostomy	1
+acls	1
+epstein	1
+cardiac valve anomaly	1
+palpitations thalassemia minor	1
+thalassemia minor hypothyroid	1
+thalassemia minor hypothyroidism	1
+hypothyroidism hypertension	1
+depression low back pain	1
+low back pain polycystic ovaries	1
+ovaries glaucoma	1
+glaucoma hypertriglyceridemia	1
+deteriorate	1
+eia	1
+paralyzed	1
+head chest	1
+chest abdomen	1
+abdomen pelvis	1
+groin fluid	1
+fresh blood	1
+nph human	1
+stemi	1
+dm2 pud	1
+pud gerd	1
+gerd glaucoma	1
+obesity tobacco abuse	1
+factor viii deficiency diagnosed	1
+history of gi bleed	1
+eosinophilic pneumonia diagnosed	1
+vulvar intraepithelial neoplasia diagnosed	1
++bruit thrill	1
++bruit	1
+right femoral artery artery	1
+artery pseudoaneurysm	1
+total blood loss	1
+left common femoral artery injury	1
+blushing	1
+patient arrived	1
+right pain	1
+right thigh thigh pain	1
+history of bph	1
+esophageal dilatation	1
+general appearance	1
+hip dressing	1
+popliteal	1
+femoral arterial laceration	1
+pain well	1
+femoral laceration	1
+postoperative blood loss anemia	1
+postoperative blood loss	1
+loose stools	1
++epigastric discomfort	1
+gurgling gas	1
+gurgling	1
++lightheadedness	1
+o a	1
+young male	1
+awake alert	1
+bleeding ulcer	1
+gi bleeding peptic ulcer disease	1
+truck	1
+multiple facial lacerations	1
+trachea	1
+negative fast	1
+large degloving injury	1
+large thigh	1
+thigh deformity	1
+large blood	1
+pubic rami fracture	1
+sacroiliac joint joint	1
+ulnar fracture	1
+right femoral fracture	1
+right forearm forearm fractures	1
+thigh	1
+consideration	1
+thickness skin	1
+left thigh	1
+right forearm forearm fracture	1
+ready for discharge	1
+right femur femur fracture	1
+bone forearm forearm fracture	1
+pelvic fracture	1
+proximal fibula fibula fracture	1
+injury	1
+diverting colostomy colostomy	1
+right pelvis	1
+tissue infection	1
+zinc	1
+small fibroids	1
+pad	1
+small uterine fibroid	1
+butting	1
+gynecological history	1
+history of abnormal pap smears	1
+babies	1
+sacrum	1
+cancers	1
+clot	1
+normal vulva	1
+vulva and vagina vagina	1
+cervix	1
+cleaning	1
+normotensive blood pressure	1
+adhesions secondary	1
+respiratory distress	1
+given medication	1
+good urine output	1
+positive end-expiratory pressure	1
+creatine	1
+left dominant	1
+issue	1
+hypotensive	1
+chronic renal insufficiency secondary	1
+mucous secondary	1
+nasal drip	1
+ate	1
+cam	1
+history of bleeding problems	1
+irregular menstrual cycle lbp	1
+pallor neck	1
+possible secondary	1
+tear blood loss anemia	1
+tear	1
+blood loss anemia thrombocytopenia	1
+thrombocytopenia hypertensive urgency	1
+talk	1
+next appointment	1
+history of myocardial infarction	1
+sharp substernal chest pain	1
+left untreated	1
+trace pericardial effusion	1
+left knee knee arthritis	1
+positive tobacco use	1
+good distal	1
+dominant heart	1
+occlusion	1
+cardiac events	1
+right radial head radial head fracture	1
+herniation chronic back pain	1
+blood fluid	1
+fluid large	1
+occipital trachea	1
+sacral tenderness	1
+back right	1
+deformity	1
+abrasion right	1
+knee abrasion left	1
+knee abrasion	1
+left ankle	1
+deformity right	1
+right radial neck neck	1
+distal fracture	1
+opacity best	1
+laceration	1
+right retroperitoneal	1
+adenopathy	1
+posterior liver	1
+patient status	1
+right radial head head	1
+acute pain	1
+breakthrough pain	1
+right bilateral	1
+bilateral pulmonary	1
+tibia and fibula fibula fractures	1
+right fibula fibula fracture	1
+right radial neck radial neck fracture	1
+splints	1
+weight bearing right	1
+jaundice nausea	1
+pseudocyst	1
+pancreatitis	1
+pseudocyst problem	1
+unable to eat	1
+hypertension	1
+upper abdomen	1
+pseudocyst mass	1
+icteric chest	1
+midline surgical	1
+surgical skin	1
+good effect	1
+pain meds	1
+pass gas	1
+type b aortic dissection aortic dissection	1
+severe back pain	1
+ex-smoker	1
+soft palate	1
+palate neck	1
+jvd heart	1
+intramural hematoma	1
+intrathoracic aorta	1
+distal left	1
+right renal renal mass	1
+renal neoplasm	1
+nodule	1
+granuloma	1
+thyroid	1
+diagnosed type b aortic dissection	1
+aortic dissection intramural hematoma	1
+urine cytology	1
+propionate	1
+chest pain, back	1
+duodenal mass	1
+homeless	1
+smoker	1
+abdomen soft	1
+positive biliary	1
+shifting dullness	1
+left inguinal mass	1
+surgical scar	1
+ptc	1
+ulcerations	1
+active inflammation	1
+hepatobiliary dilatation	1
+presumed pancreatitis	1
+bilateral biliary	1
+vein thrombus	1
+vascular transformation	1
+lca	1
+b cell lymphoma	1
+bile gram stain negative	1
+related pneumonia	1
+penis	1
+genitalia	1
+positive lymph node	1
+external biliary	1
+left inguinal	1
+needs treatment	1
+presumed hyperparathyroidism	1
+sitting position	1
+appetite	1
+knee popliteal	1
+femoral popliteal	1
+popliteal artery	1
+anterior tibial artery artery	1
+artery jump	1
+foot hematoma	1
+children living	1
+lower lobe of the left lung left	1
+massive splenomegaly	1
+left lobe of the liver liver	1
+dilatation	1
+good quality of life	1
+wanted	1
+proximal posterior	1
+artery lesion	1
+bilateral toe	1
+right third	1
+third toe	1
+toe amputation	1
+eschar	1
+bilateral carotid	1
+atrioventricular block	1
+utis	1
+soft abdomen	1
+scar	1
+follow-up pulmonary function	1
+respiratory status	1
+good result	1
+hydration	1
+pneumonia uti	1
+febrile	1
+respiratory status worsened	1
+turned positive	1
+sitting upright	1
+exudate neck	1
+tenderness ext	1
+middle third	1
+carcinoma	1
+bilateral effusions	1
+prolapse	1
+early ards	1
+seizure d	1
+family history of coronary artery disease	1
+peak t waves	1
+multiple follow-up	1
+education	1
+syringes	1
+balances	1
+brain and spinal cord spinal	1
+bachelor	1
+drug abuse	1
+personality	1
+memory intact	1
+cold	1
+gait small	1
+metastatic breast carcinoma	1
+suffers	1
+infiltration	1
+l spine spine	1
+stable disease	1
+disorientation	1
+csf infection	1
+neck pain radiating	1
+human immunodeficiency virus diagnosed	1
+history of pneumocystis carinii pneumonia	1
+ppd smoker	1
+proximal cervical	1
+cord	1
+cerebellar artery artery	1
+artery aneurysm	1
+infarction	1
+layering hemorrhage	1
+faint opacity	1
+faint	1
+intraventricular blood	1
+pica	1
+aku	1
+sensitivities	1
+peripheral eosinophilia	1
+urine eosinophilia	1
+left groin hematoma	1
+sepsis	1
+add	1
+comfort level	1
+multiple abnormalities	1
+drug effect	1
+atrial premature complex left atrial abnormality	1
+left atrial abnormality left anterior fascicular block	1
+short run	1
+inferior wall myocardial infarction	1
+left atrial abnormality right bundle branch block	1
+left axis deviation	1
+atrial premature	1
+low qrs voltage	1
+diagnostic repolarization abnormalities	1
+cardiac rhythm	1
+anterior t wave	1
+axis deviation anteroseptal myocardial infarction	1
+anterior t waves	1
+t wave abnormalities	1
+injury infarction	1
+ventricular response	1
+anteroseptal myocardial infarction	1
+lateral myocardial infarction	1
+pulmonary disease	1
+right bundle-branch block	1
+inferior myocardial infarction	1
+block left bundle branch block	1
+myocardial injury	1
+qtc	1
+axis deviation rbbb	1
+left anterior fascicular block	1
+probably not present	1
+atheromatous	1
+parameters	1
+ventricular pacing	1
+vegetations	1
+base of the heart heart	1
+inferior vena cava vena	1
+resting left ventricular outflow tract obstruction	1
+pericardial fluid	1
+vena	1
+pulmonary vein	1
+mitral valve supporting	1
+mitral tricuspid	1
+arch coarctation	1
+aortic sinus	1
+hypokinesis	1
+left ventricular systolic dysfunction c	1
+atherosclerotic plaque plaque	1
+left pulmonary	1
+thrombus	1
+proximal pulmonary	1
+pressure volume overload	1
+cavity enlargement	1
+stroke	1
+sinus mandible	1
+central ethmoid	1
+right carotid	1
+nasal pharynx	1
+ethmoid sinus	1
+sinus thickening	1
+right maxillary	1
+claudication sda	1
+left subclavian vein vein	1
+anemia thrombocytopenia	1
+thrombocytopenia coagulopathy	1
+ligament	1
+mid abdomen abdomen	1
+spinal mass	1
+effusion	1
+vertebral fusion	1
+left effusion	1
+pulled back	1
+retraction secondary	1
+ovaries	1
+free pelvic fluid pelvic	1
+pelvic fluid	1
+st segment elevation myocardial infarction	1
+hemostasis	1
+artery puncture	1
+atelectasis	1
+increased upper	1
+hep c	1
+possible ascites	1
+main portal vein portal	1
+right portal	1
+hepatic blood	1
+right ankle	1
+ankle joint	1
+fractures of the skull	1
+skull	1
+vertebra	1
+normal cervical	1
+cervical lordosis	1
+possible hematoma	1
+mixed	1
+possible contusion	1
+contusion hematoma	1
+crohn's disease sda	1
+lap	1
+pulmonary vascular engorgement	1
+interstitial basilar	1
+basilar abnormality	1
+basilar fibrosis	1
+basilar	1
+frontal	1
+scarring	1
+left ventricular myocardium myocardium	1
+intervertebral	1
+history of lung cancer	1
+margin	1
+left hilar mass	1
+left main bronchus bronchus	1
+bilateral subdural hematomas	1
+fluid hemorrhage	1
+infarcts	1
+herniations	1
+chf\coronary artery	1
+chf\coronary	1
+sda	1
+internal carotid arteries carotid	1
+overdose mental status changes	1
+thoracic cavity	1
+infection	1
+cts	1
+left neck	1
+adenoma sda	1
+left brachiocephalic vein vein	1
+left peripheral	1
+urinary tract admitting diagnosis	1
+uti flank pain	1
+fatty infiltration	1
+adrenal	1
+short axis	1
+small retroperitoneal	1
+retroperitoneal lymph	1
+seminal vesicles	1
+seminal	1
+bilateral fat	1
+inguinal hernias	1
+ninth	1
+healed fractures	1
+celiac axis axis	1
+fluor	1
+vas	1
+superficial vein vein	1
+hard	1
+puncture	1
+peel	1
+sterile dressing	1
+jejunum	1
+procedure complication	1
+bowel gas	1
+tof	1
+extrahepatic bile ducts bile	1
+bilateral lower extremity edema	1
+airways disease	1
+vascular congestion	1
+thoracic vertebral compression	1
+perforated	1
+tension	1
+chamber right	1
+left lower lobe atelectasis	1
+history of esophageal	1
+history of allergies	1
+middle lung	1
+pretracheal lymph nodes lymph	1
+granulomas	1
+lung pneumonia	1
+right adrenal adenoma	1
+dilated bowel	1
+anterior right	1
+posterior right	1
+normal respiratory	1
+proximal portal	1
+trauma history	1
+enhancing lesion	1
+left femoral vein vein	1
+vein pulmonary	1
+artery	1
