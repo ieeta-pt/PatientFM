@@ -6,6 +6,8 @@ from RuleBased import RuleBased
 # from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
 from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
+from NejiAnnotator import runNejiSourcesCreation, readPickle
+
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
 		"""
@@ -19,13 +21,19 @@ class Orchestrator():
 		# to do
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
-			runEmbeddingCreationPipeline(dataSettings)
+
+			r""" Embedding and neji sources creation is provided below if the user wants to create them from scratch.
+			Files for these sources are already provided in the repository, hence these lines are commented"""
+			# runEmbeddingCreationPipeline(dataSettings)
+			# if dataSettings["neji"]["use_neji_annotations"] == "True":
+			# 	runNejiSourcesCreation(dataSettings)
+
 
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
 
 			return predFamilyMemberDict, predObservationDict
-			# return dict(), dict()
+			return dict(), dict()
 
 		elif method == "ja_rules":
 			return RuleBased.processTask1(files)

@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import KFold
 
 from Reader import Reader
+from NejiAnnotator import readPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
 from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1
 
@@ -55,9 +56,14 @@ def runModel(settings, trainTXT, trainXML):
 
     trainClassesDict = createTrueClasses(trainTXT, trainXML)
     trainClasses = classDictToList(trainClassesDict)
-    trainClasses = [classListToTensor(sentenceClasses) for sentenceClasses in trainClasses]
+    trainClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in trainClasses]
 
-    # 100 is the default size used in embedding creation
+    if settings["neji"]["use_neji_annotations"] == "True":
+        nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiTrainClasses = classDictToList(nejiTrainClassesDict)
+        nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTrainClasses]
+
+# 100 is the default size used in embedding creation
     max_length = 100
     print("Loaded data successfully.\n")
 
@@ -65,7 +71,7 @@ def runModel(settings, trainTXT, trainXML):
 
     DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, vocabSize, embeddingsWeightsMatrix, device)
     print("Model created. Starting training.\n")
-    DL_model.train(trainEncodedSentences, trainClasses)
+    DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
 
     print("Starting the testing phase.\n")
     reader = Reader(dataSettings=settings, corpus="test")
@@ -73,7 +79,12 @@ def runModel(settings, trainTXT, trainXML):
 
     testClassesDict = createDefaultClasses(testTXT)
     testClasses = classDictToList(testClassesDict)
-    testClasses = [classListToTensor(sentenceClasses) for sentenceClasses in testClasses]
+    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
+
+    if settings["neji"]["use_neji_annotations"] == "True":
+        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle"])
+        nejiTestClasses = classDictToList(nejiTestClassesDict)
+        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
 
     testTokenizedSentences, testSentenceToDocList = getSentenceListWithMapping(testTXT, tokenized=True)
     testEncodedSentences = []
@@ -81,7 +92,8 @@ def runModel(settings, trainTXT, trainXML):
         sentence = [word2Idx[token] for token in sentence]
         testEncodedSentences.append(torch.tensor(sentence, dtype=torch.long).to(device))
 
-    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testSentenceToDocList)
+    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences,
+                                                                  testClasses, testSentenceToDocList, neji_classes=nejiTestClasses)
     return predFamilyMemberDict, predObservationDict
 
 
@@ -129,7 +141,12 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
     classesDict = createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
-    classes = [classListToTensor(sentenceClasses) for sentenceClasses in classes]
+    classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
+
+    if settings["neji"]["use_neji_annotations"] == "True":
+        nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiClasses = classDictToList(nejiClassesDict)
+        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
 
     kFolds = KFold(n_splits=cvFolds)
     predFamilyMemberDicts = []
@@ -146,6 +163,13 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         testClasses = [classes[idx] for idx in testIdx]
         testDocMapping = [sentenceToDocList[idx] for idx in testIdx]
 
+        if settings["neji"]["use_neji_annotations"] == "True":
+            nejiTrainClasses = [nejiClasses[idx] for idx in trainIdx]
+            nejiTestClasses = [nejiClasses[idx] for idx in testIdx]
+        else:
+            nejiTrainClasses = None
+            nejiTestClasses = None
+
         # 100 is the default size used in embedding creation
         max_length = 100
         print("Loaded data successfully.\n")
@@ -154,12 +178,12 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
         DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, vocabSize, embeddingsWeightsMatrix, device)
         print("Model created. Starting training.\n")
-        DL_model.train(trainEncodedSentences, trainClasses)
+        DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
 
         # DL_model.train_time_debug(trainTokenizedSentences, trainEmbeddings, trainClasses)
 
         print("Starting the testing phase.\n")
-        testLabelPred, testLabelTrue = DL_model.test(testEncodedSentences, testClasses)
+        testLabelPred, testLabelTrue = DL_model.test(testEncodedSentences, testClasses, neji_classes=nejiTestClasses)
         print("Finished the testing phase. Evaluating test results\n")
         DL_model.evaluate_test(testLabelPred, testLabelTrue)
         print("Writing model files to disk.\n")
@@ -167,7 +191,9 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
 
         print("Generating prediction output for final tsv.\n")
-        predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping)
+        predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences,
+                                                                      testEncodedSentences, testClasses,
+                                                                      testDocMapping, neji_classes=nejiTestClasses)
         predFamilyMemberDicts.append(predFamilyMemberDict)
         predObservationsDicts.append(predObservationDict)
 
