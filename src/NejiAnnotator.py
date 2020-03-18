@@ -118,6 +118,49 @@ def createIgnoreSet():
     ignore.discard(gs_observations)
     return ignore
 
+# def createNejiClasses(datasetTXT):
+#     """
+#     Create "classes" for entities annotated by Neji Annotator
+#     :param datasetTXT:
+#     :return: classesDict
+#     """
+#     classesDict = {}
+#     NEJIclass = 1
+#     NEJIclass = {"B-Annotation": 1, "I-Annotation": 2}
+#
+#     ignore = createIgnoreSet()
+#     neji = NejiAnnotator(ignore=ignore)
+#
+#     for fileName in datasetTXT:
+#         print("Going in file {}".format(fileName))
+#         classesDict[fileName] = []
+#         sentences = nltkSentenceSplit(datasetTXT[fileName], verbose=False)
+#         for sentence in sentences:
+#             entities = neji.annotate(sentence)
+#             sentence = nltkTokenize(sentence)
+#             classList = [int(0) for _ in sentence]
+#             if entities:
+#                 entities = [entity.split('|')[0] for entity in entities]
+#                 entities = unique(entities)
+#                 entities = [nltkTokenize(entity) for entity in entities]
+#                 entityIdx = 0
+#                 maxEntityIdx = len(entities) - 1
+#                 tokenIdx = 0
+#                 for tokenPosition, token in enumerate(sentence):
+#                     if entityIdx <= maxEntityIdx:
+#                         if token == entities[entityIdx][tokenIdx]:
+#                             classList[tokenPosition] = NEJIclass
+#                             if tokenIdx < len(entities[entityIdx]) - 1:
+#                                 tokenIdx += 1
+#                             else:
+#                                 tokenIdx = 0
+#                                 entityIdx += 1
+#                     else:
+#                         break
+#
+#             classesDict[fileName].append(classList)
+#     return classesDict
+
 def createNejiClasses(datasetTXT):
     """
     Create "classes" for entities annotated by Neji Annotator
@@ -125,7 +168,7 @@ def createNejiClasses(datasetTXT):
     :return: classesDict
     """
     classesDict = {}
-    NEJIclass = 1
+    NEJIclass = {"B-Annotation": 1, "I-Annotation": 2}
 
     ignore = createIgnoreSet()
     neji = NejiAnnotator(ignore=ignore)
@@ -148,7 +191,11 @@ def createNejiClasses(datasetTXT):
                 for tokenPosition, token in enumerate(sentence):
                     if entityIdx <= maxEntityIdx:
                         if token == entities[entityIdx][tokenIdx]:
-                            classList[tokenPosition] = NEJIclass
+                            if tokenIdx == 0:
+                                classList[tokenPosition] = NEJIclass["B-Annotation"]
+                            elif tokenIdx > 0:
+                                classList[tokenPosition] = NEJIclass["I-Annotation"]
+
                             if tokenIdx < len(entities[entityIdx]) - 1:
                                 tokenIdx += 1
                             else:
