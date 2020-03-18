@@ -113,7 +113,12 @@ def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, tes
     predFamilyMemberDict = {}
     predObservationDict = {}
     for idx, _ in enumerate(testTokenizedSentences):
-        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=neji_classes)
+        if neji_classes is not None:
+            nejiClasses = neji_classes[idx]
+        else:
+            nejiClasses = None
+
+        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=nejiClasses)
         familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
         if familyMemberList:
             if testDocMapping[idx] not in predFamilyMemberDict.keys():
