@@ -34,12 +34,11 @@ def classDictToList(classDict):
     return classList
 
 
-def classListToTensor(sentence_classes):
-    tensor = torch.zeros((1, len(sentence_classes)), dtype=torch.long)
+def classListToTensor(sentence_classes, datatype):
+    tensor = torch.zeros((1, len(sentence_classes)), dtype=datatype)
     for idx, label in enumerate(sentence_classes):
         tensor[0, idx] = label
     return tensor
-
 
 def getSentenceList(filesRead, tokenized=False):
     sentenceList = list()
@@ -99,7 +98,7 @@ def generateBatch(tokenized_sentences, sentences_embeddings, embedding_dimension
     return sentences_tensor, sorted_batch_classes, sorted_len_units, packed_input, mask
 
 
-def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping):
+def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, neji_classes=None):
     """
     Runs the trained model on the unseen data split (validation or test), returning the resulting entity predictions
     :param DLmodel:
@@ -107,13 +106,14 @@ def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, tes
     :param testEncodedSentences:
     :param testClasses:
     :param testDocMapping:
+    :param neji_classes: neji classes in case neji annotations are used to add input information to the model
     :return:
     """
 
     predFamilyMemberDict = {}
     predObservationDict = {}
     for idx, _ in enumerate(testTokenizedSentences):
-        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True)
+        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=neji_classes)
         familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
         if familyMemberList:
             if testDocMapping[idx] not in predFamilyMemberDict.keys():

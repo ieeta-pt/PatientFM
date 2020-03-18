@@ -1,5 +1,6 @@
 # Code for class NejiAnnotator adapted from Sérgio Matos
 
+import os
 import re
 import json
 import pickle
@@ -169,22 +170,37 @@ def createNejiSourcesGeneric(datasetTXT, picklePath):
     classesDict = createNejiClasses(datasetTXT)
     writePickle(classesDict, picklePath)
 
-def createNejiSourcesBothCorpus(settings):
+def createNejiSourcesFromCorpus(settings, corpus, picklePath):
     """
-    Automatically creates pickle files for the train and test corpus
-    :param datasetTXT:
+    Creates pickle file with class annotations for the given corpus
+    :param settings:
+    :param corpus:
+    :param picklePath:
+    :return:
+    """
+    reader = Reader(dataSettings=settings, corpus=corpus)
+    filesRead = reader.loadDataSet()
+    classesDict = createNejiClasses(filesRead)
+    writePickle(classesDict, picklePath)
+
+def runNejiSourcesCreation(settings):
+    """
+    If neji class annotations do not exist, this pipeline creates them for the train and test corpus
     :param settings:
     :return:
     """
     for corpus in ("train", "test"):
-        print("Processing {} set.".format(corpus))
-        if corpus == "train": picklePath=settings["datasets"]["neji_train_pickle"]
-        elif corpus == "test": picklePath=settings["datasets"]["neji_test_pickle"]
+        if corpus == "train": picklePath = settings["neji"]["neji_train_pickle"]
+        elif corpus == "test": picklePath = settings["neji"]["neji_test_pickle"]
 
-        reader = Reader(dataSettings=settings, corpus=corpus)
-        filesRead = reader.loadDataSet()
-        classesDict = createNejiClasses(filesRead)
-        writePickle(classesDict, picklePath)
+        if not os.path.exists(picklePath):
+            print("Creating neji annotations for the {} set.".format(corpus))
+            reader = Reader(dataSettings=settings, corpus=corpus)
+            filesRead = reader.loadDataSet()
+            classesDict = createNejiClasses(filesRead)
+            writePickle(classesDict, picklePath)
+        else:
+            print("Pickle file for {} set already exists at {}".format(corpus, picklePath))
 
 
 def unique(list):

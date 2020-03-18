@@ -7,7 +7,7 @@ from torch import nn
 from sklearn import metrics
 
 from models.utils import classListToTensor, updateProgress, valueToKey
-from models.Embedding_BiLstmCRF.utils import generateBatch
+from models.Embedding_BiLstmCRF.utils import generateBatch, concatenateNejiClassesToEmbeddings
 from models.BiLstmCRF.decoder import Decoder
 from models.BiLstmCRF.encoder import BiLSTMEncoder
 
@@ -28,6 +28,12 @@ class Model:
         self.iterations_per_epoch = configs.iterations_per_epoch
         self.learning_rate = configs.learning_rate
 
+        self.USE_NEJI = configs.USE_NEJI
+        if self.USE_NEJI == "True":
+            self.encoder_insize = self.embedding_dim + 1
+        else:
+            self.encoder_insize = self.embedding_dim
+
         self.embeddingLayer = nn.Embedding(vocab_size, self.embedding_dim).to(device=self.device)
         self.embeddingLayer.load_state_dict({'weight': weights_matrix})
         if self.EMBEDDINGS_FREEZE_AFTER_EPOCH == 0:
@@ -37,17 +43,18 @@ class Model:
             self.embeddingLayer.weight.requires_grad = True
             self.embedding_optimizer = torch.optim.Adam(self.embeddingLayer.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
-        self.encoder = BiLSTMEncoder(self.embedding_dim, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
+        self.encoder = BiLSTMEncoder(self.encoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
         self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
         self.criterion = nn.NLLLoss()
         self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
         self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
+
         # total = sum(p.numel() for p in self.encoder.parameters() if p.requires_grad)
         # total += sum(p.numel() for p in self.decoder.parameters() if p.requires_grad)
         # print("Total number of trainable parameters: {}".format(total))
 
-    def train(self, train_encoded_sentences_tensors, train_labels):
+    def train(self, train_encoded_sentences_tensors, train_labels, neji_classes=None):
 
         r""" List with entity labels ("O":0 maps to nonentity) """
         entity_labels = [value for key, value in self.entity_classes.items() if not key.startswith('O')]
@@ -65,11 +72,19 @@ class Model:
                 self.embeddingLayer.weight.requires_grad = False
                 self.embeddingLayer = self.embeddingLayer.eval()
 
-            encoded_sentences_tensors, sorted_batch_classes, sorted_len_units,  mask = \
-                generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
+            if self.USE_NEJI == "True":
+                encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask, batch_neji_classes = \
+                    generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device, neji_classes)
+            else:
+                encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask = \
+                    generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
 
             sentence_embeddings = self.embeddingLayer(encoded_sentences_tensors)
-            packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_embeddings, sorted_len_units, batch_first=True)
+            if self.USE_NEJI == "True":
+                sentence_neji_embeddings = concatenateNejiClassesToEmbeddings(sentence_embeddings, batch_neji_classes, self.device)
+                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_neji_embeddings, sorted_len_units, batch_first=True)
+            else:
+                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_embeddings, sorted_len_units, batch_first=True)
 
             initial_state_h0c0 = self.encoder.initH0C0(self.device)
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
@@ -100,7 +115,7 @@ class Model:
         self.decoder = self.decoder.eval()
 
 
-    def test(self, test_encoded_sentences_tensors, test_labels, verbose=False, SINGLE_INSTANCE=False):
+    def test(self, test_encoded_sentences_tensors, test_labels, verbose=False, neji_classes=None, SINGLE_INSTANCE=False):
         test_label_true = []
         test_label_pred = []
 
@@ -118,6 +133,15 @@ class Model:
 
             x_input[0] = encoded_sentence_tensor
             sentence_embeddings = self.embeddingLayer(x_input)
+
+            if neji_classes is not None:
+                if SINGLE_INSTANCE is True:
+                    neji_tensor = neji_classes.to(self.device)
+                else:
+                    neji_tensor = neji_classes[sentence_idx].to(self.device)
+
+                sentence_embeddings = concatenateNejiClassesToEmbeddings(sentence_embeddings, neji_tensor, self.device)
+
             packed_input = nn.utils.rnn.pack_padded_sequence(sentence_embeddings, torch.tensor([sentence_embeddings.shape[1]]), batch_first=True)
 
             initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
