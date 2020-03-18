@@ -189,7 +189,6 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         print("Writing model files to disk.\n")
         DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
 
-
         print("Generating prediction output for final tsv.\n")
         predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences,
                                                                       testEncodedSentences, testClasses,
