@@ -28,7 +28,6 @@ class Orchestrator():
 			# if dataSettings["neji"]["use_neji_annotations"] == "True":
 			# 	runNejiSourcesCreation(dataSettings)
 
-
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
 
