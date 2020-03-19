@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import pickle
 
 from Reader import Reader
 from Preprocessing import nltkSentenceSplit, nltkTokenize
@@ -56,3 +57,15 @@ def createEmbeddingsPickle(settings, corpus):
         print("Created pickle file {}".format(picklePath))
 
 
+def createSentencesFile(settings):
+    if not os.path.exists(settings["embeddings"]["sentences_path"]):
+        sentenceList = list()
+        for corpus in ("train", "test"):
+            reader = Reader(dataSettings=settings, corpus=corpus)
+            filesRead = reader.loadDataSet()
+            for fileName in filesRead:
+                sentences = nltkSentenceSplit(filesRead[fileName], verbose=False)
+                sentenceList.extend(nltkTokenize(sentence) for sentence in sentences)
+
+        with open(settings["embeddings"]["sentences_path"], 'wb') as pickle_handle:
+            pickle.dump(sentenceList, pickle_handle, protocol=4)
