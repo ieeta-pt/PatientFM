@@ -9,8 +9,8 @@ from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries, createOutputTask1
 
-from models.AlBert_BiLstmCRF.utils import loadModelConfigs, getSentenceListWithMapping
-from models.AlBert_BiLstmCRF.model import Model
+from models.ALBERT_BiLstmCRF.utils import ALBERTutils, loadModelConfigs
+from models.ALBERT_BiLstmCRF.model import Model
 
 from transformers import AlbertTokenizer
 
@@ -129,13 +129,20 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
     print("Loading and preprocessing data.\n")
 
-    tokenizer = AlbertTokenizer.from_pretrained(settings["ALBERT"]["model"])
+    if settings["ALBERT"]["add_special_tokens"] == "True":
+        addSpecialTokens = True
+    else:
+        addSpecialTokens = False
 
 
-    encodedTokenizedSentences, sentenceToDocList = getSentenceListWithMapping(trainTXT, tokenizer, device)
+    albertUtils = ALBERTutils(settings["ALBERT"]["model"], addSpecialTokens)
+    nltkTokenizedSentences, encodedTokenizedSentences, sentenceToDocList = albertUtils.getSentenceListWithMapping(trainTXT)
 
+    tensorEncodedSentences = []
+    for sentence in encodedTokenizedSentences:
+        tensorEncodedSentences.append(torch.LongTensor(sentence).to(device=device))
 
-    classesDict = createTrueClasses(trainTXT, trainXML)
+    classesDict = albertUtils.createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
     classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
 
@@ -151,6 +158,9 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     print("Beginning KFold cross validation.\n")
 
     for trainIdx, testIdx in kFolds.split(encodedTokenizedSentences):
+
+        NOW I MUST START HERE
+
         trainEncodedSentences = [encodedTokenizedSentences[idx] for idx in trainIdx]
 
         trainClasses = [classes[idx] for idx in trainIdx]
