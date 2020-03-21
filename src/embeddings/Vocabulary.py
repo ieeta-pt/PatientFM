@@ -75,7 +75,7 @@ def trainFasttextModel(sentencesPath, vocabularyPath, biowordvecPath, biowordvec
         new_sentences = pickle.load(pickle_handle)
 
     t0 = time()
-    model = FastText.load_facebook_model(biowordvecPath)
+    model = FastText.load_fasttext_format(biowordvecPath) #load_facebook_model(biowordvecPath)
     t1 = time()
     print(' ({} seconds to load)'.format(t1 - t0))
 

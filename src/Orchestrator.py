@@ -4,7 +4,8 @@ from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, 
 from RuleBased import RuleBased
 
 # from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
-from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+#from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
 from NejiAnnotator import runNejiSourcesCreation, readPickle
 
