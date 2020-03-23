@@ -8,6 +8,8 @@ from RuleBased import RuleBased
 from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
 from NejiAnnotator import runNejiSourcesCreation, readPickle
+from models.ALBERT_BiLstmCRF.utils import ALBERTutils
+
 
 class Orchestrator():
 	def processTask1(files, XMLAnnotations, dictionaries, dataSettings, method=None, show=False):
@@ -28,6 +30,9 @@ class Orchestrator():
 			# runEmbeddingCreationPipeline(dataSettings)
 			# if dataSettings["neji"]["use_neji_annotations"] == "True":
 			# 	runNejiSourcesCreation(dataSettings)
+			# if dataSettings["neji"]["use_neji_annotations"] == "True":
+			# 	albertUtils = ALBERTutils(dataSettings["ALBERT"]["model"], True)
+			# 	runNejiSourcesCreation(dataSettings, "albert", bertUtils=albertUtils)
 
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)

@@ -161,10 +161,58 @@ def createIgnoreSet():
 #             classesDict[fileName].append(classList)
 #     return classesDict
 
-def createNejiClasses(datasetTXT):
+# def createNejiClasses(datasetTXT):
+#     """
+#     Create "classes" for entities annotated by Neji Annotator
+#     :param datasetTXT:
+#     :return: classesDict
+#     """
+#     classesDict = {}
+#     NEJIclass = {"B-Annotation": 1, "I-Annotation": 2}
+#
+#     ignore = createIgnoreSet()
+#     neji = NejiAnnotator(ignore=ignore)
+#
+#     for fileName in datasetTXT:
+#         print("Going in file {}".format(fileName))
+#         classesDict[fileName] = []
+#         sentences = nltkSentenceSplit(datasetTXT[fileName], verbose=False)
+#         for sentence in sentences:
+#             entities = neji.annotate(sentence)
+#             sentence = nltkTokenize(sentence)
+#             classList = [int(0) for _ in sentence]
+#             if entities:
+#                 entities = [entity.split('|')[0] for entity in entities]
+#                 entities = unique(entities)
+#                 entities = [nltkTokenize(entity) for entity in entities]
+#                 entityIdx = 0
+#                 maxEntityIdx = len(entities) - 1
+#                 tokenIdx = 0
+#                 for tokenPosition, token in enumerate(sentence):
+#                     if entityIdx <= maxEntityIdx:
+#                         if token == entities[entityIdx][tokenIdx]:
+#                             if tokenIdx == 0:
+#                                 classList[tokenPosition] = NEJIclass["B-Annotation"]
+#                             elif tokenIdx > 0:
+#                                 classList[tokenPosition] = NEJIclass["I-Annotation"]
+#
+#                             if tokenIdx < len(entities[entityIdx]) - 1:
+#                                 tokenIdx += 1
+#                             else:
+#                                 tokenIdx = 0
+#                                 entityIdx += 1
+#                     else:
+#                         break
+#
+#             classesDict[fileName].append(classList)
+#     return classesDict
+
+def createNejiClasses(datasetTXT, modelType, bertUtils=None):
     """
     Create "classes" for entities annotated by Neji Annotator
     :param datasetTXT:
+    :param modelType: type of first representation layer (embedding or albert)
+    :param bertUtils: instance of bert/albert utils with initialized tokenizer
     :return: classesDict
     """
     classesDict = {}
@@ -179,12 +227,22 @@ def createNejiClasses(datasetTXT):
         sentences = nltkSentenceSplit(datasetTXT[fileName], verbose=False)
         for sentence in sentences:
             entities = neji.annotate(sentence)
-            sentence = nltkTokenize(sentence)
+            assert modelType == "embedding" or modelType == "albert", "Wrong type of model. Possible types are (\"embedding\", \"albert\")."
+            if modelType == "embedding":
+                sentence = nltkTokenize(sentence)
+            elif modelType == "albert":
+                sentence = bertUtils.albertTokenizer.encode(sentence, add_special_tokens=bertUtils.addSpecialTokens)
+                sentence = bertUtils.albertTokenizer.convert_ids_to_tokens(sentence)
             classList = [int(0) for _ in sentence]
+
             if entities:
                 entities = [entity.split('|')[0] for entity in entities]
                 entities = unique(entities)
-                entities = [nltkTokenize(entity) for entity in entities]
+                if modelType == "embedding":
+                    entities = [nltkTokenize(entity) for entity in entities]
+                elif modelType == "albert":
+                    entities = [bertUtils.albertTokenizer.tokenize(entity) for entity in entities]
+
                 entityIdx = 0
                 maxEntityIdx = len(entities) - 1
                 tokenIdx = 0
@@ -207,33 +265,39 @@ def createNejiClasses(datasetTXT):
             classesDict[fileName].append(classList)
     return classesDict
 
-def createNejiSourcesGeneric(datasetTXT, picklePath):
+def createNejiSourcesGeneric(datasetTXT, picklePath, modelType, bertUtils=None):
     """
     Creates a pickle file with neji annotations given any input data (in txt format)
     :param datasetTXT:
     :param picklePath:
+    :param modelType: type of first representation layer (embedding or albert)
+    :param bertUtils: instance of bert/albert utils with initialized tokenizer
     :return:
     """
-    classesDict = createNejiClasses(datasetTXT)
+    classesDict = createNejiClasses(datasetTXT, modelType, bertUtils=bertUtils)
     writePickle(classesDict, picklePath)
 
-def createNejiSourcesFromCorpus(settings, corpus, picklePath):
+def createNejiSourcesFromCorpus(settings, corpus, picklePath, modelType, bertUtils=None):
     """
     Creates pickle file with class annotations for the given corpus
     :param settings:
     :param corpus:
     :param picklePath:
+    :param modelType: type of first representation layer (embedding or albert)
+    :param bertUtils: instance of bert/albert utils with initialized tokenizer
     :return:
     """
     reader = Reader(dataSettings=settings, corpus=corpus)
     filesRead = reader.loadDataSet()
-    classesDict = createNejiClasses(filesRead)
+    classesDict = createNejiClasses(filesRead, modelType, bertUtils=bertUtils)
     writePickle(classesDict, picklePath)
 
-def runNejiSourcesCreation(settings):
+def runNejiSourcesCreation(settings, modelType, bertUtils=None):
     """
     If neji class annotations do not exist, this pipeline creates them for the train and test corpus
     :param settings:
+    :param modelType: type of first representation layer (embedding or albert)
+    :param bertUtils: instance of bert/albert utils with initialized tokenizer
     :return:
     """
     for corpus in ("train", "test"):
@@ -244,11 +308,10 @@ def runNejiSourcesCreation(settings):
             print("Creating neji annotations for the {} set.".format(corpus))
             reader = Reader(dataSettings=settings, corpus=corpus)
             filesRead = reader.loadDataSet()
-            classesDict = createNejiClasses(filesRead)
+            classesDict = createNejiClasses(filesRead, modelType, bertUtils=bertUtils)
             writePickle(classesDict, picklePath)
         else:
             print("Pickle file for {} set already exists at {}".format(corpus, picklePath))
-
 
 def unique(list):
     """
