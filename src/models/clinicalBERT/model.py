@@ -84,7 +84,7 @@ class Model:
             #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
 
             entity_out = self.linear(sentence_representations)
-            #entity_out = self.softmax(entity_out)
+            entity_out = self.softmax(entity_out)
 
 
             label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
@@ -123,7 +123,7 @@ class Model:
                 y_true_tensor = [test_labels[sentence_idx].to(self.device)]
 
             x_input[0] = encoded_sentence_tensor
-            sentence_representation = self.albertLayer(input_ids=x_input, attention_mask=mask)
+            sentence_representation = self.clinicalBERT(input_ids=x_input, attention_mask=mask)
             sentence_representation = sentence_representation[0]
 
             if neji_classes is not None:
@@ -134,14 +134,11 @@ class Model:
 
                 sentence_representation = concatenateNejiClassesToEmbeddings(sentence_representation, neji_tensor, self.device)
 
-            packed_input = nn.utils.rnn.pack_padded_sequence(sentence_representation, torch.tensor([sentence_representation.shape[1]]), batch_first=True)
+            entity_out = self.linear(sentence_representation)
+            entity_out = self.softmax(entity_out)
+            entity_out = entity_out.max(2)[1] #Similar to argmax, but backpropagable
 
-            initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
-                                  torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device))
-
-            encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
-            crf_out, entity_out, crf_loss = self.decoder(encoder_output, y_true_tensor, mask, self.device)
-            test_label_pred.extend(crf_out[0])
+            test_label_pred.extend(entity_out.tolist())
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
             if ((sentence_idx + 1) % 100 == 0) and verbose:

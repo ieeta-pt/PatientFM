@@ -79,16 +79,16 @@ def runModel(settings, trainTXT, trainXML):
 
     testEncodedSentences = []
     for sentence in encodedTokenizedSentences:
-        testEncodedSentences.append(torch.LongTensor(sentence).to(device=device))
+        testEncodedSentences.append(torch.LongTensor(sentence).to(device))
 
     testClassesDict = albertUtils.createDefaultClasses(testTXT)
     testClasses = classDictToList(testClassesDict)
-    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long).to(device) for sentenceClasses in testClasses]
+    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle"])
         nejiTestClasses = classDictToList(nejiTestClassesDict)
-        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float).to(device) for sentenceClasses in nejiTestClasses]
+        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
     else:
         nejiTestClasses = None
 
@@ -138,12 +138,12 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
     classesDict = clinicalBERTUtils.createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
-    classes = [classListToTensor(sentenceClasses, datatype=torch.long).to(device) for sentenceClasses in classes]
+    classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
         nejiClasses = classDictToList(nejiClassesDict)
-        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float).to(device) for sentenceClasses in nejiClasses]
+        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
 
     kFolds = KFold(n_splits=cvFolds)
     predFamilyMemberDicts = []
