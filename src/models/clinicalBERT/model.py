@@ -138,7 +138,7 @@ class Model:
             entity_out = self.softmax(entity_out)
             entity_out = entity_out.max(2)[1] #Similar to argmax, but backpropagable
 
-            test_label_pred.extend(entity_out.tolist())
+            test_label_pred.extend(entity_out[0].tolist())
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
             if ((sentence_idx + 1) % 100 == 0) and verbose:
