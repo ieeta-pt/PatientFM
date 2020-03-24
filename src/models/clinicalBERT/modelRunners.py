@@ -8,9 +8,8 @@ from NejiAnnotator import readPickle
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries
 
-from models.ALBERT_BiLstmCRF.utils import ALBERT_ENTITY_CLASSES, ALBERTutils, loadModelConfigs, createOutputTask1
-from models.ALBERT_BiLstmCRF.model import Model
-
+from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, clinicalBERTutils, createOutputTask1
+from models.clinicalBERT.model import Model
 
 def runModel(settings, trainTXT, trainXML):
     """ Trains the model in the FULL training dataset and computes predictions for the FULL test set
@@ -52,12 +51,12 @@ def runModel(settings, trainTXT, trainXML):
 
     trainClassesDict = albertUtils.createTrueClasses(trainTXT, trainXML)
     trainClasses = classDictToList(trainClassesDict)
-    trainClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in trainClasses]
+    trainClasses = [classListToTensor(sentenceClasses, datatype=torch.long).to(device) for sentenceClasses in trainClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
         nejiTrainClasses = classDictToList(nejiTrainClassesDict)
-        nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTrainClasses]
+        nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float).to(device) for sentenceClasses in nejiTrainClasses]
     else:
         nejiTrainClasses = None
 
@@ -84,12 +83,12 @@ def runModel(settings, trainTXT, trainXML):
 
     testClassesDict = albertUtils.createDefaultClasses(testTXT)
     testClasses = classDictToList(testClassesDict)
-    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
+    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long).to(device) for sentenceClasses in testClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle"])
         nejiTestClasses = classDictToList(nejiTestClassesDict)
-        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
+        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float).to(device) for sentenceClasses in nejiTestClasses]
     else:
         nejiTestClasses = None
 
@@ -130,21 +129,21 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     else:
         addSpecialTokens = False
 
-    albertUtils = ALBERTutils(settings["ALBERT"]["model"], addSpecialTokens)
-    ALBERTtokenizedSentences, encodedTokenizedSentences, sentenceToDocList = albertUtils.getSentenceListWithMapping(trainTXT)
+    clinicalBERTUtils = clinicalBERTutils(addSpecialTokens)
+    BERTtokenizedSentences, encodedTokenizedSentences, sentenceToDocList = clinicalBERTUtils.getSentenceListWithMapping(trainTXT)
 
     tensorEncodedSentences = []
     for sentence in encodedTokenizedSentences:
         tensorEncodedSentences.append(torch.LongTensor(sentence).to(device=device))
 
-    classesDict = albertUtils.createTrueClasses(trainTXT, trainXML)
+    classesDict = clinicalBERTUtils.createTrueClasses(trainTXT, trainXML)
     classes = classDictToList(classesDict)
-    classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
+    classes = [classListToTensor(sentenceClasses, datatype=torch.long).to(device) for sentenceClasses in classes]
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
         nejiClasses = classDictToList(nejiClassesDict)
-        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
+        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float).to(device) for sentenceClasses in nejiClasses]
 
     kFolds = KFold(n_splits=cvFolds)
     predFamilyMemberDicts = []
@@ -157,7 +156,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         trainEncodedSentences = [tensorEncodedSentences[idx] for idx in trainIdx]
         trainClasses = [classes[idx] for idx in trainIdx]
 
-        testTokenizedSentences = [ALBERTtokenizedSentences[idx] for idx in testIdx]
+        testTokenizedSentences = [BERTtokenizedSentences[idx] for idx in testIdx]
         testEncodedSentences = [tensorEncodedSentences[idx] for idx in testIdx]
         testClasses = [classes[idx] for idx in testIdx]
         testDocMapping = [sentenceToDocList[idx] for idx in testIdx]
@@ -175,9 +174,11 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
 
         modelConfigs = loadModelConfigs(settings)
 
-        DL_model = Model(modelConfigs, ALBERT_ENTITY_CLASSES, max_length, device)
+        DL_model = Model(modelConfigs, BERT_ENTITY_CLASSES, max_length, device)
         print("Model created. Starting training.\n")
         DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
+
+
 
         print("Starting the testing phase.\n")
         testLabelPred, testLabelTrue = DL_model.test(testEncodedSentences, testClasses, neji_classes=nejiTestClasses)
@@ -189,7 +190,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         print("Generating prediction output for final tsv.\n")
         predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences,
                                                                       testEncodedSentences, testClasses,
-                                                                      testDocMapping, albertUtils, neji_classes=nejiTestClasses)
+                                                                      testDocMapping, clinicalBERTUtils, neji_classes=nejiTestClasses)
         predFamilyMemberDicts.append(predFamilyMemberDict)
         predObservationsDicts.append(predObservationDict)
 
