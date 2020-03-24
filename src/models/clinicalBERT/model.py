@@ -37,8 +37,8 @@ class Model:
         # else:
         #     self.encoder_insize = self.bert_outsize
 
-        self.linear = nn.Linear(self.bert_outsize, self.output_size)
-        self.softmax = nn.LogSoftmax(dim=2)
+        self.linear = nn.Linear(self.bert_outsize, self.output_size).to(device=self.device)
+        self.softmax = nn.LogSoftmax(dim=2).to(device=self.device)
 
 
         self.criterion = nn.NLLLoss()
