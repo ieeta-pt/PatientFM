@@ -1,11 +1,11 @@
 import torch
 import numpy as np
-from transformers import AlbertTokenizer
+from transformers import AutoTokenizer
 
 from Entity import filterObservations, filterFamilyMembers, FAMILY_PLURALS, ENTITY_CLASSES
-from Preprocessing import nltkSentenceSplit, nltkTokenize
+from Preprocessing import nltkSentenceSplit
 
-ALBERT_ENTITY_CLASSES = {"O": 0,
+BERT_ENTITY_CLASSES = {"O": 0,
                          "B-Observation": 1,  "I-Observation": 2,
                          "BP-FamilyMember": 3, "IP-FamilyMember": 4,
                          "BM-FamilyMember": 5, "IM-FamilyMember": 6,
@@ -23,14 +23,13 @@ def loadModelConfigs(settings):
     configs.num_layers = int(settings["DLmodelparams"]["numlayers"])
     configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
     configs.USE_NEJI = settings["neji"]["use_neji_annotations"]
-    configs.ALBERT_MODEL = settings["ALBERT"]["model"]
     return configs
 
-class ALBERTutils():
-    def __init__(self, albert_model, add_special_tokens=True):
+class clinicalBERTutils():
+    def __init__(self, add_special_tokens=True):
         self.addSpecialTokens = add_special_tokens
-        self.albertTokenizer = AlbertTokenizer.from_pretrained(albert_model)
-        self.albertEntityClasses = ALBERT_ENTITY_CLASSES
+        self.tokenizer = AutoTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
+        self.BERTEntityClasses = BERT_ENTITY_CLASSES
 
     def getSentenceListWithMapping(self, filesRead):
         """
@@ -47,9 +46,9 @@ class ALBERTutils():
             sentences = nltkSentenceSplit(filesRead[fileName], verbose=False)
             sentenceToDocList.extend(fileName for _ in sentences)
             for sentence in sentences:
-                sentence = self.albertTokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
+                sentence = self.tokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
                 encodedTokenizedSentenceList.append(sentence)
-                sentence = self.albertTokenizer.convert_ids_to_tokens(sentence)
+                sentence = self.tokenizer.convert_ids_to_tokens(sentence)
                 tokenizedSentenceList.append(sentence)
         return tokenizedSentenceList, encodedTokenizedSentenceList, sentenceToDocList
 
@@ -63,7 +62,7 @@ class ALBERTutils():
             classesDict[fileName] = []
             sentences = nltkSentenceSplit(datasetTXT[fileName], verbose=False)
             for sentence in sentences:
-                sentence = self.albertTokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
+                sentence = self.tokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
                 classesDict[fileName].append([int(0) for _ in sentence])
         return classesDict
 
@@ -93,23 +92,23 @@ class ALBERTutils():
             observations = filterObservations(datasetXML[fileName])
             # Some documents can have no observations. In that case, the default class list remains unchanged
             if observations:
-                observationList = [self.albertTokenizer.tokenize(observation[0]) for _, observation in observations] #The [0] is to store the string instead of a list with a string
+                observationList = [self.tokenizer.tokenize(observation[0]) for _, observation in observations] #The [0] is to store the string instead of a list with a string
                 observationIdx = 0
                 for sentencePosition, sentence in enumerate(sentences):
                     tokenIdx = 0
-                    sentence = self.albertTokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
-                    sentence = self.albertTokenizer.convert_ids_to_tokens(sentence)
+                    sentence = self.tokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
+                    sentence = self.tokenizer.convert_ids_to_tokens(sentence)
                     for tokenPosition, token in enumerate(sentence):
                         if observationIdx <= len(observationList) - 1:
                             if token == observationList[observationIdx][tokenIdx]:
                                 if tokenIdx == 0:
-                                    classesDict[fileName][sentencePosition][tokenPosition] = self.albertEntityClasses["B-Observation"]
+                                    classesDict[fileName][sentencePosition][tokenPosition] = self.BERTEntityClasses["B-Observation"]
                                     if len(observationList[observationIdx]) == 1:
                                         observationIdx += 1
                                     else:
                                         tokenIdx += 1
                                 else:
-                                    classesDict[fileName][sentencePosition][tokenPosition] = self.albertEntityClasses["I-Observation"]
+                                    classesDict[fileName][sentencePosition][tokenPosition] = self.BERTEntityClasses["I-Observation"]
                                     tokenIdx += 1
                                     if tokenIdx == len(observationList[observationIdx]):
                                         tokenIdx = 0
@@ -130,12 +129,12 @@ class ALBERTutils():
             familyMembers = filterFamilyMembers(datasetXML[fileName])
             # Some documents can have no family member mentions. In that case, the class list remains unchanged
             if familyMembers:
-                familyMemberList = [(self.albertTokenizer.tokenize(familyMember.lower()), familySide) for _, familyMember, familySide in familyMembers]
+                familyMemberList = [(self.tokenizer.tokenize(familyMember.lower()), familySide) for _, familyMember, familySide in familyMembers]
                 familyMemberIdx = 0
                 for sentencePosition, sentence in enumerate(sentences):
                     tokenIdx = 0
-                    sentence = self.albertTokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
-                    sentence = self.albertTokenizer.convert_ids_to_tokens(sentence)
+                    sentence = self.tokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
+                    sentence = self.tokenizer.convert_ids_to_tokens(sentence)
                     matchFound = False
                     beginToken = True
                     for tokenPosition, token in enumerate(sentence):
@@ -158,8 +157,8 @@ class ALBERTutils():
                                             if sentence[tokenPosition+idx] != mention:
                                                 matchFound = False
 
-                                elif familyMemberList[familyMemberIdx][0][tokenIdx] == "▁grand":
-                                    if token.startswith("▁grand"):
+                                elif familyMemberList[familyMemberIdx][0][tokenIdx] == "grand":
+                                    if token.startswith("grand"):
                                         classesDict[fileName][sentencePosition][tokenPosition] = \
                                             self.getFamilyClass(familyMemberList[familyMemberIdx][1], beginningToken=beginToken)
                                         familyMemberIdx += 1
@@ -179,16 +178,16 @@ class ALBERTutils():
     def getFamilyClass(self, familySide, beginningToken=True):
 
         if familySide == "Paternal":
-            if beginningToken: return self.albertEntityClasses["BP-FamilyMember"]
-            else:              return self.albertEntityClasses["IP-FamilyMember"]
+            if beginningToken: return self.BERTEntityClasses["BP-FamilyMember"]
+            else:              return self.BERTEntityClasses["IP-FamilyMember"]
 
         elif familySide == "Maternal":
-            if beginningToken: return self.albertEntityClasses["BM-FamilyMember"]
-            else:              return self.albertEntityClasses["IM-FamilyMember"]
+            if beginningToken: return self.BERTEntityClasses["BM-FamilyMember"]
+            else:              return self.BERTEntityClasses["IM-FamilyMember"]
 
         elif familySide == "NA":
-            if beginningToken: return self.albertEntityClasses["BNA-FamilyMember"]
-            else:              return self.albertEntityClasses["INA-FamilyMember"]
+            if beginningToken: return self.BERTEntityClasses["BNA-FamilyMember"]
+            else:              return self.BERTEntityClasses["INA-FamilyMember"]
 
 
 
@@ -200,7 +199,7 @@ def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, tes
     :param testEncodedSentences:
     :param testClasses:
     :param testDocMapping:
-    :param bertUtils: instance of ALBERTutils which contains the necessary tokenizer
+    :param bertUtils: instance of BERTutils which contains the necessary tokenizer
     :param neji_classes: neji classes in case neji annotations are used to add input information to the model
     :return:
     """
@@ -246,7 +245,7 @@ def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils)
                 observation.append(singleTokenizedSentence[idx])
                 if idx < finalCheckablePosition:
                     if modelPrediction[idx + 1] not in (1, 2):
-                        observationText = bertUtils.albertTokenizer.convert_tokens_to_string(observation)
+                        observationText = bertUtils.tokenizer.convert_tokens_to_string(observation)
                         if len(observationText) > 1:
                             observationsList.append(observationText)
                         observation = list()
@@ -254,21 +253,21 @@ def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils)
                 familyMember.append(singleTokenizedSentence[idx])
                 if idx < finalCheckablePosition:
                     if modelPrediction[idx + 1] not in (3, 4):
-                        familyMemberText = bertUtils.albertTokenizer.convert_tokens_to_string(familyMember)
+                        familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
                         familySide = "Paternal"
                         processFamilyMember = True
             elif prediction in (5, 6):
                 familyMember.append(singleTokenizedSentence[idx])
                 if idx < finalCheckablePosition:
                     if modelPrediction[idx + 1] not in (5, 6):
-                        familyMemberText = bertUtils.albertTokenizer.convert_tokens_to_string(familyMember)
+                        familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
                         familySide = "Maternal"
                         processFamilyMember = True
             elif prediction in (7, 8):
                 familyMember.append(singleTokenizedSentence[idx])
                 if idx < finalCheckablePosition:
                     if modelPrediction[idx + 1] not in (7, 8):
-                        familyMemberText = bertUtils.albertTokenizer.convert_tokens_to_string(familyMember)
+                        familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
                         familySide = "NA"
                         processFamilyMember = True
 
@@ -281,5 +280,7 @@ def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils)
                     familyMemberList.append(tuple((familyMemberText, familySide)))
                 familyMember = list()
                 processFamilyMember = False
+
+
 
     return familyMemberList, observationsList

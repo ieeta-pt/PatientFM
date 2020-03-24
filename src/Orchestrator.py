@@ -5,7 +5,8 @@ from RuleBased import RuleBased
 
 # from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
 #from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
-from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+#from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+from models.clinicalBERT.modelRunners import runModel, runModelDevelopment
 
 from NejiAnnotator import runNejiSourcesCreation, readPickle
 from models.ALBERT_BiLstmCRF.utils import ALBERTutils
