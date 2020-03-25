@@ -10,6 +10,7 @@ from models.clinicalBERT.modelRunners import runModel, runModelDevelopment
 
 from NejiAnnotator import runNejiSourcesCreation, readPickle
 from models.ALBERT_BiLstmCRF.utils import ALBERTutils
+from models.clinicalBERT.utils import clinicalBERTutils
 
 
 class Orchestrator():
@@ -33,7 +34,10 @@ class Orchestrator():
 			# 	runNejiSourcesCreation(dataSettings)
 			# if dataSettings["neji"]["use_neji_annotations"] == "True":
 			# 	albertUtils = ALBERTutils(dataSettings["ALBERT"]["model"], True)
-			# 	runNejiSourcesCreation(dataSettings, "albert", bertUtils=albertUtils)
+			# 	runNejiSourcesCreation(dataSettings, modelType="albert", bertUtils=albertUtils)
+			if dataSettings["neji"]["use_neji_annotations"] == "True":
+				clinicalBERTUtils = clinicalBERTutils(True)
+				runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
 
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)

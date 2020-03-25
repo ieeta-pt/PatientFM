@@ -184,8 +184,8 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         testLabelPred, testLabelTrue = DL_model.test(testEncodedSentences, testClasses, neji_classes=nejiTestClasses)
         print("Finished the testing phase. Evaluating test results\n")
         DL_model.evaluate_test(testLabelPred, testLabelTrue)
-        print("Writing model files to disk.\n")
-        DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
+   #     # print("Writing model files to disk.\n")
+   #     # DL_model.write_model_files(testLabelPred, testLabelTrue, seed)
 
         print("Generating prediction output for final tsv.\n")
         predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences,
