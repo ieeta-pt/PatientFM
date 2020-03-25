@@ -207,11 +207,11 @@ def createIgnoreSet():
 #             classesDict[fileName].append(classList)
 #     return classesDict
 
-def createNejiClasses(datasetTXT, modelType, bertUtils=None):
+def createNejiClasses(datasetTXT, modelType=None, bertUtils=None):
     """
     Create "classes" for entities annotated by Neji Annotator
     :param datasetTXT:
-    :param modelType: type of first representation layer (embedding or albert)
+    :param modelType: type of first representation layer (embedding or albert or clinicalBert)
     :param bertUtils: instance of bert/albert utils with initialized tokenizer
     :return: classesDict
     """
@@ -227,12 +227,12 @@ def createNejiClasses(datasetTXT, modelType, bertUtils=None):
         sentences = nltkSentenceSplit(datasetTXT[fileName], verbose=False)
         for sentence in sentences:
             entities = neji.annotate(sentence)
-            assert modelType == "embedding" or modelType == "albert", "Wrong type of model. Possible types are (\"embedding\", \"albert\")."
+            assert modelType == "embedding" or modelType == "albert" or modelType == "clinicalBERT", "Wrong type of model. Possible types are (\"embedding\", \"albert\", \"clinicalBERT\")."
             if modelType == "embedding":
                 sentence = nltkTokenize(sentence)
-            elif modelType == "albert":
-                sentence = bertUtils.albertTokenizer.encode(sentence, add_special_tokens=bertUtils.addSpecialTokens)
-                sentence = bertUtils.albertTokenizer.convert_ids_to_tokens(sentence)
+            elif modelType == "albert" or modelType == "clinicalBERT":
+                sentence = bertUtils.tkenizer.encode(sentence, add_special_tokens=bertUtils.addSpecialTokens)
+                sentence = bertUtils.tokenizer.convert_ids_to_tokens(sentence)
             classList = [int(0) for _ in sentence]
 
             if entities:
@@ -240,8 +240,8 @@ def createNejiClasses(datasetTXT, modelType, bertUtils=None):
                 entities = unique(entities)
                 if modelType == "embedding":
                     entities = [nltkTokenize(entity) for entity in entities]
-                elif modelType == "albert":
-                    entities = [bertUtils.albertTokenizer.tokenize(entity) for entity in entities]
+                elif modelType == "albert" or modelType == "clinicalBERT":
+                    entities = [bertUtils.tokenizer.tokenize(entity) for entity in entities]
 
                 entityIdx = 0
                 maxEntityIdx = len(entities) - 1

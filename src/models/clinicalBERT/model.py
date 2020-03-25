@@ -41,7 +41,8 @@ class Model:
         self.softmax = nn.LogSoftmax(dim=2).to(device=self.device)
 
 
-        self.criterion = nn.NLLLoss()
+        self.entity_criterion = nn.NLLLoss()
+        self.label_criterion = nn.NLLLoss()
         self.linear_optimizer = torch.optim.Adam(self.linear.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
 
@@ -78,7 +79,7 @@ class Model:
             sentence_representations = sentence_representations[0]
 
             if self.USE_NEJI == "True":
-                sentence_neji_embeddings = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
+                sentence_representations = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
             #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_neji_embeddings, sorted_len_units, batch_first=True)
             # else:
             #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
@@ -86,9 +87,13 @@ class Model:
             entity_out = self.linear(sentence_representations)
             entity_out = self.softmax(entity_out)
 
-
-            label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-            current_loss += self.perform_optimization_step(prediction_probs, label_true)
+            if self.ENTITY_PREDICTION == "True":
+                entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                current_loss += self.perform_optimization_step_entity_pred(entity_pred, entity_true, prediction_probs, label_true)
+            elif self.ENTITY_PREDICTION == "False":
+                label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                current_loss += self.perform_optimization_step(prediction_probs, label_true)
 
             f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
             if (iteration + 1) % self.iterations_per_epoch == 0:
@@ -148,6 +153,24 @@ class Model:
 
         return test_label_pred, test_label_true
 
+    def compute_entity_prediction(self, entity_out, sorted_len_units, sorted_batch_classes):
+        label_num = 0
+        entity_pred = torch.zeros((sorted_len_units.sum(), len(self.entity_classes)), dtype=torch.float, device=self.device)
+        entity_true = torch.zeros((sorted_len_units.sum()), dtype=torch.long, device=self.device)
+
+        for batch_sample_idx in range(self.batch_size):
+            sentence_len = sorted_len_units[batch_sample_idx]
+            entity_out_sample = entity_out[batch_sample_idx]
+            entity_sample_pred = entity_out_sample[:sentence_len, :]
+            for position in range(sentence_len.item()):
+                if sorted_batch_classes[batch_sample_idx][0][position] != self.entity_classes['O']:
+                    entity_true[label_num] = 1
+                else:
+                    entity_true[label_num] = 0
+                entity_pred[label_num] = entity_sample_pred[position, :]
+                label_num += 1
+
+        return entity_pred, entity_true
 
     def compute_label_prediction(self, linear_out, sorted_len_units, sorted_batch_classes):
         label_num = 0
@@ -171,18 +194,17 @@ class Model:
 
         return label_pred, label_true, predictionProbs
 
-    def perform_optimization_step_entity_pred(self, crf_loss, entity_pred, entity_true):
-        entity_loss = self.criterion(entity_pred,entity_true)
-        loss = crf_loss + 0.2 * entity_loss
-        self.encoder_optimizer.zero_grad()
-        self.decoder_optimizer.zero_grad()
+    def perform_optimization_step_entity_pred(self, entity_pred, entity_true, prediction_probs, label_true):
+        entity_loss = self.entity_criterion(entity_pred,entity_true)
+        label_loss  = self.label_criterion(prediction_probs, label_true)
+        loss = 0.8 * label_loss + 0.2 * entity_loss
+        self.linear_optimizer.zero_grad()
         loss.backward()
-        self.encoder_optimizer.step()
-        self.decoder_optimizer.step()
+        self.linear_optimizer.step()
         return loss.item()
 
-    def perform_optimization_step(self, entity_pred, entity_true):
-        loss = self.criterion(entity_pred, entity_true)
+    def perform_optimization_step(self, prediction_probs, label_true):
+        loss = self.label_criterion(prediction_probs, label_true)
         self.linear_optimizer.zero_grad()
         loss.backward()
         self.linear_optimizer.step()
