@@ -231,7 +231,7 @@ def createNejiClasses(datasetTXT, modelType=None, bertUtils=None):
             if modelType == "embedding":
                 sentence = nltkTokenize(sentence)
             elif modelType == "albert" or modelType == "clinicalBERT":
-                sentence = bertUtils.tkenizer.encode(sentence, add_special_tokens=bertUtils.addSpecialTokens)
+                sentence = bertUtils.tokenizer.encode(sentence, add_special_tokens=bertUtils.addSpecialTokens)
                 sentence = bertUtils.tokenizer.convert_ids_to_tokens(sentence)
             classList = [int(0) for _ in sentence]
 
