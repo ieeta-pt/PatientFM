@@ -46,7 +46,6 @@ class clinicalBERTutils():
             sentences = nltkSentenceSplit(filesRead[fileName], verbose=False)
             sentenceToDocList.extend(fileName for _ in sentences)
             for sentence in sentences:
-                print(self.tokenizer.tokenize(sentence, add_special_tokens=self.addSpecialTokens))
                 sentence = self.tokenizer.encode(sentence, add_special_tokens=self.addSpecialTokens)
                 encodedTokenizedSentenceList.append(sentence)
                 sentence = self.tokenizer.convert_ids_to_tokens(sentence)
@@ -303,15 +302,15 @@ def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils)
         if prediction != 0:
             if prediction in (1, 2):
                 observation.append(singleTokenizedSentence[idx])
-                #This if is used to "preconstruct" the token in case a part of the token was not classified by the model
-                if singleTokenizedSentence[idx].startswith("##"):
-                    offset = 1
-                    while singleTokenizedSentence[idx-offset].startswith("##"):
-                        observation.insert(0, singleTokenizedSentence[idx-offset])
-                        offset += 1
-                    observation.insert(0, singleTokenizedSentence[idx-offset]) #inserts beginning token
                 if idx < finalCheckablePosition:
                     if modelPrediction[idx + 1] not in (1, 2):
+                        #This if is used to "reconstruct" the beginning of the token in case a part of the token was not classified by the model
+                        if observation[0].startswith("##"):
+                            offset = len(observation)
+                            while singleTokenizedSentence[idx-offset].startswith("##"):
+                                observation.insert(0, singleTokenizedSentence[idx-offset])
+                                offset += 1
+                            observation.insert(0, singleTokenizedSentence[idx-offset]) #inserts beginning token
                         observationText = bertUtils.tokenizer.convert_tokens_to_string(observation)
                         if len(observationText) > 1:
                             observationsList.append(observationText)
