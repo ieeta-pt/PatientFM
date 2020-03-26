@@ -35,9 +35,9 @@ class Orchestrator():
 			# if dataSettings["neji"]["use_neji_annotations"] == "True":
 			# 	albertUtils = ALBERTutils(dataSettings["ALBERT"]["model"], True)
 			# 	runNejiSourcesCreation(dataSettings, modelType="albert", bertUtils=albertUtils)
-			if dataSettings["neji"]["use_neji_annotations"] == "True":
-				clinicalBERTUtils = clinicalBERTutils(True)
-				runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
+			# if dataSettings["neji"]["use_neji_annotations"] == "True":
+			# 	clinicalBERTUtils = clinicalBERTutils(True)
+			# 	runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
 
 			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
