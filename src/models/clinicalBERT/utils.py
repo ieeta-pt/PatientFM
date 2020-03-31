@@ -225,65 +225,6 @@ def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, tes
     return predFamilyMemberDict, predObservationDict
 
 
-# def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils):
-#     """
-#     Converts the prediction vector to the respective entities identified in the text
-#     :param modelPrediction:
-#     :param singleTokenizedDocument:
-#     :param bertUtils: instance of ALBERTutils which contains the necessary tokenizer
-#     :return:
-#     """
-#     observationsList = list()
-#     familyMemberList = list()
-#     observation = list()
-#     familyMember = list()
-#     processFamilyMember = False
-#     finalCheckablePosition = len(modelPrediction) - 1
-#     for idx, prediction in enumerate(modelPrediction):
-#         if prediction != 0:
-#             if prediction in (1, 2):
-#                 observation.append(singleTokenizedSentence[idx])
-#                 if idx < finalCheckablePosition:
-#                     if modelPrediction[idx + 1] not in (1, 2):
-#                         observationText = bertUtils.tokenizer.convert_tokens_to_string(observation)
-#                         if len(observationText) > 1:
-#                             observationsList.append(observationText)
-#                         observation = list()
-#             elif prediction in (3, 4):
-#                 familyMember.append(singleTokenizedSentence[idx])
-#                 if idx < finalCheckablePosition:
-#                     if modelPrediction[idx + 1] not in (3, 4):
-#                         familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
-#                         familySide = "Paternal"
-#                         processFamilyMember = True
-#             elif prediction in (5, 6):
-#                 familyMember.append(singleTokenizedSentence[idx])
-#                 if idx < finalCheckablePosition:
-#                     if modelPrediction[idx + 1] not in (5, 6):
-#                         familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
-#                         familySide = "Maternal"
-#                         processFamilyMember = True
-#             elif prediction in (7, 8):
-#                 familyMember.append(singleTokenizedSentence[idx])
-#                 if idx < finalCheckablePosition:
-#                     if modelPrediction[idx + 1] not in (7, 8):
-#                         familyMemberText = bertUtils.tokenizer.convert_tokens_to_string(familyMember)
-#                         familySide = "NA"
-#                         processFamilyMember = True
-#
-#             if processFamilyMember:
-#                 if len(familyMemberText) > 1:
-#                     if familyMemberText[-1] == "s":
-#                         familyMemberText = familyMemberText[:-1].capitalize()
-#                     else:
-#                         familyMemberText = familyMemberText.capitalize()
-#                     familyMemberList.append(tuple((familyMemberText, familySide)))
-#                 familyMember = list()
-#                 processFamilyMember = False
-#
-#     return familyMemberList, observationsList
-
-
 def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils):
     """
     Converts the prediction vector to the respective entities identified in the text
