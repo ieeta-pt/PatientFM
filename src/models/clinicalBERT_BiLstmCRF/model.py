@@ -33,24 +33,15 @@ class Model:
 
         self.USE_NEJI = configs.USE_NEJI
         if self.USE_NEJI == "True":
-            self.bert_outsize = self.bert_outsize + 1
-        # else:
-        #     self.encoder_insize = self.bert_outsize
+            self.encoder_insize = self.bert_outsize + 1
+        else:
+            self.encoder_insize = self.bert_outsize
 
-        self.linear = nn.Linear(self.bert_outsize, self.output_size).to(device=self.device)
-        self.softmax = nn.LogSoftmax(dim=2).to(device=self.device)
-
-
-        self.entity_criterion = nn.NLLLoss()
-        self.label_criterion = nn.NLLLoss()
-        self.linear_optimizer = torch.optim.Adam(self.linear.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-
-
-        # self.encoder = BiLSTMEncoder(self.encoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
-        # self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
-        # self.criterion = nn.NLLLoss()
-        # self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-        # self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+        self.encoder = BiLSTMEncoder(self.encoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
+        self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
+        self.criterion = nn.NLLLoss()
+        self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+        self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
 
     def train(self, train_encoded_sentences_tensors, train_labels, neji_classes=None):
@@ -80,20 +71,20 @@ class Model:
 
             if self.USE_NEJI == "True":
                 sentence_representations = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
-            #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_neji_embeddings, sorted_len_units, batch_first=True)
-            # else:
-            #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
+                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
+            else:
+                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
 
-            entity_out = self.linear(sentence_representations)
-            entity_out = self.softmax(entity_out)
+            initial_state_h0c0 = self.encoder.initH0C0(self.device)
+            encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
+            crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
             if self.ENTITY_PREDICTION == "True":
                 entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-                label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-                current_loss += self.perform_optimization_step_entity_pred(entity_pred, entity_true, prediction_probs, label_true)
+                current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
             elif self.ENTITY_PREDICTION == "False":
-                label_pred, label_true, prediction_probs = self.compute_label_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-                current_loss += self.perform_optimization_step(prediction_probs, label_true)
+                current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
+            label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
 
             f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
             if (iteration + 1) % self.iterations_per_epoch == 0:
@@ -108,6 +99,10 @@ class Model:
 
         elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))
+        self.encoder = self.encoder.eval()
+        self.decoder = self.decoder.eval()
+
+
 
 
 
@@ -139,11 +134,14 @@ class Model:
 
                 sentence_representation = concatenateNejiClassesToEmbeddings(sentence_representation, neji_tensor, self.device)
 
-            entity_out = self.linear(sentence_representation)
-            entity_out = self.softmax(entity_out)
-            entity_out = entity_out.max(2)[1] #Similar to argmax, but backpropagable
+            packed_input = nn.utils.rnn.pack_padded_sequence(sentence_representation, torch.tensor([sentence_representation.shape[1]]), batch_first=True)
 
-            test_label_pred.extend(entity_out[0].tolist())
+            initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
+                                  torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device))
+
+            encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
+            crf_out, entity_out, crf_loss = self.decoder(encoder_output, y_true_tensor, mask, self.device)
+            test_label_pred.extend(crf_out[0])
             test_label_true.extend(y_true_tensor[0][0].tolist())
 
             if ((sentence_idx + 1) % 100 == 0) and verbose:
@@ -152,63 +150,6 @@ class Model:
             updateProgress(1)
 
         return test_label_pred, test_label_true
-
-    def compute_entity_prediction(self, entity_out, sorted_len_units, sorted_batch_classes):
-        label_num = 0
-        entity_pred = torch.zeros((sorted_len_units.sum(), len(self.entity_classes)), dtype=torch.float, device=self.device)
-        entity_true = torch.zeros((sorted_len_units.sum()), dtype=torch.long, device=self.device)
-
-        for batch_sample_idx in range(self.batch_size):
-            sentence_len = sorted_len_units[batch_sample_idx]
-            entity_out_sample = entity_out[batch_sample_idx]
-            entity_sample_pred = entity_out_sample[:sentence_len, :]
-            for position in range(sentence_len.item()):
-                if sorted_batch_classes[batch_sample_idx][0][position] != self.entity_classes['O']:
-                    entity_true[label_num] = 1
-                else:
-                    entity_true[label_num] = 0
-                entity_pred[label_num] = entity_sample_pred[position, :]
-                label_num += 1
-
-        return entity_pred, entity_true
-
-    def compute_label_prediction(self, linear_out, sorted_len_units, sorted_batch_classes):
-        label_num = 0
-        label_pred = torch.zeros((sorted_len_units.sum()),dtype=torch.long,device=self.device)
-        label_true = torch.zeros((sorted_len_units.sum()),dtype=torch.long,device=self.device)
-        predictionProbs = torch.zeros((sorted_len_units.sum(), len(self.entity_classes)),dtype=torch.float,device=self.device)
-
-        classPredictions = linear_out.max(2)[1]
-
-        for batch_sample_idx in range(self.batch_size):
-            sentence_len = sorted_len_units[batch_sample_idx]
-            classPredictions_sample = classPredictions[batch_sample_idx]
-            label_sample_pred = classPredictions_sample[:sentence_len]
-            predictionProbs_sample = linear_out[batch_sample_idx]
-            predictionProbs_pred = predictionProbs_sample[:sentence_len]
-            for position in range(sentence_len.item()):
-                label_true[label_num] = sorted_batch_classes[batch_sample_idx][0][position]
-                label_pred[label_num] = label_sample_pred[position]
-                predictionProbs[label_num] = predictionProbs_pred[position]
-                label_num += 1
-
-        return label_pred, label_true, predictionProbs
-
-    def perform_optimization_step_entity_pred(self, entity_pred, entity_true, prediction_probs, label_true):
-        entity_loss = self.entity_criterion(entity_pred,entity_true)
-        label_loss  = self.label_criterion(prediction_probs, label_true)
-        loss = 0.8 * label_loss + 0.2 * entity_loss
-        self.linear_optimizer.zero_grad()
-        loss.backward()
-        self.linear_optimizer.step()
-        return loss.item()
-
-    def perform_optimization_step(self, prediction_probs, label_true):
-        loss = self.label_criterion(prediction_probs, label_true)
-        self.linear_optimizer.zero_grad()
-        loss.backward()
-        self.linear_optimizer.step()
-        return loss.item()
 
 
     def get_entity_type_count(self, testLabels):
@@ -274,4 +215,62 @@ class Model:
         precision = [exactHits[entityType] / predEntityTypeCount[entityType] for entityType in entityTypes]
         fp = np.mean([(2 * precision[i] * recall[i]) / (precision[i] + recall[i]) for i in range(len(entityTypes))])
         print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
+
+
+    def compute_entity_prediction(self, entity_out, sorted_len_units, sorted_batch_classes):
+        label_num = 0
+        entity_pred = torch.zeros((sorted_len_units.sum(), 2), dtype=torch.float, device=self.device)
+        entity_true = torch.zeros((sorted_len_units.sum()), dtype=torch.long, device=self.device)
+
+        for batch_sample_idx in range(self.batch_size):
+            sentence_len = sorted_len_units[batch_sample_idx]
+            entity_out_sample = entity_out[batch_sample_idx]
+            entity_sample_pred = entity_out_sample[:sentence_len, :]
+            for position in range(sentence_len.item()):
+                if sorted_batch_classes[batch_sample_idx][0][position] != self.entity_classes['O']:
+                    entity_true[label_num] = 1
+                else:
+                    entity_true[label_num] = 0
+                entity_pred[label_num] = entity_sample_pred[position, :]
+                label_num += 1
+
+        return entity_pred, entity_true
+
+
+    def compute_label_prediction(self, crf_out, sorted_len_units, sorted_batch_classes):
+        label_num = 0
+        label_pred = torch.zeros((sorted_len_units.sum()),dtype=torch.long,device=self.device)
+        label_true = torch.zeros((sorted_len_units.sum()),dtype=torch.long,device=self.device)
+
+        for batch_sample_idx in range(self.batch_size):
+            sentence_len = sorted_len_units[batch_sample_idx]
+            crf_out_sample = crf_out[batch_sample_idx]
+            label_sample_pred = crf_out_sample[:sentence_len]
+            for position in range(sentence_len.item()):
+                label_true[label_num] = sorted_batch_classes[batch_sample_idx][0][position]
+                label_pred[label_num] = label_sample_pred[position]
+                label_num += 1
+
+        return label_pred, label_true
+
+
+    def perform_optimization_step_entity_pred(self, crf_loss, entity_pred, entity_true):
+        entity_loss = self.criterion(entity_pred,entity_true)
+        loss = crf_loss + 0.2 * entity_loss
+        self.encoder_optimizer.zero_grad()
+        self.decoder_optimizer.zero_grad()
+        loss.backward()
+        self.encoder_optimizer.step()
+        self.decoder_optimizer.step()
+        return loss.item()
+
+    def perform_optimization_step_no_entity_pred(self, crf_loss):
+        loss = crf_loss
+        self.encoder_optimizer.zero_grad()
+        self.decoder_optimizer.zero_grad()
+        loss.backward()
+        self.encoder_optimizer.step()
+        self.decoder_optimizer.step()
+        return loss.item()
+
 
