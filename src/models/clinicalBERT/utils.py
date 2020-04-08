@@ -230,7 +230,7 @@ def predictionToOutputTask1(modelPrediction, singleTokenizedSentence, bertUtils)
     Converts the prediction vector to the respective entities identified in the text
     :param modelPrediction:
     :param singleTokenizedDocument:
-    :param bertUtils: instance of ALBERTutils which contains the necessary tokenizer
+    :param bertUtils: instance of clinicalBERTutils which contains the necessary tokenizer
     :return:
     """
     observationsList = list()
