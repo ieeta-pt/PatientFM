@@ -268,8 +268,25 @@ class Model:
                 exactHits[entity_type] += 1
 
         entityTypes = ['Observation', 'FamilyMember']
-        recall = [exactHits[entityType] / trueEntityTypeCount[entityType] for entityType in entityTypes]
-        precision = [exactHits[entityType] / predEntityTypeCount[entityType] for entityType in entityTypes]
+        recall = []
+        precision = []
+        for entityType in entityTypes:
+            try:
+                tempRecall = exactHits[entityType] / trueEntityTypeCount[entityType]
+            except ZeroDivisionError:
+                print("Found a ZeroDivisionError in Recall. Recall value was set to a residual value.")
+                tempRecall = 0.00001
+            finally:
+                recall.append(tempRecall)
+
+            try:
+                tempPrecision = exactHits[entityType] / predEntityTypeCount[entityType]
+            except ZeroDivisionError:
+                print("Found a ZeroDivisionError in Precision. Precision value was set to a residual value.")
+                tempPrecision = 0.00001
+            finally:
+                precision.append(tempPrecision)
+
         fp = np.mean([(2 * precision[i] * recall[i]) / (precision[i] + recall[i]) for i in range(len(entityTypes))])
         print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
 
