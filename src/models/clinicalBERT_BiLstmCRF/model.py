@@ -217,16 +217,16 @@ class Model:
             try:
                 tempRecall = exactHits[entityType] / trueEntityTypeCount[entityType]
             except ZeroDivisionError:
-                print("Found a ZeroDivisionError in Recall. Recall value was set to 0.")
-                tempRecall = 0
+                print("Found a ZeroDivisionError in Recall. Recall value was set to a residual value.")
+                tempRecall = 0.00001
             finally:
                 recall.append(tempRecall)
 
             try:
                 tempPrecision = exactHits[entityType] / predEntityTypeCount[entityType]
             except ZeroDivisionError:
-                print("Found a ZeroDivisionError in Precision. Precision value was set to 0.")
-                tempPrecision = 0
+                print("Found a ZeroDivisionError in Precision. Precision value was set to a residual value.")
+                tempPrecision = 0.00001
             finally:
                 precision.append(tempPrecision)
 
