@@ -6,16 +6,17 @@ import numpy as np
 from torch import nn
 from sklearn import metrics
 
+from transformers import AlbertModel
+
 from models.utils import classListToTensor, updateProgress, valueToKey
 from models.Embedding_BiLstmCRF.utils import generateBatch, concatenateNejiClassesToEmbeddings
 from models.BiLstmCRF.decoder import Decoder
 from models.BiLstmCRF.encoder import BiLSTMEncoder
 
 class Model:
-    def __init__(self, configs, labels_dict, max_length, vocab_size, weights_matrix, device):
+    def __init__(self, configs, labels_dict, max_length, device):
         self.device = device
         self.ENTITY_PREDICTION = configs.ENTITY_PREDICTION
-        self.EMBEDDINGS_FREEZE_AFTER_EPOCH = int(configs.EMBEDDINGS_FREEZE_AFTER_EPOCH)
         self.max_length = max_length
         self.entity_classes = labels_dict
         self.output_size = len(self.entity_classes)
@@ -23,25 +24,19 @@ class Model:
         self.decoder_insize = self.hidden_size * 2
         self.batch_size = configs.batch_size
         self.num_layers = configs.num_layers
-        self.embedding_dim = configs.WORDVEC_SIZE
         self.epochs = configs.epochs
         self.iterations_per_epoch = configs.iterations_per_epoch
         self.learning_rate = configs.learning_rate
 
+        AlBertModelToSize = {"albert-base-v2": 768, "albert-large-v2": 1024, "albert-xlarge-v2": 2048, "albert-xxlarge-v2": 4096}
+        self.albert_model = configs.ALBERT_MODEL
+        self.albertLayer = AlbertModel.from_pretrained(self.albert_model).to(device=self.device)
+
         self.USE_NEJI = configs.USE_NEJI
         if self.USE_NEJI == "True":
-            self.encoder_insize = self.embedding_dim + 1
+            self.encoder_insize = AlBertModelToSize[self.albert_model] + 1
         else:
-            self.encoder_insize = self.embedding_dim
-
-        self.embeddingLayer = nn.Embedding(vocab_size, self.embedding_dim).to(device=self.device)
-        self.embeddingLayer.load_state_dict({'weight': weights_matrix})
-        if self.EMBEDDINGS_FREEZE_AFTER_EPOCH == 0:
-            print("Embeddings layer will not be trained.\n")
-            self.embeddingLayer.weight.requires_grad = False
-        elif self.EMBEDDINGS_FREEZE_AFTER_EPOCH > 0:
-            self.embeddingLayer.weight.requires_grad = True
-            self.embedding_optimizer = torch.optim.Adam(self.embeddingLayer.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+            self.encoder_insize = AlBertModelToSize[self.albert_model]
 
         self.encoder = BiLSTMEncoder(self.encoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
         self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
@@ -67,10 +62,6 @@ class Model:
         start = time.time()
         global_start = start
         for iteration in range(n_iterations):
-            # Freeze layer after epoch threshold
-            if ((iteration + 1) / self.iterations_per_epoch) == self.EMBEDDINGS_FREEZE_AFTER_EPOCH:
-                self.embeddingLayer.weight.requires_grad = False
-                self.embeddingLayer = self.embeddingLayer.eval()
 
             if self.USE_NEJI == "True":
                 encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask, batch_neji_classes = \
@@ -79,12 +70,15 @@ class Model:
                 encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask = \
                     generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
 
-            sentence_embeddings = self.embeddingLayer(encoded_sentences_tensors)
+            sentence_representations = self.albertLayer(input_ids=encoded_sentences_tensors, attention_mask=mask)
+            # Output from ALBERT model is a tuple with (last_hidden_state, pooler_output), so we select the first part
+            sentence_representations = sentence_representations[0]
+
             if self.USE_NEJI == "True":
-                sentence_neji_embeddings = concatenateNejiClassesToEmbeddings(sentence_embeddings, batch_neji_classes, self.device)
+                sentence_neji_embeddings = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
                 packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_neji_embeddings, sorted_len_units, batch_first=True)
             else:
-                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_embeddings, sorted_len_units, batch_first=True)
+                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
 
             initial_state_h0c0 = self.encoder.initH0C0(self.device)
             encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
@@ -105,12 +99,11 @@ class Model:
                 current_loss = 0
                 f1_score_accumulated = 0
                 elapsed = (time.time() - start)
-                print("Time used:", elapsed)
+                print("Time used in seconds:", elapsed)
                 start = time.time()
 
         elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))
-        # self.embeddingLayer = self.embeddingLayer.eval()
         self.encoder = self.encoder.eval()
         self.decoder = self.decoder.eval()
 
@@ -132,7 +125,8 @@ class Model:
                 y_true_tensor = [test_labels[sentence_idx].to(self.device)]
 
             x_input[0] = encoded_sentence_tensor
-            sentence_embeddings = self.embeddingLayer(x_input)
+            sentence_representation = self.albertLayer(input_ids=x_input, attention_mask=mask)
+            sentence_representation = sentence_representation[0]
 
             if neji_classes is not None:
                 if SINGLE_INSTANCE is True:
@@ -140,9 +134,9 @@ class Model:
                 else:
                     neji_tensor = neji_classes[sentence_idx].to(self.device)
 
-                sentence_embeddings = concatenateNejiClassesToEmbeddings(sentence_embeddings, neji_tensor, self.device)
+                sentence_representation = concatenateNejiClassesToEmbeddings(sentence_representation, neji_tensor, self.device)
 
-            packed_input = nn.utils.rnn.pack_padded_sequence(sentence_embeddings, torch.tensor([sentence_embeddings.shape[1]]), batch_first=True)
+            packed_input = nn.utils.rnn.pack_padded_sequence(sentence_representation, torch.tensor([sentence_representation.shape[1]]), batch_first=True)
 
             initial_state_h0c0 = (torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device),
                                   torch.zeros((2*self.num_layers, 1, self.hidden_size), dtype=torch.float32, device=self.device))
@@ -199,26 +193,18 @@ class Model:
     def perform_optimization_step_entity_pred(self, crf_loss, entity_pred, entity_true):
         entity_loss = self.criterion(entity_pred,entity_true)
         loss = crf_loss + 0.2 * entity_loss
-        if self.embeddingLayer.weight.requires_grad is True:
-            self.embedding_optimizer.zero_grad()
         self.encoder_optimizer.zero_grad()
         self.decoder_optimizer.zero_grad()
         loss.backward()
-        if self.embeddingLayer.weight.requires_grad is True:
-            self.embedding_optimizer.step()
         self.encoder_optimizer.step()
         self.decoder_optimizer.step()
         return loss.item()
 
     def perform_optimization_step_no_entity_pred(self, crf_loss):
         loss = crf_loss
-        if self.embeddingLayer.weight.requires_grad is True:
-            self.embedding_optimizer.zero_grad()
         self.encoder_optimizer.zero_grad()
         self.decoder_optimizer.zero_grad()
         loss.backward()
-        if self.embeddingLayer.weight.requires_grad is True:
-            self.embedding_optimizer.step()
         self.encoder_optimizer.step()
         self.decoder_optimizer.step()
         return loss.item()
@@ -233,10 +219,7 @@ class Model:
         for labelIdx, testLabel in enumerate(testLabels):
             label = valueToKey(testLabel, self.entity_classes)
             labelPrefix = label[:2]
-            if labelPrefix in ("P-", "M-", "NA"):
-                entityType = "FamilyMember"
-                entityDict[(labelIdx, labelIdx)] = entityType
-            elif labelPrefix == "B-":
+            if labelPrefix == "B-":
                 entityType = "Observation"
                 nextLabelIdx = labelIdx + 1
                 nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
@@ -244,6 +227,20 @@ class Model:
                     entityDict[(labelIdx, labelIdx)] = entityType
                 elif nextLabel == "I-Observation":
                     while nextLabel == "I-Observation":
+                        nextLabelIdx += 1
+                        if nextLabelIdx <= (len(testLabels)-1):
+                            nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
+                        else:
+                            nextLabel = "EndSentence"
+                    entityDict[(labelIdx, nextLabelIdx-1)] = entityType
+            elif labelPrefix == "BP" or labelPrefix == "BM" or labelPrefix == "BN":
+                entityType = "FamilyMember"
+                nextLabelIdx = labelIdx + 1
+                nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
+                if nextLabel != "IP-FamilyMember" and nextLabel != "IM-FamilyMember" and nextLabel != "INA-FamilyMember":
+                    entityDict[(labelIdx, labelIdx)] = entityType
+                elif nextLabel == "IP-FamilyMember" or nextLabel == "IM-FamilyMember" or nextLabel == "INA-FamilyMember":
+                    while nextLabel == "IP-FamilyMember" or nextLabel == "IM-FamilyMember" or nextLabel == "INA-FamilyMember":
                         nextLabelIdx += 1
                         if nextLabelIdx <= (len(testLabels)-1):
                             nextLabel = valueToKey(testLabels[nextLabelIdx], self.entity_classes)
@@ -296,12 +293,11 @@ class Model:
 
     def write_model_files(self, test_label_pred, test_label_true, seed):
         timepoint = time.strftime("%Y%m%d_%H%M")
-        path = '../results/models/Embedding_BiLstmCRF/'
+        path = '../results/models/ALBERT_BiLstmCRF/'
         if not os.path.exists(path):
             os.makedirs(path)
         filename = 'N2C2_BioWordVec_' + timepoint + '-' + str(seed)
         pickle.dump([test_label_pred, test_label_true], open(path + "results-" + filename + '.pickle', 'wb'))
-        torch.save(self.embeddingLayer, path + 'model_embedding_layer-'+filename)
         torch.save(self.encoder, path + 'model_encoder-'+filename)
         torch.save(self.decoder, path + 'model_decoder-'+filename)
 

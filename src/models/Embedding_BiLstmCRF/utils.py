@@ -1,6 +1,5 @@
 import torch
 import numpy as np
-from models.utils import trainPredictionToOutputTask1
 
 def loadModelConfigs(settings):
     class Args:
@@ -15,11 +14,37 @@ def loadModelConfigs(settings):
     configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
     configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
     configs.EMBEDDINGS_FREEZE_AFTER_EPOCH = int(settings["DLmodelparams"]["EMBEDDINGS_FREEZE_AFTER_EPOCH"])
+    configs.USE_NEJI = settings["neji"]["use_neji_annotations"]
     return configs
 
 
 r""" This method does not ensure that the whole dataset is used, it just uses random numbers the whole time to sample """
-def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
+# def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
+#
+#     batch_idx = np.random.randint(low=0,high=len(tokenized_sentences_tensors), size=batch_size).tolist()
+#     batch_tokenized_sentences_tensors = [tokenized_sentences_tensors[i] for i in batch_idx]
+#     batch_classes = [torch.LongTensor(classes[i]) for i in batch_idx]
+#
+#     sentences_length = torch.LongTensor([sentence_tensor.shape[0] for sentence_tensor in batch_tokenized_sentences_tensors])
+#     sentences_tensor = torch.zeros((batch_size, sentences_length.max()), dtype=torch.long).to(device)
+#     mask = torch.zeros((batch_size, sentences_length.max()), dtype=torch.long).to(device)
+#
+#     for idx, (sentence_idx, sentence_length) in enumerate(zip(batch_idx, sentences_length)):
+#         sentences_tensor[idx, :sentence_length] = batch_tokenized_sentences_tensors[idx]
+#         mask[idx, :sentence_length] = 1
+#
+#     sorted_len_units, perm_idx = sentences_length.sort(0, descending=True)
+#     sentences_tensor = sentences_tensor[perm_idx]
+#     mask = mask[perm_idx]
+#
+#     sorted_batch_classes = []
+#     for idx in perm_idx:
+#         sorted_batch_classes.append(batch_classes[idx])
+#
+#     return sentences_tensor, sorted_batch_classes, sorted_len_units, mask
+
+
+def generateBatch(tokenized_sentences_tensors, classes, batch_size, device, neji_classes=None):
 
     batch_idx = np.random.randint(low=0,high=len(tokenized_sentences_tensors), size=batch_size).tolist()
     batch_tokenized_sentences_tensors = [tokenized_sentences_tensors[i] for i in batch_idx]
@@ -29,8 +54,14 @@ def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
     sentences_tensor = torch.zeros((batch_size, sentences_length.max()), dtype=torch.long).to(device)
     mask = torch.zeros((batch_size, sentences_length.max()), dtype=torch.long).to(device)
 
+    if neji_classes is not None:
+        batch_neji_classes = [torch.FloatTensor(neji_classes[i]) for i in batch_idx]
+        neji_padded_classes = torch.zeros((batch_size, sentences_length.max()), dtype=torch.float).to(device)
+
     for idx, (sentence_idx, sentence_length) in enumerate(zip(batch_idx, sentences_length)):
         sentences_tensor[idx, :sentence_length] = batch_tokenized_sentences_tensors[idx]
+        if neji_classes is not None:
+            neji_padded_classes[idx, :sentence_length] = batch_neji_classes[idx]
         mask[idx, :sentence_length] = 1
 
     sorted_len_units, perm_idx = sentences_length.sort(0, descending=True)
@@ -41,30 +72,22 @@ def generateBatch(tokenized_sentences_tensors, classes, batch_size, device):
     for idx in perm_idx:
         sorted_batch_classes.append(batch_classes[idx])
 
+    if neji_classes is not None:
+        neji_padded_classes = neji_padded_classes[perm_idx]
+
+        return sentences_tensor, sorted_batch_classes, sorted_len_units, mask, neji_padded_classes
+
     return sentences_tensor, sorted_batch_classes, sorted_len_units, mask
 
 
-def createTrainOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping):
+def concatenateNejiClassesToEmbeddings(embeddings, nejiClasses, device):
     """
-    Runs the trained model on the validation split, returning the resulting entity predictions
-    :param DLmodel:
-    :param testTokenizedSentences:
-    :param testClasses:
-    :param testDocMapping:
+    Appends neji classes to embeddings, to add novel information to model input
+    :param embeddings: torch tensor with embeddings for each sentence
+    :param nejiClasses: torch tensors with neji classes for each sentence
+    :param device:
     :return:
     """
-
-    predFamilyMemberDict = {}
-    predObservationDict = {}
-    for idx, _ in enumerate(testTokenizedSentences):
-        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True)
-        familyMemberList, observationsList = trainPredictionToOutputTask1(testModelPred, testTokenizedSentences[idx])
-        if familyMemberList:
-            if testDocMapping[idx] not in predFamilyMemberDict.keys():
-                predFamilyMemberDict[testDocMapping[idx]] = []
-            predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
-        if observationsList:
-            if testDocMapping[idx] not in predObservationDict.keys():
-                predObservationDict[testDocMapping[idx]] = []
-            predObservationDict[testDocMapping[idx]].extend(observationsList)
-    return predFamilyMemberDict, predObservationDict
+    nejiTensor = nejiClasses.unsqueeze(2).to(device)
+    newTensor = torch.cat((embeddings, nejiTensor), dim=2)
+    return newTensor

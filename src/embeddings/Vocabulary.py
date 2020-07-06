@@ -63,3 +63,44 @@ def createFasttextModel(vocabularyFilePath, biowordvecPath, biowordvecVocabOrigP
     # biowordvec_vocab_orig = np.load(biowordvecVocabOrigPath, allow_pickle=True).item()
     # biowordvec_vocab_norm = np.load(biowordvecVocabNormPath, allow_pickle=True).item()
 
+
+def trainFasttextModel(sentencesPath, vocabularyPath, biowordvecPath, biowordvecVocabOrigPath, biowordvecVocabNormPath):
+    import pickle
+    from gensim.models import FastText
+    import numpy as np
+    from sklearn.preprocessing import normalize
+    from time import time
+
+    with open(sentencesPath, 'rb') as pickle_handle:
+        new_sentences = pickle.load(pickle_handle)
+
+    t0 = time()
+    model = FastText.load_fasttext_format(biowordvecPath) #load_facebook_model(biowordvecPath)
+    t1 = time()
+    print(' ({} seconds to load)'.format(t1 - t0))
+
+    model.build_vocab(new_sentences, update=True)
+
+    t0 = time()
+    model.train(sentences=new_sentences, total_examples=len(new_sentences), epochs=5)
+    t1 = time()
+    print(' ({} seconds to train)'.format(t1 - t0))
+
+    f = open(vocabularyPath, mode='r', encoding='utf-8')
+    vocab = f.read().splitlines()
+    f.close()
+
+    biowordvecVocabOrig = dict()
+    biowordvecVocabNorm = dict()
+
+    for word in vocab:
+        vec = model[word]
+        biowordvecVocabOrig[word] = vec
+        biowordvecVocabNorm[word] = np.float32(normalize([vec])[0])
+
+    np.save(biowordvecVocabOrigPath, biowordvecVocabOrig)
+    np.save(biowordvecVocabNormPath, biowordvecVocabNorm)
+
+    # To load:
+    # biowordvec_vocab_orig = np.load(biowordvecVocabOrigPath, allow_pickle=True).item()
+    # biowordvec_vocab_norm = np.load(biowordvecVocabNormPath, allow_pickle=True).item()
