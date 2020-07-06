@@ -24,12 +24,13 @@ class Orchestrator():
 		returns tuple(dictionary containing family members (key: filename, value: list),
 					  dictionary containing observations (key: filename, value: list))
 		"""
-		# to do
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
 
-			r""" Embedding and neji sources creation is provided below if the user wants to create them from scratch.
-			Files for these sources are already provided in the repository, hence these lines are commented"""
+			""" 
+			Embedding and neji sources creation is provided below if the user wants to create them from scratch.
+			Files for these sources are already provided in the repository, hence these lines are commented
+			"""
 			# runEmbeddingCreationPipeline(dataSettings)
 			# if dataSettings["neji"]["use_neji_annotations"] == "True":
 			# 	runNejiSourcesCreation(dataSettings)
@@ -40,11 +41,15 @@ class Orchestrator():
 			# 	clinicalBERTUtils = clinicalBERTutils(True)
 			# 	runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
 
+<<<<<<< HEAD
 			predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 			# predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
 
+=======
+			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
+			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
+>>>>>>> 787a71572a3690f559cce70fa7aed194c26e7693
 			return predFamilyMemberDict, predObservationDict
-			return dict(), dict()
 
 		elif method == "ja_rules":
 			return RuleBased.processTask1(files)
@@ -53,13 +58,21 @@ class Orchestrator():
 			return dict(), dict()
 		return 	dict(), dict()
 
-	def mergeResultsTask1(fmDocs, obsDocs):
+	def mergeResultsTask1(fmDocs, obsDocs):		
+		"""
+		Method to combine results for the different methods applied in task 1.
+		Currently, we are using the rule-based system for family members identification and deep learning for observation extraction.
+		:param fmDocs: dictionary containing the family members for the different methods. key: method used.
+		:param obsDocs: dictionary containing the observations for the different methods. key: method used.
+		returns tuple(dictionary containing family members (key: filename, value: list),
+					  dictionary containing observations (key: filename, value: list))
+		"""
 		fmRes = dict()
 		obsRes = dict()
-		#for method in fmDocs:
-		#...
-		#no right, in progress
-		fmRes = fmDocs[list(fmDocs.keys())[0]]
+		if "ja_rules" in fmDocs:
+			fmRes = fmDocs["ja_rules"]
+		else:
+			fmRes = fmDocs[list(fmDocs.keys())[0]]
 		obsRes = obsDocs[list(obsDocs.keys())[0]]
 		return 	fmRes, obsRes
 

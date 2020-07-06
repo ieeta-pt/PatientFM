@@ -6,19 +6,26 @@ PATIENT = "Patient"
 PARTNER = "Partner"
 
 #Variables to easly isolate techinques in the pipeline
-IDENTIFY_PATIENT=True
-COMPLEX_RULES=True
-EXACT_MATCH=True
-FIX_DEPENDENTS=True
+IDENTIFY_PATIENT = True
+COMPLEX_RULES	 = True
+EXACT_MATCH		 = True
+FIX_DEPENDENTS 	 = True
+PREVIOUS_SUBJECT = True
+IDENTIFY_PARTNER = False#True
+SECTION_RULES 	 = True
 
 class RuleBased(object):
 	def processTask1(files):
 		result = {}
+		count = 10
 		for fileName in files:
 			fileContent = cleanFile(files[fileName]).split(". ")
 			rb = RuleBased()
 			rb.process(fileContent)
 			result[fileName] = rb.getResults()
+			count -= 1
+			if count == 0:
+				pass#break
 		return result, {}#No observations
 
 	def __init__(self):
@@ -37,6 +44,7 @@ class RuleBased(object):
 			"phrase":""
 		}
 		self.results 	= set()
+		self.isPartner  = False
 
 	def getResults(self):
 		return self.results
@@ -44,6 +52,8 @@ class RuleBased(object):
 	def process(self, fileContent):
 		lineNr = 0
 		for line in fileContent:
+			if line.startswith("\n"):
+				self.isPartner  = False
 			phrase = line.strip()
 			result = self.processPhrase(phrase, lineNr)
 			if result != None:
@@ -62,21 +72,40 @@ class RuleBased(object):
 				return (result, markedPhrase)
 		return None
 
-	def applyRules(self, phrase, lineNr):
+	def applyRules(self, line, lineNr):
+		phrase = line
 		### Tries to idenfity the patient as subject
 		if IDENTIFY_PATIENT:
 			if self.isPatientSubject(phrase):
 				return self.buildPatientEntry(), phrase, True
-		
+
+		### Tries to idenfity the partner as subject
+		if IDENTIFY_PARTNER:
+			if self.isPartnerSubject(phrase):
+				self.isPartner = True
+				return None, phrase, False
+			if self.isPartner:#Stop applying rules after identifying the possibility of being partner fms
+				return None, phrase, False
+
+		### Tries to identify if its a section
+		if SECTION_RULES:
+			phrase = self.sectionRules(phrase)
+
 		### Apply the complex rules
 		if COMPLEX_RULES:
 			results, markedPhrase, toAddInResults = self.complexRulesFirst(phrase)
 			if toAddInResults != None:
 				return results, markedPhrase, toAddInResults
 
+
 		### Apply exact match searching
 		if EXACT_MATCH:
 			results, markedPhrase, fmIndex, readedWords = self.relativeExactMatch(phrase)
+
+			#Fix some matched results based on the previous match (maternal or paternal)
+			if PREVIOUS_SUBJECT:
+				results = self.fixFamilySideBasedOnPrevious(results)
+
 			if FIX_DEPENDENTS:
 				results, markedPhrase, toAddInResults = self.fixDependentRelatives(results, markedPhrase, fmIndex, readedWords)
 			else:
@@ -87,12 +116,25 @@ class RuleBased(object):
 		### to do
 		return None, phrase, False
 
+
+	###############################
+	#########    Rules    #########
+	###############################
+	def sectionRules(self, phrase):
+		newPhrase = ""
+		for wordInPhrase in phrase.split(" "):
+			word = wordInPhrase.replace(",", "")
+			if word not in sectionRules:
+				newPhrase += " " + word 
+		return newPhrase
+
 	def complexRulesFirst(self, phrase):
 		entities = set()
+		foundNegationRules = False
 		count = 0
 		readedWords = []
 		for wordInPhrase in phrase.split(" "):
-			word = wordInPhrase.replace(",", "")
+			word = wordInPhrase.replace(",", "").replace(":", "")
 			if word in STOPWORDS or word in MEDICALSTOPWORDS or numThere(word):
 				continue
 			for concept, familyMember, sideOfFamily, wb, wa, acceptence in complexTermsFirst:
@@ -106,6 +148,8 @@ class RuleBased(object):
 						if len(similarBefore) == len(wb) and len(similarAfter) == len(wa):
 							if acceptence:
 								entities.add((familyMember, sideOfFamily))
+							else:
+								foundNegationRules = True
 			count += 1
 			readedWords += [word]
 		if len(entities) != 0:
@@ -120,17 +164,20 @@ class RuleBased(object):
 					"ls":-1
 				}]
 			return results, markedPhrase, True
+		if foundNegationRules:
+			return None, phrase, False
 		return None, None, None
 
 	def relativeExactMatch(self, phrase):
 		results = []
 		readedWords = []
 		count = 0
+		block = False
 		markedPhrase = phrase
 		fmIndex = {}#key: count, value: possession or fm 
 		for wordInPhrase in phrase.split(" "):
-			word = wordInPhrase.replace(",", "")
-			if word in POSSESSIVEVERBS or word in negationWords:
+			word = wordInPhrase.replace(",", "").replace(":", "")
+			if word in POSSESSIVEVERBS or word in negationWords or word in SPECIALSTOPWORDS:
 				fmIndex[count] = word
 				readedWords += [word]
 				count += 1
@@ -154,6 +201,17 @@ class RuleBased(object):
 			count += 1
 		return results, markedPhrase, fmIndex, readedWords
 
+	def fixFamilySideBasedOnPrevious(self, results):
+		newResults = []
+		for fm in results:
+			relative = fm["fm"][0]
+			familySide = fm["fm"][1]
+			for previousSubjects in self.previousSubjects["fms"]:
+				if relative == previousSubjects["fm"][0] and familySide == "NA":
+					fm["fm"] = (relative, previousSubjects["fm"][1])
+			newResults += [fm]
+		return results
+
 	def fixDependentRelatives(self, results, markedPhrase, fmIndex, readedWords):
 		if len(results) == 1:
 			return results, markedPhrase, True 
@@ -167,24 +225,32 @@ class RuleBased(object):
 				if fmIndex[idx] in POSSESSIVEVERBS:
 					if subjectInList != None:
 						changeNext = True
-				elif fmIndex[idx] in negationWords:
+				elif fmIndex[idx] in negationWords:#Means that relative does not have (no sure)
 					negation = True
+				elif fmIndex[idx] in SPECIALSTOPWORDS:
+					pass#é aqui que removo os half e siblings (or parents or grandparents)
 				else:
 					if negation:
 						negation = False	
 					elif changeNext and subjectInList != None:
 						base = subjectInList["fm"][0]
 						relative = results[countFM]["fm"][0]
-						for fm1, fm2, related in relations:
+						for rel in relations:
+							fm1 = rel[0] 
+							fm2 = rel[1]
+							related = rel[2]
 							if base == fm1 and relative == fm2:
 								if related != None:
-									results[countFM]["fm"] = (related, results[countFM]["fm"][1])
+									if len(rel) == 3:
+										#results[countFM]["fm"] = (related, subjectInList["fm"][1])#results[countFM]["fm"][1])
+										results[countFM]["fm"] = (related, results[countFM]["fm"][1])
+									elif len(rel) == 4:
+										results[countFM]["fm"] = (related, rel[3])	
 									filteredResults += [results[countFM]]
 					else:
 						subjectInList = fmIndex[idx]
 						filteredResults += [results[countFM]]  
 					countFM += 1
-			#print([fmIndex[x] if fmIndex[x] in possessionVerbs else fmIndex[x]["fm"] for x in fmIndex])
 			return filteredResults, markedPhrase, True
 		return None, markedPhrase, False
 
@@ -203,6 +269,14 @@ class RuleBased(object):
 			if any([x == phrase.split(" ")[0] for x in malePatientWordList]):
 				return True
 		return False
+
+	def isPartnerSubject(self, phrase):
+		for wordInPhrase in phrase.split(" "):
+			word = wordInPhrase.replace(",", "").replace(":", "")
+			if word in noPatientRelatedWordsList:
+				return True
+		return False
+
 
 	def buildPatientEntry(self):
 		sex = "" if self.patientInfo["sex"] == "" else self.patientInfo["sex"]
