@@ -40,8 +40,8 @@ class Orchestrator():
 			# 	clinicalBERTUtils = clinicalBERTutils(True)
 			# 	runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
 
-			# predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
-			predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
+			predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
+			# predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
 
 			return predFamilyMemberDict, predObservationDict
 			return dict(), dict()
