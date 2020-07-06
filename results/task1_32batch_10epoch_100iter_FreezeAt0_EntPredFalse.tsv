@@ -1,0 +1,1320 @@
+doc_1	FamilyMember	Mother	NA
+doc_1	FamilyMember	Cousin	Paternal
+doc_1	FamilyMember	Father	NA
+doc_1	FamilyMember	Uncle	Maternal
+doc_1	FamilyMember	Brother	NA
+doc_1	FamilyMember	Sister	NA
+doc_10	FamilyMember	Brother	NA
+doc_10	FamilyMember	Father	NA
+doc_10	FamilyMember	Sister	NA
+doc_10	FamilyMember	Mother	NA
+doc_101	FamilyMember	Grandmother	Maternal
+doc_101	FamilyMember	Aunt	Maternal
+doc_101	FamilyMember	Grandfather	Maternal
+doc_104	FamilyMember	Aunt	Paternal
+doc_104	FamilyMember	Aunt	Maternal
+doc_105	FamilyMember	Grandmother	Maternal
+doc_105	FamilyMember	Daughter	NA
+doc_105	FamilyMember	Mother	NA
+doc_105	FamilyMember	Father	NA
+doc_105	FamilyMember	Grandfather	Maternal
+doc_105	FamilyMember	Uncle	Maternal
+doc_11	FamilyMember	Grandmother	Paternal
+doc_11	FamilyMember	Grandmother	Maternal
+doc_11	FamilyMember	Mother	NA
+doc_11	FamilyMember	Grandfather	Maternal
+doc_11	FamilyMember	Uncle	Maternal
+doc_11	FamilyMember	Half-brother	Maternal
+doc_11	FamilyMember	Half-sister	Paternal
+doc_115	FamilyMember	Aunt	Paternal
+doc_115	FamilyMember	Aunt	Maternal
+doc_115	FamilyMember	Son	NA
+doc_117	FamilyMember	Grandmother	Maternal
+doc_117	FamilyMember	Mother	NA
+doc_118	FamilyMember	Brother	NA
+doc_12	FamilyMember	Grandmother	Paternal
+doc_12	FamilyMember	Aunt	Paternal
+doc_12	FamilyMember	Grandfather	Paternal
+doc_12	FamilyMember	Grandmother	Maternal
+doc_12	FamilyMember	Cousin	Maternal
+doc_12	FamilyMember	Father	NA
+doc_12	FamilyMember	Grandfather	Maternal
+doc_12	FamilyMember	Uncle	Maternal
+doc_12	FamilyMember	Uncle	Paternal
+doc_121	FamilyMember	Uncle	NA
+doc_121	FamilyMember	Mother	NA
+doc_123	FamilyMember	Grandmother	Maternal
+doc_123	FamilyMember	Aunt	Maternal
+doc_123	FamilyMember	Brother	NA
+doc_123	FamilyMember	Mother	NA
+doc_124	FamilyMember	Brother	NA
+doc_124	FamilyMember	Mother	NA
+doc_126	FamilyMember	Grandmother	Paternal
+doc_126	FamilyMember	Daughter	NA
+doc_126	FamilyMember	Mother	NA
+doc_126	FamilyMember	Brother	NA
+doc_126	FamilyMember	Sister	NA
+doc_13	FamilyMember	Grandmother	Maternal
+doc_13	FamilyMember	Father	NA
+doc_13	FamilyMember	Grandfather	Maternal
+doc_130	FamilyMember	Sister	NA
+doc_132	FamilyMember	Son	NA
+doc_132	FamilyMember	Father	NA
+doc_132	FamilyMember	Mother	NA
+doc_136	FamilyMember	Aunt	Paternal
+doc_136	FamilyMember	Father	NA
+doc_136	FamilyMember	Sister	NA
+doc_138	FamilyMember	Grandmother	Maternal
+doc_138	FamilyMember	Brother	NA
+doc_138	FamilyMember	Grandfather	Maternal
+doc_139	FamilyMember	Daughter	NA
+doc_139	FamilyMember	Brother	NA
+doc_139	FamilyMember	Mother	NA
+doc_14	FamilyMember	Sibling	NA
+doc_14	FamilyMember	Brother	NA
+doc_14	FamilyMember	Sister	NA
+doc_14	FamilyMember	Mother	NA
+doc_140	FamilyMember	Grandfather	Paternal
+doc_140	FamilyMember	Mother	NA
+doc_140	FamilyMember	Uncle	Paternal
+doc_140	FamilyMember	Brother	NA
+doc_140	FamilyMember	Sister	NA
+doc_142	FamilyMember	Aunt	Maternal
+doc_142	FamilyMember	Cousin	Maternal
+doc_142	FamilyMember	Cousin	Paternal
+doc_142	FamilyMember	Uncle	Maternal
+doc_142	FamilyMember	Sister	NA
+doc_143	FamilyMember	Grandmother	Paternal
+doc_143	FamilyMember	Grandmother	Maternal
+doc_143	FamilyMember	Grandfather	Paternal
+doc_143	FamilyMember	Aunt	Maternal
+doc_143	FamilyMember	Daughter	NA
+doc_143	FamilyMember	Cousin	Maternal
+doc_143	FamilyMember	Mother	NA
+doc_143	FamilyMember	Cousin	Paternal
+doc_143	FamilyMember	Father	NA
+doc_143	FamilyMember	Grandfather	Maternal
+doc_143	FamilyMember	Uncle	Maternal
+doc_143	FamilyMember	Uncle	Paternal
+doc_143	FamilyMember	Brother	NA
+doc_143	FamilyMember	Son	NA
+doc_145	FamilyMember	Aunt	Paternal
+doc_145	FamilyMember	Aunt	Maternal
+doc_145	FamilyMember	Grandmother	Maternal
+doc_145	FamilyMember	Mother	Maternal
+doc_145	FamilyMember	Cousin	Paternal
+doc_145	FamilyMember	Uncle	Maternal
+doc_145	FamilyMember	Uncle	Paternal
+doc_147	FamilyMember	Daughter	NA
+doc_147	FamilyMember	Mother	NA
+doc_147	FamilyMember	Father	NA
+doc_147	FamilyMember	Son	NA
+doc_147	FamilyMember	Sister	NA
+doc_148	FamilyMember	Aunt	Maternal
+doc_148	FamilyMember	Daughter	NA
+doc_148	FamilyMember	Grandmother	Maternal
+doc_148	FamilyMember	Mother	NA
+doc_148	FamilyMember	Father	NA
+doc_148	FamilyMember	Uncle	Maternal
+doc_148	FamilyMember	Brother	NA
+doc_148	FamilyMember	Sister	NA
+doc_150	FamilyMember	Sibling	NA
+doc_150	FamilyMember	Brother	NA
+doc_150	FamilyMember	Sister	NA
+doc_150	FamilyMember	Mother	NA
+doc_152	FamilyMember	Grandmother	Paternal
+doc_152	FamilyMember	Aunt	Maternal
+doc_152	FamilyMember	Mother	NA
+doc_152	FamilyMember	Brother	NA
+doc_152	FamilyMember	Sister	NA
+doc_154	FamilyMember	Aunt	Maternal
+doc_155	FamilyMember	Daughter	NA
+doc_155	FamilyMember	Mother	NA
+doc_155	FamilyMember	Father	NA
+doc_155	FamilyMember	Brother	NA
+doc_155	FamilyMember	Son	NA
+doc_155	FamilyMember	Sister	NA
+doc_156	FamilyMember	Daughter	NA
+doc_156	FamilyMember	Mother	NA
+doc_156	FamilyMember	Father	NA
+doc_156	FamilyMember	Brother	NA
+doc_156	FamilyMember	Sister	NA
+doc_157	FamilyMember	Aunt	Paternal
+doc_157	FamilyMember	Aunt	Maternal
+doc_157	FamilyMember	Daughter	NA
+doc_157	FamilyMember	Mother	NA
+doc_157	FamilyMember	Father	NA
+doc_157	FamilyMember	Brother	Maternal
+doc_157	FamilyMember	Brother	NA
+doc_157	FamilyMember	Son	NA
+doc_157	FamilyMember	Sister	NA
+doc_158	FamilyMember	Brother	NA
+doc_158	FamilyMember	Sister	NA
+doc_16	FamilyMember	Uncle	Maternal
+doc_16	FamilyMember	Uncle	Paternal
+doc_16	FamilyMember	Aunt	Maternal
+doc_160	FamilyMember	Mother	NA
+doc_161	FamilyMember	Uncle	Maternal
+doc_161	FamilyMember	Daughter	NA
+doc_161	FamilyMember	Brother	NA
+doc_161	FamilyMember	Son	NA
+doc_162	FamilyMember	Aunt	Paternal
+doc_162	FamilyMember	Cousin	Paternal
+doc_164	FamilyMember	Aunt	Maternal
+doc_164	FamilyMember	Grandmother	Maternal
+doc_164	FamilyMember	Mother	NA
+doc_164	FamilyMember	Grandfather	Maternal
+doc_164	FamilyMember	Brother	Paternal
+doc_164	FamilyMember	Sister	NA
+doc_167	FamilyMember	Mother	NA
+doc_167	FamilyMember	Father	NA
+doc_167	FamilyMember	Uncle	Maternal
+doc_167	FamilyMember	Brother	NA
+doc_167	FamilyMember	Sister	NA
+doc_169	FamilyMember	Aunt	Maternal
+doc_169	FamilyMember	Grandmother	Maternal
+doc_169	FamilyMember	Grandfather	Paternal
+doc_169	FamilyMember	Cousin	Maternal
+doc_169	FamilyMember	Mother	NA
+doc_169	FamilyMember	Grandfather	Maternal
+doc_169	FamilyMember	Uncle	Maternal
+doc_169	FamilyMember	Uncle	Paternal
+doc_17	FamilyMember	Daughter	NA
+doc_17	FamilyMember	Brother	NA
+doc_17	FamilyMember	Cousin	Maternal
+doc_17	FamilyMember	Sister	NA
+doc_170	FamilyMember	Grandmother	Paternal
+doc_170	FamilyMember	Grandparent	Maternal
+doc_170	FamilyMember	Anu	Paternal
+doc_170	FamilyMember	Mother	NA
+doc_170	FamilyMember	Cousin	Maternal
+doc_170	FamilyMember	Cousin	Paternal
+doc_170	FamilyMember	Father	NA
+doc_170	FamilyMember	Uncle	Maternal
+doc_170	FamilyMember	Uncle	Paternal
+doc_170	FamilyMember	Brother	NA
+doc_170	FamilyMember	Sister	NA
+doc_173	FamilyMember	Son	NA
+doc_173	FamilyMember	Sister	NA
+doc_173	FamilyMember	Mother	NA
+doc_174	FamilyMember	Daughter	NA
+doc_174	FamilyMember	Mother	NA
+doc_174	FamilyMember	Brother	Maternal
+doc_174	FamilyMember	Sister	Maternal
+doc_174	FamilyMember	Sister	NA
+doc_177	FamilyMember	Aunt	Paternal
+doc_177	FamilyMember	Cousin	Maternal
+doc_18	FamilyMember	Aunt	Maternal
+doc_18	FamilyMember	Brother	NA
+doc_18	FamilyMember	Sister	NA
+doc_18	FamilyMember	Mother	NA
+doc_19	FamilyMember	Uncle	Paternal
+doc_19	FamilyMember	Father	NA
+doc_19	FamilyMember	Sister	NA
+doc_2	FamilyMember	Brother	NA
+doc_2	FamilyMember	Father	NA
+doc_2	FamilyMember	Mother	NA
+doc_21	FamilyMember	Mother	NA
+doc_21	FamilyMember	Father	NA
+doc_21	FamilyMember	Uncle	Maternal
+doc_21	FamilyMember	Brother	NA
+doc_21	FamilyMember	Son	NA
+doc_21	FamilyMember	Sister	NA
+doc_23	FamilyMember	Grandmother	Paternal
+doc_23	FamilyMember	Aunt	Paternal
+doc_23	FamilyMember	Grandmother	Maternal
+doc_23	FamilyMember	Aunt	Maternal
+doc_23	FamilyMember	Cousin	Maternal
+doc_23	FamilyMember	Mother	NA
+doc_23	FamilyMember	Cousin	Paternal
+doc_23	FamilyMember	Father	NA
+doc_23	FamilyMember	Grandfather	Maternal
+doc_23	FamilyMember	Uncle	Maternal
+doc_23	FamilyMember	Uncle	Paternal
+doc_23	FamilyMember	Sister	NA
+doc_24	FamilyMember	Grandmother	Paternal
+doc_24	FamilyMember	Grandmother	Maternal
+doc_24	FamilyMember	Aunt	Maternal
+doc_24	FamilyMember	Daughter	NA
+doc_24	FamilyMember	Cousin	Maternal
+doc_24	FamilyMember	Mother	NA
+doc_24	FamilyMember	Father	NA
+doc_24	FamilyMember	Grandfather	Maternal
+doc_24	FamilyMember	Brother	NA
+doc_24	FamilyMember	Son	NA
+doc_26	FamilyMember	Aunt	Paternal
+doc_26	FamilyMember	Grandmother	Maternal
+doc_26	FamilyMember	Aunt	Maternal
+doc_26	FamilyMember	Grandfather	Paternal
+doc_26	FamilyMember	Grandfather	Maternal
+doc_26	FamilyMember	Uncle	Maternal
+doc_26	FamilyMember	Uncle	Paternal
+doc_26	FamilyMember	Brother	NA
+doc_26	FamilyMember	Sister	NA
+doc_28	FamilyMember	Aunt	Maternal
+doc_28	FamilyMember	Daughter	NA
+doc_28	FamilyMember	Brother	NA
+doc_28	FamilyMember	Son	NA
+doc_28	FamilyMember	Sister	NA
+doc_29	FamilyMember	Grandmother	Maternal
+doc_29	FamilyMember	Brother	NA
+doc_29	FamilyMember	Son	NA
+doc_29	FamilyMember	Great-grandmother	Maternal
+doc_29	FamilyMember	Sister	NA
+doc_31	FamilyMember	Father	NA
+doc_35	FamilyMember	Uncle	Maternal
+doc_35	FamilyMember	Brother	NA
+doc_35	FamilyMember	Sister	NA
+doc_36	FamilyMember	Grandmother	Paternal
+doc_36	FamilyMember	Grandmother	Maternal
+doc_36	FamilyMember	Grandfather	Paternal
+doc_36	FamilyMember	Grandfather	Maternal
+doc_36	FamilyMember	Uncle	Paternal
+doc_37	FamilyMember	Aunt	Maternal
+doc_37	FamilyMember	Grandmother	Maternal
+doc_37	FamilyMember	Cousin	Maternal
+doc_37	FamilyMember	Mother	NA
+doc_37	FamilyMember	Grandfather	Maternal
+doc_37	FamilyMember	Uncle	Maternal
+doc_37	FamilyMember	Uncle	Paternal
+doc_4	FamilyMember	Aunt	Paternal
+doc_4	FamilyMember	Aunt	Maternal
+doc_4	FamilyMember	Daughter	NA
+doc_4	FamilyMember	Grandmother	Maternal
+doc_4	FamilyMember	Grandmother	Paternal
+doc_4	FamilyMember	Grandfather	Paternal
+doc_4	FamilyMember	Mother	NA
+doc_4	FamilyMember	Father	NA
+doc_4	FamilyMember	Grandfather	Maternal
+doc_4	FamilyMember	Uncle	Paternal
+doc_4	FamilyMember	Brother	NA
+doc_4	FamilyMember	Son	NA
+doc_4	FamilyMember	Sister	NA
+doc_40	FamilyMember	Aunt	Paternal
+doc_40	FamilyMember	Aunt	Maternal
+doc_40	FamilyMember	Grandfather	Paternal
+doc_40	FamilyMember	Grandparent	Maternal
+doc_40	FamilyMember	Grandmother	Paternal
+doc_40	FamilyMember	Cousin	Maternal
+doc_40	FamilyMember	Mother	NA
+doc_40	FamilyMember	Father	NA
+doc_40	FamilyMember	Uncle	Maternal
+doc_40	FamilyMember	Uncle	Paternal
+doc_40	FamilyMember	Brother	NA
+doc_40	FamilyMember	Sister	NA
+doc_41	FamilyMember	Aunt	Paternal
+doc_41	FamilyMember	Grandfather	Paternal
+doc_41	FamilyMember	Mother	NA
+doc_41	FamilyMember	Father	NA
+doc_41	FamilyMember	Grandfather	Maternal
+doc_41	FamilyMember	Uncle	Paternal
+doc_42	FamilyMember	Aunt	Paternal
+doc_42	FamilyMember	Grandfather	Paternal
+doc_42	FamilyMember	Brother	NA
+doc_42	FamilyMember	Sister	NA
+doc_43	FamilyMember	Aunt	Paternal
+doc_43	FamilyMember	Grandmother	Paternal
+doc_43	FamilyMember	Grandfather	Paternal
+doc_43	FamilyMember	Mother	NA
+doc_43	FamilyMember	Father	NA
+doc_44	FamilyMember	Grandmother	Paternal
+doc_44	FamilyMember	Grandmother	Maternal
+doc_44	FamilyMember	Aunt	Maternal
+doc_44	FamilyMember	Grandfather	Paternal
+doc_44	FamilyMember	Mother	NA
+doc_44	FamilyMember	Father	NA
+doc_44	FamilyMember	Grandfather	Maternal
+doc_44	FamilyMember	Sister	NA
+doc_49	FamilyMember	Brother	NA
+doc_49	FamilyMember	Father	NA
+doc_49	FamilyMember	Sister	NA
+doc_49	FamilyMember	Mother	NA
+doc_50	FamilyMember	Grandmother	Paternal
+doc_50	FamilyMember	Grandmother	Maternal
+doc_50	FamilyMember	Mother	NA
+doc_50	FamilyMember	Cousin	Paternal
+doc_50	FamilyMember	Grandfather	Maternal
+doc_52	FamilyMember	Father	NA
+doc_52	FamilyMember	Mother	NA
+doc_53	FamilyMember	Daughter	NA
+doc_53	FamilyMember	Son	NA
+doc_54	FamilyMember	Aunt	Maternal
+doc_54	FamilyMember	Grandmother	Maternal
+doc_54	FamilyMember	Mother	NA
+doc_54	FamilyMember	Father	NA
+doc_54	FamilyMember	Grandfather	Maternal
+doc_54	FamilyMember	Uncle	Maternal
+doc_54	FamilyMember	Brother	NA
+doc_54	FamilyMember	Great-grandmother	Maternal
+doc_56	FamilyMember	Cousin	NA
+doc_56	FamilyMember	Mother	NA
+doc_56	FamilyMember	Cousin	Paternal
+doc_56	FamilyMember	Father	NA
+doc_56	FamilyMember	Sister	NA
+doc_57	FamilyMember	Brother	NA
+doc_57	FamilyMember	Father	NA
+doc_57	FamilyMember	Grandfather	Maternal
+doc_57	FamilyMember	Mother	NA
+doc_58	FamilyMember	Grandmother	Maternal
+doc_58	FamilyMember	Aunt	Maternal
+doc_58	FamilyMember	Mother	NA
+doc_58	FamilyMember	Uncle	Maternal
+doc_58	FamilyMember	Brother	NA
+doc_59	FamilyMember	Father	NA
+doc_59	FamilyMember	Sister	NA
+doc_59	FamilyMember	Mother	NA
+doc_6	FamilyMember	Aunt	Maternal
+doc_6	FamilyMember	Daughter	NA
+doc_6	FamilyMember	Mother	NA
+doc_6	FamilyMember	Father	NA
+doc_6	FamilyMember	Uncle	Maternal
+doc_6	FamilyMember	Brother	NA
+doc_6	FamilyMember	Son	NA
+doc_60	FamilyMember	Aunt	Paternal
+doc_60	FamilyMember	Uncle	Paternal
+doc_66	FamilyMember	Grandmother	Maternal
+doc_66	FamilyMember	Grandfather	Maternal
+doc_67	FamilyMember	Grandmother	Paternal
+doc_67	FamilyMember	Sibling	NA
+doc_67	FamilyMember	Brother	NA
+doc_67	FamilyMember	Sister	NA
+doc_7	FamilyMember	Aunt	Maternal
+doc_7	FamilyMember	Father	NA
+doc_7	FamilyMember	Uncle	Maternal
+doc_7	FamilyMember	Son	NA
+doc_7	FamilyMember	Sister	NA
+doc_76	FamilyMember	Grandmother	Maternal
+doc_76	FamilyMember	Aunt	Maternal
+doc_76	FamilyMember	Uncle	Maternal
+doc_76	FamilyMember	Uncle	Paternal
+doc_79	FamilyMember	Brother	NA
+doc_79	FamilyMember	Sister	NA
+doc_81	FamilyMember	Grandmother	Maternal
+doc_81	FamilyMember	Aunt	Maternal
+doc_81	FamilyMember	Mother	NA
+doc_81	FamilyMember	Son	NA
+doc_81	FamilyMember	Sister	NA
+doc_85	FamilyMember	Aunt	Maternal
+doc_85	FamilyMember	Mother	NA
+doc_86	FamilyMember	Aunt	Maternal
+doc_86	FamilyMember	Daughter	NA
+doc_86	FamilyMember	Mother	NA
+doc_86	FamilyMember	Father	NA
+doc_86	FamilyMember	Uncle	Maternal
+doc_86	FamilyMember	Uncle	Paternal
+doc_86	FamilyMember	Sister	NA
+doc_9	FamilyMember	Aunt	Paternal
+doc_9	FamilyMember	Aunt	Maternal
+doc_9	FamilyMember	Daughter	NA
+doc_9	FamilyMember	Cousin	Maternal
+doc_9	FamilyMember	Mother	NA
+doc_9	FamilyMember	Father	NA
+doc_9	FamilyMember	Grandfather	Maternal
+doc_9	FamilyMember	Uncle	Maternal
+doc_9	FamilyMember	Uncle	Paternal
+doc_9	FamilyMember	Brother	NA
+doc_9	FamilyMember	Son	NA
+doc_92	FamilyMember	Aunt	Maternal
+doc_92	FamilyMember	Sister	NA
+doc_94	FamilyMember	Grandmother	Paternal
+doc_94	FamilyMember	Grandfather	Paternal
+doc_95	FamilyMember	Aunt	Maternal
+doc_95	FamilyMember	Mother	NA
+doc_95	FamilyMember	Uncle	Maternal
+doc_95	FamilyMember	Brother	NA
+doc_95	FamilyMember	Sister	NA
+doc_97	FamilyMember	Grandmother	Paternal
+doc_97	FamilyMember	Grandmother	Maternal
+doc_97	FamilyMember	Aunt	Maternal
+doc_97	FamilyMember	Cousin	Maternal
+doc_97	FamilyMember	Grandfather	Maternal
+doc_97	FamilyMember	Uncle	Maternal
+doc_1	Observation	bile duct adenocarcinoma
+doc_1	Observation	ovarian failure
+doc_1	Observation	choreic dysphonia
+doc_1	Observation	conduction disorders
+doc_1	Observation	meninges
+doc_1	Observation	ear melanoma
+doc_1	Observation	skin
+doc_1	Observation	herpes
+doc_1	Observation	 2q syndrome
+doc_1	Observation	hurler
+doc_1	Observation	benign complications
+doc_1	Observation	arboviral infections
+doc_1	Observation	neoplasm maligprostate
+doc_1	Observation	phaeochromocytoma
+doc_1	Observation	grade 2 ileum obstruction
+doc_1	Observation	disorders
+doc_10	Observation	anteroclusion
+doc_10	Observation	hypertension
+doc_10	Observation	cancer endometrium
+doc_10	Observation	atopic
+doc_10	Observation	multiple plasmodiosis
+doc_10	Observation	stillborn
+doc_10	Observation	metastasis to urethra
+doc_10	Observation	papillary carcinoma
+doc_10	Observation	thyroid problems
+doc_101	Observation	drug overdose
+doc_101	Observation	hypothyroidism
+doc_101	Observation	hypertension
+doc_101	Observation	hyperthermia
+doc_101	Observation	vulvar sarcoma
+doc_101	Observation	umbilical cord anomaly
+doc_101	Observation	paragonimiasis
+doc_104	Observation	birth defects
+doc_104	Observation	nalbuphine allergy
+doc_104	Observation	neonatal death
+doc_104	Observation	schizophrenia
+doc_104	Observation	mental retardation
+doc_104	Observation	multiple miscarriages
+doc_105	Observation	cancer
+doc_105	Observation	heart attack
+doc_105	Observation	heavy smoker
+doc_105	Observation	herpes iris
+doc_105	Observation	depressed
+doc_105	Observation	heart murmur
+doc_105	Observation	rheumatoid arthritis
+doc_105	Observation	factor s deficiency
+doc_105	Observation	cardiac problems infarction
+doc_105	Observation	 cancer
+doc_105	Observation	carrier of leptomeningeal metastases
+doc_105	Observation	renal disease
+doc_105	Observation	allergies
+doc_105	Observation	hemophilia
+doc_105	Observation	type 2 diabetes
+doc_105	Observation	heart issues
+doc_105	Observation	alcoholism
+doc_105	Observation	alcohol use
+doc_11	Observation	cancers
+doc_11	Observation	cholera
+doc_11	Observation	hypermnesia
+doc_11	Observation	hypertension
+doc_11	Observation	cysticercosis
+doc_11	Observation	keratitis actinic
+doc_11	Observation	heart disease
+doc_11	Observation	anthrax
+doc_11	Observation	 jejunum
+doc_11	Observation	dermatitis acneiform
+doc_111	Observation	cancer
+doc_111	Observation	birth defects
+doc_111	Observation	syndrome merrf
+doc_111	Observation	learning disabilities
+doc_111	Observation	infiltrating ductal carcinoma
+doc_111	Observation	mental retardation
+doc_115	Observation	disorder micturition
+doc_115	Observation	 sclerosis
+doc_115	Observation	emphysema paraseptal
+doc_115	Observation	thalassemia
+doc_115	Observation	type 2 diabetes
+doc_115	Observation	malignant blood disorder
+doc_115	Observation	babesia infection
+doc_115	Observation	aortic dilation
+doc_115	Observation	asthma
+doc_117	Observation	tonsillitis
+doc_117	Observation	brain tumor
+doc_117	Observation	dextrocardia
+doc_117	Observation	ovaries
+doc_117	Observation	 low platelets
+doc_117	Observation	aortic dilation
+doc_117	Observation	low platelets
+doc_117	Observation	delleman syndrome
+doc_117	Observation	malignant lesion
+doc_117	Observation	myocardial infarction
+doc_117	Observation	anomalies nervous
+doc_117	Observation	asthma
+doc_118	Observation	hypertension
+doc_118	Observation	recurrent thyroid problems
+doc_12	Observation	heart attacks
+doc_12	Observation	embolism
+doc_12	Observation	pancoast
+doc_12	Observation	darkly pigmented skin
+doc_12	Observation	genital lichen planus
+doc_12	Observation	urethral corbus
+doc_12	Observation	torus palatinus
+doc_12	Observation	amebic eczema
+doc_12	Observation	blood pressure
+doc_12	Observation	asthma
+doc_12	Observation	asthma colliers
+doc_121	Observation	chloasma
+doc_121	Observation	malignant blood disorder
+doc_121	Observation	amebic abscess of skin
+doc_121	Observation	asthma
+doc_123	Observation	brain cancer
+doc_123	Observation	blood clot
+doc_123	Observation	p388 leukemia
+doc_123	Observation	eating excess
+doc_123	Observation	asthma
+doc_124	Observation	multiple pregnancy loss
+doc_124	Observation	birth defects
+doc_124	Observation	learning disabilities
+doc_124	Observation	congestive heart failure
+doc_124	Observation	mental retardation
+doc_124	Observation	cystic fibrosis
+doc_126	Observation	multiple miscarriages
+doc_126	Observation	birth defects
+doc_126	Observation	learning disabilities
+doc_126	Observation	nhl childhood
+doc_126	Observation	mental retardation
+doc_126	Observation	bone fragile
+doc_126	Observation	glaucoma
+doc_13	Observation	telangiectasia surgery
+doc_13	Observation	lung myolipoma
+doc_13	Observation	memory lapses
+doc_13	Observation	pongidae disease
+doc_13	Observation	diabetes
+doc_13	Observation	ductal
+doc_13	Observation	cyclothymic personality
+doc_13	Observation	acute proctitis
+doc_13	Observation	corbus
+doc_13	Observation	syndrome scheie
+doc_13	Observation	ileitis pouch
+doc_13	Observation	autism
+doc_130	Observation	heart murmur
+doc_130	Observation	hydrocephalus
+doc_130	Observation	delleman syndrome
+doc_130	Observation	dvt
+doc_130	Observation	stroke
+doc_132	Observation	hypothyroidism
+doc_132	Observation	blood pressure
+doc_132	Observation	schizophrenia
+doc_132	Observation	aneurysm
+doc_132	Observation	tuberculosis respiratory
+doc_132	Observation	leukemia
+doc_132	Observation	asthma
+doc_136	Observation	acquired tear duct stenosis
+doc_136	Observation	birth defects
+doc_136	Observation	schonberg disease
+doc_136	Observation	cholera
+doc_136	Observation	heart
+doc_136	Observation	pseudotruncus arteriosus
+doc_136	Observation	angelman syndrome
+doc_136	Observation	cchf
+doc_136	Observation	mental retardation
+doc_136	Observation	learning disabilities
+doc_136	Observation	heart issues
+doc_136	Observation	uterine cancer
+doc_138	Observation	cardiac disease
+doc_138	Observation	recurrent malignant tumour
+doc_138	Observation	cholera
+doc_138	Observation	heart problems
+doc_138	Observation	cchf
+doc_138	Observation	marfan syndrome
+doc_138	Observation	diabetes
+doc_138	Observation	prophylactic mastectomy
+doc_138	Observation	melanoma
+doc_138	Observation	copd
+doc_138	Observation	multiple sclerosis
+doc_138	Observation	dka
+doc_138	Observation	colorblind
+doc_138	Observation	dementia
+doc_138	Observation	deficiency endocrine
+doc_138	Observation	malaria
+doc_138	Observation	hemophilia
+doc_139	Observation	cancer
+doc_139	Observation	dubinis disease
+doc_139	Observation	disease graves
+doc_139	Observation	metastatic disease
+doc_139	Observation	germ cell tumour ovarian recurrent
+doc_139	Observation	aphasia broca
+doc_139	Observation	nettle rash
+doc_139	Observation	gonorrhea recurrent
+doc_139	Observation	fever typhogastric
+doc_139	Observation	papillary carcinoma
+doc_139	Observation	mental behavioral disorders
+doc_139	Observation	gastroliths
+doc_139	Observation	neurosis depressive
+doc_139	Observation	pancreatitis fungal
+doc_139	Observation	familial polyposis
+doc_14	Observation	diverticulitis
+doc_14	Observation	myofascitis
+doc_14	Observation	pyriform fossa
+doc_14	Observation	sigmoiditis
+doc_14	Observation	edema stress
+doc_14	Observation	ileum ulcer
+doc_14	Observation	stomach abscess
+doc_14	Observation	cystic duct
+doc_14	Observation	spasm tic
+doc_14	Observation	gi problems
+doc_14	Observation	leukocytopenias
+doc_14	Observation	hemophilia
+doc_14	Observation	hepatic coma
+doc_14	Observation	tumour
+doc_14	Observation	neoplasm
+doc_14	Observation	melanoma ear
+doc_14	Observation	lymphangitis
+doc_14	Observation	lymphocytoma
+doc_140	Observation	acute mi
+doc_140	Observation	leukemia pediatric acute lymphocytic
+doc_140	Observation	giant cell pneumonia
+doc_140	Observation	hypertension
+doc_140	Observation	thyroid lump
+doc_140	Observation	type 2 diabetes
+doc_140	Observation	myopathy
+doc_142	Observation	prolapse colon
+doc_142	Observation	precancer
+doc_142	Observation	hydrocephalus
+doc_142	Observation	skin eruption
+doc_142	Observation	phacomatosis
+doc_142	Observation	fever uremic
+doc_142	Observation	renal disease
+doc_142	Observation	nulnaris disorder
+doc_142	Observation	heart disease
+doc_142	Observation	anal cancer
+doc_142	Observation	fungus eczema
+doc_142	Observation	heart issues
+doc_142	Observation	iron allergy
+doc_143	Observation	cancer
+doc_143	Observation	basiloma
+doc_143	Observation	cchf
+doc_143	Observation	pneumonia
+doc_143	Observation	brown mclean syndrome
+doc_143	Observation	uricemia
+doc_143	Observation	tinea
+doc_143	Observation	urachal cysts
+doc_143	Observation	meninges sarcoma
+doc_143	Observation	gastritis biliary
+doc_143	Observation	odontomas
+doc_143	Observation	cardiomyopathy amyloid etiology
+doc_143	Observation	febrile mucocutaneous syndrome
+doc_143	Observation	vagina sarcoma
+doc_143	Observation	neck lipoma
+doc_143	Observation	quadraplegia
+doc_145	Observation	hypogonadism
+doc_145	Observation	brain anoxia
+doc_145	Observation	thigh abscess
+doc_145	Observation	heart murmur
+doc_145	Observation	down syndrome
+doc_145	Observation	gingival tumour
+doc_145	Observation	widespread cancer
+doc_145	Observation	necrosis scrotum
+doc_145	Observation	cavd ii
+doc_145	Observation	postnatal dysphoria
+doc_145	Observation	myasthenia gravis
+doc_147	Observation	coronary disease
+doc_147	Observation	stupor catatonic
+doc_147	Observation	hyperopia
+doc_147	Observation	paratesticular lipoma
+doc_147	Observation	hemophilia
+doc_147	Observation	ulcers rodent
+doc_148	Observation	multiple miscarriages
+doc_148	Observation	cancer metastases
+doc_148	Observation	diverticulitis
+doc_148	Observation	elevated lipoprotein
+doc_148	Observation	xerophthalmia
+doc_148	Observation	vaginitis trichomonal
+doc_148	Observation	hemoglobinopathies
+doc_148	Observation	heart disease
+doc_148	Observation	heavy smoker
+doc_148	Observation	polyp rectum
+doc_150	Observation	dextrocardia
+doc_150	Observation	memory loss
+doc_150	Observation	leukopenias
+doc_150	Observation	prophylactic mastectomy
+doc_150	Observation	lymphocoeles
+doc_150	Observation	lung fibroma
+doc_150	Observation	pityriasis
+doc_150	Observation	cystdermoid
+doc_150	Observation	suprarenal insufficiency
+doc_150	Observation	sinus cancer
+doc_150	Observation	uterus adhesion
+doc_150	Observation	akithisia
+doc_150	Observation	lung cancer
+doc_150	Observation	stomatitis
+doc_150	Observation	sacral ulcer
+doc_152	Observation	climactericum epileptic
+doc_152	Observation	sinus infections
+doc_152	Observation	cancer
+doc_152	Observation	tonsillitis
+doc_152	Observation	 bladder
+doc_152	Observation	half-uncle
+doc_152	Observation	malaria
+doc_152	Observation	cholangioma
+doc_152	Observation	heavy smoker
+doc_154	Observation	low platelets
+doc_155	Observation	pneumothorax iatrogenic
+doc_155	Observation	cornea hypesthesia
+doc_155	Observation	skin cancer
+doc_155	Observation	klinefelter
+doc_155	Observation	carrier
+doc_155	Observation	traction diverticulum
+doc_155	Observation	lyme carditis
+doc_155	Observation	steroid purpura
+doc_155	Observation	multiple miscarriages
+doc_156	Observation	syndrome hemiparaplegic
+doc_156	Observation	down syndrome
+doc_156	Observation	imbecile
+doc_157	Observation	blepharelosis
+doc_157	Observation	pharynx cellulitis
+doc_157	Observation	moral deficit
+doc_157	Observation	cellulitis of pharynx
+doc_157	Observation	anomaly integument
+doc_157	Observation	choroid plexus papilloma
+doc_158	Observation	multiple miscarriages
+doc_158	Observation	benign tumor of ovary
+doc_158	Observation	cardiac polyp
+doc_158	Observation	mental retardation
+doc_16	Observation	histomoniases
+doc_16	Observation	neoplasm choroidal
+doc_16	Observation	osteochondrodysplasia
+doc_16	Observation	 murmur
+doc_16	Observation	heart murmur
+doc_16	Observation	thrombopenias
+doc_16	Observation	other hypertensionlabile
+doc_16	Observation	familial retinoblastomas
+doc_16	Observation	breast
+doc_160	Observation	fever chitral
+doc_160	Observation	haematoporphyrinaemia
+doc_160	Observation	pulp gangrenes
+doc_160	Observation	 attack
+doc_161	Observation	atr astigmatism
+doc_161	Observation	viral meningitides
+doc_161	Observation	skin syphilitic
+doc_161	Observation	abscess joint
+doc_161	Observation	krabbe
+doc_161	Observation	weakness
+doc_162	Observation	suicide
+doc_162	Observation	renal disease
+doc_162	Observation	obesity
+doc_162	Observation	alcohol/drug use
+doc_162	Observation	demyelinating diseases
+doc_164	Observation	eardrum inflammation
+doc_164	Observation	retrosternal hernia
+doc_164	Observation	nipple neoplasm
+doc_164	Observation	shortness of breath
+doc_164	Observation	gingival pregnancy tumour
+doc_166	Observation	genital syphilitic
+doc_166	Observation	foot osteoarthritides
+doc_166	Observation	renal sarcoma
+doc_166	Observation	sarcomas avian
+doc_167	Observation	dvt
+doc_169	Observation	cholera
+doc_169	Observation	hypertension
+doc_169	Observation	diabetes
+doc_169	Observation	tar syndrome
+doc_169	Observation	prophylactic mastectomy
+doc_169	Observation	thalassemia
+doc_169	Observation	heart disease
+doc_169	Observation	graft site infection
+doc_169	Observation	bowel bypass syndrome
+doc_169	Observation	schizophrenia
+doc_169	Observation	asthma
+doc_17	Observation	bone marrow
+doc_17	Observation	melanoma
+doc_17	Observation	leukemia
+doc_170	Observation	cancer
+doc_170	Observation	leucine
+doc_170	Observation	connective tissue
+doc_170	Observation	pneumonia
+doc_170	Observation	liver necrosis
+doc_170	Observation	renal disease
+doc_170	Observation	neutrophilic hyperplasia
+doc_170	Observation	health problems
+doc_170	Observation	dysplasia of
+doc_173	Observation	hairy tongues
+doc_173	Observation	spontaneous
+doc_173	Observation	hypertension
+doc_173	Observation	learning disabilities
+doc_173	Observation	leukemia thrombocytic
+doc_173	Observation	type 2 diabetes
+doc_173	Observation	mental retardation
+doc_173	Observation	retinal artery occlusion
+doc_174	Observation	pyelitis acute
+doc_174	Observation	birth defects
+doc_174	Observation	learning disabilities
+doc_174	Observation	mental retardation
+doc_176	Observation	psychiatric
+doc_176	Observation	iron disorder
+doc_176	Observation	hypermnesia
+doc_176	Observation	copd
+doc_176	Observation	esophageal infections
+doc_176	Observation	atrial fibrillation
+doc_176	Observation	endosalpingiosis
+doc_177	Observation	mansonelliases
+doc_177	Observation	cell leukemias plasma
+doc_177	Observation	eczema dyshidrotic
+doc_177	Observation	acute middle ear effusion
+doc_177	Observation	atrophic hair
+doc_177	Observation	epilepsy senile
+doc_178	Observation	gonococcal perihepatitis
+doc_178	Observation	diarrhea anxiety
+doc_178	Observation	diabetes
+doc_178	Observation	 errors
+doc_178	Observation	bone marrow cancer
+doc_178	Observation	metabolism
+doc_178	Observation	stage i lentigo maligna
+doc_18	Observation	hypertension
+doc_18	Observation	psoriasis nummular
+doc_18	Observation	cervix metritis
+doc_19	Observation	barium pneumoconiosis
+doc_19	Observation	kanamycin allergy
+doc_19	Observation	adenomathyroid
+doc_19	Observation	aneurysm
+doc_19	Observation	gynatresias
+doc_19	Observation	haygarth node
+doc_19	Observation	salmonella infection
+doc_19	Observation	isoflurane allergy
+doc_2	Observation	nails
+doc_2	Observation	abuse laxatives
+doc_2	Observation	aortocaval fistula
+doc_2	Observation	tumors
+doc_2	Observation	crop
+doc_2	Observation	testosterone allergy
+doc_2	Observation	keshan
+doc_21	Observation	waardenburg
+doc_21	Observation	heart
+doc_21	Observation	cutaneous syphilis
+doc_21	Observation	blood disease
+doc_21	Observation	family ataxia
+doc_21	Observation	associative dysphasia
+doc_21	Observation	ocular tumor
+doc_21	Observation	lung cancer
+doc_21	Observation	cancers anal
+doc_21	Observation	dwarfism
+doc_23	Observation	seasonal hemophilia
+doc_23	Observation	conjunctivitis-like problem
+doc_23	Observation	meningitis recurrent
+doc_23	Observation	pineoblastoma
+doc_23	Observation	leptomeningeal metastases
+doc_23	Observation	pachygyria
+doc_23	Observation	papillary carcinoma
+doc_23	Observation	hemophilia
+doc_23	Observation	paranasal sinus cancer
+doc_23	Observation	dyslexia
+doc_23	Observation	foot ulcer
+doc_23	Observation	phycomycosis
+doc_24	Observation	haglunds
+doc_24	Observation	heart disease
+doc_24	Observation	puerperal salpingitis
+doc_24	Observation	cancer
+doc_24	Observation	esophageal carcinoma
+doc_24	Observation	ekbom syndrome
+doc_24	Observation	smoker
+doc_24	Observation	non-smoker
+doc_24	Observation	drink alcohol
+doc_24	Observation	rheumatoid arthritis
+doc_24	Observation	colon cancer
+doc_24	Observation	lesch nyhan syndrome
+doc_24	Observation	hysterectomy
+doc_24	Observation	laryngeal sarcomatoid carcinoma
+doc_24	Observation	blood pressure
+doc_24	Observation	excessive sun
+doc_24	Observation	urethral cancer
+doc_24	Observation	sinus testis
+doc_24	Observation	asthma
+doc_24	Observation	factor s deficiency
+doc_24	Observation	pelvic cancer
+doc_24	Observation	gastric tumor
+doc_24	Observation	thiamine deficiencies
+doc_24	Observation	oral glyceryl trinitrate allergy
+doc_26	Observation	pancreas mass
+doc_26	Observation	birth defects
+doc_26	Observation	sirenomelia
+doc_26	Observation	mental retardation
+doc_26	Observation	learning disabilities
+doc_26	Observation	skin cancer
+doc_26	Observation	smoker
+doc_26	Observation	lip fissure
+doc_26	Observation	hepatic coma
+doc_26	Observation	lactrodectism
+doc_26	Observation	asthma
+doc_28	Observation	pelvic cancer
+doc_28	Observation	endotheliosis
+doc_28	Observation	fibrous cavernitides
+doc_28	Observation	infant deaths
+doc_28	Observation	ovarian endometriosis
+doc_28	Observation	prematurity
+doc_28	Observation	cystic fibrosis
+doc_28	Observation	ulcerative colitis
+doc_29	Observation	anxiety
+doc_29	Observation	cholera
+doc_29	Observation	psych problem
+doc_29	Observation	hyperthermia
+doc_29	Observation	learning
+doc_29	Observation	enamel caries
+doc_29	Observation	neoplasms vascular
+doc_29	Observation	asthma
+doc_31	Observation	suicide
+doc_31	Observation	chemical dependence
+doc_31	Observation	present alcohol/drug use
+doc_31	Observation	paranasal sinus cancer
+doc_31	Observation	hemophilia
+doc_31	Observation	dwarfism
+doc_34	Observation	birth defects
+doc_34	Observation	neonatal death
+doc_34	Observation	multiple miscarriages
+doc_34	Observation	mental retardation
+doc_35	Observation	leukemia
+doc_36	Observation	brain problems
+doc_36	Observation	bar accident
+doc_36	Observation	lipoidemia
+doc_36	Observation	wellbutrin
+doc_36	Observation	celexa
+doc_36	Observation	cchf
+doc_36	Observation	infiltrating ductal carcinoma
+doc_36	Observation	gabapentin
+doc_36	Observation	skin
+doc_36	Observation	borna disease
+doc_36	Observation	nail disease
+doc_36	Observation	genital dwarfism
+doc_36	Observation	alcohol and drugs
+doc_36	Observation	chronic pain
+doc_37	Observation	vulvar corbus
+doc_37	Observation	hypothyroidism
+doc_37	Observation	desmoplastic
+doc_37	Observation	cholera
+doc_37	Observation	lung corbus
+doc_37	Observation	brain corbus
+doc_37	Observation	low platelets
+doc_37	Observation	 learning disabilities
+doc_37	Observation	maxillary antrum tumour
+doc_37	Observation	nickel eczema
+doc_37	Observation	enamel caries
+doc_37	Observation	schizophrenia
+doc_37	Observation	acute chorea
+doc_37	Observation	dwarfism
+doc_37	Observation	asthma
+doc_4	Observation	orbital varix
+doc_4	Observation	anemia
+doc_4	Observation	noesis
+doc_4	Observation	hypermnesia
+doc_4	Observation	mental disorder caffeine
+doc_4	Observation	uvulitis
+doc_4	Observation	aspirin abuse
+doc_4	Observation	leprosy neural
+doc_4	Observation	maids
+doc_4	Observation	anal tumour
+doc_4	Observation	syndrome fraxe
+doc_4	Observation	skrjabinemosis
+doc_4	Observation	nevus benign
+doc_4	Observation	rubeola
+doc_4	Observation	malaria
+doc_4	Observation	timolol allergy
+doc_4	Observation	thymus atrophy
+doc_40	Observation	fair skin
+doc_40	Observation	cholera
+doc_40	Observation	cerebral palsy
+doc_40	Observation	yaba pox
+doc_40	Observation	malignant gangliogliomas
+doc_40	Observation	lichen
+doc_40	Observation	dextrocardia
+doc_40	Observation	stressors
+doc_40	Observation	mucous colon
+doc_40	Observation	angiolipomas
+doc_40	Observation	allergies
+doc_40	Observation	peritoneal cancer
+doc_40	Observation	xeroma
+doc_40	Observation	peanut allergies
+doc_40	Observation	severe nosebleed
+doc_40	Observation	acne comedonal
+doc_41	Observation	hypothyroidism
+doc_41	Observation	fever oroya
+doc_41	Observation	heart murmur
+doc_41	Observation	alalia
+doc_41	Observation	malignant clitoris tumour
+doc_41	Observation	extramembranous glomerulopathy
+doc_41	Observation	type 2 diabetes
+doc_41	Observation	vulval neoplasms
+doc_41	Observation	ulcer bladder
+doc_41	Observation	fainting
+doc_41	Observation	asthma
+doc_41	Observation	alcohol use
+doc_42	Observation	cancer
+doc_42	Observation	encephalitis periaxialis
+doc_42	Observation	melanoma
+doc_42	Observation	thalassemia
+doc_42	Observation	uterine cancer
+doc_42	Observation	2017
+doc_42	Observation	asthma
+doc_42	Observation	pelvic corbus
+doc_43	Observation	cancer
+doc_43	Observation	factor s deficiency
+doc_43	Observation	heart issues
+doc_43	Observation	planus lichen
+doc_43	Observation	corbus
+doc_43	Observation	peribronchial pneumonia
+doc_43	Observation	 an auto accident
+doc_44	Observation	acute schizophrenic
+doc_44	Observation	hypothyroidism
+doc_44	Observation	lameness
+doc_44	Observation	cholera
+doc_44	Observation	acute disorder
+doc_44	Observation	hypertension
+doc_44	Observation	low platelets
+doc_44	Observation	angelman syndrome
+doc_44	Observation	heart issues
+doc_44	Observation	pineoblastoma
+doc_44	Observation	thalassemia
+doc_44	Observation	prophylactic mastectomy
+doc_44	Observation	smoker
+doc_44	Observation	oligodendroglioma
+doc_44	Observation	an accident
+doc_44	Observation	asthma
+doc_49	Observation	cancer
+doc_49	Observation	stillborn or died early
+doc_49	Observation	parathyroid disorders
+doc_49	Observation	polyp inflammatory
+doc_49	Observation	jung syndrome
+doc_49	Observation	segmental dysfunction
+doc_50	Observation	cancer
+doc_50	Observation	hemochromatosis
+doc_50	Observation	wolman
+doc_50	Observation	hyperthermia
+doc_50	Observation	fungal infection
+doc_50	Observation	deficiency pyridoxamine
+doc_50	Observation	umbilical cord anomaly
+doc_50	Observation	pineal syndrome
+doc_50	Observation	comas hepatic
+doc_50	Observation	cittotaeniosis
+doc_50	Observation	heart attacks
+doc_52	Observation	adrenal disorder
+doc_52	Observation	cancer
+doc_52	Observation	iodamoebiases
+doc_52	Observation	still born
+doc_52	Observation	ovariocele
+doc_52	Observation	amyotrophic sclerosis
+doc_52	Observation	smoker
+doc_52	Observation	periapical abscess
+doc_52	Observation	thyroid problems
+doc_52	Observation	ischemic myelopathies
+doc_53	Observation	coronary artery disease
+doc_53	Observation	blood pressure
+doc_53	Observation	nervous diarrhea
+doc_53	Observation	giant colon
+doc_53	Observation	rare tetanus disease
+doc_53	Observation	domperidone allergy
+doc_53	Observation	ovalbumin allergy
+doc_53	Observation	myocardial damage
+doc_53	Observation	entropion
+doc_53	Observation	emphysema
+doc_53	Observation	biliary tumour
+doc_53	Observation	childhood leukemia
+doc_53	Observation	multiple miscarriages
+doc_53	Observation	hepatopulmonary syndromes
+doc_53	Observation	pharyngitides
+doc_53	Observation	nutritional cirrhosis
+doc_54	Observation	heart attack
+doc_54	Observation	oesophageal neoplasm metastatic
+doc_54	Observation	sternal neoplasm
+doc_54	Observation	cardiac problems infarction
+doc_54	Observation	skin cancer
+doc_54	Observation	albright disease
+doc_54	Observation	pineal tumor
+doc_54	Observation	enteroscopy
+doc_54	Observation	uterus myoma
+doc_54	Observation	fecalith appendix
+doc_54	Observation	psychosis manic
+doc_54	Observation	congestive heart failure
+doc_54	Observation	smoker
+doc_54	Observation	colonoscopy
+doc_54	Observation	emotional crisis
+doc_54	Observation	acromioclavicular infection
+doc_56	Observation	porphyria acute
+doc_56	Observation	uterine cancer
+doc_56	Observation	neoplasm of the urethra
+doc_56	Observation	hypertension
+doc_56	Observation	alzheimer disease
+doc_56	Observation	umbilical cord anomaly
+doc_56	Observation	 dermal
+doc_56	Observation	colon spasm
+doc_56	Observation	lufts disease
+doc_56	Observation	submucosal cleft palate
+doc_56	Observation	colon cancer
+doc_56	Observation	autism torsion
+doc_56	Observation	kidney problems
+doc_56	Observation	edema cornea
+doc_56	Observation	severe chorea syndromes
+doc_56	Observation	coma insulin
+doc_56	Observation	depression
+doc_56	Observation	myriapodiasis
+doc_56	Observation	grawitz tumor
+doc_57	Observation	 guard
+doc_57	Observation	eye sight
+doc_57	Observation	groin melanoma
+doc_58	Observation	motor vehicle accident
+doc_58	Observation	acromioclavicular infection
+doc_59	Observation	pancreatic abscess
+doc_59	Observation	cancer
+doc_59	Observation	libman
+doc_59	Observation	renal disease
+doc_6	Observation	brain coryza
+doc_6	Observation	breast coryza
+doc_6	Observation	tarsal coalition
+doc_6	Observation	carcinofibroma
+doc_6	Observation	legs ulcers
+doc_6	Observation	coryzas
+doc_6	Observation	heart blocks
+doc_6	Observation	thinking reduced
+doc_6	Observation	gaze apraxia
+doc_6	Observation	muscle tissue neoplasms
+doc_6	Observation	colon coryza
+doc_6	Observation	cysticercosis
+doc_6	Observation	behcet arthritides
+doc_6	Observation	coryza
+doc_6	Observation	viral illness
+doc_6	Observation	vitreous syneresis
+doc_6	Observation	reflux duodenal
+doc_6	Observation	pelvic coryza
+doc_6	Observation	 skin
+doc_6	Observation	bile nephrosis
+doc_6	Observation	salmonella pneumonia
+doc_6	Observation	myocarditis
+doc_6	Observation	corbus
+doc_6	Observation	contralateral pelvic coryza
+doc_6	Observation	atrophic hair
+doc_6	Observation	multiple perthes
+doc_6	Observation	skin disease
+doc_6	Observation	fryns syndrome
+doc_6	Observation	timber tongue
+doc_6	Observation	heller
+doc_6	Observation	 coryza
+doc_6	Observation	bilateral pelvic coryza
+doc_6	Observation	deviation sex
+doc_60	Observation	birth defects
+doc_60	Observation	genetic conditions
+doc_60	Observation	learning disabilities
+doc_60	Observation	alzheimer disease
+doc_60	Observation	mental retardation
+doc_60	Observation	 unexplained deaths
+doc_60	Observation	multiple miscarriages
+doc_62	Observation	edema retina
+doc_62	Observation	heart issues
+doc_62	Observation	thyroid problems
+doc_62	Observation	abscessdental
+doc_62	Observation	hyperlipidemia
+doc_62	Observation	 disease
+doc_62	Observation	heart disease
+doc_62	Observation	blood clots
+doc_62	Observation	dyslexia
+doc_62	Observation	malaria
+doc_62	Observation	alcoholism
+doc_62	Observation	asthma
+doc_66	Observation	heart attacks
+doc_66	Observation	hypermnesia
+doc_66	Observation	alzheimer disease
+doc_66	Observation	low platelets
+doc_66	Observation	multiple sclerosis
+doc_66	Observation	heart disease
+doc_66	Observation	smoker
+doc_66	Observation	alcohol use
+doc_67	Observation	hypothyroidism
+doc_67	Observation	cholera
+doc_67	Observation	ischemia brain
+doc_67	Observation	complications of schizophrenia
+doc_67	Observation	cardiac bypass surgery
+doc_67	Observation	pancreatic metastases
+doc_67	Observation	stroke
+doc_7	Observation	malignancy
+doc_7	Observation	labium polyp
+doc_7	Observation	adherent pericardium
+doc_7	Observation	colon tumor
+doc_7	Observation	syndromes fraxe
+doc_7	Observation	urticaria aggravated
+doc_7	Observation	fever
+doc_7	Observation	pneumonitis toxoplasmal
+doc_7	Observation	corbus
+doc_7	Observation	pleura exudate
+doc_7	Observation	sponge kidney medullary
+doc_7	Observation	mikulicz
+doc_7	Observation	hypomnesia
+doc_7	Observation	enamel caries
+doc_7	Observation	oxatomide allergy
+doc_7	Observation	otitis media acute seromucinous
+doc_7	Observation	epiphysiolysis proximal
+doc_7	Observation	 tongue
+doc_74	Observation	heart murmur
+doc_76	Observation	pelvic cancer
+doc_76	Observation	testicular cancer
+doc_76	Observation	lump
+doc_76	Observation	type 2 diabetes
+doc_76	Observation	heart issues
+doc_79	Observation	diabetes
+doc_79	Observation	diabetes mellitus
+doc_79	Observation	hemophilia
+doc_79	Observation	tetanus disease
+doc_80	Observation	heart attack
+doc_80	Observation	birth defects
+doc_80	Observation	learning disabilities
+doc_80	Observation	mental retardation
+doc_80	Observation	chronic pulmonary disease
+doc_81	Observation	hypothyroidism
+doc_81	Observation	seizures
+doc_81	Observation	cholera
+doc_81	Observation	hypertension
+doc_81	Observation	alzheimer disease
+doc_81	Observation	prophylactic mastectomy
+doc_81	Observation	 a hypothyroidism
+doc_81	Observation	renal disease
+doc_81	Observation	skin cancer
+doc_81	Observation	shortness of breath
+doc_81	Observation	complications after childbirth
+doc_81	Observation	malaria
+doc_81	Observation	peptic ulcers
+doc_81	Observation	stroke
+doc_81	Observation	asthma heart
+doc_81	Observation	jamaican syndrome
+doc_85	Observation	dermanyssosis
+doc_85	Observation	cystitides
+doc_85	Observation	spinal tumor
+doc_85	Observation	heart disease
+doc_85	Observation	thyroid toxic
+doc_86	Observation	heart attack
+doc_86	Observation	cancer
+doc_86	Observation	cardiac bypass surgery
+doc_86	Observation	carcinoma bladder
+doc_86	Observation	dyslexia
+doc_86	Observation	heart issues
+doc_86	Observation	pelvic cancer
+doc_86	Observation	dystocia
+doc_86	Observation	heart disease
+doc_86	Observation	ge reflux
+doc_86	Observation	thyromegaly
+doc_86	Observation	stroke
+doc_86	Observation	asthma
+doc_9	Observation	histoplasma capsulatum infection
+doc_9	Observation	hallucinosis
+doc_9	Observation	wind sucking
+doc_9	Observation	renal pelvis tumour
+doc_9	Observation	high cholesterol
+doc_9	Observation	infectionbitespider
+doc_9	Observation	intestinal
+doc_9	Observation	hyoid myoclonus
+doc_9	Observation	retina disorder
+doc_9	Observation	nephrosis cholemic
+doc_9	Observation	lymphoma
+doc_9	Observation	cyclic schizophrenia
+doc_9	Observation	biventricular pacemaker
+doc_91	Observation	multiple miscarriages
+doc_91	Observation	cancers
+doc_91	Observation	birth defects
+doc_91	Observation	collagen arthritis
+doc_91	Observation	learning disabilities
+doc_91	Observation	infant deaths
+doc_91	Observation	mental retardation
+doc_91	Observation	leukemia
+doc_92	Observation	emphysema and autism
+doc_92	Observation	dyslexia
+doc_93	Observation	low platelets
+doc_94	Observation	type 2 diabetes
+doc_94	Observation	hypertension
+doc_94	Observation	heart issues
+doc_95	Observation	cancers
+doc_95	Observation	heart problems
+doc_95	Observation	cchf
+doc_95	Observation	psoriatic arthritis
+doc_95	Observation	 sounds
+doc_95	Observation	cysticercosis
+doc_95	Observation	heart disease
+doc_95	Observation	lactotroph adenomas
+doc_97	Observation	hypothyroidism
+doc_97	Observation	 ischemia
+doc_97	Observation	stomach cancer
+doc_97	Observation	liver infections
+doc_97	Observation	splenic sequestration
+doc_97	Observation	thalassemia
+doc_97	Observation	larynx carcinoma
+doc_97	Observation	type 2 diabetes
+doc_97	Observation	iii.6
+doc_97	Observation	esophago pharyngeal diverticula
+doc_97	Observation	traumatic eczema
+doc_97	Observation	nosebleed
+doc_97	Observation	fainting

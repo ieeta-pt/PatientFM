@@ -13,7 +13,7 @@ class Reader(object):
 
 	def loadDataSet(self, cleaning=False):
 		filesContent = {}
-		allFiles = glob.glob('{}*.{}'.format(self.dataSetDir, "txt"))
+		allFiles = sorted(glob.glob('{}*.{}'.format(self.dataSetDir, "txt")))
 		for file in allFiles:
 			fileName = file.split("/")[-1].split(".")[0]
 			with codecs.open(file, 'r', encoding='utf8') as fp:
@@ -42,7 +42,7 @@ class Reader(object):
 		"""
 
 		xmlFilesContent = {}
-		allFiles = glob.glob('{}*.{}'.format(self.dataSetDir, "xml"))
+		allFiles = sorted(glob.glob('{}*.{}'.format(self.dataSetDir, "xml")))
 		for file in allFiles:
 			fileName = file.split("/")[-1].split(".")[0]
 			xmlFilesContent[fileName] = {}
