@@ -70,6 +70,23 @@ simpleTermsSecond = [
 
 	#with errors
 	("bothers","Brother", "NA"), ("bother","Brother", "NA"),
+	
+	#partner to remove later
+	#("husband", "Partner", "NA"),
+	#("husband's", "Partner", "NA"),
+	#("wife", "Partner", "NA"),
+	#("wife's",  "Partner", "NA"),
+	#("partner",  "Partner", "NA"),
+	#("bride", "Partner", "NA"),
+	#("companion",  "Partner", "NA"),
+	#("spouse", "Partner", "NA"),
+	#("roommate",  "Partner", "NA"),
+	#("mate",  "Partner", "NA"),
+	#("consort", "Partner", "NA"),
+	#("boyfriend", "Partner", "NA"),
+	#("partner's", "Partner", "NA"), 
+	#("girlfriend", "Partner", "NA"),
+	
 ]
 #("", "", "", [""], [""], True/False),
 #("Word in text", "Family Member", "Side of family", ["words","before"], ["words","after"], Accept/Reject)
@@ -180,6 +197,7 @@ complexTermsFirst = [
 	("son", "2nd Cousin", "", ["great", "aunt"], [],  False),
 	("daughter", "2nd Cousin", "", ["great", "aunt"], [],  False),
 
+	("daughter", "Wrong Daughter", "", ["son's"], [],  False),
 
 	("aunt", "Geat Aunt", "", ["great"], [], False),
 	("uncle", "Geat Uncle", "", ["great"], [], False),
@@ -238,18 +256,83 @@ relations = [
 	("Uncle", "Child", "Cousin"),
 	("Uncle", "Cousin", None),
 
-	("Mother", "Brother", "Uncle"),
-	("Mother", "Sister", "Aunt"),
+	#("Mother", "Brother", "Uncle"),
+	#("Mother", "Sister", "Aunt"),
 	("Mother", "Son", "Brother"),
 	("Mother", "Daughter", "Sister"),
 	("Mother", "Child", "Sibling"),
 
-	("Father", "Brother", "Uncle"),
-	("Father", "Sister", "Aunt"),
+	#("Father", "Brother", "Uncle"),
+	#("Father", "Sister", "Aunt"),
 	("Father", "Son", "Brother"),
 	("Father", "Daughter", "Sister"),
 	("Father", "Child", "Sibling"),
+
+
+	('Father', 'Brother', 'Uncle', 'Paternal'),
+	('Father', 'Sister', 'Aunt', 'Paternal'),
+	('Father', 'Mother', 'Grandmother', 'Paternal'),
+	('Father', 'Father', 'Grandfather', 'Paternal'),
+	('Father', 'Sibling', 'Sibling', 'NA'),
+	('Father', 'Cousin', None, 'Paternal'),
+	('Mother', 'Mother', 'Grandmother', 'Maternal'),
+	('Mother', 'Father', 'Grandfather', 'Maternal'),
+	('Mother', 'Brother', 'Uncle', 'Maternal'),
+	('Mother', 'Sister', 'Aunt', 'Maternal'),
+	('Mother', 'Sibling', 'Sibling', 'NA'),
+	('Mother', 'Cousin', None),
+	('Brother', 'Son', None),
+	('Brother', 'Daughter', None),
+	('Brother', 'Child', None),
+	('Sister', 'Son', None),
+	('Sister', 'Daughter', None),
+	('Sister', 'Child', None),
+	('Uncle', 'Son', 'Cousin'),
+	('Uncle', 'Daughter', 'Cousin'),
+	('Uncle', 'Child', 'Cousin'),
+	('Aunt', 'Son', 'Cousin'),
+	('Aunt', 'Daughter', 'Cousin'),
+	('Aunt', 'Child', 'Cousin'),
+	('Son', 'Son', None),
+	('Son', 'Daughter', None),
+	('Son', 'Child', None),
+	('Daughter', 'Son', None),
+	('Daughter', 'Daughter', None),
+	('Daughter', 'Child', None),
+	('Grandmother', 'Brother', None),
+	('Grandmother', 'Sister', None),
+	('Grandfather', 'Brother', None),
+	('Grandfather', 'Sister', None),
+	('Cousin', 'Daughter', None),
+	('Cousin', 'Son', None),
+	('Cousin', 'Child', None),
+	
+	('Partner', 'Brother', None),
+	('Partner', 'Sister', None),
+	('Partner', 'Mother', None),
+	('Partner', 'Father', None),
+	('Partner', 'Sibling', None),
+	('Partner', 'Cousin', None),
+	('Partner', 'Son', None),
+	('Partner', 'Daughter', None),
+	('Partner', 'Child', None),
+	('Partner', 'Aunt', None),
+	('Partner', 'Uncle', None),
+
+	('OtherParent', 'Brother', None),
+	('OtherParent', 'Sister', None),
+	('OtherParent', 'Mother', None),
+	('OtherParent', 'Father', None),
+	('OtherParent', 'Sibling', None),
+	('OtherParent', 'Cousin', None),
+	('OtherParent', 'Son', None),
+	('OtherParent', 'Daughter', None),
+	('OtherParent', 'Child', None),
+	('OtherParent', 'Aunt', None),
+	('OtherParent', 'Uncle', None)
 ]
+
+sectionRules = ["siblings:", "parents:", "children:", "aunts:", "uncles:", "cousins:", "grandparents:"]
 
 def getSimpleTermsSecond():
 	listOfTerms = []
