@@ -11,8 +11,8 @@ def getMarkedPhrase(phrase, value):
 	return phrase#.replace(value+ " ", WARNING + value+ " " + ENDC)
 
 def cleanFile(inFile):
-	file = inFile.replace("\n", " ").replace("’", "\'")
-	for ch in ['\\','\"','*','_','{','}','[',']','(',')','>','#','+',',','!','$',':',';']:
+	file = inFile.replace("\n", " \n").replace("’", "\'")
+	for ch in ['\\','\"','*','_','{','}','[',']','(',')','>','#','+',',','!','$',';']:
 			if ch in file:
 				file = file.replace(ch,"")
 	file = file.lower()
