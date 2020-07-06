@@ -8,7 +8,7 @@ from NejiAnnotator import readPickle
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries
 
-from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, clinicalBERTutils, createOutputTask1
+from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, clinicalBERTutils, createOutputTask1, createOutputTask2
 from models.clinicalBERT_BiLstmCRF.model import Model
 
 def runModel(settings, trainTXT, trainXML):
@@ -55,8 +55,8 @@ def runModel(settings, trainTXT, trainXML):
 
     if settings["neji"]["use_neji_annotations"] == "True":
         nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
-        nejiClasses = classDictToList(nejiClassesDict)
-        nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
+        nejiTrainClasses = classDictToList(nejiClassesDict)
+        nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTrainClasses]
     else:
         nejiTrainClasses = None
 
@@ -91,8 +91,11 @@ def runModel(settings, trainTXT, trainXML):
     else:
         nejiTestClasses = None
 
-    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
-                                                                      testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
+     # predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
+     #                                                                  testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
+
+    predFamilyMemberDict, predObservationDict = createOutputTask2(DL_model, testBERTtokenizedSentences, testEncodedSentences,
+                                                                  testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
 
 
     return predFamilyMemberDict, predObservationDict
