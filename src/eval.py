@@ -103,6 +103,7 @@ def calculate_s1(gs_tsv, pred_tsv, verbose, onlyFM=False):
     ignoringSide = False
 
     falsePostive = {}
+    falsePostiveWithDoc = {}
     truePostive = {}
     trueNegative = {}
     if ignoringSide:
@@ -144,8 +145,10 @@ def calculate_s1(gs_tsv, pred_tsv, verbose, onlyFM=False):
                 #print(elm)
                 if fm in falsePostive:
                     falsePostive[fm] += 1
+                    falsePostiveWithDoc[fm] += [elm[0]]
                 else:
                     falsePostive[fm] = 1
+                    falsePostiveWithDoc[fm] = [elm[0]]
                 #if verbose: print(elm)
                 fp_fm += 1
         for elm in gs_fm:
@@ -161,6 +164,10 @@ def calculate_s1(gs_tsv, pred_tsv, verbose, onlyFM=False):
             print(sorted(trueNegative.items(), key=lambda kv: kv[1]))
             print("False positives")
             print(sorted(falsePostive.items(), key=lambda kv: kv[1]))
+            print("False positives (doc)")
+            for fm in sorted(falsePostive.items(), key=lambda kv: kv[1]):
+                print(fm[0])
+                print(falsePostiveWithDoc[fm[0]])
 
         fn_fm = len(gs_fm) - tp_fm
 
