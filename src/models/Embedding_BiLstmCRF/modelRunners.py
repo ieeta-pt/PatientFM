@@ -6,7 +6,7 @@ from sklearn.model_selection import KFold
 from Reader import Reader
 from NejiAnnotator import readPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
-from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1
+from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1, createOutputTask2
 
 from models.Embedding_BiLstmCRF.utils import loadModelConfigs
 from models.Embedding_BiLstmCRF.model import Model
@@ -59,7 +59,7 @@ def runModel(settings, trainTXT, trainXML):
     trainClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in trainClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle_biowordvec"])
         nejiTrainClasses = classDictToList(nejiTrainClassesDict)
         nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTrainClasses]
 
@@ -82,7 +82,7 @@ def runModel(settings, trainTXT, trainXML):
     testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle"])
+        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle_biowordvec"])
         nejiTestClasses = classDictToList(nejiTestClassesDict)
         nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
 
@@ -144,7 +144,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle_biowordvec"])
         nejiClasses = classDictToList(nejiClassesDict)
         nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
 

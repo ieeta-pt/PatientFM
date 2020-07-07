@@ -8,7 +8,7 @@ from NejiAnnotator import readPickle
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries
 
-from models.ALBERT_BiLstmCRF.utils import ALBERT_ENTITY_CLASSES, ALBERTutils, loadModelConfigs, createOutputTask1
+from models.ALBERT_BiLstmCRF.utils import ALBERT_ENTITY_CLASSES, ALBERTutils, loadModelConfigs, createOutputTask1, createOutputTask2
 from models.ALBERT_BiLstmCRF.model import Model
 
 
@@ -55,7 +55,7 @@ def runModel(settings, trainTXT, trainXML):
     trainClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in trainClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiTrainClassesDict = readPickle(settings["neji"]["neji_train_pickle_albert"])
         nejiTrainClasses = classDictToList(nejiTrainClassesDict)
         nejiTrainClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTrainClasses]
     else:
@@ -87,7 +87,7 @@ def runModel(settings, trainTXT, trainXML):
     testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle"])
+        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle_albert"])
         nejiTestClasses = classDictToList(nejiTestClassesDict)
         nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
     else:
@@ -95,7 +95,7 @@ def runModel(settings, trainTXT, trainXML):
 
 
     predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testALBERTtokenizedSentences, testEncodedSentences,
-                                                                  testClasses, sentenceToDocList, neji_classes=nejiTestClasses)
+                                                                  testClasses, sentenceToDocList, albertUtils, neji_classes=nejiTestClasses)
     return predFamilyMemberDict, predObservationDict
 
 
@@ -142,7 +142,7 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     classes = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in classes]
 
     if settings["neji"]["use_neji_annotations"] == "True":
-        nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle"])
+        nejiClassesDict = readPickle(settings["neji"]["neji_train_pickle_albert"])
         nejiClasses = classDictToList(nejiClassesDict)
         nejiClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiClasses]
 
