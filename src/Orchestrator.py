@@ -27,6 +27,15 @@ class Orchestrator():
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
 
+			if dataSettings["DLmodel"]["model"] == "biowordvec_bilstm":
+				from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+			elif dataSettings["DLmodel"]["model"] == "albert_bilstm":
+				from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+			elif dataSettings["DLmodel"]["model"] == "clinicalbert_bilstm":
+				from models.clinicalBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+			elif dataSettings["DLmodel"]["model"] == "clinicalbert_linear":
+				from models.clinicalBERT.modelRunners import runModel, runModelDevelopment
+
 			""" 
 			Embedding and neji sources creation is provided below if the user wants to create them from scratch.
 			Files for these sources are already provided in the repository, hence these lines are commented
@@ -41,8 +50,15 @@ class Orchestrator():
 			# 	clinicalBERTUtils = clinicalBERTutils(True)
 			# 	runNejiSourcesCreation(dataSettings, modelType="clinicalBERT", bertUtils=clinicalBERTUtils)
 
-			predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
+			"""
+			Development Runner: train and validate using k-fold cross-validation. Uses only train dataset
+			"""
 			# predFamilyMemberDict, predObservationDict = runModelDevelopment(dataSettings, files, XMLAnnotations, cvFolds=5)
+
+			"""
+			Test Runner: trains in full train dataset, evaluates and generates output on full test dataset
+			"""
+			predFamilyMemberDict, predObservationDict = runModel(dataSettings, files, XMLAnnotations)
 
 			return predFamilyMemberDict, predObservationDict
 
