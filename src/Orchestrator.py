@@ -27,6 +27,9 @@ class Orchestrator():
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
 
+			""" 
+			Loads model runners according to the selected DL model (defined in settings.ini)
+			"""
 			if dataSettings["DLmodel"]["model"] == "biowordvec_bilstm":
 				from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 			elif dataSettings["DLmodel"]["model"] == "albert_bilstm":
