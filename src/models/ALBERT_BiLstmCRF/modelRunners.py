@@ -8,7 +8,7 @@ from NejiAnnotator import readPickle
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries
 
-from models.ALBERT_BiLstmCRF.utils import ALBERT_ENTITY_CLASSES, ALBERTutils, loadModelConfigs, createOutputTask1, createOutputTask2
+from models.ALBERT_BiLstmCRF.utils import ALBERT_ENTITY_CLASSES, ALBERTutils, loadModelConfigs, createOutputTask1
 from models.ALBERT_BiLstmCRF.model import Model
 
 
