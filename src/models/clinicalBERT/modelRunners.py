@@ -12,7 +12,7 @@ from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, cli
 from models.clinicalBERT.model import Model
 
 def runModel(settings, trainTXT, trainXML):
-    """ Trains the model in the FULL training dataset and computes predictions for the FULL test set
+    """ Trains the model in the FULL training dataset, saves it in .pth files, and computes predictions for the FULL test set
     :param settings: settings from settings.ini file
     :param trainTXT: train txts
     :param trainXML: train xml annotations
@@ -33,7 +33,6 @@ def runModel(settings, trainTXT, trainXML):
         print('Memory Usage:')
         print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
         print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
-
 
     print("Loading and preprocessing data.\n")
 
@@ -70,6 +69,9 @@ def runModel(settings, trainTXT, trainXML):
     print("Model created. Starting training.\n")
     DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
 
+    print("Writing model files to disk.\n")
+    DL_model.write_model_files(random_seed)
+
     print("Starting the testing phase.\n")
     reader = Reader(dataSettings=settings, corpus="test")
     testTXT = reader.loadDataSet()
@@ -93,7 +95,6 @@ def runModel(settings, trainTXT, trainXML):
 
     predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
                                                                   testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
-
 
     return predFamilyMemberDict, predObservationDict
 
@@ -178,8 +179,6 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
         print("Model created. Starting training.\n")
         DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
 
-
-
         print("Starting the testing phase.\n")
         testLabelPred, testLabelTrue = DL_model.test(testEncodedSentences, testClasses, neji_classes=nejiTestClasses)
         print("Finished the testing phase. Evaluating test results\n")
@@ -198,3 +197,66 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     finalObservationsDict = mergeDictionaries(predObservationsDicts)
 
     return finalFamilyMemberDict, finalObservationsDict
+
+
+def runModel_LoadAndTest(settings, linear_path):
+    """ Loads the model trained in the FULL training dataset and computes predictions for the FULL test set
+    :param settings: settings from settings.ini file
+    :param linear_path: path for the file with linear layer state dict
+    :return: finalFamilyMemberDict, finalObservationsDict: dicts indexed by filename with detected entities
+    """
+
+    seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
+    random_seed = seed[9]
+    random.seed(random_seed)
+    np.random.seed(random_seed)
+    torch.manual_seed(random_seed)
+
+    torch.cuda.is_available()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('Using device:', device)
+    if device.type == 'cuda':
+        print(torch.cuda.get_device_name(0))
+        print('Memory Usage:')
+        print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
+        print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
+
+    if settings["ALBERT"]["add_special_tokens"] == "True":
+        addSpecialTokens = True
+    else:
+        addSpecialTokens = False
+
+    clinicalBERTUtils = clinicalBERTutils(addSpecialTokens)
+
+    # 100 is the default size used in embedding creation
+    max_length = 100
+    modelConfigs = loadModelConfigs(settings)
+    DL_model = Model(modelConfigs, BERT_ENTITY_CLASSES, max_length, device)
+    DL_model.load_model_files(linear_path)
+    print("Loaded model successfully.\n")
+
+    print("Starting the testing phase.\n")
+    reader = Reader(dataSettings=settings, corpus="test")
+    testTXT = reader.loadDataSet()
+
+    testBERTtokenizedSentences, encodedTokenizedSentences, sentenceToDocList = clinicalBERTUtils.getSentenceListWithMapping(testTXT)
+
+    testEncodedSentences = []
+    for sentence in encodedTokenizedSentences:
+        testEncodedSentences.append(torch.LongTensor(sentence).to(device))
+
+    testClassesDict = clinicalBERTUtils.createDefaultClasses(testTXT)
+    testClasses = classDictToList(testClassesDict)
+    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
+
+    if settings["neji"]["use_neji_annotations"] == "True":
+        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle_clinicalbert"])
+        nejiTestClasses = classDictToList(nejiTestClassesDict)
+        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
+    else:
+        nejiTestClasses = None
+
+    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
+                                                                  testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
+
+    return predFamilyMemberDict, predObservationDict

@@ -13,7 +13,7 @@ from models.Embedding_BiLstmCRF.model import Model
 
 
 def runModel(settings, trainTXT, trainXML):
-    """ Trains the model in the FULL training dataset and computes predictions for the FULL test set
+    """ Trains the model in the FULL training dataset, saves it in .pth files, and computes predictions for the FULL test set
     :param settings: settings from settings.ini file
     :param trainTXT: train txts
     :param trainXML: train xml annotations
@@ -34,7 +34,6 @@ def runModel(settings, trainTXT, trainXML):
         print('Memory Usage:')
         print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
         print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
-
 
     print("Loading and preprocessing data.\n")
 
@@ -72,6 +71,9 @@ def runModel(settings, trainTXT, trainXML):
     DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, vocabSize, embeddingsWeightsMatrix, device)
     print("Model created. Starting training.\n")
     DL_model.train(trainEncodedSentences, trainClasses, neji_classes=nejiTrainClasses)
+
+    print("Writing model files to disk.\n")
+    DL_model.write_model_files(random_seed)
 
     print("Starting the testing phase.\n")
     reader = Reader(dataSettings=settings, corpus="test")
@@ -200,3 +202,71 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     finalObservationsDict = mergeDictionaries(predObservationsDicts)
 
     return finalFamilyMemberDict, finalObservationsDict
+
+
+def runModel_LoadAndTest(settings, embedding_layer_path, encoder_path, decoder_path):
+    """ Loads the model trained in the FULL training dataset and computes predictions for the FULL test set
+    :param settings: settings from settings.ini file
+    :param embedding_layer_path: path for the file with embedding layer state dict
+    :param encoder_path: path for the file with encoder state dict
+    :param decoder_path: path for the file with decoder state dict
+    :return: finalFamilyMemberDict, finalObservationsDict: dicts indexed by filename with detected entities
+    """
+
+    seed = [35899,54377,66449,77417,29,229,1229,88003,99901,11003]
+    random_seed = seed[9]
+    random.seed(random_seed)
+    np.random.seed(random_seed)
+    torch.manual_seed(random_seed)
+
+    torch.cuda.is_available()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print('Using device:', device)
+    if device.type == 'cuda':
+        print(torch.cuda.get_device_name(0))
+        print('Memory Usage:')
+        print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
+        print('Cached:   ', round(torch.cuda.memory_cached(0)/1024**3,1), 'GB')
+
+    print("Loading embeddings.\n")
+
+    embeddingModel = np.load(settings["embeddings"]["biowordvec_original"], allow_pickle=True).item()
+    vocab = [key for key in embeddingModel]
+    vocabSize = len(vocab)
+    embeddingsWeightsMatrix = np.zeros((vocabSize, int(settings["embeddings"]["wordvec_size"])))
+    word2Idx = {}
+    for i, word in enumerate(vocab):
+        word2Idx[word] = i
+        embeddingsWeightsMatrix[i] = embeddingModel[word]
+    embeddingsWeightsMatrix = torch.tensor(embeddingsWeightsMatrix, dtype=torch.float64).to(device)
+
+    # 100 is the default size used in embedding creation
+    max_length = 100
+
+    modelConfigs = loadModelConfigs(settings)
+    DL_model = Model(modelConfigs, ENTITY_CLASSES, max_length, vocabSize, embeddingsWeightsMatrix, device)
+    DL_model.load_model_files(embedding_layer_path, encoder_path, decoder_path)
+    print("Loaded model successfully.\n")
+
+    print("Starting the testing phase.\n")
+    reader = Reader(dataSettings=settings, corpus="test")
+    testTXT = reader.loadDataSet()
+
+    testClassesDict = createDefaultClasses(testTXT)
+    testClasses = classDictToList(testClassesDict)
+    testClasses = [classListToTensor(sentenceClasses, datatype=torch.long) for sentenceClasses in testClasses]
+
+    if settings["neji"]["use_neji_annotations"] == "True":
+        nejiTestClassesDict = readPickle(settings["neji"]["neji_test_pickle_biowordvec"])
+        nejiTestClasses = classDictToList(nejiTestClassesDict)
+        nejiTestClasses = [classListToTensor(sentenceClasses, datatype=torch.float) for sentenceClasses in nejiTestClasses]
+
+    testTokenizedSentences, testSentenceToDocList = getSentenceListWithMapping(testTXT, tokenized=True)
+    testEncodedSentences = []
+    for sentence in testTokenizedSentences:
+        sentence = [word2Idx[token] for token in sentence]
+        testEncodedSentences.append(torch.tensor(sentence, dtype=torch.long).to(device))
+
+    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testTokenizedSentences, testEncodedSentences,
+                                                                  testClasses, testSentenceToDocList, neji_classes=nejiTestClasses)
+    return predFamilyMemberDict, predObservationDict

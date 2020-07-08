@@ -4,10 +4,6 @@ from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, 
 from RuleBased import RuleBased
 
 # from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
-#from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
-#from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
-#from models.clinicalBERT.modelRunners import runModel, runModelDevelopment
-from models.clinicalBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
 
 from NejiAnnotator import runNejiSourcesCreation, readPickle
 from models.ALBERT_BiLstmCRF.utils import ALBERTutils
@@ -31,13 +27,13 @@ class Orchestrator():
 			Loads model runners according to the selected DL model (defined in settings.ini)
 			"""
 			if dataSettings["DLmodel"]["model"] == "biowordvec_bilstm":
-				from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+				from models.Embedding_BiLstmCRF.modelRunners import runModel, runModelDevelopment, runModel_LoadAndTest
 			elif dataSettings["DLmodel"]["model"] == "albert_bilstm":
-				from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+				from models.ALBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment, runModel_LoadAndTest
 			elif dataSettings["DLmodel"]["model"] == "clinicalbert_bilstm":
-				from models.clinicalBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment
+				from models.clinicalBERT_BiLstmCRF.modelRunners import runModel, runModelDevelopment, runModel_LoadAndTest
 			elif dataSettings["DLmodel"]["model"] == "clinicalbert_linear":
-				from models.clinicalBERT.modelRunners import runModel, runModelDevelopment
+				from models.clinicalBERT.modelRunners import runModel, runModelDevelopment, runModel_LoadAndTest
 
 			""" 
 			Embedding and neji sources creation is provided below if the user wants to create them from scratch.
