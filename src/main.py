@@ -20,8 +20,10 @@ def help(show=False):
                         help='The method used to process.')
 	configs.add_argument('-ds', '--dataset', dest='dataset', type=str, default='train',\
                         help='The dataset used to process.')
-	configs.add_argument('-r', '--read', dest='dataset', type=str, default='train',\
+	configs.add_argument('-r', '--read', default=False, action='store_true',\
                         help='Read annotations from file (Usefull for task 2)')
+	configs.add_argument('-sf', '--submission', default=False, action='store_true',\
+                        help='If activated, the output will be in the submission file format')
 	
 	executionMode = parser.add_argument_group('Execution Mode', 'Flags to select the execution mode!')
 	executionMode.add_argument('-t1', '--first', default=False, action='store_true', \
@@ -62,11 +64,11 @@ def main():
 		print("Nothing to do, please select the execution mode!")
 		help(show=True)
 		exit()
+	reader = Reader(dataSettings=settings, corpus=args.dataset)
 	fmDocsRes = {}
 	obsDocsRes = {}
 	if args.first:
 		print("Execute the first subtask")
-		reader = Reader(dataSettings=settings, corpus=args.dataset)
 		filesRead = reader.loadDataSet(cleaning=args.cleaning)
 		fmDocs = {}
 		obsDocs = {}
@@ -82,12 +84,14 @@ def main():
 		fmDocsRes, obsDocsRes = Orchestrator.mergeResultsTask1(fmDocs, obsDocs)
 		Writer.writeTask1(resultFile 	= settings["results"]["task1"], 
 					 	  fmDocs 		= fmDocsRes, 
-					 	  obsDocs	 	= obsDocsRes)
+					 	  obsDocs	 	= obsDocsRes,
+					 	  submission	= args.submission)
 
 	if args.second:
 		print("Execute the second subtask")
 		if args.read:
-			fmDocsRes, obsDocsRes = Reader.loadFMandObs()
+			fmDocsRes, obsDocsRes = reader.loadFMObs(fmFile 	= settings["results"]["family_members"],
+													 obsFile 	= settings["results"]["observations"])
 		if len(fmDocsRes) == 0 or len(obsDocsRes) == 0:
 			print("No observations or family members available for this task!")
 		else:
