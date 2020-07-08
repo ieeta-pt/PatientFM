@@ -248,7 +248,7 @@ def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, tes
             nejiClasses = None
 
         reconstructedSentence = bertUtils.tokenizer.convert_tokens_to_string(testTokenizedSentences[idx])
-        reconstructedSentence = reconstructedSentence.replace(" [SEP]", "")
+        reconstructedSentence = reconstructedSentence.replace("[SEP]", "").replace("[CLS] ", "")
 
         testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=nejiClasses)
         familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx], bertUtils)
