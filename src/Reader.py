@@ -166,5 +166,16 @@ class Reader(object):
 		obs = {}
 		with codecs.open(fmFile, 'r', encoding="utf8", errors='ignore') as fp:
 			for line in fp:
-				print(line)
+				data = line.strip().split("\t")
+				if data[1] == "FamilyMember":
+					if data[0] not in fms:
+						fms[data[0]] = []
+					fms[data[0]].append(((data[2],data[3]),data[4]))
+		with codecs.open(obsFile, 'r', encoding="utf8", errors='ignore') as fp:
+			for line in fp:
+				data = line.strip().split("\t")
+				if data[1] == "Observation":
+					if data[0] not in obs:
+						obs[data[0]] = []
+					obs[data[0]].append((data[2],data[3]))
 		return fms, obs

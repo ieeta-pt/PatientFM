@@ -64,12 +64,15 @@ def main():
 		print("Nothing to do, please select the execution mode!")
 		help(show=True)
 		exit()
-	reader = Reader(dataSettings=settings, corpus=args.dataset)
+
 	fmDocsRes = {}
 	obsDocsRes = {}
+
+	reader = Reader(dataSettings=settings, corpus=args.dataset)
+	filesRead = reader.loadDataSet(cleaning=args.cleaning)
+
 	if args.first:
 		print("Execute the first subtask")
-		filesRead = reader.loadDataSet(cleaning=args.cleaning)
 		fmDocs = {}
 		obsDocs = {}
 		for method in methods:
@@ -95,5 +98,10 @@ def main():
 		if len(fmDocsRes) == 0 or len(obsDocsRes) == 0:
 			print("No observations or family members available for this task!")
 		else:
-			print("to do")
+			results = Orchestrator.processTask2(files 	= filesRead, 
+											 	fmDocs 	= fmDocsRes, 
+											 	obsDocs	= obsDocsRes,
+								    			show 	= args.showprints)
+			Writer.writeTask2(resultFile 	= settings["results"]["task2"], 
+							  annotations 	= results)
 main()

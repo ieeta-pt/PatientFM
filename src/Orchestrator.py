@@ -1,3 +1,4 @@
+from rules import *
 from Preprocessing import nltkInitialize
 from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
@@ -74,8 +75,8 @@ class Orchestrator():
 		Currently, we are using the rule-based system for family members identification and deep learning for observation extraction.
 		:param fmDocs: dictionary containing the family members for the different methods. key: method used.
 		:param obsDocs: dictionary containing the observations for the different methods. key: method used.
-		returns tuple(dictionary containing family members (key: filename, value: list),
-					  dictionary containing observations (key: filename, value: list))
+		:returns: tuple(dictionary containing family members (key: filename, value: list),
+					  	dictionary containing observations (key: filename, value: list))
 		"""
 		fmRes = dict()
 		obsRes = dict()
@@ -86,6 +87,38 @@ class Orchestrator():
 		obsRes = obsDocs[list(obsDocs.keys())[0]]
 		return 	fmRes, obsRes
 
-	def processTask2(show=False):
-		# to do
-		return 	None
+	def processTask2(files, fmDocs, obsDocs, show=False):
+		"""
+		...
+		:return: Dictionary containing 
+		{
+			"file name":[
+				(familyMember, familySide, "LivingStatus", number 4 or 0)
+				or
+				(familyMember, familySide, "Observation", concept)
+			]
+		}
+		"""
+		results = dict()
+		for file in files:
+			results[file] = []
+			livingStatus = {}
+			if file not in fmDocs:
+				continue
+			for fmAnn in fmDocs[file]:
+				fm = fmAnn[0]
+				sentence = fmAnn[1]
+				if fm in livingStatus:
+					if livingStatus[fm] == 4:
+						continue #This FM is dead
+				else:
+					livingStatus[fm] = 0
+					for word in deadWords:
+						if word in sentence:
+							livingStatus[fm] = 4
+							break
+
+
+			for ls in livingStatus:
+				results[file].append((ls[0], ls[1], "LivingStatus", livingStatus[ls]))
+		return 	results
