@@ -149,3 +149,22 @@ class Reader(object):
 						dictionary.add(diseases.strip())
 		return dictionary
 
+	def loadFMObs(self, fmFile, obsFile):
+		"""
+		...
+		:ŕeturn: Tuple of two dicts: fms: key is the file name, value is a list of tuples containing the FMs and sentence.
+		(
+			{
+				"file name": [((FamilyMember, FamilySide), sentence),...]
+			},
+			{
+				"file name": [(Observation, sentence),...]
+			}
+		)
+		"""
+		fms = {}
+		obs = {}
+		with codecs.open(fmFile, 'r', encoding="utf8", errors='ignore') as fp:
+			for line in fp:
+				print(line)
+		return fms, obs

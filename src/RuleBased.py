@@ -17,15 +17,11 @@ SECTION_RULES 	 = True
 class RuleBased(object):
 	def processTask1(files):
 		result = {}
-		count = 10
 		for fileName in files:
 			fileContent = cleanFile(files[fileName]).split(". ")
 			rb = RuleBased()
 			rb.process(fileContent)
 			result[fileName] = rb.getResults()
-			count -= 1
-			if count == 0:
-				pass#break
 		return result, {}#No observations
 
 	def __init__(self):
@@ -43,7 +39,7 @@ class RuleBased(object):
 			"fms":[],
 			"phrase":""
 		}
-		self.results 	= set()
+		self.results 	= list()
 		self.isPartner  = False
 
 	def getResults(self):
@@ -59,7 +55,8 @@ class RuleBased(object):
 			if result != None:
 				for subject in self.currentSubjects["fms"]:
 					if subject["fm"] != PATIENT and subject["fm"] != PARTNER:
-						self.results.add(subject["fm"])
+						ann = (subject["fm"],self.currentSubjects["phrase"])
+						self.results.append(ann)
 			self.previousSubjects = self.currentSubjects.copy()
 			lineNr += 1
 

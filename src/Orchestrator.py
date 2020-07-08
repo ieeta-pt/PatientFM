@@ -17,8 +17,8 @@ class Orchestrator():
 		:param files: dictionary containing the clinical reports (key: filename)
 		:....
 
-		returns tuple(dictionary containing family members (key: filename, value: list),
-					  dictionary containing observations (key: filename, value: list))
+		returns tuple(dictionary containing family members (key: filename, value: list of tuples ((fm, fs), sentence),
+					  dictionary containing observations (key: filename, value: list of tuples (obs, sentence)))
 		"""
 		if method == "silva":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
