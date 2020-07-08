@@ -192,41 +192,41 @@ class ALBERTutils():
 
 
 
+# def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, bertUtils, neji_classes=None):
+#     """
+#     Runs the trained model on the unseen data split (validation or test), returning the resulting entity predictions
+#     :param DLmodel:
+#     :param testTokenizedSentences:
+#     :param testEncodedSentences:
+#     :param testClasses:
+#     :param testDocMapping:
+#     :param bertUtils: instance of ALBERTutils which contains the necessary tokenizer
+#     :param neji_classes: neji classes in case neji annotations are used to add input information to the model
+#     :return:
+#     """
+#
+#     predFamilyMemberDict = {}
+#     predObservationDict = {}
+#     for idx, _ in enumerate(testTokenizedSentences):
+#         if neji_classes is not None:
+#             nejiClasses = neji_classes[idx]
+#         else:
+#             nejiClasses = None
+#
+#         testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=nejiClasses)
+#         familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx], bertUtils)
+#         if familyMemberList:
+#             if testDocMapping[idx] not in predFamilyMemberDict.keys():
+#                 predFamilyMemberDict[testDocMapping[idx]] = []
+#             predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
+#         if observationsList:
+#             if testDocMapping[idx] not in predObservationDict.keys():
+#                 predObservationDict[testDocMapping[idx]] = []
+#             predObservationDict[testDocMapping[idx]].extend(observationsList)
+#     return predFamilyMemberDict, predObservationDict
+
+
 def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, bertUtils, neji_classes=None):
-    """
-    Runs the trained model on the unseen data split (validation or test), returning the resulting entity predictions
-    :param DLmodel:
-    :param testTokenizedSentences:
-    :param testEncodedSentences:
-    :param testClasses:
-    :param testDocMapping:
-    :param bertUtils: instance of ALBERTutils which contains the necessary tokenizer
-    :param neji_classes: neji classes in case neji annotations are used to add input information to the model
-    :return:
-    """
-
-    predFamilyMemberDict = {}
-    predObservationDict = {}
-    for idx, _ in enumerate(testTokenizedSentences):
-        if neji_classes is not None:
-            nejiClasses = neji_classes[idx]
-        else:
-            nejiClasses = None
-
-        testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=nejiClasses)
-        familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx], bertUtils)
-        if familyMemberList:
-            if testDocMapping[idx] not in predFamilyMemberDict.keys():
-                predFamilyMemberDict[testDocMapping[idx]] = []
-            predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
-        if observationsList:
-            if testDocMapping[idx] not in predObservationDict.keys():
-                predObservationDict[testDocMapping[idx]] = []
-            predObservationDict[testDocMapping[idx]].extend(observationsList)
-    return predFamilyMemberDict, predObservationDict
-
-
-def createOutputTask2(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, bertUtils, neji_classes=None):
     """
     Runs the trained model on the unseen data split (validation or test), returning the resulting entity predictions
     :param DLmodel:
@@ -256,16 +256,14 @@ def createOutputTask2(DLmodel, testTokenizedSentences, testEncodedSentences, tes
             if testDocMapping[idx] not in predFamilyMemberDict.keys():
                 predFamilyMemberDict[testDocMapping[idx]] = []
             for familyMember in familyMemberList:
-                familyMemberText, familySide = familyMember
-                familySide = familySide + "\t" + reconstructedSentence
-                entry = tuple((familyMemberText, familySide))
+                entry = tuple((familyMember, reconstructedSentence))
                 predFamilyMemberDict[testDocMapping[idx]].extend([entry])
 
         if observationsList:
             if testDocMapping[idx] not in predObservationDict.keys():
                 predObservationDict[testDocMapping[idx]] = []
             for observation in observationsList:
-                entry = observation + "\t" + reconstructedSentence
+                entry = tuple((observation, reconstructedSentence))
                 predObservationDict[testDocMapping[idx]].extend([entry])
     return predFamilyMemberDict, predObservationDict
 

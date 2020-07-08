@@ -6,7 +6,7 @@ from sklearn.model_selection import KFold
 from Reader import Reader
 from NejiAnnotator import readPickle
 from Entity import createTrueClasses, createDefaultClasses, ENTITY_CLASSES
-from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1, createOutputTask2
+from models.utils import classListToTensor, classDictToList, getSentenceList, getSentenceListWithMapping, mergeDictionaries, createOutputTask1
 
 from models.Embedding_BiLstmCRF.utils import loadModelConfigs
 from models.Embedding_BiLstmCRF.model import Model

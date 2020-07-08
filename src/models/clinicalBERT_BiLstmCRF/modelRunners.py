@@ -8,7 +8,7 @@ from NejiAnnotator import readPickle
 
 from models.utils import classListToTensor, classDictToList, getSentenceList, mergeDictionaries
 
-from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, clinicalBERTutils, createOutputTask1, createOutputTask2
+from models.clinicalBERT.utils import BERT_ENTITY_CLASSES, loadModelConfigs, clinicalBERTutils, createOutputTask1
 from models.clinicalBERT_BiLstmCRF.model import Model
 
 def runModel(settings, trainTXT, trainXML):
@@ -91,10 +91,7 @@ def runModel(settings, trainTXT, trainXML):
     else:
         nejiTestClasses = None
 
-     # predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
-     #                                                                  testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
-
-    predFamilyMemberDict, predObservationDict = createOutputTask2(DL_model, testBERTtokenizedSentences, testEncodedSentences,
+    predFamilyMemberDict, predObservationDict = createOutputTask1(DL_model, testBERTtokenizedSentences, testEncodedSentences,
                                                                   testClasses, sentenceToDocList, clinicalBERTUtils, neji_classes=nejiTestClasses)
 
 
