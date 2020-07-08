@@ -283,6 +283,7 @@ class Model:
         self.decoder_optimizer.step()
         return loss.item()
 
+
     def perform_optimization_step_no_entity_pred(self, crf_loss):
         loss = crf_loss
         self.encoder_optimizer.zero_grad()
@@ -292,4 +293,20 @@ class Model:
         self.decoder_optimizer.step()
         return loss.item()
 
+
+    def write_model_files(self, seed):
+        timepoint = time.strftime("%Y%m%d_%H%M")
+        path = '../results/models/clinicalBERT_BiLstmCRF/'
+        if not os.path.exists(path):
+            os.makedirs(path)
+        filename = 'N2C2_clinicalBERT_' + timepoint + '-seed_' + str(seed)
+        torch.save(self.encoder.state_dict(), path + 'model_encoder-'+filename+".pth")
+        torch.save(self.decoder.state_dict(), path + 'model_decoder-'+filename+".pth")
+
+
+    def load_model_files(self, encoder_path, decoder_path):
+        self.encoder.load_state_dict(torch.load(encoder_path, map_location=self.device))
+        self.decoder.load_state_dict(torch.load(decoder_path, map_location=self.device))
+        self.encoder.eval()
+        self.decoder.eval()
 

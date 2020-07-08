@@ -292,3 +292,16 @@ class Model:
         fp = np.mean([(2 * precision[i] * recall[i]) / (precision[i] + recall[i]) for i in range(len(entityTypes))])
         print("Exact Hit metrics: F1 = {} | Precision = {} | Recall = {}".format(round(fp, 4), round(np.mean(precision), 4), round(np.mean(recall), 4)))
 
+
+    def write_model_files(self, seed):
+        timepoint = time.strftime("%Y%m%d_%H%M")
+        path = '../results/models/clinicalBERT/'
+        if not os.path.exists(path):
+            os.makedirs(path)
+        filename = 'N2C2_clinicalBERT_' + timepoint + '-seed_' + str(seed)
+        torch.save(self.linear.state_dict(), path + 'model_linear-'+filename+".pth")
+
+
+    def load_model_files(self, linear_path):
+        self.linear.load_state_dict(torch.load(linear_path, map_location=self.device))
+        self.linear.eval()
