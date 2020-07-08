@@ -25,6 +25,27 @@ class Writer():
 					foutput.write("{}\tObservation\t{}\n".format(doc, disease))
 				else:
 					foutput.write("{}\tObservation\t{}\t{}\n".format(doc, disease, sentence))
-		
 		foutput.close()
 		
+	def writeTask2(resultFile, annotations):
+		"""
+		{
+			"file name":[
+				(familyMember, familySide, "LivingStatus", number 4 or 0)
+				or
+				(familyMember, familySide, "Observation", concept)
+			]
+		}
+		"""
+		foutput = open(resultFile, "w")
+		for file in annotations:
+			for ann in annotations[file]:
+				annType = ann[2]
+				familyMember = ann[0]
+				sideOfFamily = ann[1]
+				value = ann[3]
+				if annType == "LivingStatus":
+					foutput.write("{}\t{}\t{}\t{}\t{}\n".format(file, familyMember, sideOfFamily, annType, value))
+				elif annType == "Observation":
+					foutput.write("{}\t{}\t{}\t{}\t{}Non_Negated\n".format(file, familyMember, sideOfFamily, annType, value))
+		foutput.close()

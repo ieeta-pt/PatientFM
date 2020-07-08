@@ -55,7 +55,7 @@ class RuleBased(object):
 			if result != None:
 				for subject in self.currentSubjects["fms"]:
 					if subject["fm"] != PATIENT and subject["fm"] != PARTNER:
-						ann = (subject["fm"],self.currentSubjects["phrase"])
+						ann = (subject["fm"], self.currentSubjects["phrase"].replace("\n", " "))
 						self.results.append(ann)
 			self.previousSubjects = self.currentSubjects.copy()
 			lineNr += 1
