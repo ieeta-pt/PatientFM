@@ -89,6 +89,6 @@ def concatenateNejiClassesToEmbeddings(embeddings, nejiClasses, device):
     :param device:
     :return:
     """
-    nejiTensor = nejiClasses.unsqueeze(2).to(device)
+    nejiTensor = nejiClasses.unsqueeze(2)/8.to(device)
     newTensor = torch.cat((embeddings, nejiTensor), dim=2)
     return newTensor
