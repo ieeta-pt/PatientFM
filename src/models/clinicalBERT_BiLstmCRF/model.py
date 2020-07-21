@@ -27,6 +27,7 @@ class Model:
         self.epochs = configs.epochs
         self.iterations_per_epoch = configs.iterations_per_epoch
         self.learning_rate = configs.learning_rate
+        self.patience = configs.patience
 
         self.clinicalBERT = AutoModel.from_pretrained("emilyalsentzer/Bio_ClinicalBERT").to(device=self.device)
         self.bert_outsize = 768
@@ -56,46 +57,63 @@ class Model:
 
         start = time.time()
         global_start = start
-        for iteration in range(n_iterations):
 
-            if self.USE_NEJI == "True":
-                encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask, batch_neji_classes = \
-                    generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device, neji_classes)
-            else:
-                encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask = \
-                    generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
+        TRAINING = True
+        loss_delta = 1
+        current_patience = 0
+        while TRAINING:
+            for iteration in range(n_iterations):
 
-            sentence_representations = self.clinicalBERT(input_ids=encoded_sentences_tensors, attention_mask=mask)
-            # Output from clinicalBERT model is a tuple with (last_hidden_state, pooler_output), so we select the first part
-            sentence_representations = sentence_representations[0]
+                if self.USE_NEJI == "True":
+                    encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask, batch_neji_classes = \
+                        generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device, neji_classes)
+                else:
+                    encoded_sentences_tensors, sorted_batch_classes, sorted_len_units, mask = \
+                        generateBatch(train_encoded_sentences_tensors, train_labels, self.batch_size, self.device)
 
-            if self.USE_NEJI == "True":
-                sentence_representations = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
-                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
-            else:
-                packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
+                sentence_representations = self.clinicalBERT(input_ids=encoded_sentences_tensors, attention_mask=mask)
+                # Output from clinicalBERT model is a tuple with (last_hidden_state, pooler_output), so we select the first part
+                sentence_representations = sentence_representations[0]
 
-            initial_state_h0c0 = self.encoder.initH0C0(self.device)
-            encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
-            crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
+                if self.USE_NEJI == "True":
+                    sentence_representations = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
+                    packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
+                else:
+                    packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
 
-            if self.ENTITY_PREDICTION == "True":
-                entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
-                current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
-            elif self.ENTITY_PREDICTION == "False":
-                current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
-            label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
+                initial_state_h0c0 = self.encoder.initH0C0(self.device)
+                encoder_output, hidden_state_n, cell_state_n = self.encoder(packed_input.to(device=self.device), initial_state_h0c0)
+                crf_out, entity_out, crf_loss = self.decoder(encoder_output, sorted_batch_classes, mask, self.device)
 
-            f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
-            if (iteration + 1) % self.iterations_per_epoch == 0:
-                all_losses.append(current_loss / self.iterations_per_epoch)
-                print("Epoch %d of %d | F1: %.3f%% | Average Loss: %.5f" %
-                      ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
-                current_loss = 0
-                f1_score_accumulated = 0
-                elapsed = (time.time() - start)
-                print("Time used in seconds:", elapsed)
-                start = time.time()
+                if self.ENTITY_PREDICTION == "True":
+                    entity_pred, entity_true = self.compute_entity_prediction(entity_out, sorted_len_units, sorted_batch_classes)
+                    current_loss += self.perform_optimization_step_entity_pred(crf_loss, entity_pred, entity_true)
+                elif self.ENTITY_PREDICTION == "False":
+                    current_loss += self.perform_optimization_step_no_entity_pred(crf_loss)
+                label_pred, label_true = self.compute_label_prediction(crf_out, sorted_len_units, sorted_batch_classes)
+
+                f1_score_accumulated += metrics.f1_score(label_pred.tolist(), label_true.tolist(), average='micro', labels=entity_labels)
+                if (iteration + 1) % self.iterations_per_epoch == 0:
+                    all_losses.append(current_loss / self.iterations_per_epoch)
+                    print("Epoch %d of %d | F1: %.3f%% | Average Loss: %.5f" %
+                          ((iteration + 1) / self.iterations_per_epoch, self.epochs, f1_score_accumulated / self.iterations_per_epoch * 100, current_loss / self.iterations_per_epoch))
+                    current_loss = 0
+                    f1_score_accumulated = 0
+                    elapsed = (time.time() - start)
+                    print("Time used in seconds:", elapsed)
+                    start = time.time()
+
+                    if len(all_losses) > 1:
+                        loss_change = (all_losses[-1]-all_losses[-2])/all_losses[-2]*100
+                        if loss_change < loss_delta:
+                            current_patience += 1
+                            print("Last loss change was smaller than {}%. Patience increased to {}.".format(loss_delta, current_patience))
+                            if current_patience == self.patience:
+                                print("Reached patience of {}. Stopping training.".format(self.patience))
+                                TRAINING=False
+                                break
+                            else:
+                                current_patience = 0
 
         elapsed = (time.time() - global_start)
         print("Completed training. Total time used: {}".format(elapsed))

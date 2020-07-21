@@ -15,6 +15,7 @@ def loadModelConfigs(settings):
     configs.WORDVEC_SIZE = int(settings["embeddings"]["wordvec_size"])
     configs.EMBEDDINGS_FREEZE_AFTER_EPOCH = int(settings["DLmodelparams"]["EMBEDDINGS_FREEZE_AFTER_EPOCH"])
     configs.USE_NEJI = settings["neji"]["use_neji_annotations"]
+    configs.patience = int(settings["DLmodelparams"]["patience"])
     return configs
 
 
