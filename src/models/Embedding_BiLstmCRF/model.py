@@ -69,7 +69,7 @@ class Model:
         global_start = start
 
         TRAINING = True
-        loss_delta = 1
+        loss_delta = 0.5 # corresponds to 0.5% change in value
         current_patience = 0
         while TRAINING:
             for iteration in range(n_iterations):
@@ -114,9 +114,14 @@ class Model:
                     print("Time used:", elapsed)
                     start = time.time()
 
+                    # If training is completed
+                    if (iteration + 1) == n_iterations:
+                        TRAINING=False
+                        break
+
                     if len(all_losses) > 1:
                         loss_change = (all_losses[-1]-all_losses[-2])/all_losses[-2]*100
-                        if loss_change < loss_delta:
+                        if abs(loss_change) < loss_delta:
                             current_patience += 1
                             print("Last loss change was smaller than {}%. Patience increased to {}.".format(loss_delta, current_patience))
                             if current_patience == self.patience:
