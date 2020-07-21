@@ -23,6 +23,7 @@ def loadModelConfigs(settings):
     configs.num_layers = int(settings["DLmodelparams"]["numlayers"])
     configs.learning_rate = float(settings["DLmodelparams"]["learningrate"])
     configs.USE_NEJI = settings["neji"]["use_neji_annotations"]
+    configs.patience = int(settings["DLmodelparams"]["patience"])
     return configs
 
 class clinicalBERTutils():
