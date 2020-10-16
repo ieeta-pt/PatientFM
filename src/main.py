@@ -53,13 +53,13 @@ def main():
 	settings = readSettings(args.settings)
 	if  not args.first and \
 		not args.second:
-		print("Nothing to do, please define the method to process!")
+		print("Nothing to do, please define the execution mode!")
 		help(show=True)
 		exit()
 
 	methods = getMethod(settings, args.method)
 	if  len(methods) == 0:
-		print("Nothing to do, please select the execution mode!")
+		print("Nothing to do, please select the method to process!")
 		help(show=True)
 		exit()
 
