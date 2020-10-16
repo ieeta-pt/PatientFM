@@ -1,4 +1,4 @@
-# Using the system
+# Using PatientFM
 
 To run the system simply execute the `python main.py` command supplied with the desired flags. The system supports the following list of flags:
 
