@@ -1,5 +1,7 @@
 # Using PatientFM
 
+PatientFM is an end-to-end system for extracting family history information from clinical notes. The system is implemented so that the user can select between the hybrid solution (end-to-end extraction of entities and relations), only the rule-based engine (only extracts family member entities) and only the deep-learning module (only extracts disease observation entities). 
+
 To run the system simply execute the `python main.py` command supplied with the desired flags. The system supports the following list of flags:
 
 |Settings Flag|Description|
