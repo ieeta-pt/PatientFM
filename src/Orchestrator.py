@@ -21,7 +21,7 @@ class Orchestrator():
 		returns tuple(dictionary containing family members (key: filename, value: list of tuples ((fm, fs), sentence),
 					  dictionary containing observations (key: filename, value: list of tuples (obs, sentence)))
 		"""
-		if method == "silva":
+		if method == "deeplearning":
 			nltkInitialize(dataSettings["datasets"]["nltk_sources"])
 
 			""" 
@@ -62,7 +62,7 @@ class Orchestrator():
 
 			return predFamilyMemberDict, predObservationDict
 
-		elif method == "ja_rules":
+		elif method == "rulebased":
 			return RuleBased.processTask1(files)
 
 		elif  method == "methodZZZ":
@@ -80,8 +80,8 @@ class Orchestrator():
 		"""
 		fmRes = dict()
 		obsRes = dict()
-		if "ja_rules" in fmDocs:
-			fmRes = fmDocs["ja_rules"]
+		if "rulebased" in fmDocs:
+			fmRes = fmDocs["rulebased"]
 		else:
 			fmRes = fmDocs[list(fmDocs.keys())[0]]
 		obsRes = obsDocs[list(obsDocs.keys())[0]]

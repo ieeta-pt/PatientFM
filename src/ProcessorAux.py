@@ -19,7 +19,7 @@ def cleanFile(inFile):
 	file = file.replace("dr.", "dr").replace("mr.", "mr").replace("mrs.", "mrs").replace("ms.", "ms")
 	return file
 
-def fulfillPatientShits(phrase, patientInfo):
+def fulfillPatientDetails(phrase, patientInfo):
 	nextIsTheName = False
 	dirtyPreviousWord = ""
 	for word in phrase.split(" "):
