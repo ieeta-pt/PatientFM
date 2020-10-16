@@ -1,7 +1,6 @@
 import os
 import time
 import torch
-import pickle
 import numpy as np
 from torch import nn
 from sklearn import metrics

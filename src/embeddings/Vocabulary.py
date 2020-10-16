@@ -41,7 +41,6 @@ def createFasttextModel(vocabularyFilePath, biowordvecPath, biowordvecVocabOrigP
     # Vocabulary.
     vocab = model.wv.vocab
 
-    # 16545452 unique tokens.
     n = len(vocab)
 
     f = open(vocabularyFilePath, mode='r', encoding='utf-8')
