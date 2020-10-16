@@ -1,17 +1,14 @@
 import os
 import time
 import torch
-import pickle
 import numpy as np
 from torch import nn
 from sklearn import metrics
 
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoModel
 
 from models.utils import classListToTensor, updateProgress, valueToKey
 from models.Embedding_BiLstmCRF.utils import generateBatch, concatenateNejiClassesToEmbeddings
-from models.BiLstmCRF.decoder import Decoder
-from models.BiLstmCRF.encoder import BiLSTMEncoder
 
 class Model:
     def __init__(self, configs, labels_dict, max_length, device):
@@ -34,23 +31,13 @@ class Model:
         self.USE_NEJI = configs.USE_NEJI
         if self.USE_NEJI == "True":
             self.bert_outsize = self.bert_outsize + 1
-        # else:
-        #     self.encoder_insize = self.bert_outsize
 
         self.linear = nn.Linear(self.bert_outsize, self.output_size).to(device=self.device)
         self.softmax = nn.LogSoftmax(dim=2).to(device=self.device)
 
-
         self.entity_criterion = nn.NLLLoss()
         self.label_criterion = nn.NLLLoss()
         self.linear_optimizer = torch.optim.Adam(self.linear.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-
-
-        # self.encoder = BiLSTMEncoder(self.encoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, num_layers=self.num_layers).to(device=self.device)
-        # self.decoder = Decoder(self.decoder_insize, self.hidden_size, self.output_size, batch_size=self.batch_size, max_len=self.max_length, num_layers=self.num_layers).to(device=self.device)
-        # self.criterion = nn.NLLLoss()
-        # self.encoder_optimizer = torch.optim.Adam(self.encoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-        # self.decoder_optimizer = torch.optim.Adam(self.decoder.parameters(), lr=self.learning_rate, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
 
 
     def train(self, train_encoded_sentences_tensors, train_labels, neji_classes=None):
@@ -85,9 +72,6 @@ class Model:
 
                 if self.USE_NEJI == "True":
                     sentence_representations = concatenateNejiClassesToEmbeddings(sentence_representations, batch_neji_classes, self.device)
-                #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_neji_embeddings, sorted_len_units, batch_first=True)
-                # else:
-                #     packed_input = torch.nn.utils.rnn.pack_padded_sequence(sentence_representations, sorted_len_units, batch_first=True)
 
                 entity_out = self.linear(sentence_representations)
                 entity_out = self.softmax(entity_out)

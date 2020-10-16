@@ -1,5 +1,3 @@
-import torch
-import numpy as np
 from transformers import AutoTokenizer
 
 from Entity import filterObservations, filterFamilyMembers, FAMILY_PLURALS, ENTITY_CLASSES
@@ -189,41 +187,6 @@ class clinicalBERTutils():
         elif familySide == "NA":
             if beginningToken: return self.BERTEntityClasses["BNA-FamilyMember"]
             else:              return self.BERTEntityClasses["INA-FamilyMember"]
-
-
-
-# def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, bertUtils, neji_classes=None):
-#     """
-#     Runs the trained model on the unseen data split (validation or test), returning the resulting entity predictions
-#     :param DLmodel:
-#     :param testTokenizedSentences:
-#     :param testEncodedSentences:
-#     :param testClasses:
-#     :param testDocMapping:
-#     :param bertUtils: instance of BERTutils which contains the necessary tokenizer
-#     :param neji_classes: neji classes in case neji annotations are used to add input information to the model
-#     :return:
-#     """
-#
-#     predFamilyMemberDict = {}
-#     predObservationDict = {}
-#     for idx, _ in enumerate(testTokenizedSentences):
-#         if neji_classes is not None:
-#             nejiClasses = neji_classes[idx]
-#         else:
-#             nejiClasses = None
-#
-#         testModelPred, _ = DLmodel.test([testEncodedSentences[idx]], testClasses[idx], SINGLE_INSTANCE=True, neji_classes=nejiClasses)
-#         familyMemberList, observationsList = predictionToOutputTask1(testModelPred, testTokenizedSentences[idx], bertUtils)
-#         if familyMemberList:
-#             if testDocMapping[idx] not in predFamilyMemberDict.keys():
-#                 predFamilyMemberDict[testDocMapping[idx]] = []
-#             predFamilyMemberDict[testDocMapping[idx]].extend(familyMemberList)
-#         if observationsList:
-#             if testDocMapping[idx] not in predObservationDict.keys():
-#                 predObservationDict[testDocMapping[idx]] = []
-#             predObservationDict[testDocMapping[idx]].extend(observationsList)
-#     return predFamilyMemberDict, predObservationDict
 
 
 def createOutputTask1(DLmodel, testTokenizedSentences, testEncodedSentences, testClasses, testDocMapping, bertUtils, neji_classes=None):

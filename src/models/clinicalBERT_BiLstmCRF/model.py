@@ -1,12 +1,11 @@
 import os
 import time
 import torch
-import pickle
 import numpy as np
 from torch import nn
 from sklearn import metrics
 
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoModel
 
 from models.utils import classListToTensor, updateProgress, valueToKey
 from models.Embedding_BiLstmCRF.utils import generateBatch, concatenateNejiClassesToEmbeddings
@@ -124,9 +123,6 @@ class Model:
         print("Completed training. Total time used: {}".format(elapsed))
         self.encoder = self.encoder.eval()
         self.decoder = self.decoder.eval()
-
-
-
 
 
     def test(self, test_encoded_sentences_tensors, test_labels, verbose=False, neji_classes=None, SINGLE_INSTANCE=False):
