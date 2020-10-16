@@ -1,7 +1,6 @@
 POSSESSIVEVERBS = ["has", "have", "had"]
 
 DEMONSTRATIVEPRONOUNS = ["this", "those", "that", "these"]
-#other, e palavras que sao outro
 
 SPECIALSTOPWORDS = list(set(['he', "he'd", "he'll", "he's", 'her', 'hers', 'herself', 'hes', 
 	'him', 'himself', 'his', 'their', 'theirs', 'them', 'themselves', 'they', "they'd", 
