@@ -4,7 +4,8 @@
 
 ### Documentation
 
-More documentation on how to use the system is available [here](https://github.com/bioinformatics-ua/PatientFM/blob/master/src/).
+PatientFM is an end-to-end hybrid solution composed of a Rule-based Engine that integrates Deep Learning approaches for entity extraction.
+For more documentation on how to use the system, please check the instructions provided [here](https://github.com/bioinformatics-ua/PatientFM/blob/master/src/).
 
 ### Team
   * João F. Silva<sup id="a1">[1](#f1)</sup>
