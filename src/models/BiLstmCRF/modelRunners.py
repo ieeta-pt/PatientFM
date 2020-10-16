@@ -90,8 +90,6 @@ def runModelDevelopment(settings, trainTXT, trainXML, cvFolds):
     predFamilyMemberDicts = []
     predObservationsDicts = []
     for trainIdx, testIdx in kFolds.split(tokenizedSentences):
-        # print(trainIdx)
-        # print(testIdx)
 
         trainTokenizedSentences = [tokenizedSentences[idx] for idx in trainIdx]
         trainEmbeddings = embeddings[trainIdx]
