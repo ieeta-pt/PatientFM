@@ -5,7 +5,6 @@ from Preprocessing import nltkSentenceSplit, nltkTokenize
 
 ## BIO format: B - beginning, I - inside, O - outside entity
 ## Type of entity: FamilyMember, Observation
-## The 13 resulting labels are manually coded in this variable
 
 ENTITY_CLASSES = {"O": 0,
                   "B-Observation": 1,  "I-Observation": 2,

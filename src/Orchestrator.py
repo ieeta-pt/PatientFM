@@ -4,8 +4,6 @@ from embeddings.Pipeline import runEmbeddingCreationPipeline
 from Entity import ENTITY_CLASSES, createDefaultClasses, setObservationClasses, setFamilyMemberClasses, createTrueClasses
 from RuleBased import RuleBased
 
-# from models.BiLstmCRF.modelRunners import runModel, runModelDevelopment
-
 from NejiAnnotator import runNejiSourcesCreation, readPickle
 from models.ALBERT_BiLstmCRF.utils import ALBERTutils
 from models.clinicalBERT.utils import clinicalBERTutils
