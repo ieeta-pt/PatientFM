@@ -17,7 +17,7 @@ For more documentation on how to use the system, please check the instructions p
 
 ### Cite
 
-Please cite the following, if you use DrAC in your work:
+Please cite the following, if you use PatientFM in your work:
 
 ```bib
 in progress
