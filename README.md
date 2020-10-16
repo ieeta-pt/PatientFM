@@ -1,6 +1,6 @@
-<p align="center"><b>PatientFM</b></p>
+<h1 align="center"><b>PatientFM</b></h1>
 
-An end-to-end system for extracting family history information from clinical notes.
+<p align="center"><b>An end-to-end system for extracting family history information from clinical notes.</b></p>
 
 ### Documentation
 
