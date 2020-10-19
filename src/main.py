@@ -11,15 +11,15 @@ def help(show=False):
                         type=str, default="settings.ini", \
                         help='The system settings file (default: settings.ini)')	
 	configs.add_argument('-p', '--showprints', default=False, action='store_true', \
-							help='When active it show some parts of the processing during the executions (default: False)')
+						 help='When active, some parts of the processing are shown during execution (default: False)')
 	configs.add_argument('-c', '--cleaning', default=False, action='store_true', \
-							help='When active it cleans the clinical reports (default: False)')
+							help='When active, clinical reports are processed and cleaned (default: False)')
 	configs.add_argument('-m', '--method', dest='method', type=str, default='',\
-                        help='The method used to process.')
+                        help='The method used to process clinical records.')
 	configs.add_argument('-ds', '--dataset', dest='dataset', type=str, default='train',\
                         help='The dataset used to process.')
 	configs.add_argument('-r', '--read', default=False, action='store_true',\
-                        help='Read annotations from file (Usefull for task 2)')
+                        help='Read annotations from file (Useful for task 2)')
 	configs.add_argument('-sf', '--submission', default=False, action='store_true',\
                         help='If activated, the output will be in the submission file format')
 	
