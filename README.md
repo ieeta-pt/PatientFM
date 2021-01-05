@@ -20,5 +20,5 @@ For more documentation on how to use the system, please check the instructions p
 Please cite the following, if you use PatientFM in your work:
 
 ```bib
-in progress
+Silva JF, Almeida JR, Matos S, Extraction of Family History Information From Clinical Notes: Deep Learning and Heuristics Approach, JMIR Med Inform 2020;8(12):e22898, URL: https://medinform.jmir.org/2020/12/e22898, DOI: 10.2196/22898, PMID: 33372893
 ```
